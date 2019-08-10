@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Arianna Simpson: Bitcoin, Books and Burning Man — David Perell</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="f8db8837-1efc-4e13-b715-22d0d06c4021" class="page sans"><header><h1 class="page-title">Arianna Simpson: Bitcoin, Books and Burning Man — David Perell</h1></header><div class="page-body"><p id="feb1e58d-d3b4-449c-9175-824c03f39c78" class="block-color-gray"><a href="https://www.perell.com/podcast/arianna-simpson">https://www.perell.com/podcast/arianna-simpson</a></p><p id="330ba9b1-78da-44bc-a1e4-7ccf982fd8f7" class="">
+</p><figure id="c16fa5e3-02de-443d-abeb-283ff89bc5c2" class="image"><a href="https://static1.squarespace.com/static/55576406e4b02e4679105dc2/5814e6a96b8f5b0e59aed181/5bb69afeeef1a1b994adf5f2/1539353703016/arianna_perell.jpg?format=1500w"><img src="https://static1.squarespace.com/static/55576406e4b02e4679105dc2/5814e6a96b8f5b0e59aed181/5bb69afeeef1a1b994adf5f2/1539353703016/arianna_perell.jpg?format=1500w"/></a></figure><p id="fc8bda76-872c-4f9c-aaf0-0522af3b392d" class="">My guest today is Arianna Simpson, the Managing Director at a cryptocurrency hedge fund called <a href="https://www.ariannasimpson.com/">Autonomous Partners</a>.</p><p id="c75aef08-7e23-4e33-966f-d4e7a37f1e35" class="">Arianna’s background is fascinating. She grew up in Italy and spent time in Zimbabwe, where she got a first-hand perspective on hyper-inflation and what it does to people. That’s where we began this conversation. Then, we moved on to learning. Arianna is a voracious reader. At one point in her life, she was reading 300 books per year.</p><p id="a0ab700f-a722-4461-a26c-9a55064e3a06" class="">We also talk about her love for Burning Man and how to find new ideas on the internet. We explore how and why San Francisco has the culture that it does, and explore Arianna’s investing philosophy.</p><p id="8a577304-90e9-42d8-8b1d-7b14f4c7f19a" class="">Please enjoy my conversation with Arianna Simpson.</p><figure id="86637522-2797-4890-8bd7-74f9b501d264" class="image"><a href="Arianna Simpson Bitcoin Books and Burning Man Davi/perell_Simpson"><img style="width:700px" src="Arianna Simpson Bitcoin Books and Burning Man Davi/perell_Simpson"/></a></figure><p id="add26394-dcda-4b87-8046-69ed6558328a" class="">Arianna Simpson</p><h3 id="5dc68cbf-01a3-4e13-a488-60b706324ce3" class="">Links</h3><h3 id="5722a5dd-5fe9-466f-8dfb-3af919ac907b" class="">Show Topics</h3><p id="a7e04fb9-4795-4886-a025-938426b460a0" class="">2:18- Arianna discusses her childhood in Italy and her frustrations with bureaucracy.</p><p id="f1f69b07-d6b0-4301-8e81-fc0a6696b7fc" class="">3:00 Arianna discusses her philosophy of optimism and reveals why she’s excited about the future.</p><p id="338376fb-a538-4d39-87d6-a6fe85abdc87" class="">4:11 Arianna compares Italian culture with American culture. She discusses how growing up in Italy shaped her worldview.</p><p id="8955be4a-f035-4db1-be9a-6268343d7294" class="">7:50 David explains the concept of <a href="http://www.perell.com/blog/history">“tall poppy syndrome”</a> and discusses his trip to Australia.</p><p id="6aeb246b-d9a2-406e-9241-f386815f51f4" class="">9:00 Arianna shares lessons and learnings from her time in Zimbabwe, and tells a story about running elephants.</p><p id="2b5b022b-a6f0-4837-b7fa-ef3e3ecb0985" class="">10:30 The wild and vastly different realities of life in Zimbabwe compared to the US.</p><p id="e1ff25f8-e0d4-40b3-9756-bef8543f7aee" class="">12:00 Arianna describes how cryptocurrencies became relevant in Zimbabwe despite its lack of infrastructure.</p><p id="80e6ef4b-e32a-48eb-8c82-9913a88709a2" class="">12:30 David and Arianna dive into the relationship between culture and money.</p><p id="2acdc4f1-982c-4b2a-a981-c822fef5255f" class="">14:30 Money touches everything; beyond capitalism it touches our culture, how we eat, our security, and just about everything</p><p id="7b747076-b0bb-46f7-b7cf-ee14436e3904" class="">16:30 The appeals of crypto in regards to transparency and cutting out the middle man.</p><p id="1dc964da-b1fa-4e4f-96a8-ac62c8bacbc4" class="">18:45 Arianna gives some examples of financial catastrophes, such as the collapse of Long-Term Capital Management.</p><p id="1e6f2256-0574-42c3-8963-5cae794ea193" class="">20:19 What makes crypto different?</p><p id="eda60f91-e034-4c7f-b0c5-1bdd4ce98151" class="">21:30 Human psychology and how it drives peoples long term financial decisions</p><p id="e4839b65-1242-42bd-9914-635fba5ad6e3" class="">23:05 Arianna explains a “multi-year horizon” as a good starting point for long term financial planning</p><p id="e5e4f53b-9e44-4a1a-8ad7-7e8d36922148" class="">24:30 Investing is not that hard in terms of intellectual complicity, it’s the emotional side and risk management aspect that present the real challenge.</p><p id="e35f3c30-8cf6-42c3-b8f8-8eaa721ffaa2" class="">24:50 How Venezuela may be one of the best real world examples of the security and necessity for crypto.</p><p id="826680e4-eba7-48d4-93b2-568622b841f6" class="">27:30 What should governments think about when they think about cryptocurrencies.</p><p id="65f45d95-a3b5-4822-bbb7-b4a4827bd642" class="">30:10 The history of money and why understanding it may be more helpful than we realize.</p><p id="d71d6e33-d175-451b-b694-fdf94a6fbdf4" class="">31:38 if crypto is not backed by anything, what makes it any better than monopoly or make believe money?</p><p id="9c38211a-4efb-403f-8943-f904be4c89cb" class="">33:02 David ask Arianna to breakdown and explain what the learning processing looks like when learning about crypto online.</p><p id="8008ee8c-026b-45cc-a671-0adf11bab49f" class="">35:20 How Arianna spends and managers her time studying both and history and projections of crypto</p><p id="a444de0e-f694-4f60-b526-ea64839d46eb" class="">39:29 David and Arianna dive into books and learning from reading and how it fits in as a way of life.</p><p id="9c5ad462-0f2a-4563-80d6-4a5643b20670" class="">47:20 How cross-pollination of ideas can lead to surprising creative discovers</p><p id="b21696e9-98c7-4e7a-adda-c0a42b0f8340" class="">48:45 What makes San Francisco special?</p><p id="3ffc27c0-50a4-4f0c-af64-8826b0f4cfc8" class="">50:49 Arianna explains a concept she calls “the suspension of disbelief” and shows why it applies to San Francisco.</p><p id="2a0fab4d-7a9f-4469-8ce7-f3fe01f98b61" class="">54:00 Arianna shares some of the special factors that make Burning Man such a great experience for her.</p><p id="11c0d0bf-355c-4752-9049-0e008deadbc6" class="">57:31 Arianna shares how she likes to rebel against her own fears by challenge them and facing them.</p></div></article></body></html>

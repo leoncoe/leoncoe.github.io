@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Sara Dietschy: The Life of a YouTuber — David Perell</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="e3a9ed64-985a-4130-8cbd-b38ffed637ed" class="page sans"><header><h1 class="page-title">Sara Dietschy: The Life of a YouTuber — David Perell</h1></header><div class="page-body"><p id="4aa3a702-f904-40b5-bafb-ae9d8ee9a263" class="block-color-gray"><a href="https://www.perell.com/podcast/sara-dietschy">https://www.perell.com/podcast/sara-dietschy</a></p><p id="a121bed3-0eae-43a8-b863-62088bc05bde" class="">
+</p><figure id="d812b679-4414-4dd5-8592-502b50fa7f18" class="image"><a href="https://static1.squarespace.com/static/55576406e4b02e4679105dc2/5814e6a96b8f5b0e59aed181/5b19789faa4a999ca4714ac1/1531249063765/SaraWebsite.jpg?format=1500w"><img src="https://static1.squarespace.com/static/55576406e4b02e4679105dc2/5814e6a96b8f5b0e59aed181/5b19789faa4a999ca4714ac1/1531249063765/SaraWebsite.jpg?format=1500w"/></a></figure><h3 id="609e3f7e-28f7-43c3-998e-5ef1e191fe6f" class=""><strong>Introduction</strong></h3><p id="8728610c-1a2d-4a41-bc05-3fc275e0f762" class="">My guest today is Sara Dietschy, a YouTuber and content creator based in New York City.</p><p id="0de069be-77c7-4012-8039-0f9e492e0055" class="">With more than 300,000 subscribers, Sara’s created a docu-series, a daily vlog and recently launched a new podcast called <em>The Creative Exchange.</em></p><p id="d88e3606-9225-445d-b627-95ce60d97344" class="">Sara is one of the most inspiring people I know.</p><p id="e12aa0ae-e708-474b-968d-329f77767182" class="">Before she moved to New York, Sara grew up in Dallas, went to college to study computer science, dropped out, and moved to Nashville. Through her work, Sara explores the intersection of technology and creativity. Sara rocks the YouTube scene with her sincerity and a contagious zest for life.</p><p id="402a301d-9fa4-4ac0-bbe0-cfc7420b7e68" class="">The internet spells the end of oppressive creative regimes, the death of gatekeepers and the fall of Hollywood. On the Internet, agility is essential. In this day in age, vlogs showcase the everyday experiences of real people with real stories that exist in real life.</p><p id="d2a163aa-8873-430c-a237-cc0a05e64af3" class="">We live at a time where people have deep and intimate relationships with their favorite YouTubers — people they’ve never met before that feel like their best friends. Millennials and Gen Z have the luxury to ask what is my passion and use the internet to build a career.</p><p id="22eb087a-af34-4515-89da-ade8afbb9654" class="">On the internet, people want to connect with individuals, not massive companies or a bland television ad. They want to connect with people, not companies, and it’s influencers like Sara that are leading the charge.</p><p id="0ab83459-2eae-4ece-9742-3ca7fd1b8154" class="">In this episode, Sara explains how she rose to Youtube stardom and the characteristics she’s noticed between herself and other successful influencers.</p><p id="8f376166-dc65-4e92-a6ea-8f9804916989" class="">Sara and I go back to her time as a musician — an on-stage performer who played in front of large audiences. We talk about all the Sundays Sara spent at a local Megachurch in Dallas, where she played in a band and was blown away by top-notch production quality.</p><p id="7934d1ef-4da9-4ea6-9461-8db44e9545c8" class="">We discuss what it means to do work you love, and the power of staying busy, how Sara’s built a career around the vlogosphere.</p><p id="4a609a1d-4214-4dab-97f8-a0822280645f" class="">Finally, we talk about her first viral moments, how she forced herself to become extroverted and the takeover of new media.</p><figure id="0a899751-06fb-49e6-a5a2-e6dc40a610f6" class="image"><a href="Sara Dietschy The Life of a YouTuber David Perell/FullSizeRender3.jpg"><img style="width:700px" src="Sara Dietschy The Life of a YouTuber David Perell/FullSizeRender3.jpg"/></a></figure><h3 id="e2a3c862-97d1-46ff-ae5d-822feb23bfad" class=""><strong>Links</strong></h3><figure id="4d6a5df2-922d-4c20-a4e9-1f5e7ad5a069" class="image"><a href="Sara Dietschy The Life of a YouTuber David Perell/FullSizeRender5.jpg"><img style="width:700px" src="Sara Dietschy The Life of a YouTuber David Perell/FullSizeRender5.jpg"/></a></figure><h3 id="a3b92f62-357b-416f-a9aa-27edfcc92b66" class=""><strong>Time Stamps</strong></h3><p id="fca9d9fa-6428-4f60-af9a-93e0c348c3a8" class="">1:27 Sara talks about who she is and what to expect from her Youtube channel</p><p id="9313f4a7-b46f-462a-8e55-49488dd5d976" class="">2:14 How Sara turned from a basketball-loving tomboy into a musician</p><p id="3544a414-2532-4b76-a4ba-a0df96f50b57" class="">6:39 Sara’s first love and how it gave her the most creative highs of her career thus far</p><p id="ff14e900-c44f-4af8-8e3f-16c891aef5ac" class="">7:28 Her transition from music to videography and how her church was the driving factor for her moving behind the lens</p><p id="c555fc9b-e9f9-45f0-9e69-adb63c295387" class="">10:08 Her move to Nashville and how she leveraged value in turn for artist’s time for her first docu-series called Creative Spaces</p><p id="256fa481-cfa6-43c3-be52-7377f4ae70ca" class="">11:35 Sara’s belief that the harder you work the luckier you get and how she notices serendipity in her life the more she works towards her goals</p><p id="19658c90-5acc-481a-9b40-4e942d7660dc" class="">12:50 Sara’s, very calculated, first viral moments featuring TWO shoutouts from Casey Neistat</p><p id="8ce71f64-febd-42e6-ba2b-c8305ad57433" class="">17:01 Sara talks about her passion for creativity and what motivates her throughout the process</p><p id="bf3bef4a-7525-4119-b3f8-5be7ad665636" class="">18:20 The one characteristic Sara has found in common amongst all of her passionate friends and interviewees</p><p id="7db33541-e262-48df-bd83-7eba605dbdf6" class="">24:36 The three pillars Sara believes makes a good Youtube channel</p><p id="2464b1d6-2ec9-4f4d-b8d7-59f988b6c76d" class="">26:26 Sara’s Youtube career, from 0 to over 300,000 followers</p><p id="a81dc316-7134-48ed-b6b4-35bd9514faac" class="">33:09 Sara talks about why audiences relate to an individual over a brand</p><p id="51093f76-27cf-49bd-b870-f2d2f480f6af" class="">36:22 The clear divide between Hollywood and new media, as proven by the Cannes Film Festival</p><p id="e6c3943c-9220-471f-8019-1a1dfea1fd4b" class="">39:52 Sara’s rule to always be working on something or learning about topics outside of her job in order to have that essential escape</p><p id="f2ac7f6e-0899-4935-b854-cb1265bbd3a2" class="">45:40 The changes happening in New York City and Sara’s prediction that Hudson Yards is becoming the next Midtown</p><p id="494f79b9-629a-4d96-82d7-f8346a93952b" class="">50:32 How our ecosystem is built around cars and how storytellers may impact the sharing economy</p><p id="a0d79fc9-2c8b-4625-872e-8e1b4c0d65a5" class="">51:41 Where Sara’s inspiration comes from and how she works with deadlines</p><p id="a0c3f09a-f355-4979-a81f-225f876eedd0" class="">55:53 How Sara trained herself to become more extroverted so she could meet more creatives</p><p id="da76abc1-f481-4e76-9d3b-bb2a1be98b6f" class="">58:32 Sara’s vision for the future and her perspective to see it as a never-ending journey</p><p id="f6fab4d0-3379-484b-81bf-878fa501d3fd" class="">1:00:24 How Sara sees her future on Youtube</p><h3 id="591ae807-1c25-4b24-a4ac-4ac0495cad57" class=""><strong>Quotes</strong></h3><p id="90978db0-daff-47c0-ad26-3641a8e6c644" class=""><em>“Serendipity I think is huge. Being in a place where things are happening is a big deal. If you want to make music videos for country stars for the rest of your life, you have to be in Nashville. If you want to be a creative business type and you want flavors from different industries, be in New York. If you want strictly entertainment and acting, you have to be in LA. I fully believe in location helping tremendously.”</em></p><p id="43994cdd-eca2-4e9f-8bba-d2f63a7a0293" class=""><em>“Everyone who is doing something that they love, and it’s never all rainbows and butterflies, but to the people who are doing what they love-it’s because they have gone through so many things before that to figure out what they want to be doing now. I think a lot of people wait around, and wait for something to hit them. They wait for their passion to hit them and it so doesn’t happen that way.”</em></p><p id="ed8312dc-bbd2-4a0d-ada9-e6acc125b140" class=""><em>“I myself, as much as a person who creates it and consumes it, am so much more motivated by people in the real world. Instead of watching Wolf of Wall Street, I’m going to watch a couple of Gary Vaynerchuk Vlogs. I am way more inspired by seeing the behind the scenes of a CEO in real life than a fabricated story of this crazy Wall Street dude.”</em></p><p id="888c7584-b66e-40c5-8474-b366c898c52e" class=""><em>“I think if you just have these huge massive goals-like one massive goal every five years-I don’t think it’s the healthiest thing. If you don’t achieve it, you’re destroyed. If you do achieve it, you’re going to be empty inside and be like, what’s next? I always have these miniature things in my head, I want to meet these five people, I want to do these five things. If they happen sick, if they don’t, move on to the next thing. It’s taught me to be stoked on the journey because you’re never going to arrive.”</em></p><h3 id="81a38f0e-ae2b-47ef-a9f1-b835ccaa5e5a" class=""><strong>Conclusion</strong></h3><p id="9ac72143-d619-4ac1-be38-a604364f8415" class="">You can support the North Star Podcast by leaving a review on <a href="https://itunes.apple.com/us/podcast/north-star-podcast/id1170914572?mt=2">iTunes</a>. Or you can share the podcast on <a href="https://twitter.com/?lang=en">Twitter</a> or <a href="https://www.facebook.com/">Facebook</a>.</p><p id="b22d0dd7-fd7c-42f0-9bae-1dba27537514" class="">To listen to other episodes or learn more about the North Star, you can connect with me directly at <a href="http://perell.com/">perell.com</a> and you can always reach out on <a href="https://twitter.com/david_perell?lang=en">Twitter at david_perell</a>. And if you enjoyed this episode, you’ll like the episode with <a href="http://www.perell.com/podcast/kyle-chayka">Kyle Chayka</a>, who writes about the intersection of art, architecture, and how the internet is transforming society. We also talk about Kyle’s time in Beijing, the co-evolution of fashion and internet culture, and the present, past and future of minimalism.</p></div></article></body></html>

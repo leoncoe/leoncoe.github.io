@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Web Smith: The Direct-to-Consumer Craze — David Perell</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="9c2e30db-5429-4237-b7a4-a45db9133935" class="page sans"><header><h1 class="page-title">Web Smith: The Direct-to-Consumer Craze — David Perell</h1></header><div class="page-body"><p id="8705290a-ff93-417b-b5fd-3aa33c80f94f" class="block-color-gray"><a href="https://www.perell.com/podcast/web-smith">https://www.perell.com/podcast/web-smith</a></p><p id="f1e09b86-9207-40fe-8b79-2e1477b3266c" class="">
+</p><figure id="932851f2-4ae8-492f-b41c-527122ce45e8" class="image"><a href="https://static1.squarespace.com/static/55576406e4b02e4679105dc2/5814e6a96b8f5b0e59aed181/5c61878aa4222fa3c7e76c69/1549896502122/IMG_0905.jpg?format=1500w"><img src="https://static1.squarespace.com/static/55576406e4b02e4679105dc2/5814e6a96b8f5b0e59aed181/5c61878aa4222fa3c7e76c69/1549896502122/IMG_0905.jpg?format=1500w"/></a></figure><p id="f4e941d6-164b-4ef0-8dfc-b02ee626ad5d" class="">My guest today is Web Smith, the founder of 2PM, Inc. a curated, subscription-based media company with quick commentary on brands, data, and eCommerce. He invests in and advises for digitally native vertical brands, and spends most of his time in the intersection of digital media and eCommerce. Within the eCommerce industry, Web’s done many tours of duty: he was the cofounding CMO of Mizzen &amp; Main. Before that, he handled marketing at Rogue. Most recently, he was the Director of eCommerce at Gear Patrol.</p><p id="561d4ede-80ec-4b5b-aed8-6851453a9094" class="">We begin the episode talking about what Web learned working for Rogue Fitness. We discuss misconceptions around eCommerce. We talk about the purpose of advertising and how brands should think about spreading their messages. Then, we dive into the intersection of content and commerce, and explore brands like Supreme who turn off as many people as they attract. We talk about the future of retail, and explore the developing prospects for Dollar General, Wal-Mart, and J-Crew. Finally, we end with a conversation about Web’s journey from a hungry Houston kid to a multi-time founder. Web’s grit shines through in this conversation. I left the conversation in awe of Web’s humility and ambition. Please enjoy my conversation with Web Smith.</p><figure id="9d640b53-2f8c-4795-9361-2c61b7c43506" class="image"><a href="Web Smith The Direct to Consumer Craze David Perel/IMG_0905.jpg"><img style="width:700px" src="Web Smith The Direct to Consumer Craze David Perel/IMG_0905.jpg"/></a></figure><h2 id="e2129838-1005-494a-be6f-a5dcb92b39e3" class="">Show Notes</h2><p id="bb28d0d5-0aa1-4604-8cdf-b0a7f20ecba1" class="">Find Web online:</p><p id="8aa4345e-3def-499e-b740-406f436eac16" class="">People mentioned:</p><p id="aa06d2c2-b352-43e6-b2f9-a218de42e55a" class="">Other mentions:</p><figure id="32b9b377-000b-432c-9a4c-f4c811a47cf1" class="image"><a href="Web Smith The Direct to Consumer Craze David Perel/IMG_1242.jpg"><img style="width:700px" src="Web Smith The Direct to Consumer Craze David Perel/IMG_1242.jpg"/></a></figure><p id="7c873121-1ef8-40d5-8064-ca80a4a15e5a" class="">1:12 - How Web began with the e-commerce industry with Rogue, some of the misconceptions he first had with the industry, and a few of his experiences of a blue-collar mentality within e-commerce.</p><p id="48d5c673-d939-4acf-8345-9fea0474fc3d" class="">7:20 - Product becoming less of a differentiating factor within e-commerce companies, Web’s thoughts on this, as well as his thoughts on companies doing things in-house versus outsourcing.</p><p id="b54596ae-1663-448b-8949-15dcbaa5917d" class="">11:46 - A few other things that Web looks for within an e-commerce company and some factors that stand out to him.</p><p id="bb3a39a8-bc78-4322-b739-9e4144b01e77" class="">14:22 - The direct to consumer industrial complex and Web discussing how the real winners of this era are the people that are supporting these brand efforts. Also, a bit on what Web is building within 2 PM and the strategies he’s using.</p><p id="c7dc8e1c-901a-44da-839b-96e562698084" class="">19:32 - What Web’s original vision for 2 PM was and where the company is currently going. Also, some thoughts on if you’re not doing a paid route, then word of mouth being very important. The most important factor within the Supreme brand discussed, as well.</p><p id="78aecc9f-e1a5-41f5-bfdd-4fc6cb765bde" class="">26:29 - Web’s thoughts on the collaborations that Supreme and Virgil Abloh have done. (Paying $300 for a Supreme branded brick)</p><p id="ad6c9ee6-2a90-4942-b69b-71b765d05839" class="">29:08 - What Web has learned from CrossFit, his thoughts on it, and a few of his experiences within that community. Also, thoughts on brands relating to being a religion.</p><p id="cd0031e8-7dba-4911-a849-be609ea17158" class="">36:20 - What is it with the structure of the industries like food, beverage, or cosmetics that makes them not go public. Afterward, discussion on the convergence of media and e-commerce.</p><p id="b7008e19-82c1-4764-afb4-5e48439babdb" class="">49:24 - The rise of dollar stores rising up around the country and Web’s thoughts on this. Also, why the same benefits of these dollar stores (high convenience, close to your home, and low prices) can’t be improved through e-commerce vectors.</p><p id="982f3a62-12b9-4e54-bb46-45580038f547" class="">54:22 - What stands out about Walmart and what they’re doing within the industry to Web. One of his experiences with Walmart here, as well.</p><p id="8c2fb0dd-33df-4861-aebd-233d0e1e43e7" class="">58:46 - Columbus, Ohio being one of the major retail capitals of the world and some thoughts on the things going on within the retail space there.</p><p id="e6945f6f-a367-418b-99f6-11573326acdc" class="">1:01:41 - What Web has learned from Casey Neistat. His huge amounts of discipline and strict schedules. Where he came from and where he’s going.</p><p id="2925ac82-7201-47a2-a206-6841c50c6631" class="">1:06:22 - As the cost for testing and launching products go down, more and more companies are coming out with more and different products than what they’re known for. How Casey has also done this.</p><p id="0b3613c8-5702-4c67-9faa-72a5e6db0255" class="">1:08:31 - The lessons and ambitions Web got from growing up and some discussion on his earlier days and experiences with poverty. How this has translated into him raising his kids.</p><p id="777019a3-04b2-4f8e-a76e-a5a56216e61a" class="">1:13:13 - Why Web has chosen 2 PM as a way to share his knowledge and to give his gift to the world. Also, what Web deals with within the intersection between e-commerce and media.</p><p id="dcc4b98f-5bb4-4cad-8240-538a21bdf389" class="">1:16:40 - What Web has learned about the craft of writing and how he’s gotten better at it. Why it’s important to always write, especially when you don’t want to do it.</p><p id="f7e7ee7a-709e-4fd4-99db-98357734fe79" class="">1:19:00 - How Web thinks about talking to people, creating ideas, learning, reading and then making those ideas and that information real and then sharing those with the world. How Web approaches learning through conversation and how he goes about it.</p><p id="5fcc8269-4aa7-4ccc-933f-bd27c21d92f3" class=""><em>“I don’t think you can be all things for all people. If you’re not pissing someone off, you’re doing something wrong.”</em></p></div></article></body></html>

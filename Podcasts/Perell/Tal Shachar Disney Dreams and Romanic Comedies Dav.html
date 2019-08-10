@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Tal Shachar: Disney, Dreams, and Romanic Comedies — David Perell</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2f75788c-2294-4e2c-9439-af39d6daa336" class="page sans"><header><h1 class="page-title">Tal Shachar: Disney, Dreams, and Romanic Comedies — David Perell</h1></header><div class="page-body"><p id="988f9cd5-12ed-466f-9ccc-ea92c2007d14" class="block-color-gray"><a href="https://www.perell.com/podcast/tal-shachar">https://www.perell.com/podcast/tal-shachar</a></p><p id="1d456ce4-a0f1-4dec-9ddf-2ad38b2a3720" class="">
+</p><figure id="804059a8-8a43-4433-a014-5eb87188a7b3" class="image"><a href="https://static1.squarespace.com/static/55576406e4b02e4679105dc2/5814e6a96b8f5b0e59aed181/5c45ee15aa4a995fe6b3d871/1548087393778/IMG_3107.png?format=1500w"><img src="https://static1.squarespace.com/static/55576406e4b02e4679105dc2/5814e6a96b8f5b0e59aed181/5c45ee15aa4a995fe6b3d871/1548087393778/IMG_3107.png?format=1500w"/></a></figure><p id="1b88cadf-16df-48fd-b147-0a88d2e95009" class="">My guest today is Tal Shachar, the Chief Digital Offer of Immortals, a global eSports organization in Los Angeles where he leads consumer-facing operations. At Immortals, Tal is working to build the most engaged and inclusive community in eSports. Before joining Immortals, Tal lead strategy and growth for BuzzFeed studios, focusing on growing audience and monetizing Buzzfeed’s intellectual property across channels. Before that, Tal worked for an independent media holding company called the Chernin group, and worked with companies like Barstool Sports, the Action Network, and Headspace. And finally, Tal writes for Media REDEF, where he analyzes the media and technology industries.</p><p id="39b11d27-24f4-4291-9d54-10f7fc40c715" class="">I can confidently say Tal’s articles are some of the best articles ever written on the media business. We devote this entire episode to the future of media. We talk about Netflix, Disney, Amazon, HBO and the changing definitions of scale in the media business. We explore the present and future of niche media and discuss the emergence of food culture on the internet. Then, we talk about some of Tal’s craziest ideas like the differences between Tiles and Feeds, why Hollywood is like an API for Silicon Valley, an how fast feedback loops between digital and physical reality are changing the world.</p><figure id="7461e5c9-83c8-42a0-87a2-b3ba5bd23356" class="image"><a href="Tal Shachar Disney Dreams and Romanic Comedies Dav/IMG_3107.jpg"><img style="width:700px" src="Tal Shachar Disney Dreams and Romanic Comedies Dav/IMG_3107.jpg"/></a></figure><p id="bb5310bb-a7c0-4fbd-bca8-4adf3c66b9eb" class=""><strong>Show</strong> <strong>Notes</strong></p><p id="9b2ef3e2-eed8-436e-8dea-6ff0a22b2fef" class=""><em>LINKS:</em></p><p id="45216729-5062-4a54-a76c-f02e99346126" class="">Find Tal online:</p><p id="1874ab04-d7ec-452d-b7a2-cf9df74ecc3e" class="">People mentioned:</p><p id="4e8eb83f-5e7b-4538-8b8d-caf6be6d93a6" class="">Other mentions:</p><p id="d8d25519-9b6b-43b0-8a1a-ca14853729e2" class=""><em>SHOW TOPICS</em></p><p id="8fedb4ef-30b8-4694-9c1d-c0cd25e4d0b9" class="">0:35 - The constraints in the past regarding the limited choice people had. Comparing this to now where we have numerous ways to choose various things and how we want them. How this relates to communities emerging - <em>“With limitless distribution and limitless choice, we can find exactly what appeals to us, including other people.”</em></p><p id="37555ebd-cdf8-45dd-9bdc-e57e7848f295" class="">5:35 - The distinction between a push-discovery and a pull-discovery (having something pushed onto you versus choosing and being drawn to something). Some examples of these. Also, detailing passive and active forms of content consumption.</p><p id="d996502a-b7dc-45d8-a205-914ee513da01" class="">8:11 - How advertising and subscription business models tie into push versus pull theory (most television being 50/50 split). The passive and active aspects of media, as well. Going into Netflix’s strategy and scaling, and discussing why it doesn’t have advertising or sports. How being at scale has changed and what this means.</p><p id="4248fd2b-68bc-496b-9281-9bfa73b8bddf" class="">20:20 - What some of the bottlenecks are regarding sports media and television. Also, what sports television may look like in the future.</p><p id="e79bc339-fddc-451d-b4a6-3a4b1fcf415b" class="">23:10 - Tiles versus feeds. How passive and active consumption ties into both of these (for example, Facebook feeds much more suited for passive consumption). Tile-based consumption being more suited to active consumption.</p><p id="2a63eeac-28f4-43e9-8661-4e71ab3fc90f" class="">27:15 - How Disney, Amazon, and HBO use much more different strategies compared to Netflix and why they do this. Going in-depth into their specific strategies.</p><p id="ae805507-d3be-46de-993c-38446c580098" class="">31:50 - How Tal’s prediction with content leading straight to purchase and how this has largely come to be true. Also, how parts of this prediction have been wrong. Discussion on and examples of focusing at the top of the funnel, and then focusing solely at the bottom of the funnel. A bit on how online shopping may evolve to begin having a similar experience that in-store shopping might have.</p><p id="137f5cec-145d-417d-981d-f5584ffcc9e1" class="">40:49 - Who has a structural advantage in the world and some examples of these advantages. How the type of product will be better suited for online distribution versus a more physical distribution. A future increase in the number of direct consumer brands.</p><p id="9dbb1044-d774-492c-8fb9-a01b07ffec70" class="">44:31 - How the goal is not to pay the least amount but to pay the most for your content. How we’ve gone wrong in terms of how we think about this. Paying for the best content, to then monetize it at the highest rate, and then return to paying for the content again is really what’s going to matter. For passive content, the model is different.</p><p id="d09759ce-9d61-42cf-aaf5-f6e77c31698f" class="">47:19 - How Tal sees Hollywood changing in terms of risk and reward. How Netflix ties into this and detailing that. Discussing the nature of music and the monetary aspect of top-tier content.</p><p id="4ce752fc-d44f-4e38-b435-9c1e3cc1928c" class="">54:00 - Discussing media-consumption and how the demand may not be increasing but the supply is always increasing. The opportunity-cost arising. What begins to shift when there is no longer any attention left to give to media. The possible integration of companies using facial expression data from cameras to create even more accessible and efficient data.</p><p id="1ca01121-2a9b-4b31-b36e-126701341639" class="">58:45 - The idea of Hollywood as an API for Silicon Valley. Some discussion on this idea and how companies use Hollywood as an API.</p><p id="6d45a66e-10d4-4c7f-915a-b8d17a845852" class="">1:03:34 - If we go back to the 1960s, how music mainly ran the culture at the time. Now, how travel is a shelling point for culture, for people to meet, and in many other sectors. Some examples of this with food, as well.</p><p id="93ab5790-d33a-4afd-8332-fcc302b31610" class="">1:06:54 - What Tal learned from Peter Chernin and some unique skills that Peter has.</p><p id="a5cdae75-2752-430d-863b-c95b7d814b2d" class="">1:08:29 - Why Tal has watched almost every romantic comedy. Some discussion on what makes them unique and on what they can teach us with storytelling.</p><p id="188b6746-0c26-4bef-a97d-1683b8f3a587" class="">1:10:55 - John Malone and what he does really well. Why Tal admires him and why John might have the unique perspective that he does.</p><p id="86754272-cef3-4166-aacc-21d6af71bd63" class="">1:13:08 - What does LeBron James coming to Los Angeles say about Los Angeles, LeBron, and for the increasing importance of entertainment.</p><p id="1edc1977-1eac-4bc5-ae5d-9884a4b494ec" class="">1:15:05 - What stands out to Tal regarding Ze Frank and Jonah Peretti.</p><p id="8146c762-e92d-402c-a5ff-349a99abe019" class="">1:16:15 - How the internet has increased our ability to share information more easily and effectively. Some discussion on how Buzzfeed has capitalized on that shift and the competition that comes with sharing content.</p><p id="5a6f0e58-1fe3-427d-9d71-45c67b22719f" class="">1:19:35 - How Tal thinks about the trade-off Seth Godin-style daily blog, couple hundred words, versus pouring your heart and soul into an article. Frequency and consistency discussed, as well. (articles mentioned listed above)</p><p id="90fcd190-eea4-48ea-81eb-0768da1fd019" class="">1:21:54 - Tal’s perspective on Evan Spiegel and some thoughts on Snapchat. What Snapchat does well and has struggled with. A bit of discussion on what’s to come in the future regarding social media.</p><p id="8eb1d71b-fa30-4135-8bea-5a41ed86b778" class="">1:27:50 - How communication has changed over time from speech to pictures and words. Thoughts on this and previous forms of entertainment compared to now.</p><p id="d604c4c0-fe01-4bca-8616-982929c9427e" class="">1:32:10 - Some of the two-way feedback loops we’re currently seeing. Distribution-based content impacting the real-world, then coming back around to impacting the distribution of that content again. Also, discussing the increasing number of people that are finding trends and capitalizing on them. A bit on the uncertainty caused by these ever-increasing tight feedback loops.</p><p id="83d72914-787e-441c-865c-a2523c6400ec" class="">1:38:31 - Why Tal is so excited about media and why he devotes his life to it. How powerful media can be for enriching our daily lives, meeting people, understanding people, and with learning.</p><p id="a5230093-f6be-49ad-8221-ab97824c3cb3" class=""><em>“There’s no other industry that sits at the nexus of culture in society like media does.”</em></p></div></article></body></html>

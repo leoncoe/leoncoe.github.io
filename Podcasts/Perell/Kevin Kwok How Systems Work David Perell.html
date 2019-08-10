@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Kevin Kwok: How Systems Work — David Perell</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="fc211d04-eb9a-4237-9ce0-74aeaab82251" class="page sans"><header><h1 class="page-title">Kevin Kwok: How Systems Work — David Perell</h1></header><div class="page-body"><p id="c01e5731-25fc-49a3-9cf9-c6fdbfce60e9" class="block-color-gray"><a href="https://www.perell.com/podcast/kevin-kwok">https://www.perell.com/podcast/kevin-kwok</a></p><p id="72a0e4bc-6bbc-4521-bdd2-1354b18bedc0" class="">
+</p><figure id="6486095f-1d9f-4b5d-8e5e-4844c9ec8a9c" class="image"><a href="https://static1.squarespace.com/static/55576406e4b02e4679105dc2/5814e6a96b8f5b0e59aed181/5b312ef770a6adc3906e9dea/1565010191118/Kevin_Dark.png?format=1500w"><img src="https://static1.squarespace.com/static/55576406e4b02e4679105dc2/5814e6a96b8f5b0e59aed181/5b312ef770a6adc3906e9dea/1565010191118/Kevin_Dark.png?format=1500w"/></a></figure><p id="0d22c9e6-9ddc-4262-a2b3-68940a820df7" class="">Our guest this week is Kevin Kwok and this episode is a special treat. Kevin was an investor at Greylock Partners, where he mainly focused on marketplaces, cryptocurrencies, and autonomous vehicles.</p><p id="1f584147-fafe-4dd3-9e7f-868b746beb58" class="">Kevin is particularly interested in understanding the underlying structures that shape industries and the core loops that drive companies. And among other things is currently working on a class on loops, network effects, and growth models.</p><p id="7dfa047d-375b-444d-940b-44a9612cf93d" class="">In this wide-ranging conversation, Kevin and I jump between various topics such as A/B testing cities in China, Saudi Arabia and the future of democracy, and why we have democracies in countries and dictators in companies.</p><p id="4200637e-312f-425f-9aec-fef804c94d59" class="">Then, Kevin distills lessons from five extremely long biographies — four of them about US President Lyndon B. Johnson and one of them about Robert Moses, the “master builder” of New York City. Drawing on those Caro biographies, Kevin talks about power, where it originates, and how to think about systems.</p><p id="224ad6dd-3191-4574-a28a-3983b5851a9d" class="">Kevin has an in-depth knowledge of political history, governments, technology and growing a company in the internet age. Today, we’ll weave all of those threads together.</p><figure id="06aeb84c-87ca-484d-888e-65be373c6e25" class="image"><a href="Kevin Kwok How Systems Work David Perell/IMG_9137.jpg"><img style="width:400px" src="Kevin Kwok How Systems Work David Perell/IMG_9137.jpg"/></a></figure><h3 id="e49fde80-0d8c-4ae0-901b-9bfcd4c55e4c" class=""><strong>Links</strong></h3><h3 id="cb92c997-1fec-4416-9627-fa85c517efc5" class=""><strong>Time Stamps</strong></h3><p id="b90ed322-3044-4572-85c0-c10268ce1ccc" class="">1:27 Kevin talks about Robert Caro and his biographies on Robert Moses and Lyndon B. Johnson</p><p id="1a9131ca-a194-4cb2-b3d0-c8c4ab06148f" class="">3:08 How systems are the underlying reason for power in governments and companies</p><p id="e68da8db-6641-4ce8-8598-6be8ce34405f" class="">6:49 Kevin’s observations on the significant similarities between governments, religions and companies</p><p id="1c1885c4-e8d0-4214-ba1d-585654b950de" class="">10:27 Kevin defines his theory of loops and how they are a pattern that can be seen in the most successful businesses</p><p id="cc2cbf93-ae01-407b-a6cf-cf9f449ea3ba" class="">14:03 Kevin’s observation on how successful governments and businesses use loops to scale</p><p id="11bb520c-60b4-475b-994e-7b94614366a2" class="">17:34 The two ways Kevin sees legibility, why it’s so important in creating synchronization between founders and employees, and how it’s the reason for Uber’s success</p><p id="ca128890-1b3c-416a-8e6c-6a20fd336c2f" class="">22:32 Kevin’s fascinations with Stripe’s thoughtful leaders and their transparency in growing the company</p><p id="1a3aebf3-f566-4dd6-8f28-1be96a4fbb48" class="">28:26 Why the outcome of loops is a leverage effect and how leverage can remove constraints and compound systems for more gain and less effort</p><p id="4a553ba0-8ce2-437a-8eb4-5c557e4a9d3f" class="">34:49 Kevin talks about China’s goal to urbanize more of its country through A/B testing and his opinion on the pros and cons of their strategy</p><p id="c8a30ea3-b5b6-4f6f-9579-49dbaf39b4f9" class="">40:35 A brief history of Saudi Arabia, and its implications about whether democracy is declining.</p><p id="0075d07f-64c4-4314-a617-e0ecafe2d6c4" class="">46:25 Kevin’s opinion on the future of currency and how cryptocurrency is reshaping markets and their functions</p><p id="d2100f25-5e0d-4e80-a6a2-b5b56e413d8b" class="">51:32 Kevin talks about how infrastructure shapes how residents interact with their cities and the underlying problems that can arise</p><p id="61a6ecf7-78ee-4697-8813-0d831c016fe2" class="">57:44 Kevin’s take on the new trend of contrarianism, how we’ve seen this pattern before and how to be most effective with a contrarian view</p><p id="43d808df-0f76-4f69-8715-5dfd4d4b6897" class="">1:00:20 How Steve Jobs was a perfect example of contrarianism followed by impact</p><p id="6e04fdf0-5619-4b2c-908a-d8b4c97831b9" class="">1:01:58 Kevin talks about his current focus on loops and his hope that humans continue pushing and testing this frontier</p><h3 id="a9f6c6b3-0d7a-4e12-b311-5763913b17b3" class=""><strong>Quotes</strong></h3><p id="8c9dca4c-ccc0-4f61-8c01-d9fd8a364d38" class=""><em>“It’s too easy to see what other people are doing. It’s so easy to raise capital if you can paint a compelling case for why there’s a good return. The best companies are companies that have these internal compounding proprietary advantages that get better and are impossible for anybody else to do other than them. That’s what I mean by loops. There’s different ways this can look. For example, network events as people come and talk about them is an example of a loop. The value of the user increases as more people join the network and that’s an internal loop that other people, who don’t have your network and don’t have your users, can’t benefit from.”</em></p><p id="5807f832-f151-485c-80a0-3941574e90e2" class=""><em>“People try to figure out how to build these systems that are independent from their hours put in. Fundamentally, your scarce resource is your hours. There’s just some finite cap and the level of productivity you can get. You can get more productive but there’s a finite cap to how much more productive you can get on your hours. As long as your output is contrast by your hours, there always is some cap to it. The question is, how do you get increased leverage on that and, how do you keep increasing the leverage on that at some point? Ultimately, capital is actually less of a constraint if you have a working business model than just the cognitive load and your ability to actively work on different things.”</em></p><p id="c0151071-eeef-4c62-bbf3-ace7111bc2eb" class=""><em>“Think about how much has been shaped structurally, without even realizing it, by the decisions that were made by people crafting the Internet standards. All of those decisions people made have had huge downstream impacts on every layer that has been built on top of them. I don’t think we regret that. I think that we look at it and we say, let’s make sure we do all of the good things there. Let’s also think about the mistakes we’ve made as we create other industries, whether that’s the current waves of finance, or the current waves of tech, or whatever. When you’re in these nascent periods of new industries, how do we make sure that we help the people who we trust to be making those decisions be there at the end.”</em></p><p id="ef674c6b-a1a6-4cf6-9b68-a2210321b93f" class=""><em>“I think that a lot of people talk about contrarianism as being against the grain, and having views that other people disagree with. Of course, the challenge is the decision of, ‘I have this view that people disagree with. Is that actually a good view or a view that people disagree with because it’s a bad view?’ Similarly, it’s hard to judge the people around you because it could be that you have a view that is mainstream in your community, but it’s actually a contrarian view in the larger view of people. My view of contrarianism is that the important part isn’t in having this view that everybody else disagrees with. The important part is bringing it to everyone else, taking that view and causing it to become non-contrarian.”</em></p><p id="0e4bd7de-04ab-464f-93df-37c3ffcf903d" class=""><em>“The people we should be most excited about that have contrarian views are the people who don’t just have them, they then go make sure that those views stop being contrarian and we all believe them. In fact, it’s the people who we look back and say, was that even that contrarian of a view? Actually, we all believe it. And I think that there is too much of a focus on the standing apart and being the one with the unique insight versus the part which is, ‘how do you educate everybody else and bring that back into the mainstream consciousness?’. That is a lot of work and proves that what you were thinking about was actually valuable and important. That’s the part of it that I wish was more focused on, not the part where you just feel hipster.”</em></p><h2 id="70a48767-8972-4edd-a4ed-f99385db34f7" class=""><strong>TRANSCRIPT</strong></h2><p id="dc775afa-2dde-42fe-945c-f84d70323e14" class=""><strong>DAVID:</strong></p><p id="62f50636-86da-48ed-bc11-df74475a42b8" class="">Kevin Kwok, welcome to the North Star.</p><p id="084fa7da-0949-4cf6-8ed1-47cf5dda8eb8" class=""><strong>KEViN:</strong></p><p id="f306d490-1d8c-4e89-8536-81c67cf83dcb" class="">Thanks for having me.</p><p id="8098f817-a58c-4a28-9892-f24bdb705d7c" class=""><strong>DAVID:</strong></p><p id="ba09f63c-0a1c-40bc-ab26-f4fc78e3828c" class="">So you absolutely loved <a href="https://en.wikipedia.org/wiki/Robert_Caro">Caro biographies</a> and I thought that would be a fun place to begin this podcast.</p><p id="ee01e851-336b-46fd-b06f-019b8e68ee50" class=""><strong>KEViN:</strong></p><p id="bdce4921-54c1-40c7-9a41-e14b6916d1a4" class="">I&#x27;m glad I get to do my paid advertisement for Caro now. So <a href="https://en.wikipedia.org/wiki/Robert_Caro">Robert Caro</a> has written five biographies right now, one of which is on <a href="https://en.wikipedia.org/wiki/Robert_Moses">Robert Moses</a> who is kind of the person who built all of New York City. And then the other four are kind of four biographies of <a href="https://en.wikipedia.org/wiki/Lyndon_B._Johnson">Lyndon Johnson</a> who is probably everyone&#x27;s least interesting president when they don&#x27;t know about him. And then after reading the biographies, he’s by far the most interesting I think. The craziest thing about the biographies is that they are extremely long and so they&#x27;re just these huge tomes that if you try to get someone to read, nobody will because they kind of look at it and then they are like, I would much rather go and read 10 books instead of reading one of those. And so it&#x27;s super hard to get people to start with it. And Caro has certainly done himself no favors on that, but they&#x27;re just the best books I think about understanding power, where it originates, structuralism, and how you think about the kinds of systems and people who understand how to figure them out and make them work for good or for bad. Which both, I think, you know, Moses in New York, then Lyndon Johnson and the Senate, and then the White House are both kind of the peak examples.</p><p id="4e6f2c8f-8a57-4f05-b8f0-abd9ebfd103c" class=""><strong>DAVID:</strong></p><p id="dc91e0e4-99d5-492f-acff-13421395d078" class="">What is it about power that interests you so much? And is there a story that you can tell from one of the biographies that illuminates your interest in power?</p><p id="cc403325-27f3-4010-a488-4bd39786e363" class=""><strong>KEViN:</strong></p><p id="09d19cdb-8144-40af-afe5-d4235bd17f22" class="">Yeah, for sure. I think power is less the thing that interests me about the biographies as much as understanding systems. For most people, it&#x27;s hard to understand the companies they work at or how the government functions or why New York grows and the way that it grows is something that feels too complex to kind of be legible and be understood. But then you look at, you know, someone who does it and you don&#x27;t understand why they&#x27;re able to do it. And unpacking that I think is just super useful to get people down the road of saying, wait, actually how do all of these systems work? And can I figure out the kind of thing in either the company I work at to make it work better or in the kind of why the government operates in the way it does.</p><p id="1a8380de-c72c-4c55-a685-bdd21dcce388" class="">And so to give you one example though, we could go on for infinite examples on this. I think if you look at Senate history, there really wasn&#x27;t, you know, we now look at the Senate as kind of this dysfunctional organization that doesn&#x27;t really ever produce meaningful bills, has a large impact. Uh, and that&#x27;s not actually a recent phenomenon. I think that in general is actually how the Senate has always operated. But there&#x27;s this brief period when Lyndon Johnson enters the Senate and then becomes majority leader where the just sheer volume of important bills that pass is ridiculous. Like most of the progressive bills we now look at whether that&#x27;s kind of !medicare related or whether that&#x27;s a punch of the public works or whether that&#x27;s the civil rights act, all are kind of ones that Lyndon Johnson shepherded through and shepherded it through at a time where the southern senators had tremendous amounts of power.</p><p id="c68a61f8-727d-4646-8cb0-1af0a2f49803" class="">And where they were not interested in civil rights or anything like this kind of being passed through. And so a lot of it is kind of him going into this sub 100 person organization understanding at both the kind of personal level, but also kind of where there a centralization of power, whether that was how to raise money better and funnel that to government. Whether that was how to set up the subcommittees that actually had the organizational power and had the kind of power to shape what moved down the pipeline of bills or whether that was kind of setting up a structure where he decided had people in all of the subcommittees and helped both expedite bills. And eventually, people went to him to kind of make sure that their bills will get passed.</p><p id="7b0ff38f-00de-423a-8bb5-89f4eb90cd2a" class="">But then that also gave him a tremendous amount of insight and knowledge and control what bills were getting passed and having leveraged with all the other senators. And so I think, you look at a bunch of those examples and then they&#x27;re not dissimilar from how we look at companies now, right? Or how we look at any type of organization now of where are the natural places, where the constraints on the system are and where are the places where power resides and I think Lyndon Johnson certainly did not always do things for the greater good. He did things for his own personal power which sometimes was aligned with the greater good but oftentimes was not. And I think the interesting thing is how do you understand those systems? And then how do you hopefully have people who care about building good things out of those systems, understand them and use them.</p><p id="aa7e187d-10c3-42e5-b26f-16f007adfa85" class=""><strong>DAVID:</strong></p><p id="1720967b-9418-4b1e-8845-c3a0ebac096d" class="">Building off of that, even in that answer, you talked about companies, you talked about government and you strike me as somebody who looks at models and frameworks that sort of may be representing a lot of different domains with the world. How do you think about that?</p><p id="a50ed3ba-81bf-4883-bbbe-b54585414b71" class=""><strong>KEVIN:</strong></p><p id="786c8a6c-e2a1-4055-ac52-1dfc49eff557" class="">Yeah. The thing that always strikes me about organizations is that whether you look at governments or religions or companies, all of them are kind of topologically equivalent. Like they&#x27;re all kind of the same thing. There are organizations of people that have some set of rules for who&#x27;s in the group. Some set of rules for how the group makes decisions and come to a consensus, some sort of rules for how they allocate resources and all of these things. And so you can look at them on a bunch of different factors and they vary right, for example, you looked at a lot of companies and companies kind of allow both the company and the employee to unilaterally decide if they want to be part of the company. Whereas governments, for example, kind of have this rule that says, hey, as long as you don&#x27;t commit treason, if you&#x27;re a citizen, you&#x27;re a citizen.</p><p id="113c7684-3e6c-49ae-9bfa-e90e7ef5f83e" class="">And so they vary on different things. But actually, once you account for that, at similar orders of magnitude they&#x27;re very similar. And so I think as an example, one thing I think about a lot with companies is are companies today are more similar to a companies a thousand years ago or are they more similar to city states a thousand years ago and what are then the lessons you can draw if you look at all the different things that are similar in some regard but different in others that you looked at and say, hey, you can actually learn some interesting lessons about how religions organize and structure themselves for crypto projects. Are there lessons for how the Senate operates for decisions within companies or things like that.</p><p id="83fb8f03-367c-4e75-82c3-b280ede49f15" class=""><strong>DAVID:</strong></p><p id="23a28d51-99a3-44dd-9b6f-27c48bc9dadb" class="">So how do you think about balancing the similarities between different structures but also the reality that as things grow and scale, begins to change the properties of something. Right? Because you could see similarities between different companies for example. But also there&#x27;s an inherent tension between growth and wanting to sort of rest on those models, but things change as they scale.</p><p id="2a3c983c-d8cc-4e09-8b99-b7b8fdf5d6be" class=""><strong>KEVIN:</strong></p><p id="9c02c723-f029-4df7-acd8-ea5e5ada1b05" class="">Yeah. That&#x27;s, that&#x27;s a great question. I think the thing that always confuses people is that as their companies grow or as any organization grows by an order of magnitude on any dimension, whether that is customers or employees or a number of purchases or anything, it&#x27;s just a fundamentally different company and a different system. And the things that you&#x27;ve built and the processes you have that work great when you&#x27;re 10 people, stop working when you&#x27;re 100 people and definitely don&#x27;t work when you&#x27;re 100,000 people. And so a part of it is that you have to be comfortable saying, how do I understand that even just being successful at the same thing, we are successful, that will by definition obsolete our competence at it because it will grow by order of magnitude and will be fundamentally different. And how do you understand what are those ecosystems and loops that you have? And you know, as they get to a new scale, how they change and what they need to transition to and what that looks like, that might be very different.</p><p id="d6822f5f-98e5-423a-8d4b-5dace431efb4" class=""><strong>DAVID:</strong></p><p id="91390222-7f03-46cb-9c61-c5467c779170" class="">So we were at dinner about a month ago and we were talking about loops and you have some really interesting ideas in terms of the relationship between loops, sales, network effects, maybe even careers. So just gonna let you run with that.</p><p id="916af2bb-786a-4a95-a945-a36c2712e429" class=""><strong>KEVIN:</strong></p><p id="2c2d6f2a-35aa-45c8-93db-d42bef2c8a54" class="">Yeah. It&#x27;s funny because I feel like I talk about loops with a bunch of people or on !twitter. And then I realized that everyone just asked me what loops are and I don&#x27;t have a great explanation because I feel like it&#x27;s not discussed super often. I think to kind of start from the beginning of it. I think one of the things that I&#x27;ve thought about a lot is if the two of us were going to start a company a thousand years ago, 500 years ago, the best way to start a successful company would be to get the government to give us exclusive trade routes between the US and India and guarantee that anyone else using those routes, the military or the navy would go stop them. And you could build a hugely successful business there.</p><p id="15d5fcdd-dbd6-442e-9893-78c3b2d0994b" class="">And then in the 1800s or 1900s, the best way to do it would be to find some area, maybe a natural resource or building railroads or something like that and go build this business that is economy of scale after you have a bunch of proprietary relationships. And it&#x27;d be hard for people to both copy that or raise the capital to compete with it. But now you look at the most successful companies and certainly the tech companies and it&#x27;s too easy to see what other people are doing. It&#x27;s so easy to raise capital if you can paint a compelling case for why there&#x27;s a good return on it. And so the best companies are companies that have these internal compounding proprietary advantages that get better and are impossible for anyone else to do other than them. And I think that&#x27;s what I mean by loops and there are lots of different ways that can look.</p><p id="c05a7141-1a8c-407c-bd6d-0db45764853a" class="">For example, I think that, you know, network effects as people commonly talk about them, are an example of a loop where the kind of value to the user increases as more people join the network and that&#x27;s an internal loop that other people who don&#x27;t have your network and don&#x27;t have your users can&#x27;t benefit from even if they know that it&#x27;s true. But I think that network effects are one subset, but there are lots of them and they&#x27;re all over companies. And actually the interesting way to think about companies or sectors or any of these ecosystems is kind of the loops around them and what is compounding and not only what is compounding but what&#x27;s constraining them, because when you look at something that&#x27;s a loop the and keeps compounding, the thing that hurts it the most is wherever it is most constrained and is dropping off, right?</p><p id="0bb01327-bd50-43f6-838b-c4b47cdbe1ef" class="">So I think that both for individuals and for companies, we don&#x27;t currently track things like this. In fact, many of our metrics today are more geared around either funnels or other types of ways of looking at companies. But really as you think about how do you build companies and understand the sequencing of what compounds and why does it keep getting bigger. It&#x27;s all about what are the loops you have and how do you strengthen them? And then what are the constraints on them and how do you remove those frictions, right? Whether that&#x27;s financial capital or social capital or knowledge or having more employees or whatever it is.</p><p id="963be4be-ae3f-4390-9e2b-f573eb348be3" class=""><strong>DAVID:</strong></p><p id="248ffa53-453e-4ee6-9b09-6e44bc9456f8" class="">What changed about the world that made loops super relevant?</p><p id="b1dfa7ed-013d-4ab2-bc31-171895557554" class=""><strong>KEVIN:</strong></p><p id="a3b55e15-eeff-4392-a3df-1679f41cff85" class="">It&#x27;s a good question. I think that loops were always relevant, but the thing is the less data and iterations and the less at bats you have the less loops matter because if you look at an enterprise company and you know they need to land the government and they land the government and they&#x27;re a public company and that&#x27;s the entire business. Then you know, these loops don&#x27;t really matter. What matters is, can you build a great relationship with the buyer at the whatever department in the government and can you get them on board, but then you look at the other extreme and you look at consumer marketplaces and it&#x27;s not enough to say, I got dinner with that one buyer and they bought $25 thing on my website and now I&#x27;m golden. You have to say, hey, can I get 10 million people to go do that?</p><p id="0976e815-dd8a-44af-9cd6-f5c22f577d08" class="">And it&#x27;s just not possible for me to hand go to them and get to know them personally. I have to build a system that aligns them with me and causes them to engage with me and then retain and then keep buying and then be happy and then keep spreading the word to other people. And so the more we have things that have greater amounts of data or customers, the more we have things where you have more interactions with the customers, the more that you have things where you can&#x27;t just have the government dictate that you win or have one or two people decide who&#x27;s the winner in the market. The more we get to a world where you have to build these internal systems that compound. And I think that&#x27;s why we&#x27;re still in the early days of it.</p><p id="16704e51-6bd3-480b-91e0-f88286b9ea57" class="">I think we&#x27;ll look back in 10, 20 years and a lot of how we track things in companies, a lot of how we look at things will have shifted towards this because one model of companies or model of venture I look at is at one end of the extreme is enterprise sales where it is more knowable, what makes a company successful and which people could start a successful company and who are the customers. And then on the other side is consumer social or consumer marketplaces where even for the best investors, it&#x27;s super hard to predict which one will figure out the loop and get traction with customers. But you know, the whole point of tech as an industry and venture as an industry to some degree is taking these things that are not yet understood about how we should think about metrics or how we should think about company building or loops and then making it understood and benefiting from that.</p><p id="ee5103f3-a02b-4313-8083-825517fd5a8a" class="">But hopefully, the things that are the frontier of our understanding today about company building, in 20 years, kids in college, will just look at you like you&#x27;re dumb for even thinking that that was ever not understood in the same way that we look back at companies 20 years ago and we say, you know, of course. I think that exactly like that, you go back enough years, it wasn&#x27;t in the mainstream consciousness about how to think about that. Now it&#x27;s almost overused, right? Everyone kind of knows that&#x27;s how they should think about that. And I think the question is how do you keep pushing all of these views that are usable and useful of how to think about companies or just how to think about any system forward collectively. Right?</p><p id="daaba7fd-3dfa-4586-8c5d-1835e012679f" class=""><strong>DAVID:</strong></p><p id="2760f8e0-e74c-4968-9588-7ad211e3b2c9" class="">And on that theme of pushing forward and pushing to the frontier where we were talking a bit about pushing the frontier of legibility. Can you do a quick background on legibility and illegibility and talk about what you mean by pushing the frontier of legibility?</p><p id="a803c16b-7253-46fd-a082-844be7bcef04" class=""><strong>KEVIN:</strong></p><p id="cd829c82-d5f5-4cd3-a5ed-3cc8130a9305" class="">Yeah, for sure. So I think that there are two ways I think about legibility, which I&#x27;ll go into. I think the first is that legibility in companies, which I view as kind of two things I&#x27;ve been kind of thinking about are legibility and synchronicity and companies. And so I think legibility to me and companies is, does each person at a company understand why the company works the way it does and what&#x27;s important to the company and what are the loops that matter to the company? And I think that&#x27;s super important because a lot of times people do their job well and then the company or their manager or whoever kills the project and they don&#x27;t understand why and they don&#x27;t understand why even though they did the thing that they were told to do, it didn&#x27;t fit into the larger system of what the company wanted.</p><p id="b175f35a-96fc-464c-8736-a2c84343e6a9" class="">And the same is true for founders. You know, a lot of times founders have to figure out legibility of the market, right? And understanding where they fit into that. And I think that it&#x27;s hard to measure and we don&#x27;t really measure this but it&#x27;s interesting to me to what degree does each person within a company understand the loops and the rest of the company so that they always know how they should kind of act and the things they should do that are most beneficial for the company. I think if you think about legibility as kind of everyone at the company trying to understand the company, synchronicity is kind of the flip of that, which is if you&#x27;re the founder of a company, what is your ability to have everyone at the company synchronized with the things you want and on the same page and of kind of how you think about it and what actions are important and working towards those. And I think that these are the kind of the two feedback loops in both directions within companies that are their own system and loop, right. That when you have it really well, it&#x27;s just significantly more productive and for better or worse. For example, I think that <a href="https://www.uber.com/">Uber</a> had tremendous synchronicity, more so than many, many companies and it allowed them to act with super distributed teams in every city.</p><p id="8d6ce70d-e426-49a9-9417-7408e2c612b6" class=""><strong>DAVID:</strong></p><p id="b9bc120d-9727-467e-9df2-9c7b374f2cde" class="">Almost a balance of their central headquarters, but also the local units that would go into every city, work with local government, understand the local dynamics of the market and they had good synchronicity between the two.</p><p id="e8f6dc45-6aeb-4cc3-9d0a-68faff0afd32" class=""><strong>KEVIN:</strong></p><p id="48913fb6-aa37-4cc3-acf9-d3923ef573d4" class="">Exactly. You need the legibility of understanding what is actually what should be different for each market and having the teams on the ground there, but then you also need them to understand kind of what is actually the most important things that Uber as an entity cares about. Right. And those are things like liquidity and having a driver available within x minutes from anytime you call or having pricing that looks within a certain range and these kinds of metrics that you need to have kind of synchronicity across all of the groups on. I think that also is just as we talked about with Caro, I think that goes in both the benefits and the cons, right? Because it also means that if you have issues, those can get synchronized across the entire companies too.</p><p id="370d57c9-5e8f-480b-902f-b3dafbbb8718" class="">But I think that one thing that Silicon Valley has done significantly better than many other industries is how to think about the internal structure of organization and how do you actually get leveraged. So instead of just adding more and more humans and hoping that it works well, but inevitably kind of falling over because it becomes harder and harder to coordinate. How do you actually figure out these systems so that you can coordinate people both on the team, or a lot of marketplaces if you look at <a href="https://www.uber.com/">Uber</a>, <a href="https://www.airbnb.com/">Airbnb</a> for example, I think that they don&#x27;t have direct control over the hosts or the drivers, but they still need to have synchronicity and legibility with them of figuring out how to coordinate with them and have them act in ways that are beneficial for both them and the platform. And that&#x27;s even tougher when you don&#x27;t have direct control because they&#x27;re your employees. All of the tech companies have been figuring out a lot of advancements in how do we think about company structure and you look at how <a href="https://www.amazon.com/">Amazon</a> or <a href="https://stripe.com/">Stripe</a> or all these companies very intentionally think about it and you know, there&#x27;s a lot of mistakes made, but it also is kind of pushing forward a bunch of this, right?</p><p id="3776d298-b023-4baa-95f8-53370d1172c0" class=""><strong>DAVID:</strong></p><p id="560e792c-7859-4136-abab-29f8274fc8b5" class="">Talk about <a href="https://stripe.com/">Stripe</a>, I&#x27;m really interested in stripe and I think that in terms of its impact on the world, it&#x27;s very under-covered and definitely understudied.</p><p id="89349c17-4780-45bd-ac43-5d078b5e6ef1" class=""><strong>KEVIN:</strong></p><p id="c77b9f77-907f-4105-934d-57bb7897fccf" class="">Yeah, absolutely. I certainly think that there are many people who know Stripe much better than me and I definitely don&#x27;t know all the details of it. But I think there are a few things that are fascinating about Stripe. I think certainly one of them from a company organization standpoint is that the <a href="https://www.bloomberg.com/news/features/2017-08-01/how-two-brothers-turned-seven-lines-of-code-into-a-9-2-billion-startup">Collison brothers</a>, even from afar, are just very clearly thoughtful leaders who are consciously thinking about knowledge. It&#x27;s baffling to me given the demands of their jobs, how they have the cognitive time and any of the ability to spend the amount of time they do just soaking up knowledge and thinking about how to kind of structure their company better and structure or their system better.</p><p id="755dd835-ccb4-4978-93a6-3a42bda4283f" class="">But you just look at them and they&#x27;re super intentional about it. Right? And I think that whether that&#x27;s the internal tooling they built out for kind of improving communications internally, which they&#x27;ve blogged a bit about or whether that&#x27;s kind of how they think about the emails being open and shared and having a default to that so that people can have as much information as possible. Whether that&#x27;s just kind of seeking out the best practices from other companies and always kind of trying to figure out how to improve. I think that one thing you look at is that people talk about A players and B players and C players and companies and there&#x27;s always the adage of kind of you want people who are not afraid to hire the best people to join them versus afraid that people will kind of replace them.</p><p id="52fc75c3-3e8b-4d9a-ad84-740ff5206fd7" class="">But I actually think there&#x27;s another accede to that, which is how much do you bias towards people who will build things in the same way that they have been built versus people who will rethink how to build these systems. And don&#x27;t get me wrong, I think that a lot of times the best practices that have been established are great and so in a lot of places you do want to hire the person who has built out with VP sales at the company that was the last generation of what you&#x27;re building and can immediately bring you to all of those best practices. And so that&#x27;s kind of one accede to me. And then there&#x27;s another accede which is, are people willing to look at kind of the situation of your company in particular and say, hey, actually should we rethink how it&#x27;s done and would it be more beneficial or should we obsolete this business unit entirely and would that actually be beneficial?</p><p id="f1e201be-d272-4a6f-b989-7aa70665bf4e" class="">And then am I not afraid to do that. And I think the harsh truth is that most companies, getting to the best practices is kind of a baseline requirement. And if you can&#x27;t do that at some speed, you don&#x27;t really earn the right. You just don&#x27;t have the time or the money or the ability to experiment with new models that might not work. And the payoff could be much higher, but you might not find out whether it worked or not for a while. Then you look at companies like Stripe that kind of do operate at a great level, and then still are able to find the time and say, hey, actually we should still rethink these systems and figure out if there are ways to build it better. And that&#x27;s how you build very special companies.</p><p id="d96ace54-1d54-4479-a8ac-35d4e72e6329" class="">Because I think that as an example if you look at marketplaces and you look at Uber, it wasn&#x27;t common knowledge to think about network effects at a local level when <a href="https://www.uber.com/">Uber</a> started and when <a href="https://www.lyft.com/">Lyft</a> started, people didn&#x27;t do city teams in the same way. They kind of launched nationally and both of those companies kind of really pioneered, at least for the mainstream consciousness, this idea that actually it might be advantageous to launch city teams because there might be these loops that are better done at the city level versus at the national level. Now, you look after Uber and Lyft and there were so many marketplaces that all kind of created city teams and launched. Actually, it&#x27;s not obvious that was always beneficial. I think you look at a lot of these teams and they kind of copied this new norm that kind of became standard instead of also thinking for their sectors, hey, actually if you looked at it, what is the correct scope of my network effect and what&#x27;s the best area, whether that&#x27;s the city level or the state level or just the local neighborhood or even one block and saying what actually makes the most sense.</p><p id="481f558b-3813-4595-8e8d-3f09a58fbb78" class="">And so for example, if you look at the scooter companies that are popping up everywhere in the US and whether they&#x27;ll be successful or not, what&#x27;s fascinating is that their natural zone is not quite cities. They work much better on the Venice boardwalk. Then they work in the middle of some suburban neighborhood in Los Angeles.</p><p id="344f3ea4-5f1a-4b90-9746-b355d7143383" class=""><strong>DAVID:</strong></p><p id="41484f2c-1f0d-4e3b-8ef1-4585f323d74f" class="">Wouldn&#x27;t work in Houston.</p><p id="4cb73e01-c560-4ecc-9def-51718c5b1abb" class=""><strong>KEVIN:</strong></p><p id="878c8ece-71b5-4fe5-b3cb-aa25ad1e52b3" class="">Right, right. So the question is if you look at that, how do you figure out how you deploy the people in your organization, how do you think about the metrics and what scope you should be tracking them and how do you think about what are those loops and what is the natural scope of them so that you can best build the business and have it compound. And I think that, you look at companies that are just super thoughtful about it and it&#x27;s incredible and you know, part of the challenge is, how do you find people who have that bias, but also how do you have a cadence of shipping and progress that is fast enough that you know, have the time and ability to spend those resources thinking about it.</p><p id="1e52480b-ec38-446a-bb17-b8e72188762e" class=""><strong>DAVID:</strong></p><p id="db6c8079-2683-431c-95f7-2b3ca02f2af9" class="">It seems like leverage, is sort of the outcome of loops. So loops keep spinning. Perhaps as the network effect grows, they spin faster and faster and over time you&#x27;re building leverage. And that&#x27;s something I think about in terms of building a career. I&#x27;ve been thinking about maybe we&#x27;re moving from a world of career ladders to actually spinning different loops and going where which ones are spinning faster and faster, and then that&#x27;s where we direct our attention. So how would you think about this in terms of a personal career?</p><p id="00aeaec9-3ca1-4bcb-819b-fedabca19374" class=""><strong>KEVIN:</strong></p><p id="07fb9dee-82bd-4b1f-b974-6b65bdc4607b" class="">Yeah, a few things on that. So the first is, I think the way I&#x27;ve thought about careers, which I think is very much to your point, is there is compounding and unconstraining. And so I think unconstraining is that the reality is most of us, probably all of us are constrained on different things. In fact, most people think that money is the constraint because for most people money is the constraint, right? And if you&#x27;re living paycheck to paycheck, money is the thing that is kind of constraining your ability to decide what you want to do and to pursue or to optimize for the long-term or all sorts of decisions. And then for a bunch of us, not that money is not a constraint to some degree, but then you get passed some point where you&#x27;re worried about paying rent or paying for food and money becomes less the constraint.</p><p id="907abd8f-8ba0-4352-83a1-6283b99428c0" class="">And then there are other things that might be the constraints such as knowledge and learning about things or who you know or all sorts of other areas. And so I think one way I look at it is that you should always have a view of what are the constraints on you. And that&#x27;s kind of you as a loop, right? What are the constraints that are kind of blocking you? And if they were unconstrained you would act meaningfully different and you would feel like you had more autonomy to decide what you wanted to do. And then I think the second half of that is compounding. And so how do you build out these loops and how do you build out loops that actually have the ability to compound for you? So for that, I think there are two ways I look at it. One way is for you doing whatever you like, whether that&#x27;s your podcast or whether that&#x27;s your business, how do you build it so that you doing it today versus you doing it a year from now, it&#x27;s better, easier, higher quality, lower costs, all of these good attributes a year from now versus today because otherwise it&#x27;s kind of, there&#x27;s been no progress. Right? And it&#x27;s kind of finitely limited.</p><p id="6fa5cb15-563e-4fdf-abea-2be604fb06fc" class=""><strong>DAVID:</strong></p><p id="b904c875-dedf-41b6-bca4-8e3cfe729b81" class="">It&#x27;s like the red queen effect of always trying to spin faster and faster. One thing I&#x27;m always thinking about is how do I build leverage so that I can achieve, it sounds obvious, but the goal is how to achieve more without running faster and faster and that sort of by building that leverage so that once something comes, you can just automate or have the connections to see something and make it happen.</p><p id="d3a7675d-e2ec-400a-bbd4-dc098cb64b11" class=""><strong>KEVIN:</strong></p><p id="03687a7d-cbce-4501-9989-2bc82dcc06cb" class="">For sure. The red queen effect is a good way to put it because I think that the natural state of most things in the world is default and tropic and so the natural state of things is that, you find a successful business, competitors will see that and come to challenge it that the things that you&#x27;ve been doing eventually they will degrade slightly over time. And so that&#x27;s why it&#x27;s important to find the things that are naturally compounding because actually, the default is that things will naturally kind of revert to the mean. Right? And so you have to find these areas that compound, whether that&#x27;s on your time or whether that&#x27;s building out systems around you that kind of will help scale up your work, whether that&#x27;s with people or with the kind of products you build because otherwise the natural status for them to kind of all revert to the mean.</p><p id="12b2bd65-503f-498a-bf98-cc58f4fb7fe9" class=""><strong>DAVID:</strong></p><p id="f82904f9-734c-4dfa-a092-4c7cbb6af9f0" class="">It was funny, we were with some friends last week. I was in Austin and we were talking about the spectrum of typers to tappers and typers are hardcore workers, hands-on-keyboard people and they are the workers of an organization. They generally have less leverage, but then my buddy, he was with the CEO of a sixty-billion-dollar of a Japanese firm and he said that his biggest insight from spending a bit of time with him was that he was a tapper and that he had so much leverage on his time that his career could all be done by tapping on a smartphone screen. And the fundamental insight was that he&#x27;s not doing work. Rather he&#x27;s directing the flow of a gushing river and he&#x27;s directing the flow of water.</p><p id="bbe8ac3b-de25-432c-9777-9d59e4b2e1fe" class=""><strong>KEVIN:</strong></p><p id="34ff8bd5-566c-4e5b-8345-9eb87f590724" class="">Yeah. That&#x27;s interesting. I think that there&#x27;s a lot of truth to that. There&#x27;s also, not to take away from the former, there&#x27;s a lot of just how does work get done? Right. And the reason I think eventually people will think about how to build these systems that are independent from their hours put in is that fundamentally your scarce resource is your hours. And so there&#x27;s just some finite cap and the level of productivity you can get more productive, but there was a finite cap to how much more productive you can get on your hours. And so as long as your output is constrained by your hours, there always is kind of some cap to it. And so the question is how do you get increased leverage on that?</p><p id="19ec388a-4b4d-4117-a9e9-6b67d01ea611" class="">Right? And how do you keep increasing the leverage on that at some point because ultimately capital is actually less of a constraint if you have a working business model than just the kind of, not even hours, but just your cognitive load, right? And your ability to how many things you can really kind of keeping your mind and be actively working on. And so I think everyone eventually either intuitively struggles with it or tries to explicitly build out these systems of how do I build systems around me or my company so that I can kind of get more leverage on this and be able to keep scaling it up without it being affected by the fact that I only have x hours to work per day even if I cut into my sleep.</p><p id="53873172-38cb-4782-989b-113de6ad158b" class=""><strong>DAVID:</strong></p><p id="1300cee0-34ce-4a23-984b-5083e25dba42" class="">Gonna change directions here. I think both of us are pretty interested in cities. And personally, I&#x27;m fascinated by city-states. Actually, one of the things sort of on my long-term bucket list is I&#x27;d really like to travel to Singapore and Hong Kong to Dubai and compare and contrast the different city-states from culture to economics to politics. And I know you&#x27;ve talked a lot about city-states, but also from sort of an A, B test perspective. What do you mean by that?</p><p id="c74054fc-5321-472f-a916-7d0759a24814" class=""><strong>KEVIN:</strong></p><p id="f7162d46-a580-473a-899b-c6d7b47b4ae2" class="">Yeah, so I think one of the areas on cities, and this is specific to China. When I was talking about this in good ways and bad ways, I think that China seems to A, B test cities in the same way that companies in the US A, B test features. And look, there&#x27;s a lot of bad about that too, right? I mean, I think that when you A, B test cities, whichever is the B test that did not work out that well has a lot of people&#x27;s lives affected. On the other side though, it means that they&#x27;re integrating a bunch on experimenting with how should you structure cities and how do you improve cities the most? And so I think that if you look at China right now and I think China&#x27;s plan is to urbanize more people in the next few decades in China than people who live in the United States.</p><p id="37ecace1-5853-473b-b957-ce49f1edce79" class="">And if you think that the, the best way to improve human well-being is actually urbanization, which I think a lot of the data points to, of all the network effects of cities. Then it makes a lot of sense, but it also is a insanely daunting thing to say, how do I intentionally manufacture over 300 million people moving into cities that do not exist today. I think that when you think about that challenge and how, how you build that, it&#x27;s a lot of different experiments that they&#x27;ve done on a scope that in a lot of other countries we don&#x27;t do for better or worse. And you contrast that to a lot of the debates people have in San Francisco on housing policy for example. It&#x27;s just a much higher both centralization of power and bias to action, which has a lot of downsides but also has a lot of upsides.</p><p id="713b579f-930a-4187-b4d2-66255b91b84e" class="">And so I think the contrast to that to me is if you look at democracies, I think that one of the, kind of weak points of democracies, the one that people commonly talk about is majority rule. I think that&#x27;s discussed a lot and because it&#x27;s discussed a lot of people think about how to mitigate it a bunch, which is good. I think that one of the less commonly discussed ones is that democracies don&#x27;t represent future stakeholders. And so democracies are greater representing all of us who are around today, but they don&#x27;t represent the people who will be affected 10 years from now by our decisions or 50 years from our decisions because they don&#x27;t vote. Sometimes they&#x27;re not alive. And the way in governments we deal with this is that for the most part, we think that the people today it&#x27;s their children who will be the future stakeholders.</p><p id="36b07b7f-69f1-4605-aacb-85d80260046c" class="">And so it&#x27;s okay because they&#x27;ll kind of think about the interests of their children. So even then, if you look at a lot of how we make funding decisions for a lot of government institutions, we don&#x27;t seem to account for kind of how it&#x27;s handled down the road. But when you look at a lot of the areas that there&#x27;s a lot of disagreement on such as housing policy or immigration or areas like this, I think that a lot of the problems come down to the fact that a lot of the people who care about those decisions are not part of the process of deciding those decisions. And so it&#x27;s not the immigrants, it&#x27;s not the future citizens who are currently living in other countries who get to weigh in on what immigration policy should be and it&#x27;s not the people who don&#x27;t live in San Francisco but would live in San Francisco if housing was cheap enough, who&#x27;d get to weigh in on that.</p><p id="aa2e32fc-5224-469c-af62-9b87d0f0b66d" class="">And that creates this misaligned incentives where people aren&#x27;t being irrational. They&#x27;re actually representing their interests. Right? And you know, people who own houses should want their houses to increase in value. People who live in a country, at least some set of them would not want other people to come in. And I think that in so far as you think that those kinds of things are important. There is a question which is how do we kind of fix these issues or mitigate these issues in our democracies so that we do represent these stakeholders and I think historically two ways we&#x27;ve done is we&#x27;ve either said, hey, here&#x27;s why it obviously is economically beneficial even for the people who are already there to have San Francisco grow in size and more people move here and grow the economy or another way we&#x27;ve done it as we&#x27;ve had cultural norms or we&#x27;ve said, hey, you know, America is built on this norm of being built by immigrants and welcoming immigrants.</p><p id="91c3a5d5-e93a-42f5-860c-0438d661d58f" class="">And I think both of those and other strategies are powerful, but both of those seem to be weakening. And as they weaken, then the question is how do you make sure, as long as you think these are good things for cities to have, how do we get these benefits? So without the downside so that we can get the benefits that countries like China have with kind of growing their cities without the downsides of kind of totalitarian rule or pollution or a bunch of centralized control that&#x27;s not representing the interests of the people. Right.</p><p id="fc22ef6b-d4d9-40c9-974a-07bceeb7a531" class=""><strong>DAVID:</strong></p><p id="35043d71-9403-4873-9514-56b20812f085" class="">So we&#x27;ve talked about America, we&#x27;ve talked about China, but I see that you&#x27;re really interested in Saudi Arabia. Why?</p><p id="ed73b492-526e-440c-845f-381b240ebfdb" class=""><strong>KEVIN:</strong></p><p id="11ef8410-7bc5-4ba3-8e0b-7ca77c54592d" class="">Yeah, yeah. I feel like over the last few years, certainly there&#x27;s a handful of countries that I feel like I&#x27;ve just personally and certainly for no professional interests, spent a lot of time thinking about and researching and Saudi Arabia is one of them. I think Saudi Arabia is fascinating right now because it kind of hits on a lot of trends that are happening in the world right now. And so for example, one trend is that Saudi Arabia is this fascinating country where, people, most people don&#x27;t quite know what to make of it. It sort of is, you see a lot of reports and you say on one hand it looks like they&#x27;re cracking down on corruption or improving women&#x27;s rights or opening up to foreign investment. And then, on the other hand, you also look at it and you say it looks like it&#x27;s centralizing power and becoming less democratic.</p><p id="6ab22ad1-e64a-4ca6-b344-e6ef4eecbc0a" class="">Not that it was entirely democratic at all ever, but it&#x27;s becoming even more centralized in power and actually trending towards kind of a dictatorship and cracking down and imprisoning political enemies. And so you look at these two sides and I think it&#x27;s hard for a lot of people to weigh what&#x27;s happening. But I think, you dig into it a bunch and what&#x27;s happening kind of also then explains a bunch of kind of structurally what&#x27;s been happening in the Middle East. And so one example is over the last five, 10 years, MBS, who is the current ruler, has kind of been involved in a tremendously done coup of the other royal families in Saudi Arabia. And you look at that and one part of it is a lot of the conflicts in the Middle East, a bunch of them can be traced back to the fact that MBS was kind of in command of the external facing parts of Saudi Arabia.</p><p id="303033f8-4820-4133-a8e4-6e6f4c299fb0" class="">Whereas the other sides of this internal coup were in charge of the internal facing government organizations. And so having a bunch of conflicts happen in the Middle East actually make it more important to centralize power with the external facing side of this government. And helped him gather power, build relationships with the military, cement those relationships as he then went to kind of cement his power in the throne. A lot of the movements on both liberalizing externally but solidifying rule internally or are very interconnected, right? And you need to have the external allies aligned with you as you kind of deal with a bunch of the internal conflicts. And then finally, I think that it also is just an interesting data point on this trend where I think a lot of us, if you think about the core things that you believe in and if at the top of that heap of things that you believe in but don&#x27;t hold very strongly is kind of what&#x27;s your favorite breakfast food.</p><p id="854c5c4b-097c-4166-a7e8-1a4146f98ca4" class="">And then at the bottom of that heap is your belief in maybe for some people democracy or their religion or free speech or whatever areas they care most about. I think that one of the questions we&#x27;re dealing with today is, is there a reason democracy is structurally trending away as the dominant form of government? Because if you look around the world empirically and Saudi Arabia, China included are good examples of this. It feels like there was a time years ago where it felt like the world was getting more democratic. It actually feels like the world is getting less democratic now. And there was a question of why that&#x27;s happening. You know, for example, I think one reason you might say it&#x27;s happening is that it&#x27;s actually becoming more possible for countries to understand the needs and what is going on at a local level in their countries.</p><p id="da82d823-ce95-4066-8b78-28f1bfadb9b5" class="">And you look at China for example, and you go back a thousand years in China. It was impossible for people in the central government to truly coordinate with all of the local provinces at any reasonable time-frame. And so there&#x27;s just a natural decentralization that happens there where you need. We&#x27;re even if we say it&#x27;s under one ruler, you have to let local officials decide things because it&#x27;ll take eight weeks to hear word back for any decision. Whereas you look at China now and because of all of the information technology that has been created and because of all of these things, it&#x27;s more possible than ever for a government to understand what&#x27;s going on and all of the local provinces and in the best form of that say, hey, actually what are the things they want and what are the things they need?</p><p id="471b4268-faad-48df-8900-465b2788f243" class="">And so it&#x27;s become easier and easier for centralized authoritarian governments to both control, but also provide for and understand what they should provide for, of people around their countries. And that has made democracy seem to trend downward, which I think for a lot of us as a pretty frightening thing, but it&#x27;s a thing that I think you should always assess whether the thing that you don&#x27;t want to happen. Is it a temporary blip that it&#x27;s fading away or is there some structural reason? And if so, how do you either try to mitigate that or how does that influence your views on it?</p><p id="1c77cced-351b-44d1-b2b3-86a4bdc32333" class=""><strong>DAVID:</strong></p><p id="4ea611cb-7261-4689-a48f-baacddf82905" class="">My question to you is sort of a meta question, but there is this sort of this spectrum from people in crypto land who say this time is different, things will never be the same to people often in finance. A lot of the literature is, this is just a cycle, we go in cycles of the market is going well, the market drops, the market goes well, the market drops. How would you think about the words this time is different in terms of something like government and democracy?</p><p id="338d67cf-9124-485d-ac42-c027c9b92ec9" class=""><strong>KEVIN:</strong></p><p id="02e178c3-710c-4a4d-b8a9-70a348a5ad8a" class="">Yeah, yeah, for sure. I think that also in the crypto point, I think that that is also a super fascinating question because, on the crypto side, I think that it&#x27;s exactly as you say, right? People who are involved in crypto say well we reshape a bunch of the markets of how things function. This will be fundamentally different. And then people in both tech and finance say, actually, there may be some changes, but it will kind of reconverge back on the same thing. And to some degree, I think both are correct. I think that the way things work is you can change a lot of things. Now eventually people will recentralize as they figure out where are the dominant places to centralize power within these ecosystems.</p><p id="7e53735b-cd1f-490d-b24f-0419462a078b" class="">And so we don&#x27;t yet know where that is in crypto. I think eventually people will figure those out. But to the point, and part of the reason I think a lot of people, myself included, are interested in crypto right now is that the decisions made in this kind of formative early part of these industries. If you think these industries will become important, which I think we don&#x27;t know if certainty, but there is a decent likelihood that crypto could, a lot of decisions made. Whether consciously or unconsciously in the kind of days where this is kind of still wet clay end up having huge downstream effects. So for example, if you look at privacy norms in the US, I think that a lot of decisions that were made by both the CEOs of companies like Facebook or Snapchat or other companies that are at the forefront of kind of both the communication mediums that people use for this as well as kind of a video recording or other areas, the decisions they made and the people who influenced them kind of had an outsized impacts on social norms around those areas.</p><p id="62447f12-5bab-4404-acc5-3f69fbde41cd" class="">Now, not to say that the government doesn&#x27;t help get involved in it and not to say that the people don&#x27;t, you know, in some ways regulate and socially regulate their decisions, but they have a lot of impact. And so if you care about those impacts, then what&#x27;s important is kind of being in zone of those decisions and how those decisions are made or being able to impact the people making those decisions so that they do think about the consequences of them and they think about what the downstream impacts are and you look at the Internet today and the, there&#x27;s many volumes of kind of debates that were had on internet standards and for the most part, we don&#x27;t remember them now at all, but you think about how much has been shaped just structurally without even realizing it by the decisions that were made by people kind of crafting the internet standards.</p><p id="275e2340-5013-4bdd-9e3e-68ace62845cf" class="">And all of those decisions people made have had huge downstream impacts of every layer that has been built on top of them. And so I don&#x27;t think we regret that per se, but I think that you look at it and you say, hey, let&#x27;s make sure we do all the good things there. Let&#x27;s also think about the mistakes that we&#x27;ve made as we&#x27;ve created other industries. Whether that&#x27;s the current waves of finance or whether that&#x27;s the current waves of tech or whatever. And say, hey, when you&#x27;re in these nascent periods of new industries, how do we go make sure that we help the people who we trust to be making those decisions be there at the end. Right? And I think that&#x27;s not unique to crypto.</p><p id="89e7aa09-f30b-436a-85c9-55dab34ba52d" class="">I think that&#x27;s also the same if you look at governments, you look at AI, you look at a lot of these areas, a lot of us personally won&#x27;t be able to affect a bunch of those, but to the degree you can, you want the people who you trust to be making the decisions that you think are most aligned with how you think decisions should be made to be the ones at the table who have a say. And the reality is the table stakes for being at that table in many of these industries is building the companies that have the dominant loops and are the dominant companies of their industries because they&#x27;re the ones who get to kind of have a seat at that table to decide what our norms will be for AI or what are norms will be for crypto or any of these areas.</p><p id="9ca8960c-3bef-4f64-8b0b-e569103a1e74" class=""><strong>DAVID:</strong></p><p id="d9661277-d9de-41ba-ab12-fefb77aef08b" class="">Even something as simple as the words we use shape how we act and whatnot. And also we were talking about cities earlier and when you think about building the infrastructure of a city, a city that depends on highways operates very differently from a city that depends on public subways and whatnot, which operates then again, very differently from a city that has roads designed for bikes and people who are walking, right? So the infrastructure that we build at the beginning will then shape the topology, the culture, and basically the modes of action that arise later.</p><p id="8b168463-00fe-4ce8-9dd3-c6383defadd7" class=""><strong>KEVIN:</strong></p><p id="a852c938-4569-43e1-aa51-871fe9192d79" class="">100 percent. And maybe that&#x27;s a good reroute to the beginning of a Robert Caro because I think his first book about Robert Moses who kind of built out much of what people look at in New York City is a really good example of this because Robert Moses, he basically was unchecked in his power in building things in New York, which has a lot of downsides. And I think that the flip side of the critique of a lot of things going on in San Francisco right now where people say, hey, I wish we built more is what happens after Robert Moses where for decades after Robert Moses, people. I think <a href="https://en.wikipedia.org/wiki/Jane_Jacobs">Jane Jacobs</a> is the most known among these said, a lot of things that he built weren&#x27;t great. And some of that was terrible views and decisions he had.</p><p id="11183d92-d069-4603-9589-33d680af9dd3" class="">And I think there&#x27;s a lot of things we can point to there. And then part of it was also areas where he was one man and didn&#x27;t have full legibility on what the city needed or wanted or how to prepare for the future. And so to give you some examples of this, he built the highway systems in and around New York City and at the time there were very few people driving on highways or in cars and he kind of was one of the first people. And then a lot of the people who then ended up building a bunch of the highway systems for Eisenhower across the US where people who worked for him and he built these highways and he refused to put public transit lines along them. And his view was why would you need this? 1. The highways you can more than handle the capacity of cars that are driving.</p><p id="2f89874f-0678-40c4-8015-4e52d60d658e" class="">And 2. Another view he kind of had or people suspect he had, which is he was slightly elitist. And he said, cars are the rich and public transit is the poor. And actually, I want to make it much easier for the rich to get out to these places and not have the poor able to do it. And so you look at these decisions and they had huge impacts for a bunch of reasons. So one reason, one impact they had is that a bunch of these decisions he made that were either racist or discriminatory against the poor, just created ghettos within New York, made it impossible for people who are poor to afford to go out. And the same way that people who were rich were, they had real impact on real people&#x27;s lives. And Robert Caro, I think he does a great job of both capturing how Robert Moses accumulates power and understanding it while also capturing the real stories of the people whose lives were affected by it in terrible ways.</p><p id="03ae9dc6-0731-4874-add2-f9997a374131" class="">So that you understand that we shouldn&#x27;t just love this. We should understand that these decisions have very real impacts. And you know, there&#x27;s one section of the book where he goes through one block that was affected by the decisions that Robert Moses made and talks to the children and grandchildren of people who lived on this block that was raised for one of Robert Moses&#x27; project and how their lives were affected by that and how crushing it was to their families and how much it impacted even two generations later, their children and your grandchildren. And so I think that there&#x27;s that side of it. And then on the other side, you look at it and his refusal to build public transit lines along the highway has kind of still, we are feeling the impact of that because obviously now cars are ubiquitous and everywhere and the highways he built to handle that.</p><p id="4928d5b8-e5c5-40aa-836f-e3d15c30d209" class="">And the reality is highways period can handle that without building public transit, LRT systems which just can handle significantly more people. And so you look at a lot of these decisions people make around how we structure our cities or structure of companies. And these decisions have huge downstream impacts and so I think it&#x27;s fascinating to see all these decisions being made a lot of times without the full understanding of the downstream impacts and without other people understanding that these are very important decisions. And that&#x27;s kind of why I think the Caro books are just great at this because they make, you realize that once you take the time to understand how these ecosystems develop and the downstream impacts of them, you understand why all of these things are important and they show how one person can have a huge impact on it.</p><p id="d06e496f-6e5e-49ed-a8a7-c7250170e629" class="">One person who understands the system and kind of where the vulnerabilities of it are and where the weaknesses are in it can have a huge impact on it. And you know, hopefully, that will be people who have good intentions doing that. Right? And using that. And that&#x27;s why I kind of want a lot of my friends and other people to read the Caro biographies to kind of understand that and be able to be in position for those. But it also means that it helps you understand when you see people who are making bad decisions about it, right? And whether intentionally or not and kind of understanding that the importance of things like housing policy or things like public transit, whether that looks like bike lanes or highways or LRT or whatever because they have a just huge impact on everything else within these cities.</p><p id="9576d879-2aa7-4816-8701-8c8b3f973937" class=""><strong>DAVID:</strong></p><p id="104053a2-8695-4f22-849b-17720669a15e" class="">The last question before a couple of quick ones at the end, you had a thought about contrarianism a couple of weeks ago that I&#x27;ve been thinking a lot about. I think perhaps we&#x27;ve gone a bit too far with it and often in the name of contrarianism we miss the mark about what it&#x27;s really about. So I&#x27;d love if you could riff on that for a bit.</p><p id="a8e42643-14d8-463d-b90b-2b127186206a" class=""><strong>KEVIN:</strong></p><p id="3166b06d-e243-45df-8a67-5a72a46315c3" class="">Yeah, for sure. I think that contrarianism has become obviously a very mainstream area where ironically everyone wants to be contrarian now and what&#x27;s interesting is that I think I&#x27;ve always been fascinated by these concepts where everyone is a big fan of them, but we don&#x27;t unpack them further. And so for example, I think network effects is another example of these areas where everyone knows that they should say they are contrarian or they have network effects, but then you really push on kind of like, what do you mean by that other than just I have good things. So I think that a lot of people talk about contrarianism as kind of being against the grain and kind of having views that other people disagree with.</p><p id="fdfba1ff-60db-4b54-a3b4-9a4ed157ca7f" class="">And of course, the challenge is the decision if I have this view that people disagree with. Is that actually a good view or is it just a view that people disagree with because it&#x27;s a bad view. And similarly, I think it&#x27;s hard to judge if you&#x27;re contrarian enough from the people around you because it could be that you have a view that is mainstream in your community, but that view is actually a contrarian view in the larger view of people. But my view of contrarianism is that the important part of it is not about having this view that everyone else disagrees with. The important part is bringing it to everyone else and actually taking that view and causing it to become non-contrarian because a contrary view that stays controlled forever. It&#x27;s just something that is-</p><p id="10266ebe-3501-4670-b917-ceb3521e7984" class=""><strong>DAVID:</strong></p><p id="66baea76-d0a8-4321-a1d1-84d18efadcf9" class="">It&#x27;s all intellect, no action.</p><p id="0b1b398f-a45c-4dc7-8547-ddbd81a00a93" class=""><strong>KEVIN:</strong></p><p id="d8d867d7-f641-4773-ac90-04b7ab2cb27c" class="">Yeah, it&#x27;s useless, right? It&#x27;s useless both for you and for the world. And so the interesting thing is actually having views that are not the consensus views of the world, but then doing your work to make sure they become consensus to the world if they are better, and don&#x27;t get me wrong, I think that part of that is getting rewarded for it, right? And figuring out how to generate value from that, whether that is in building a company or whether that is in finding people who are like-minded.</p><p id="692c7289-9213-47d0-8706-830795980d56" class=""><strong>DAVID:</strong></p><p id="e839ebb3-2454-4947-9be3-b5fd05df7b2c" class="">I think a great example of that is <a href="https://en.wikipedia.org/wiki/Steve_Jobs">Steve Jobs</a>. His vision for the future of computing, a contrarian that many people doubted. There are all the stories that we know, but then he goes out and profits from it by giving his vision to the world. And I think that to your point, that&#x27;s why he&#x27;s revered in society.</p><p id="96bc5450-133a-45d8-826d-676905b8044e" class=""><strong>KEVIN:</strong></p><p id="00a5087d-3846-48f2-98c0-6288683f1028" class="">Absolutely. And I think that the best thing to look at in contrarianism is how successfully they obsoleted their view from being contrarian, right? Because the people we should be most excited about who have contrarian views are the people who don&#x27;t just have them, they then go make sure that those views stopped being contrarian and we all believed them. In fact, it&#x27;s the people who we looked back and we say, hey, was that even that contrarian of a view? Actually, like we all believe it, right? I think that there&#x27;s too much of a focus on the kind of standing apart and, and being the one who has the unique insight that nobody else has versus the part which is how do you go educate everyone else and bring that back into the mainstream consciousness and actually that is a lot of work and that is the thing that proves that what you were thinking about was actually valuable and of importance. And when I think about contrarianism, that&#x27;s the part of it that I wish was more focused on versus the part where everyone can kind of feel hipster and feel that they&#x27;re the special person with special thoughts on it.</p><p id="3db77185-9101-4f93-9503-6e9ab78fa9af" class=""><strong>DAVID:</strong></p><p id="c349b47a-7e39-495b-907b-219c04fc1c8f" class="">Totally. So a couple of questions about you. The first one I&#x27;m going to steal from <a href="https://marginalrevolution.com/">Tyler Cowen</a> (<a href="http://www.perell.com/podcast/tyler">my episode with Tyler here</a>), he and his interviews saying what is your production functions? So what helps you stand out, be different, and have these ideas that you&#x27;ve shared with us today?</p><p id="066174c8-6db3-4739-9d4f-4b86ed1035bf" class=""><strong>KEVIN:</strong></p><p id="b5f3ed22-2150-42a0-a6ea-766b6d4c3f7f" class="">I don&#x27;t know to what degree I stand out or have done well or I&#x27;m different. The view I care about is in understanding how systems work and the structuralism of that and I find that the people who I get along super well with and could talk for hours with are people who share that curiosity about trying to understand systems. When I think about on a kind of 50 year time horizon, what are the bets that I would want to take and would want to live by and then when you&#x27;re retired and 50 years later if you&#x27;re wrong, you&#x27;re like, well, I&#x27;m still glad I took that bet. But it could have been wrong. I think the first one is kind of a on this idea that there is value in understanding systems and actually part of what we all should be doing is pushing this frontier of understanding the world and understanding why things work the way they do and then actually testing it and seeing if it is true in our theories on that were true.</p><p id="bf2145e2-41e5-4acb-8312-0604e1b69877" class="">And so I think that is a bet I&#x27;d take any day of the weekend and I think is just natural gravity I have. And then I think the second one, which is tied to that on the people side, it&#x27;s just finding people you resonate with who kind of are interested in thinking about the same types of things you do. Because at the end of the day, just like companies have loops and network effects. I think that people are ultimately the loop and network effects for each other. And the reality is we write biographies about companies and people and because of how we write biographies, we always view them as kind of the start of the company is when the company was incorporated and then it was built from there. When the reality is that the companies were all started 20 years before that of the set of people who how the founders knew each other, the people who they bounce their ideas off of the people who they would go then and higher. And so all of the compounding companies and governments and organizations to me seems to stem from the people you surround yourself with and how you resonate with them. And so I think that also is kind of how I both draw most of my ideas is from those discussions and also kind of how I stress test my ideas is kind of pushing on those with people who are curious about those same things or who are in other fields and you find the consilience between the fields.</p><p id="58d84b8f-f485-4740-81c8-26b0cda10d07" class=""><strong>DAVID:</strong></p><p id="338edb7d-9292-47c7-9881-33f6887967cf" class="">Well Kevin, thank you so much for coming on the North Star.</p><p id="1d2f748e-4bee-4942-b3d6-606f191dd64b" class=""><strong>KEVIN:</strong></p><p id="7d98570b-ae2e-49cb-8b76-bc3f6890be51" class="">Yup. Thank you so much.</p><p id="1211758b-27b7-4c37-9175-7efbb99ea8ee" class="">Hey again, it’s David here one more time.</p><p id="c5bbb8a3-e312-4016-9c29-0564e300e56c" class="">At <a href="http://perell.com/work">North Star Media</a>, we help companies build brands on the internet, and through content, we help them build trust and generate attention. And we do it through blog posts, books, videos, and podcasts like this one.</p><p id="c637407d-7114-4634-8aef-c8e9a6389fbf" class="">You can support the North Star Podcast by leaving a review on <a href="https://itunes.apple.com/us/podcast/north-star-podcast/id1170914572?mt=2">iTunes</a>. Or you can share the podcast on <a href="https://twitter.com/?lang=en">Twitter</a> or <a href="https://www.facebook.com/">Facebook</a>.</p><p id="c5f012c4-c278-4da0-b280-93550606dc6f" class="">To listen to other episodes or learn more about the North Star, you can connect with me directly at <a href="http://perell.com/">perell.com</a> and you can always reach out on <a href="https://twitter.com/david_perell?lang=en">Twitter at david_perell</a>. And if you enjoyed this episode, you’ll like the episode with <a href="http://www.perell.com/podcast/albert">Albert Wenger</a>, a partner at Union Square Ventures. In this conversation we talk about Albert’s fourth coming book, <em>World After Capital, </em>and how technological progress has shifted scarcity for humanity. When we were foragers it was food that was scarce, during the Aquarian age it was a fight for land. Following the industrial revolution, capital became scarce. With digital technologies, scarcities are shifting once more. We need to figure out how to live in a world after capital, where the only scarcity is our attention.</p></div></article></body></html>

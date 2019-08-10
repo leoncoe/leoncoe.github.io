@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Michael Nielsen: Tools for Thought — David Perell</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5c6bb43a-152a-4dfa-ade0-61e720c503b4" class="page sans"><header><h1 class="page-title">Michael Nielsen: Tools for Thought — David Perell</h1></header><div class="page-body"><p id="9cf98b29-17d1-4d4d-81d4-f3bbc7a5e8bd" class="block-color-gray"><a href="https://www.perell.com/podcast/michael-nielsen">https://www.perell.com/podcast/michael-nielsen</a></p><p id="f7c7de2f-58d6-49b9-9643-b3ec9ab2d9ac" class="">
+</p><figure id="cb89c378-5266-4fde-8d42-68a168bdee82" class="image"><a href="https://static1.squarespace.com/static/55576406e4b02e4679105dc2/5814e6a96b8f5b0e59aed181/5b3d0c4f2b6a28173359351b/1541642559853/Nielsen.png?format=1500w"><img src="https://static1.squarespace.com/static/55576406e4b02e4679105dc2/5814e6a96b8f5b0e59aed181/5b3d0c4f2b6a28173359351b/1541642559853/Nielsen.png?format=1500w"/></a></figure><p id="5d21c6ee-f77d-4216-ac57-de159730275e" class="">My guest today is Michael Nielsen a scientist, writer and computer programmer who works as a research fellow at Y Combinator Research. Michael has written on various topics from quantum teleportation, geometric complexity and the future of science. Michael is the most original thinker I have discovered in a long time when it comes to artificial intelligence, augmenting human intelligence, reinventing explanation and using new media to enable new ways of thinking.</p><p id="4c7f285c-98e9-481b-b919-f6607e3a26f1" class="">Michael has pushed my mind towards new and unexpected places. This conversation gets a little wonky at times, but as you know, the best conversations are difficult. They are challenging because they venture into new, unexplored territory and that&#x27;s exactly what we did here today.</p><p id="a63263cf-9c2f-4375-9a86-10ca9dc389a3" class="">Michael and I explored the history of tools and jump back to the invention of language, the defining feature of human collaboration and communication. We explore the future of data visualization and talk about the history of the spreadsheet as a tool for human thought.</p><p id="cd0487b9-cee9-42f9-9865-a11e9723f52e" class=""><em><strong>“Before writing and mathematics, you have the invention of language which is the most significant event in some ways. That’s probably the defining feature of the human species as compared to other species.”</strong></em></p><h2 id="a9cbde35-b892-4934-96b2-28339eaf0e1e" class="">LINKS</h2><h3 id="7b94349d-1830-4663-bd9f-5f440b0b9876" class=""><strong>Find Michael Online</strong></h3><h3 id="f79f347f-8427-4c5d-9b7c-08e1c9c9230f" class=""><strong>Mentioned In the Show</strong></h3><p id="32d5c561-0418-40f8-9356-67765fce1ee2" class="">21:48<a href="https://www.photoshop.com/"> Photoshop</a></p><p id="a133ad9d-1924-4efb-948b-4d044b3501bd" class="">21:49 <a href="https://products.office.com/en-us/word">Microsoft Word</a></p><h3 id="b3aeb63a-57eb-4bd3-8686-6c8d710c64c9" class=""><strong>People Mentioned</strong></h3><p id="0f22d597-1bfb-477b-a0ef-e636e2dca6e6" class="">15:01 <a href="https://www.claudemonetgallery.org/">Monet’s Gallery</a></p><p id="84a28656-f597-41ce-ae3f-e78efba9bc0a" class="">15:05 <a href="https://www.pablopicasso.org/">Picasso’s Paintings</a></p><p id="de18ccbe-7124-4d1e-a892-4fb4e67a0ffc" class="">35:19 <a href="http://biography.yourdictionary.com/franco-of-cologne">Franco of Cologne</a></p><p id="3b4ef590-81f6-480a-9f8a-d7ff41a13907" class="">56:58 <a href="https://www.ted.com/talks/alan_kay_shares_a_powerful_idea_about_ideas">Alan Kay’s Ted Talk on the future of education</a></p><p id="e5a0683e-65be-4ac4-a839-d4c87fa3524c" class="">57:04 <a href="http://dougengelbart.org/">Doug Engelbart</a></p><p id="c9b37448-d66d-4b15-8574-870f34a71814" class="">58:35 <a href="https://www.amazon.com/default/e/B001HCWUIA/ref=dp_byline_cont_book_1?redirectedFromKindleDbs=true">Karl Schroeder</a></p><p id="e3482a1d-dd5a-4d7b-b624-e5e33f09553b" class="">01:02:06 <a href="http://www.spacex.com/about">Elon Musk’s Mars-bound company, SpaceX</a></p><h3 id="946daa75-3057-4d98-9009-7b7451330aaa" class=""><strong>Show Topics</strong></h3><p id="185545e4-b09b-4ca8-b2fc-cf9e9f335172" class="">4:01 Michael’s North Star, which drives the direction of his research</p><p id="1a00f555-4c42-48b6-9951-d774b51be961" class="">5:32 Michael talks about how he sets his long-term goals and how he’s propelled by ideas he’s excited to see in the world.</p><p id="911a660e-ec60-4b05-91df-659fd7c3698d" class="">7:13 The invention of language. Michael discusses human biology and how it’s easier to learn a language than writing or mathematics.</p><p id="5081e6de-ce8d-4f69-a163-6d388d3f44a4" class="">9:28 Michael talks about humanity’s ability to bootstrap itself. Examples include maps, planes, and photography</p><p id="50e8ceb0-ce89-4dfe-b03b-64542cd4e5cf" class="">17:33 Limitations in media due to consolidation and the small number of communication platforms available to us</p><p id="264e2cbe-9232-4891-b5de-2f753b109abc" class="">18:30 How self-driving cars and smartphones highlight the strange intersection where artificial intelligence meets human interaction and the possibilities that exist as technology improves</p><p id="3355cef1-2329-4522-b900-0194fe0976bf" class="">21:45 Why does Photoshop improve your editing skills, while Microsoft Word doesn’t improve your writing skills?</p><p id="d2cd7884-7319-4b62-9860-4dbf6a1b8749" class="">27:07 Michael’s opinion on how Artificial Intelligence can help people be more creative</p><p id="7aafd826-b620-4da9-a54e-3acb2e9da021" class=""><em><strong>“Really good AI systems are going to depend upon building and currently depend on building very good models of different parts of the world, to the extent that we can then build tools to actually look in and see what those models are telling us about the world.”</strong></em></p><p id="63161697-5df1-4692-899c-727add1d871f" class="">30:22 The intersection of algorithms and creativity. Are algorithms the musicians of the future?</p><p id="a00c8357-3e02-4898-be1f-742abaa377f8" class="">36:51 The emerging ability to create interactive visual representations of spreadsheets that are used in media, internally in companies, elections and more.</p><p id="b6edc443-4582-4473-960a-c46b472f5ad9" class=""><em><strong>“I’m interested in the shift from having media be predominantly static to dynamic, which the New York Times is a perfect example of. They can tell stories on </strong></em><a href="http://newyorktimes.com/"><em><strong>newyorktimes.com</strong></em></a><em><strong> that they can’t tell in the newspaper that gets delivered to your doorstep.”</strong></em></p><p id="f703d9f9-fb93-4e9b-9201-3811b7fc10f5" class="">45:42 The strategies Michael uses to successfully trail blaze uncharted territory and how they emulate building a sculpture</p><p id="adb5af8d-1f9d-427b-925d-3137595f6dc8" class="">53:30 Michael’s learning and information consumption process, inspired by the idea that you are what you pretend to be</p><p id="0b1724c6-b4ca-42ad-ad7a-287d8c366dd9" class="">56:44 The foundation of Michael’s worldview. The people and ideas that have shaped and inspired Michael.</p><p id="87a72cd3-db69-4b50-af1c-e57dd865fccd" class="">01:02:26 Michael’s hypothesis for the 21st century project involving blockchain and cryptocurrencies and their ability to make implementing marketplaces easier than ever before</p><p id="3d4f7805-3e68-46b3-af2b-adc91c143553" class=""><em><strong>“The key point is that some of these cryptocurrencies actually, potentially, make it very easy to implement marketplaces. It’s plausible to me that the 21st century [project] turns out to be about [marketplaces]. It’s about inventing new types of markets, which really means inventing new types of collective action.”</strong></em></p><figure id="d677eb5c-4d5c-4d3a-824c-4aa566ac1d4a" class="image"><a href="Michael Nielsen Tools for Thought David Perell/Michael_David_Perell"><img style="width:700px" src="Michael Nielsen Tools for Thought David Perell/Michael_David_Perell"/></a></figure><p id="40d5f072-512b-494c-bb80-ae2387764aa8" class="">Host David Perell and Guest Michael Nielsen</p><h2 id="35813ea8-a45d-4a40-8ab7-ff516bb9360d" class="">TRANSCRIPT</h2><p id="3c66c4a8-3d2b-4961-8c3b-beb5f2f67af1" class="">Hello and welcome to the North Star. I&#x27;m your host, David Perell, the founder of North Star Media, and this is the North Star podcast. This show is a deep dive into the stories, habits, ideas, strategies, and rituals that guide fulfilled people and create enormous success for them, and while the guests are diverse, they share profound similarities. They&#x27;re guided by purpose, live with intense joy, learn passionately, and see the world with a unique lens. With each episode, we get to jump into their minds, soak up their hard-earned wisdom and apply it to our lives.</p><p id="a1b26ea1-0487-4eb5-8da9-6ac98926134b" class="">My guest today is <a href="http://michaelnielsen.org/">Michael Nielson</a>, a scientist, writer, and computer programmer, who works as a research fellow at <a href="https://ycr.org/">Y Combinator Research</a>. Michael&#x27;s written on various topics from quantum teleportation to geometric complexity to the future of science, and now Michael is the most original thinker I&#x27;ve discovered in a long time. When it comes to artificial intelligence to augmenting human intelligence, reinventing explanation, or using new media to enable new ways of thinking, Michael has pushed my mind towards new and unexpected places.</p><p id="d7422c40-5c4d-4133-b4d7-89ca46191913" class="">Now, this conversation gets a little wonky at times, but as you know, the best conversations are difficult. They&#x27;re challenging because they venture into new, unexplored territory and that&#x27;s exactly what we did here today. Michael and I explored the history of tools. This is an extension of human thought and we jump back to the invention of language, the defining feature of human collaboration and communication. We explore the future of data visualization and talk about the history of this spreadsheet as a tool for human thought. Here&#x27;s my conversation with Michael Nielson.</p><p id="cd573bab-bbba-4197-aad0-ec8e492c705d" class=""><strong>DAVID:</strong></p><p id="101946fc-2eaf-41fb-9f4e-7683fb0c7608" class="">Michael Nielson, welcome to the North Star Podcast.</p><p id="02892b97-cbc8-4f66-967f-c57be2a534d9" class=""><strong>MICHAEL:</strong></p><p id="25c75ea7-90dc-4487-a405-b6da4e7b21c2" class="">Thank you, David.</p><p id="8a2304c5-10ef-465f-a762-ecdb538f52c7" class=""><strong>DAVID:</strong></p><p id="0bb70afa-218a-454b-b4b7-c6f74fa6768c" class="">So tell me a little bit about yourself and what you do.</p><p id="220bf39e-2e4c-40f5-942e-5235bfcad435" class=""><strong>MICHAEL:</strong></p><p id="ed2bbf2f-4a99-4fa2-87ac-6f7a554a4a66" class="">So day to day, I&#x27;m a researcher at <a href="https://ycr.org/">Y Combinator Research</a>. I&#x27;m basically a reformed theoretical physicist. My original background is doing quantum computing work. And then I&#x27;ve moved around a bit over the years. I&#x27;ve worked on open science, I&#x27;ve worked on artificial intelligence and most of my current work is around tools for thought.</p><p id="0ffd36ee-3a94-4cd2-a5ff-a5b861c1e617" class=""><strong>DAVID:</strong></p><p id="d53429bb-7029-40f7-a622-35aee4667c45" class="">So you wrote an essay which I really enjoyed called <a href="http://www.michaelnielsen.org/blog/archive/tough-learning/tough-learning-final.html">Extreme Thinking</a>. And in it, you said that one of the single most important principle of learning is having a strong sense of purpose and a strong sense of meaning. So let&#x27;s be in there. What is that for you?</p><p id="915ac457-0911-458a-9e7d-6b634b42e8ac" class=""><strong>MICHAEL:</strong></p><p id="148fc329-8382-4688-8162-70f603c37715" class="">Okay. You&#x27;ve done your background. Haven&#x27;t thought about that essay in years. God knows how long ago I wrote it. Having a strong sense of purpose. What did I actually mean? Let me kind of reboot my own thinking. It&#x27;s, it&#x27;s kind of the banal point of view. How much you want something really matters. There&#x27;s this lovely interview with the physicist <a href="https://en.wikipedia.org/wiki/Richard_Feynman">Richard Feynman</a>, where he&#x27;s asked about this Indian mathematical prodigy <a href="https://en.wikipedia.org/wiki/Srinivasa_Ramanujan">Ramanujan</a>. <a href="https://en.wikipedia.org/wiki/Ramanujan_(film)">A movie was made about Ramanujan’s mathematical prowess</a> a couple of years ago. He was kind of this great genius. And a Feynman was asked what made Ramanujan so good. And the interview was expecting him to say something about how bright this guy was or whatever. And Feynman said instead, that it was desire. It was just that love of mathematics was at the heart of it. And he couldn&#x27;t stop thinking about it and he was thinking about it. He was doing in many ways, I guess the hard things. It&#x27;s very difficult to do the hard things that actually block you unless you have such a strong desire that you&#x27;re willing to go through those things. Of course, I think you see that in all people who get really good at something, whether it be sort of a, just a skill like playing the violin or something, which is much more complicated.</p><p id="56bd0132-270f-461d-8ed5-38edd6b309aa" class=""><strong>DAVID:</strong></p><p id="b3832988-065f-454f-a4f9-44d449554fe7" class="">So what is it for you? What is that sort of, I hate to say I want to just throw that out here, that North Star, so to speak, of what drives you in your research?</p><p id="2cff648a-7606-4395-adbc-31e7ef938cc7" class=""><strong>MICHAEL:</strong></p><p id="bbb82c90-0397-4c4b-ab82-3134ed09a51d" class="">Research is funny. You go through these sort of down periods in which you don&#x27;t necessarily have something driving you on. That used to really bother me early in my career. That was sort of a need to always be moving. But now I think that it&#x27;s actually important to allow yourself to do that. That&#x27;s actually how you find the problems, which really get, get you excited. If you don&#x27;t sort of take those pauses, then you&#x27;re not gonna find something that&#x27;s really worth working on. I haven&#x27;t actually answered your question. I think I know I&#x27;ve jumped to that other point because that&#x27;s one thing that really matters to me and it was something that was hard to learn.</p><p id="a50cc841-e1dd-48b2-8144-5fd3e163f9a4" class=""><strong>DAVID:</strong></p><p id="cf088f3e-3112-4581-adea-7b0ca21166cf" class="">So one thing that I&#x27;ve been thinking a lot about recently is you sort of see it in companies. You see it in countries like Singapore, companies like <a href="https://www.amazon.com/">Amazon</a> and then something like the <a href="http://longnow.org/">Long Now Foundation</a> with like the 10,000-year clock. And I&#x27;m wondering to you in terms of learning, there&#x27;s always sort of a tension between short-term learning and long-term learning. Like short-term learning so often is maybe trying to learn something that feels a little bit richer. So for me, that&#x27;s reading, whereas maybe for a long-term learning project there are things I&#x27;d like to learn like <a href="https://www.python.org/">Python</a>. I&#x27;d like to learn some other things like that. And I&#x27;m wondering, do you set long-term learning goals for yourself or how would you think about that trade off?</p><p id="49362087-15c4-4061-befc-faccaa3548eb" class=""><strong>MICHAEL:</strong></p><p id="431223dd-bc11-453f-8a79-e75752668258" class="">I try to sit long-time learning goals to myself, in many ways against my better judgment. It&#x27;s funny like you&#x27;re very disconnected from you a year from now or five years from now, or 10 years from now. I can&#x27;t remember, but <a href="https://en.wikipedia.org/wiki/Dwight_D._Eisenhower">Eisenhower</a> or <a href="https://en.wikipedia.org/wiki/Napoleon">Bonaparte</a> or somebody like that said that the planning is invaluable or planning plans are overrated, but planning is invaluable. And I think that&#x27;s true. And this is the right sort of attitude to take towards these long-term lending goals. Sure. It&#x27;s a great idea to decide that you&#x27;re going out. Actually, I wouldn&#x27;t say it was a great idea to say that you&#x27;re going to learn python, I might say. However, there was a great idea to learn python if you had some project that you desperately wanted to do that it required you to learn python, then it&#x27;s worth doing, otherwise stay away from python. I certainly favor, coupling learning stuff to projects that you&#x27;re excited to actually see in the world. But also, then you may give stuff up, you don&#x27;t become a master of python and instead you spend whatever, a hundred hours or so learning about it for this project that takes you a few hundred hours, and if you want to do a successor project which involves it, more of it. Great, you&#x27;ll become better. And if you don&#x27;t, well you move onto something else.</p><p id="266b9cbc-6dd3-40d2-8253-37ee62aea564" class=""><strong>DAVID:</strong></p><p id="351f8b15-67d5-4209-bf8e-ced839f6b7bd" class="">Right. Well now I want to dive into the thing that I&#x27;m most excited to talk to you about today and that&#x27;s tools that extend human thought. And so let&#x27;s start with the history of that. We&#x27;ll go back sort of the history of tools and there&#x27;s had great <a href="https://en.wikipedia.org/wiki/Walter_J._Ong">Walter Ong</a> quote about how there are no new thoughts without new technologies. And maybe we can start there with maybe the invention of writing, the invention of mathematics and then work through that and work to where you see the future of human thought going with new technologies.</p><p id="e69b01a0-b4b2-4e3a-83d7-6f1d6cbb18ea" class=""><strong>MICHAEL:</strong></p><p id="ec0e2b03-345f-499f-9958-955ae0ecab80" class="">Actually, I mean before writing and mathematics, you have the invention of language, which is almost certainly the most significant single event in some ways. The history of the planet suddenly, you know, that&#x27;s probably the defining feature of the human species as compared to other species. Um, I say invention, but it&#x27;s not even really invention. There&#x27;s certainly a lot of evidence to suggest that language is in some important sense built into our biology. Not the details of language. Um, but this second language acquisition device, it seems like every human is relatively very set to receive language. The actual details depend on the culture we grow up on. Obviously, you don&#x27;t grow up speaking French if you were born in San Francisco and unless you were in a French-speaking household, some very interesting process of evolution going on there where you have something which is fundamentally a technology in some sense languages, humans, a human invention.</p><p id="d3068c52-77ed-4a66-9580-4929ee9949ee" class="">It&#x27;s something that&#x27;s constructed. It&#x27;s culturally carried. Um, it, there&#x27;s all these connections between different words. There&#x27;s almost sort of a graph of connections between the words if you like, or all sorts of interesting associations. So in that sense, it&#x27;s a technology, something that&#x27;s been constructed, but it&#x27;s also something which has been over time built into our biology. Now if you look at later technologies of thought things like say mathematics, those are much, much later. That hasn&#x27;t been the same sort of period of time. Those don&#x27;t seem to be built into our biology in quite the same way. There&#x27;s actually some hints of that we have some intrinsic sense of number and there&#x27;s some sort of interesting experiments that suggest that we were built to do certain rudimentary kinds of mathematical reasoning but there&#x27;s no, you know, section of the brain which specializes sort of from birth in solving quadratic equations, much less doing algebraic geometry or whatever, you know, super advanced.</p><p id="413f213e-46e0-4de4-8376-4540d77160a8" class="">So it becomes this cultural thing over the last few thousand years, this kind of amazing process whereby we&#x27;ve started to bootstrap ourselves. If you think about something like say the invention of maps, which really has changed the way people relate to the environment. Initially, they were very rudimentary things. Um, and people just kept having new ideas for making maps more and more powerful as tools for thought. Okay. I can give you an example. You know, a very simple thing, if you&#x27;ve ever been to say the underground in London or most other subway systems around the world. It was actually the underground when this first happened, if you look at the map of the underground, I mean it&#x27;s a very complicated map, but you can get pretty good at reasoning about how to get from one place to another. And if you look at maps prior to, I think it was 1936, in fact, the maps were much more complicated.</p><p id="1e48bd3f-2db1-4803-9af2-86958d1a48f3" class="">And the reason was that mapmakers up to that point had the idea that where the stations were shown on the map had to correspond to the geography of London. Exactly. And then somebody involved in producing the underground map had just a brilliant insight that actually people don&#x27;t care. They care about the connections between the stations and they want to know about the lines and they want some rough idea of the geography, but they&#x27;re quite happy for it to be very rough indeed and he was able to dramatically simplify that map by simply doing away with any notion of exact geography.</p><p id="3b985865-4928-4572-a509-23e13d980815" class=""><strong>DAVID:</strong></p><p id="365fb874-d655-4d52-9fe8-6642ff89dfd9" class="">Well, it&#x27;s funny because I noticed the exact same thing in New York and so often you have insights when you see two things coming together. So I was on the subway coming home one day and I was looking at the map and I always thought that Manhattan was way smaller than Brooklyn, but on the subway map, Manhattan is actually the same size as Brooklyn. And in Manhattan where the majority of the subway action is, it takes up a disproportionate share of the New York City subway map. And then I went home to go read <a href="https://www.amazon.com/Power-Broker-Robert-Moses-Fall/dp/0394720245">Power Broker</a>, which is a book about <a href="https://en.wikipedia.org/wiki/Robert_Moses">Robert Moses</a> building the highways and they had to scale map. And what I saw was that Brooklyn was way, way bigger than Manhattan. And from predominantly looking at subway maps. Actually, my topological geographical understanding of New York was flawed and I think exactly to your point.</p><p id="3b6c1653-950b-460d-8902-edbb8800e357" class=""><strong>MICHAEL:</strong></p><p id="2dfd4a41-3bcc-4bf1-a505-1d1cfea8adfa" class="">It&#x27;s interesting. When you think about what&#x27;s going on there and what it is, is some person or a small group of people is thinking very hard about how to represent their understanding of the city and then the building, tools, sort of a technological tool of thought that actually then saves millions or in the case of a New York subway or the London underground, hundreds of millions or billions of people, mostly just seconds, sometimes, probably minutes. Like those maps would be substantially more complicated sort of every single day. So it&#x27;s only a small difference. I mean, and it&#x27;s just one invention, right? But, you know, our culture is of course accumulated thousands or millions of these inventions.</p><p id="cac99d2d-e4af-43d9-a1a7-a2bb8a0331b7" class=""><strong>DAVID:</strong></p><p id="ebb94a05-de24-4c43-ae2e-c1885673083a" class="">One of my other favorite ones from being a kid was I would always go on airplanes and I&#x27;d look at the route map and it would always show that the airplanes would fly over the North Pole, but on two-dimensional space that was never clear to me. And I remember being with my dad one night, we bought a globe and we took a rubber band and we stretched why it was actually shorter to fly over the North Pole, say if you&#x27;re going from New York to India. And that was one of the first times in my life that I actually didn&#x27;t realize it at the time, but understood exactly what I think you&#x27;re trying to get at there. How about photography? Because that&#x27;s another one that I think is really striking, vivid from the horse to slow motion to time lapses.</p><p id="57e9d443-4c88-497b-a815-ef36fc488acb" class=""><strong>MICHAEL:</strong></p><p id="cdac08e8-43f7-43b8-b33d-0232a14b67b0" class="">Photography I think is interesting in this vein in two separate ways. One is actually what it did to painting, which is of course painters have been getting more and more interested in being more and more realistic. And honestly, by the beginning of the 19th century, I think painting was pretty boring. Yeah, if you go back to say the 16th and 17th centuries, you have people who are already just astoundingly good at depicting things in a realistic fashion. To my mind, <a href="https://en.wikipedia.org/wiki/Rembrandt">Rembrandt</a> is probably still the best portrait painter in some sense to ever live.</p><p id="86a35d76-ed15-461d-9439-a9c9e968ac17" class=""><strong>DAVID:</strong></p><p id="bfe8cfdf-1349-4ac5-8f9c-0c1a46c5e915" class="">And is that because he was the best at painting something that looked real?</p><p id="d6b60518-9502-4d84-b3da-12b00fb2c446" class=""><strong>MICHAEL:</strong></p><p id="be501ac0-c65d-45ac-9fd3-187cec79c8e1" class="">I think he did something better than that. He did this very clever thing, you know, you will see a photograph or a picture of somebody and you&#x27;ll say, oh, that really looks like them. And I think actually most of the time we, our minds almost construct this kind of composite image that we think of as what David looks like or what our mother looks like or whatever. But actually moment to moment, they mostly don&#x27;t look like that. They mostly, you know, their faces a little bit more drawn or it&#x27;s, you know, the skin color is a little bit different. And my guess, my theory of Rembrandt, is that he may have actually been very, very good at figuring out almost what that image was and actually capturing that. So, yeah, I mean this is purely hypothetical. I have no real reason to believe it, but I think it&#x27;s why I responded so strongly to his paintings.</p><p id="57c235a2-212e-4055-9691-d642ff4fefb8" class=""><strong>DAVID:</strong></p><p id="e799800c-f0d4-4aeb-b066-5128dffd4e38" class="">And then what happened? So after Rembrandt, what changed?</p><p id="427a673d-f9df-4299-9435-dab7362ec505" class=""><strong>MICHAEL:</strong></p><p id="f91bd869-3ebf-495d-9b70-bdd17ed82bd0" class="">So like I said, you mean you keep going for a sort of another 200 years, people just keep getting more and more realistic in some sense. You have all the great landscape painters and then you have this catastrophe where photography comes along and all of a sudden you&#x27;re being able to paint in a more and more realistic fashion. It doesn&#x27;t seem like such a hot thing to be doing anymore. And if for some painters, I think this was a bit of a disaster, a bit of dose. I said of this modern wave, you start to see through people like <a href="https://en.wikipedia.org/wiki/Claude_Monet">Monet</a> and <a href="https://en.wikipedia.org/wiki/Pierre-Auguste_Renoir">Renoir</a>. But then I think <a href="https://en.wikipedia.org/wiki/Pablo_Picasso">Picasso</a>, for me anyway, was really the pivotal figure in realizing that actually what art could become, is the invention of completely new ways of seeing. And he starts to play inspired by <a href="https://en.wikipedia.org/wiki/Paul_C%C3%A9zanne">Cezanne</a> and others in really interesting ways with the construction of figures and such. Showing things from multiple angles in one painting and different points of view. And he just plays with hundreds of ideas along these lines, through all of his painting and how we see and what we see in how we actually construct reality in their heads from the images that we see.</p><p id="77c612c1-e246-4417-a3e8-cc4146c2f35c" class="">And he did so much of that. It really became something that I think a lot of artists, I&#x27;m not an artist or a sophisticated art theory person, but it became something that other people realized was actually an extraordinarily interesting thing to be doing. And much of the most interesting modern art is really a descendant of that understanding that it&#x27;s a useful thing to be doing. A really interesting thing to be doing rather than becoming more and more realistic is actually finding more and more interesting ways of seeing and being able to represent the world.</p><p id="0daeb876-e53e-4b81-86cc-81b9e5395abb" class=""><strong>DAVID:</strong></p><p id="403e9c86-8444-4079-8655-b74dbf7127fe" class="">So I think that the quote is attributed to <a href="https://en.wikipedia.org/wiki/Marshall_McLuhan">Marshall McLuhan</a>, but I have heard that <a href="https://en.wikipedia.org/wiki/Winston_Churchill">Winston Churchill</a> said it. And first, we shape our tools and then our tools shape us. And that seems to be sort of the foundation of a lot of the things that you&#x27;re saying.</p><p id="247d6c99-9729-4760-8b0f-cf6883bcf868" class=""><strong>MICHAEL:</strong></p><p id="4f5f738b-aedb-4f09-a734-245da15fa6da" class="">Yeah, that&#x27;s absolutely right. I mean, on the other side, you also have, to your original question about photography. Photographers have gradually started to realize that they could shape how they saw nature. <a href="https://en.wikipedia.org/wiki/Ansel_Adams">Ansel Adams</a> and people like this, you know. Just what an eye. And understanding his tools so verbally he&#x27;s not just capturing what you see. He&#x27;s constructing stuff in really, really interesting ways.</p><p id="c3e45c4f-b745-45b5-82e9-5f3a94648885" class=""><strong>DAVID:</strong></p><p id="3ee22792-d163-41da-9b78-cf6606ef6299" class="">And how about moving forward in terms of your work, thinking about where we are now to thinking about the future of technology. For example, one thing that frustrates me a bit as a podcast host is, you know, we just had this conversation about art and it&#x27;s the limits of the audio medium to not be able to show the paintings of Rembrandt and Cezanne that we just alluded to. So as you think about jumping off of that, as you think about where we are now in terms of media to moving forward, what are some of the challenges that you see and the issues that you&#x27;re grappling with?</p><p id="dc3ba702-e1bb-4310-830d-945643c5c172" class=""><strong>MICHAEL:</strong></p><p id="9fff7d66-b1af-446a-be64-e25ead20fae7" class="">One thing for sure, which I think inhibits a lot of exploration. We&#x27;re trapped in a relatively small number of platforms. The web is this amazing thing as our phones, <a href="https://en.wikipedia.org/wiki/IOS">iOS</a> and whatnot, but they&#x27;re also pretty limited and that bothers me a little bit. Basically when you sort of narrow down to just a few platforms which have captured almost all of the attention, that&#x27;s quite limiting. People also, they tend not to make their own hardware. They don&#x27;t do these kinds of these kinds of things. If that were to change, I think that would certainly be exciting. Something that I think is very, very interesting over the next few years, artificial intelligence has gotten to the point now where we can do a pretty good job in understanding what&#x27;s actually going on inside a room. Like we can set up sufficient cameras.</p><p id="0aae38de-a5c4-424d-91a1-6a0fcbfa9557" class="">If you think about something like self-driving cars, essentially what they&#x27;re doing is they&#x27;re building up a complete model of the environment and if that model is not pretty darned good, then you can&#x27;t do self-driving cars, you need to know where the pedestrians are and where the signs are and all these kinds of things and if there&#x27;s an obstruction and that technology when brought into, you know, the whole of the rest of the world means that you&#x27;re pretty good at passing out. You know what&#x27;s inside the room. Oh, there&#x27;s a chair over there, there&#x27;s a dog which is moving in that direction, there&#x27;s a person, there’s a baby and sort of understanding all those actions and ideally starting to understand all the gestures which people are making as well. So we&#x27;re in this very strange state right at the moment.</p><p id="162ddcab-a451-4c24-bd4b-aa7097382228" class="">Where the way we talk to computers is we have these tiny little rectangles and we talk to them through basically a square inch or so of sort of skin, which is our eyes. And then we, you know, we tap away with our fingers and the whole of the rest of our body and our existence is completely uncoupled from that. We&#x27;ve effectively reduced ourselves to our fingers and our eyes. We a couple to it only through the whatever, 100 square inches, couple hundred square inches of our screens or less if you&#x27;re on a phone and everything else in the environment is gone. But we&#x27;re actually at a point where we&#x27;re nearly able to do an understanding of all of that sufficiently well that actually other modes of interaction will become possible. I don&#x27;t think we&#x27;re quite there yet, but we&#x27;re pretty close.</p><p id="77a5f703-dee1-4971-9805-047afcc5bd22" class="">And you start to think about, something like one of my favorite sport is tennis. You think about what a tennis player can do with their body or you think about what a dancer can do with their body. It&#x27;s just extraordinary. And all of that mode of being human and sort of understanding we can build up antibodies is completely shut out from the computing experience at the moment. And I think over the next sort of five to ten years that will start to reenter and then in the decades hence, it will just seem strange that it was ever shut out.</p><p id="be8bc639-f666-449f-aa76-5369ab8cd0a3" class=""><strong>DAVID:</strong></p><p id="46b9d8cc-4fab-40b9-99bf-43b13a4d0d8d" class="">So help me understand this. So when you mean by start to reenter, do mean that we&#x27;ll be able to control computers with other parts of our bodies or that we&#x27;ll be spending less time maybe typing on keyboards. Help me flesh this out.</p><p id="1584d06f-c8b6-4e60-99c3-c8234f901dba" class=""><strong>MICHAEL:</strong></p><p id="d4b45529-6507-4ea2-b180-8e05eb1c6da2" class="">I just mean that at the moment. As you speak to David, you are waving your arms around and all sorts of interesting ways and there is no computer system which is aware of it, what your computer system is aware of. You&#x27;re doing this recording. That&#x27;s it. And even that, it doesn&#x27;t understand in any sort of significant way. Once you&#x27;ve gained the ability to understand the environment. Lots of interesting things become possible. The obvious example, which everybody immediately understands is that self driving cars become possible. There&#x27;s this sort of enormous capacity. But I think it&#x27;s certainly reasonably likely that much more than that will become possible over the next 10 to 20 years. As your computer system becomes completely aware of your environment or as aware as you&#x27;re willing to allow it to be.</p><p id="b7af9eed-448a-4031-b667-021aa30720c7" class=""><strong>DAVID:</strong></p><p id="25f46d91-299a-430c-975f-0de2e0360a4a" class="">You made a really interesting analogy in one of your essays about the difference between <a href="https://www.adobe.com/products/photoshop.html">Photoshop</a> and <a href="https://products.office.com/en-us/word">Microsoft Word</a>. That was really fascinating to me because I know both programs pretty well. But to know Microsoft word doesn&#x27;t necessarily mean that I&#x27;m a better writer. It actually doesn&#x27;t mean that at all. But to know Photoshop well probably makes me pretty good at image manipulation. I&#x27;m sure there&#x27;s more there, but if you could walk me through your thought process as you were thinking through that. I think that&#x27;s really interesting.</p><p id="00073910-aa22-48a3-9b65-fd1b09ef605e" class=""><strong>MICHAEL:</strong></p><p id="634e8cb5-48a2-4d85-ac51-86780ef8e7bd" class="">So it&#x27;s really about a difference in the type of tools which are built into the program. So in Photoshop, which I should say, I don&#x27;t know that well, I know Word pretty well. I&#x27;ve certainly spent a lot more time in it than I have ever spent in Photoshop. But in Photoshop, you do have these very interesting tools which have been built in, which really condense an enormous amount of understanding of ideas like layers or an idea, different brushes, these kinds of ideas. There&#x27;s just a tremendous amount of understanding which has been built in there. When I watch friends who are really good with these kinds of programs, what they can do with layers is just amazing. They understand all these kind of clever screening techniques. It seems like such a simple idea and yet they&#x27;re able to do these things that let you do astonishing things just with sort of three or four apparently very simple operations.</p><p id="cc503c1f-e7fa-463e-916d-73560584d7f8" class="">So in that sense, there are some very deep ideas about image manipulation, which had been built directly into Photoshop. By contrast, there&#x27;s not really very many deep ideas about writing built into Microsoft Word. If you talk to writers about how they go about their actual craft and you say, well, you know, what heuristics do use to write stories and whatnot. Most of the ideas which they use aren&#x27;t, you know, they don&#x27;t correspond directly to any set of tools inside Word. Probably the one exception is ideas, like outlining. There are some tools which have been built into word and that&#x27;s maybe an example where in fact Word does help the writer a little bit, but I don&#x27;t think to nearly the same extent as Photoshop seems to.</p><p id="b88bf237-42ac-4397-9431-33d5ba627195" class=""><strong>DAVID:</strong></p><p id="27c3aa97-7db1-46eb-bc30-5c4aff46d1b9" class="">I went to an awesome exhibit for <a href="https://www.davidbowie.com/">David Bowie</a> and one of the things that David but we did when he was writing songs was he had this word manipulator which would just throw him like 20, 30 words and the point wasn&#x27;t that he would use those words. The point was that by getting words, his mind would then go to different places and so often when you&#x27;re in my experience and clearly his, <em>when you&#x27;re trying to create something, it helps to just be thrown raw material at you rather than the perennial, oh my goodness, I&#x27;m looking at a white screen with like this clicking thing that is just terrifying, Word doesn&#x27;t help you in that way.</em></p><p id="1c989801-6d5f-49c3-a78d-8897542b7632" class=""><strong>MICHAEL:</strong></p><p id="bc6db739-a86d-42bb-93bc-2442b63b2210" class="">So an example of something which does operate a little bit in that way, it was a Ph.D. thesis was somebody wrote at <a href="http://www.mit.edu/">MIT</a> about what was called the <a href="http://alumni.media.mit.edu/~rhodes/Papers/remembrance.html">Remembrance Agent</a>. And what it would do, it was a plugin essentially for a text editor that it would, look at what you are currently writing and it would search through your hard disk for documents that seemed like they might actually be relevant. Just kind of prompt you with what you&#x27;re writing. Seems like it might be related to this or this or this or this or this. And to be perfectly honest, it didn&#x27;t actually work all that well. I think mostly because the underlying machine learning algorithms it used weren&#x27;t very clever. It&#x27;s defunct now as far as I know. I tried to get it to run on my machine or a year or two ago and I couldn&#x27;t get it running. It was still an interesting thing to do. It had exactly this same kind of the belly sort of experience. Even if they weren&#x27;t terribly relevant. You kind of couldn&#x27;t understand why on earth you are being shown it. It&#x27;s still jogged your mind in an interesting way.</p><p id="7e472653-0989-492b-b62f-90e49097c85b" class=""><strong>DAVID:</strong></p><p id="8f9ce0d1-878d-4584-80c5-1752427260e3" class="">Yeah. I get a lot of help out of that. Actually, I’ll put this example. So <a href="https://www.nytimes.com/column/david-brooks">David Brooks</a>, you know the columnist for the <a href="https://www.nytimes.com/">New York Times</a>. When he writes, what he does is he gets all of his notes and he just puts his notes on the floor and he literally crawls all around and tries to piece the notes together and so he&#x27;s not even writing. He&#x27;s just organizing ideas and it must really help him as it helps me to just have raw material and just organize it all in the same place.</p><p id="59674975-21a4-4e13-b886-68cc139c579a" class=""><strong>MICHAEL:</strong></p><p id="ce75ebda-a013-4d36-a104-b6023b64c97d" class="">There&#x27;s a great British humorist, <a href="https://medium.com/@pgboathouse">PG Boathouse</a>, he supposedly wrote on I think it was the three by five-inch cards. He&#x27;d write a paragraph on each one, but he had supposedly a very complicated system in his office, well not complicated at all, but it must have looked amazing where he would basically paste the cards to the wall and as the quality of each paragraph rose, he would move the paragraph up the wall and I think the idea was something like once it got to the end, it was a lion or something, every paragraph in the book had to get above that line and at that point it was ready to go.</p><p id="7e34cf22-71d6-47a1-abe6-332f144df6be" class=""><strong>DAVID:</strong></p><p id="cd6d6983-8670-4593-a8c8-19f887ef3336" class="">So I&#x27;ve been thinking a lot about sort of so often in normal media we take AI sort of on one side and art on another side. But I think that so many of the really interesting things that will emerge out of this as the collaboration between the two. And you&#x27;ve written a bit about art and AI, so how can maybe art or artificial intelligence help people be more creative in this way?</p><p id="34d17cd3-d742-490f-b718-c51e84ff2ed0" class=""><strong>MICHAEL:</strong></p><p id="e88986de-d808-4297-9fcb-e0cfa6ade2ca" class="">I think we still don&#x27;t know the answer to the question, unfortunately. The hoped-for answer the answer that might turn out to be true. Real AI systems are going to build up very good models of different parts of the world, maybe better than any human has of those parts of the world. It might be the case, I don&#x27;t know. It might be the case that something like the Google translate system, maybe in some sense that system already knows some facts about translation that would be pretty difficult to track down in any individual human mind and sort of so much about translation in some significant ways. I&#x27;m just speculating here. But if you can start to interrogate that understanding, it becomes a really useful sort of a prosthetic for human beings.</p><p id="a0b7f48c-6d9a-4985-bcb3-0cd162b68d0b" class="">If you&#x27;ve seen any of these amazing, well I guess probably the classics, the <a href="https://en.wikipedia.org/wiki/DeepDream">deep dream images</a> that came out of Google brain a couple of years ago. Basically, you take ordinary images and you&#x27;re sort of running them backwards through a neural net somehow. You&#x27;re sort of seeing something about how the neural net sees that image. You get these very beautiful images as a result. There&#x27;s something strange going on and sort of revealing about your own way of seeing the world. And at the same time, it&#x27;s based on some structure which this neural net has discovered inside these images which is not ordinarily directly accessible to you. It&#x27;s showing you that structure. So sort of I think the right way to think about this is that really good AI systems are going to depend upon building and do currently depend on building very good models of different parts of the world and to the extent that we can then build tools to actually look in and see what those models are telling us about the world, we can learn interesting new things which are useful for us.</p><p id="471a9b3e-d56e-4814-9056-26cb44c68b18" class="">I think the conventional way, certainly the science fiction way to think about AI is that we&#x27;re going to give it commands and it&#x27;s going to do stuff. How you shut the whatever it is, the door or so on and so forth, and there was certainly will be a certain amount of that. Or with <a href="https://deepmind.com/research/alphago/">AlphaGo</a> what is the best move to take now, but actually in some sense, with something like AlphaGo, it&#x27;s probably more interesting to be able to look into it and see what it&#x27;s understanding is of the board position than it is to ask what&#x27;s the best move to be taken. A colleague showed me a go program, a prototype, what it would do. It was a very simple kind of a thing, but it would help train beginners.</p><p id="90b85a0a-4e3e-41b7-9ac5-71a450910c48" class="">I think it was Go, but by essentially colorizing different parts of the board according to whether they were good or bad moves to be taking in its estimation. If you&#x27;re a sophisticated player, it probably wasn&#x27;t terribly helpful, but if you&#x27;re just a beginner, there&#x27;s an interesting kind of a conditioning going on there. At least potentially a which lets you start to see. You get a feeling for immediate feedback from. And all that&#x27;s happening there is that you&#x27;re seeing a little bit into one of these machine learning algorithms and that&#x27;s maybe helping you see the world in a slightly different way.</p><p id="3eb11c91-1716-4873-9a04-52e93aece153" class=""><strong>DAVID:</strong></p><p id="45603c00-9b53-44fe-ae3a-bc9c808d04e2" class="">As I was preparing for this podcast, you&#x27;ve liked a lot to <a href="https://en.wikipedia.org/wiki/Brian_Eno">Brian Eno</a> and his work. So I spent as much time reading Brian Eno, which I&#x27;m super happy that I went down those rabbit holes. But one of the things that he said that was really interesting, so he&#x27;s one of the fathers of ambient music and he said that a lot of art and especially music, there will sort of be algorithms where you sort of create an algorithm that to the listener might even sound better than what a human would produce. And he said two things that were interesting. The first one is that you create an algorithm and then a bunch of different musical forms could flower out of that algorithm. And then also said that often the art that algorithms create is more appealing to the viewer. But it takes some time to get there. And had the creator just followed their intuition. They probably would have never gotten there.</p><p id="89e84f5f-444f-4adf-a1cb-6078818769e8" class=""><strong>MICHAEL:</strong></p><p id="3664cc15-cee3-4c4d-bba5-18dd241379b1" class="">It certainly seems like it might be true. And that&#x27;s the whole sort of interesting thing with that kind of computer-generated music is to, I think the creators of it often don&#x27;t know where they&#x27;re gonna end up. To be honest, I think my favorite music is all still by human composers. I do enjoy performances by people who live code. There&#x27;s something really spectacular about that. So there are people who, they will set up the computer and hook it up to speakers and they will hook the text editor up to a projector and they&#x27;ll have essentially usually a modified form of the programming language list a or people use a few different systems I guess. And they will write a program which producers music onstage and they&#x27;ll just do it in real time and you know, it starts out sounding terrible of course.</p><p id="a0502c93-b00a-4bad-8780-4491880d6e34" class="">And that lasts for about 20 seconds and by about sort of 30 or 40 seconds in, already it&#x27;s approaching the limits of complex, interesting music and I think even if you don&#x27;t really have a clue what they&#x27;re doing as they program, there&#x27;s still something really hypnotic and interesting about watching them actually go through this process of creating music sort of both before your eyes and before your ears. It&#x27;s a really interesting creative experience and sometimes quite beautiful. I think I suspect that if I just heard one of those pieces separately, I probably wouldn&#x27;t do so much for me, but actually having a done in real time and sort of seeing the process of creation, it really changes the experience and makes it very, very interesting. And sometimes, I mean, sometimes it&#x27;s just beautiful. That&#x27;s the good moment, right? When clearly the person doing it has something beautiful happen. You feel something beautiful happen and everybody else around you feel something beautiful and spontaneous. It&#x27;s just happened. That&#x27;s quite a remarkable experience. Something really interesting is happening with the computer. It&#x27;s not something that was anticipated by the creator. It arose out of an interaction between them and their machine. And it is actually beautiful.</p><p id="50b78312-9b48-49ce-9680-f85d9bc1b6d6" class=""><strong>DAVID:</strong></p><p id="fab49e13-c094-4684-95e9-324d56c66292" class="">Absolutely. Sort of on a similar vein, there&#x27;s a song called <a href="https://www.youtube.com/watch?v=quDZCAbSdBw">Speed of Life by Dirty South</a>. So I really liked electronic music, but what he does is he constructs a symphony, but he goes one layer at a time. It&#x27;s about eight and a half minute song and he just goes layer after layer, after layer, after layer. And what&#x27;s really cool about listening to it is you appreciate the depth of a piece of music that you would never be able to appreciate if you didn&#x27;t have that. And also by being able to listen to it over and over again. Because before we had recording, you would only hear a certain piece of music live and one time. And so there are new forms that are bursting out of now because we listen to songs so often.</p><p id="510c673d-f0cf-4e9b-bf52-56242cd61935" class=""><strong>MICHAEL:</strong></p><p id="af0a65f9-7257-4d83-8ae8-29810a292ba0" class="">It&#x27;s interesting to think, there&#x27;s a sort of a history to that as well. If you go back, essentially modern systems for recording music, if you go back much more than a thousand years. And we didn&#x27;t really have them. There&#x27;s a multi-thousand-year history of recorded music. But a lot of the early technology was lost and it wasn&#x27;t until sort of I think the eighth, ninth century that people started to do it again. But we didn&#x27;t get all the way to button sheet music overnight. There was a whole lot of different inventions. For instance, the early representations didn&#x27;t show absolute pitch. They didn&#x27;t show the duration of the note. Those were ideas that had to be invented. So in I think it was 1026, somebody introduced the idea of actually showing a scale where you can have absolute pitch.</p><p id="e89a09fb-1ebe-4e2e-b5c6-2a2a9459f355" class="">And then a century or two after that, <a href="https://en.wikipedia.org/wiki/Franco_of_Cologne">Franco of Cologne</a> had the idea of representing duration. And so they said like tiny little things, but then you start to think about, well, what does that mean for the ability to compose music? It means now that actually, you can start to compose pieces, which for many, many, many different instruments. So you start to get the ability to have orchestral music. So you go from being able to basically you have to kind of instruct small groups of players that&#x27;s the best you can hope to do and get them to practice together and whatever. So maybe you can do something like a piece for a relatively small number of people, but it&#x27;s very hard to do something for an 80 piece orchestra. Right? So all of a sudden that kind of amazing orchestral music I think becomes possible. And then, you know, we&#x27;re sort of in version 2.0 of that now where of course you can lay a thousand tracks on top of one another if you want. You get ideas like micropolyphony. And these things where you look at the score and it&#x27;s just incredible, there are 10,000 notes in 10 seconds.</p><p id="6ffdf439-31bc-4a3a-8240-c163f5f6c4e5" class=""><strong>DAVID:</strong></p><p id="d58cb7e8-5f28-4942-a09b-733a693ac6be" class="">Well, to your point I was at a tea house in Berkeley on Monday right by <a href="https://www.berkeley.edu/">UC Berkeley</a>&#x27;s campus and the people next to me, they were debating the musical notes that they were looking at but not listening to the music and it was evident that they both had such a clear ability to listen to music without even listening to it, that they could write the notes together and have this discussion and it was somebody who doesn&#x27;t know so much about music. It was really impressive.</p><p id="a2d6792e-f3bc-45f2-b50f-9226ee6bf9ab" class=""><strong>MICHAEL:</strong></p><p id="62fcd66b-8a52-4f59-b66c-bd87956d74c6" class="">That sounds like a very interesting conversation.</p><p id="8801c4e4-32a5-4864-9846-8eda4b8b238f" class=""><strong>DAVID:</strong></p><p id="7261f98f-0f8d-469a-993e-0bf3c6b3f723" class="">I think it was. So one thing that I&#x27;m interested in and that sort of have this dream of, is I have a lot of friends in New York who do data visualization and sort of two things parallel. I have this vision of like remember the <a href="https://en.wikipedia.org/wiki/Harry_Potter">Harry Potter</a> book where the newspaper comes alive and it becomes like a rich dynamic medium. So I have that compared with some immersive world that you can walk through and be able to like touch and move around data and I actually think there&#x27;s some cool opportunities there and whatnot. But in terms of thinking about the future of being able to visualize numbers and the way that things change and whatnot.</p><p id="72e25292-836c-4176-8f86-fcea5e6c50b4" class=""><strong>MICHAEL:</strong></p><p id="377d2449-47ea-4331-ad0d-aea4d1903815" class="">I think it&#x27;s a really complicated question like it actually needs to be broken down. So one thing, for example, I think it&#x27;s one of the most interesting things you can do with computers. Lots of people never really get much experience playing with models and yet it&#x27;s possible to do this. Now, basically, you can start to build very simple models. The example that a lot of people do get that they didn&#x27;t use to get, is spreadsheets. So, you can sort of create a spreadsheet that is a simple model of your company or some organization or a country or of whatever. And the interesting thing about the spreadsheet is really that you can play with it. And it sort of, it&#x27;s reactive in this interesting way. Anybody who spends as much time with spreadsheets is they start to build up hypotheses, oh, what would happen if I changed this number over here?</p><p id="0be5ca59-d896-41b4-8899-cc6681ded434" class="">How would it affect my bottom line? How would it affect the GDP of the country? How would it affect this? How would it affect that? And you know, as you kind of use it, you start to introduce, you start to make your model more complicated. If you&#x27;re modeling some kind of a factory yet maybe you start to say, well, what would be the effect if a carbon tax was introduced? So you introduce some new column into the spreadsheet or maybe several extra columns into the spreadsheet and you start to ask questions, well, what would the structure of the carbon tax be? What would help you know, all these sorts of what if questions. And you start very incrementally to build up models. So this experience, of course, so many people take for granted. It was not an experience that almost anybody in the world had say 20 or 30 years ago.</p><p id="5e7b04ae-09ca-4b9c-b6dd-38ac88e79300" class="">Well, spreadsheets data about 1980 or so, but this is certainly an experience that was extremely rare prior to 1980 and it&#x27;s become a relatively common, but it hasn&#x27;t made its way out into mass media. We don&#x27;t as part of our everyday lives or the great majority of people don&#x27;t have this experience of just exploring models. And I think it&#x27;s one of the most interesting things which particularly the New York Times and to some extent some of the other newsrooms have done is they&#x27;ve started in a small way to build these models into the news reading experience. So, in particular, the data visualization team at the New York Times, people like <a href="http://www.nytimes.com/by/amanda-cox">Amanda Cox</a> and others have done this really interesting thing where you start to get some of these models. You might have seen, for example, in the last few elections. They&#x27;ve built this very interesting model showing basically if you can sort of make choices about how different states will vote.</p><p id="c1b029ab-ed7c-4b13-97b2-635cd750429d" class="">So if such and such votes for <a href="https://en.wikipedia.org/wiki/Donald_Trump">Trump</a>, what are <a href="https://en.wikipedia.org/wiki/Hillary_Clinton">Hillary</a>&#x27;s chances of winning the election. And you may have seen they have this sort of amazing interactive visualization of it where you can just go through and you can sort of look at the key swing states, what happens if Pennsylvania votes for so and so what happens if Florida does? And that&#x27;s an example where they&#x27;ve built an enormous amount of sort of pulling information into this model and then you can play with it to build up some sort of understanding. And I mean, it&#x27;s a very simple example. I certainly think that you know, normatively, we&#x27;re not there yet. We don&#x27;t actually have a shared understanding. There&#x27;s very little shared language even around these models. You think about something like a map. A map is an incredibly sophisticated object, which however we will start learning from a very young age.</p><p id="49ba44bd-5102-45d3-8cc3-bd9b84e983e3" class="">And so we&#x27;re actually really good at parsing them. We know if somebody shows us a map, how to engage, how to interpret it, how to use it. And if somebody just came from another planet, actually they need to learn all those things. How do you represent a road? How do you represent a shop on a map? How do you represent this or that, why do we know that up is north like that&#x27;s a convention. All those kinds of things actually need to be learned and we learned them when we were small. With these kinds of things which the Times and other media outlets are trying to do, we lack all of that collective knowledge and so they&#x27;re having to start from scratch and I think that over a couple of generations actually, they&#x27;ll start to evolve a lot of conventions and people will start to take it for granted. But in a lot of contexts actually you&#x27;re not just going to be given a narrative, you know, just going to be told sort of how some columnist thinks the world is.</p><p id="a5e6ab98-b4b1-4298-b2c4-3340951159c2" class="">Instead, you&#x27;ll actually expect to be given some kind of a model which you can play with. You can start to ask questions and sort of run your own hypotheses in much the same way as somebody who runs a business might actually set up a spreadsheet to model their business and ask interesting questions. It&#x27;s not perfect. The model is certainly that the map is not the territory as they say, but it is nonetheless a different way of engaging rather than just having some expert tell you, oh, the world is this way.</p><p id="ae42991b-0c87-4c97-9025-ac08f7443238" class=""><strong>DAVID:</strong></p><p id="595ce4e5-c524-4116-b608-33cde877b64c" class="">I&#x27;m interested in sort of the shift from having media be predominantly static to dynamic, which the New York Times is a perfect example. They can tell stories on <a href="https://www.nytimes.com/">Newyorktimes.com</a> that they can&#x27;t tell in the newspaper that gets delivered to your doorstep. But what&#x27;s really cool about spreadsheets that you&#x27;re talking about is like when I use <a href="https://products.office.com/en-us/excel">Excel</a>, being able to go from numbers, so then different graphs and have the exact same data set, but some ways of visualizing that data totally clicked for me and sometimes nothing happens.</p><p id="027d67b1-28a7-4ce0-9a18-6b6588d50879" class=""><strong>MICHAEL:</strong></p><p id="d1ad8849-ad2b-4e21-af75-8cb7afe720a0" class="">Sure. Yeah. And we&#x27;re still in the early days of that too. There&#x27;s so much sort of about literacy there. And I think so much about literacy is really about opportunity. People have been complaining essentially forever that the kids of today are not literate enough. But of course, once you actually provide people with the opportunity and a good reason to want to do something, then they can become very literate very quickly. I think basically going back to the rise of social media sort of 10 or 15 years ago, so <a href="https://www.facebook.com/">Facebook</a> around whatever, 2006, 2007 <a href="https://twitter.com/?lang=en">twitter</a> a little bit later, and then all the other platforms which have come along since. They reward being a good writer. So all of a sudden a whole lot of people who normally wouldn&#x27;t have necessarily been good writers are significantly more likely to become good writers.</p><p id="67510485-8b32-4104-91eb-98adf2a68400" class="">It depends on the platform. Certainly, Facebook is a relatively visual medium. Twitter probably helps. I think twitter and text messaging probably are actually good. Certainly, you&#x27;re rewarded for being able to condense an awful lot into a small period. People complain that it&#x27;s not good English, whatever that is. But I think I&#x27;m more interested in whether something is a virtuosic English than I am and whether or not it&#x27;s grammatically correct. People are astonishingly good at that, but the same thing needs to start to happen with these kinds of models and with data visualizations and things like that. At the moment, you know, you have this priestly caste that makes a few of them and that&#x27;s an interesting thing to be able to do, but it&#x27;s not really part of the everyday experience of most people.</p><p id="9c3394de-59cf-44ce-bd20-3017e2a13d92" class="">It&#x27;s an interesting question whether or not that&#x27;s gonna change as it going to in the province of some small group of people, or will it actually become something that people just expect to be able to do? Spreadsheets are super interesting in that regard. They actually did. I think if you&#x27;ve talked to somebody in 1960 and said that by 2018, tens of millions of people around the world would be building sophisticated mathematical models as just part of their everyday life. It would&#x27;ve seemed absolutely ludicrous. But actually, that kind of model of literacy has become relatively common. I don&#x27;t know whether we&#x27;ll get to 8 billion people though. I think we probably will.</p><p id="292702ef-9355-44f3-b035-359be5593bdc" class=""><strong>DAVID:</strong></p><p id="7521a066-c8d5-4f42-b400-b8a4cc64d5be" class="">So when I was in high school I went to, what I like to say is the weirdest school in the weirdest city in America. I went to the weirdest high school in San Francisco and rather than teaching us math, they had us get in groups of three and four and they had us discover everything on our own. So we would have these things called problem sets and we would do about one a week and the teacher would come around and sort of help us every now and then. But the goal was really to get three or four people to think through every single problem. And they called it discovery-based learning, which you&#x27;ve also talked about too. So my question to you is we&#x27;re really used to learning when the map is clear and it&#x27;s clear what to do and you can sort of follow a set path, but you actually do the opposite. The map is unclear and you&#x27;re actually trailblazing and charting new territory. What strategies do you have to sort of sense where to move?</p><p id="85631e6c-3b8b-4741-93e4-5fb18a620c65" class=""><strong>MICHAEL:</strong></p><p id="33be9471-857d-4a10-b22f-55d0cef77522" class="">There&#x27;s sort of a precursor question which is how do you maintain your morale and the <a href="https://en.wikipedia.org/wiki/Robert_M._Pirsig">Robert Pirsig</a> book, <a href="https://www.amazon.com/Zen-Art-Motorcycle-Maintenance-Inquiry/dp/0060589469">Zen and the Art of Motorcycle Maintenance</a>. He proposes a university subject, gumptionology 101. Gumption is almost the most important quality that we have. The ability to keep going when things don&#x27;t seem very good. And mostly that&#x27;s about having ways of being playful and ways of essentially not running out of ideas. Some of that is about a very interesting tension between having, being ambitious in what you&#x27;d like to achieve, but also being very willing to sort of celebrate the tiniest, tiniest, tiniest successes. Suddenly a lot of creative people I know I think really struggle with that. They might be very good at celebrating tiny successes but not have that significant ambitions, but they might be extremely ambitious, but because they&#x27;re so ambitious, if an idea doesn&#x27;t look Nobel prize worthy, they&#x27;re not particularly interested in it. You know, they struggle with just kind of the goofing around and they often feel pretty bad because of course most days you&#x27;re not at your best, you don&#x27;t actually have the greatest idea.</p><p id="a45e13f2-0ada-49b9-b02f-7104a94bdbf4" class="">So there&#x27;s some interesting tension to manage there. There&#x27;s really two different types of work. One is where you have a pretty good goal, you know what success looks like, right? But you may also be doing something that&#x27;s more like problem discovery where you don&#x27;t even know where you&#x27;re going. Typically if you&#x27;re going to compose a piece of music. Well, I&#x27;m not a composer, but certainly, my understanding from, from friends who are, is that they don&#x27;t necessarily start out with a very clear idea of where they&#x27;re going. Some composers do, but a lot, it&#x27;s a process of discovery. Actually, a publisher once told me somebody who has published a lot of well-known books that she described one of her authors as a writing for discovery.</p><p id="e4925196-e662-43fe-9d5c-9c38cf5ee7d6" class="">Like he didn&#x27;t know what his book was going to be about, he had a bunch of kind of vague ideas and the whole point of writing the book was to actually figure out what it was that he wanted to say, what problem was he really interested in. So we&#x27;d start with some very, very good ideas and they kind of get gradually refined. And it was very interesting. I really liked his books and it was interesting to see that. They looked like they&#x27;d been very carefully planned and he really knew what he was doing and she told me that no, he&#x27;d sort of come in and chat with her and be like, well, I&#x27;m sort of interested over here. And he&#x27;d have phrases and sort of ideas. But he didn&#x27;t actually have a clear plan and then he&#x27;d get through this process of several years of gradually figuring out what it was that he wanted to say.</p><p id="86260843-360a-40ca-bc4f-14ecdac68f15" class="">And often the most significant themes wouldn&#x27;t actually emerge until relatively late in that whole process. I asked another actually quite a well-known writer, I just bumped into when he was, he was reporting a story for a major magazine and I think he&#x27;d been working, he&#x27;d been reporting for two weeks, I think at that point. So just out interviewing people and whatever. And I said, how&#x27;s it going? And he said, Oh yeah, pretty good. I said, what&#x27;s your story about? He said, I don&#x27;t know yet, which I thought was very interesting. He had a subject, he was following a person around. But he didn&#x27;t actually know what his story was.</p><p id="37e42075-f164-431d-9875-40b4dc628431" class=""><strong>DAVID:</strong></p><p id="e1ea0f43-76ec-4de8-8592-b74740af134a" class="">So the analogy that I have in my head as you&#x27;re talking about this, it&#x27;s like sculpture, right? Where you start maybe with a big thing of granite or whatnot, and slowly but surely you&#x27;re carving the stone or whatnot and you&#x27;re trying to come up with a form. But so often maybe it&#x27;s the little details at the end that are so far removed from that piece of stone at the very beginning that make a sculpture exceptional.</p><p id="572a2cad-1f8b-4694-b672-42f7005f66ee" class=""><strong>MICHAEL:</strong></p><p id="076cfa86-788e-4507-8fcb-0cc2a7271e1d" class="">Indeed. And you wonder what&#x27;s going on. I haven&#x27;t done sculpture. I&#x27;ve done a lot of writing and writing often feels so sometimes I know what I want to say. Those are the easy pieces to write, but more often it&#x27;s writing for discovery and there you need to be very happy celebrating tiny improvements. I mean just fixing a word needs to be an event you actually enjoy, if not, the process will be an absolute nightmare. But then there&#x27;s this sort of instinct where you realize, oh, that&#x27;s a phrase that A: I should really refine and B: it might actually be the key to making this whole thing work and that seems to be a very instinctive kind of a process. Something that you, if you write enough, you start to get some sense of what actually works for you in those ways.</p><p id="811845a6-20e1-42b4-a875-4c503af561a9" class="">The recognition is really hard. It&#x27;s very tempting to just discount yourself. Like to not notice when you have a good phrase or something like that and sort of contrary wise sometimes to hang onto your darlings too long. You have the idea that you think it&#x27;s about and it&#x27;s actually wrong.</p><p id="cc2f862a-f9b4-4ff3-888a-e7ac524378db" class=""><strong>DAVID:</strong></p><p id="07c1f39f-348b-4ab9-8021-056d5780d022" class="">Why do you write and why do you choose the medium of writing to think through things sometimes? I know that you choose other ones as well.</p><p id="752ecf20-590f-4df5-8181-f2b18301c996" class=""><strong>MICHAEL:</strong></p><p id="e107f29a-7fcd-4b0f-bfb0-07a6831fa7a2" class="">Writing has this beautiful quality that you can improve your thoughts. That&#x27;s really helpful. A friend of mine who makes very popular YouTube videos about mathematics has said to me that he doesn&#x27;t really feel like people are learning much mathematics from them. Instead, it&#x27;s almost a form of advertising like they get some sense of what it is. They know that it&#x27;s very beautiful. They get excited.</p><p id="9175266a-b8a1-442b-bb58-4b6ba3a1fcb1" class="">All those things are very important and matter a lot to him, but he believes that only a tiny, tiny number of people are actually really understanding much detail at all. There&#x27;s actually a small group who have apparently do kind of. They have a way of processing video that lets them understand.</p><p id="f065c408-8ddc-4d87-aec3-4910470883ce" class=""><strong>DAVID:</strong></p><p id="b6a1adfc-2040-4276-8c2e-08e9afe6aee1" class="">Also, I think you probably have to, with something like math, I&#x27;ve been trying to learn economics online and with something like math or economics that&#x27;s a bit complex and difficult, you have to go back and re-watch and re-watch, but I think that there&#x27;s a human tendency to want to watch more and more and more and it&#x27;s hard to learn that way. You actually have to watch things again.</p><p id="b676efb1-462f-4546-baae-cbae12c71417" class=""><strong>MICHAEL:</strong></p><p id="357c8fc3-46d0-4906-8f1a-7aafaf5bee6f" class="">Absolutely. Totally. And you know, I have a friend who when he listens to podcasts, if he doesn&#x27;t understand something, he, he rewinds it 30 seconds.</p><p id="d0f74c52-cdd8-4413-bd0a-0f441ef8fe6e" class="">But most people just don&#x27;t have that discipline. Of course, you want to keep going. So I think the written word for most people is a little bit easier if they want to do that kind of detailed understanding. It&#x27;s more random access to start with. It&#x27;s easier to kind of skip around and to concentrate and say, well, I didn&#x27;t really get that sentence. I&#x27;m going to think about it a little bit more, or yeah, I can see what&#x27;s going to happen in those two or three paragraphs. I&#x27;ll just very quickly skip through them. It&#x27;s more built for that kind of detailed understanding, so you&#x27;re getting really two very different experiences. In the case of the video, very often really what you&#x27;re getting is principally an emotional experience with some bits and pieces of understanding tacked on with the written word. Often a lot of that emotion is stripped out, which makes can make it much harder to motivate yourself. You need that sort of emotional connection to the material, but it is actually, I think a great deal easier to understand sort of the details of it. There&#x27;s a real kind of choice to be to be made. There&#x27;s also the fact that people just seem to respond better to videos. If you want a large audience, you&#x27;re probably better off making YouTube videos than you are publishing essays.</p><p id="3ae6c78b-b3ea-4d33-86b9-693e1cc66b55" class=""><strong>DAVID:</strong></p><p id="2118c483-84b3-4f7c-ba33-f34cf346a857" class="">My last question to you, as somebody who admires your pace and speed of learning and what&#x27;s been really fun about preparing for this podcast and come across your work is I really do feel like I&#x27;ve accessed a new perspective on the world which is really cool and I get excited probably most excited when I come across thinkers who don&#x27;t think like anyone who I&#x27;ve come across before, so I&#x27;m asking to you first of all, how do you think about your learning process and what you consume and second of all, who have been the people and the ideas that have really formed the foundation of your thought?</p><p id="ec61bb04-da4d-461d-a1c3-4f72d92d6884" class=""><strong>MICHAEL:</strong></p><p id="a6f1326c-fe35-45b0-853f-e1a4492d6921" class="">A <a href="https://en.wikipedia.org/wiki/Kurt_Vonnegut">Kurt Vonnegut</a> quote from his book, I think it&#x27;s <a href="https://www.amazon.com/Cats-Cradle-Novel-Kurt-Vonnegut/dp/038533348X">Cat&#x27;s Cradle</a>. He says, we become what we pretend to be, so you must be careful what we pretend to be and I think there&#x27;s something closely analogously true, which is that we become what we pay attention to, so we should be careful what we pay attention to and that means being fairly careful how you curate your information diet. There&#x27;s a lot of things. There&#x27;s a lot of mistakes I&#x27;ve made. Paying attention to angry people is not very good. I think ideas like the filter bubble, for example, are actually bad ideas. And for the most part, it sounds virtuous to say, oh, I&#x27;m going to pay attention to people who disagree with me politically and whatever. Well, okay, there&#x27;s a certain amount of truth to that. It&#x27;s a good idea probably to pay attention to the very best arguments from the very best exponents of the other different political views.</p><p id="2cea4a4b-20f1-48dd-9d03-0144665623de" class="">So sure, seek those people out, but you don&#x27;t need to seek out the random person who has a different political view from you. And that&#x27;s how most people actually interpret that kind of injunction. They, they&#x27;re not looking for the very best alternate points of view. So that&#x27;s something you need to be careful about. There&#x27;s a whole lot of things like that I enjoy. So for example, I think one person, it&#x27;s interesting on twitter to look, he&#x27;s, he&#x27;s no longer active but he&#x27;s still following people is <a href="https://en.wikipedia.org/wiki/Marc_Andreessen">Marc Andreessen</a> and I think he follows, it&#x27;s like 18,000 people or something and it&#x27;s really interesting just to look through the list of followers because it&#x27;s all over the map and much of it I wouldn&#x27;t find interesting at all, but you&#x27;ll find the strangest corners people in sort of remote villages in India and people doing really interesting things in South Africa. Okay. So he&#x27;s a venture capitalist but they&#x27;re not connected to venture capital at all. So many of them, they&#x27;re just doing interesting things all over the world and I wouldn&#x27;t advocate doing the same thing. You kind of need to cultivate your own tastes and your own interests. But there&#x27;s something very interesting about that sort of capitalist city of interests and curiosity about the world, which I think is probably very good for almost anybody to cultivate. I haven&#x27;t really answered your question.</p><p id="6febe554-c128-4031-9549-57cde7950e12" class=""><strong>DAVID:</strong></p><p id="f3fbcfee-b677-42ef-b55c-186bd0b14fa5" class="">I do want to ask who were the people or the ideas or the areas of the world that have really shaped and inspired your thinking because I&#x27;m asking selfishly because I want to go down those rabbit holes.</p><p id="773e955b-d6ef-4162-9b9e-9fbffc187eb8" class=""><strong>MICHAEL:</strong></p><p id="d8c49348-825d-4d2f-b971-bce88fdd0658" class="">Alright. A couple of people, <a href="https://en.wikipedia.org/wiki/Alan_Kay">Alan Kay</a> and <a href="https://en.wikipedia.org/wiki/Douglas_Engelbart">Doug Engelbart</a>, who are two of the people who really developed the idea of what a computer might be. In the 1950&#x27;s and 60&#x27;s, people mostly thought computers were machines for solving mathematical problems, predicting the weather next week, computing artillery tables, doing these kinds of things. And they understood that actually there could be devices which humans would use for themselves to solve their own problems. That would be sort of almost personal prosthetics for the mind. They&#x27;d be new media. We could use to think with and a lot of their best ideas I think out there, there&#x27;s still this kind of vision for the future. And if you look particularly at some of Alan Kay&#x27;s talks, there&#x27;s still a lot of interesting ideas there.</p><p id="d7924c8e-cb5b-4cdf-ba7b-2a7557f21bdb" class=""><strong>DAVID:</strong></p><p id="e66cb444-38c0-46fa-a40b-a09880e32fa2" class="">That the perspective is worth 80 IQ points. That&#x27;s still true.</p><p id="97ce4713-9907-4fb3-b624-efeb2f6f054e" class=""><strong>MICHAEL:</strong></p><p id="5eb75f9d-bef5-4ba1-a397-e960cc66831d" class="">For example, the best way to predict the future is to invent it, right? He&#x27;s actually, he&#x27;s got a real gift for coming up with piddly little things, but there&#x27;s also quite deep ideas. They&#x27;re not two-year projects or five-year projects, they&#x27;re thousand year projects or an entire civilization. And we&#x27;re just getting started on them. I think that&#x27;s true. Actually. It&#x27;s in general, maybe that&#x27;s an interesting variation question, which is, you know, what are the thousand year projects? A friend of mine, Cal Schroeder, who&#x27;s a science fiction writer, has this term, The Project, which he uses to organize some of his thinking about science fictional civilizations. So The Project is whatever a civilization is currently doing, which possibly no member of the civilization is even aware of.</p><p id="21545ffc-69cb-4d09-98c3-a77305756607" class="">So you might ask the question, what was the project for our planet in the 20th century? I think one plausible answer might be, for example, it was actually eliminating infectious diseases. You think about things like polio and smallpox and so many of these diseases were huge things at the start of the 20th century and they become much, much smaller by the end of the 20th century. Obviously AIDS is this terrible disease, but in fact, by historical comparison, even something like the Spanish flu, it&#x27;s actually relatively small. I think it&#x27;s several hundred million people it may have killed. Maybe that was actually the project for human civilization in the 20th century.</p><p id="5f1956f6-f244-4540-83c1-e1c10db53154" class="">I think it&#x27;s interesting to think about those kinds of questions and sort of the, you know, where are the people who are sort of most connected to those? So I certainly think Doug Engelbart and Alan Kay.</p><p id="ec429de4-f331-4241-a690-bf09224a73ab" class=""><strong>DAVID:</strong></p><p id="b483696a-2a58-49b1-9595-5146b37c2e02" class="">Talk about Doug Engelbart, I know nothing about him.</p><p id="dd4247c5-a8e3-4958-819e-179acb2dec05" class=""><strong>MICHAEL:</strong></p><p id="46252cc1-d13a-49a5-9724-07b1f8ecdd80" class="">So Engelbart is the person who I think more than anybody invented modern computing. He did this famous demo in 1968, 1969. It&#x27;s often called the mother of all demos, in front of an audience of a thousand people I believe. Quite a while since I&#x27;ve watched it and it demonstrates a windowing system and what looks like a modern word processor, but it&#x27;s not just a word processor. They&#x27;re actually hooked up remotely to a person in another location and they&#x27;re actually collaborating in real time. And it&#x27;s the first public showing I believe of the mouse and of all these different sorts of ideas.</p><p id="c2678812-f42c-4957-bcb2-ed8d6af2ef5c" class="">And you look at other images of computers at the time and they&#x27;re these giant machines with tapes and whatever. And here&#x27;s this vision that looks a lot more like sort of Microsoft Windows and a than anything else. And it&#x27;s got all these things like real-time collaboration between people in different locations that we really didn&#x27;t have at scale until relatively recently. And he lays out a huge fraction of these ideas in 1962 in a paper he wrote then. But that paper is another one of these huge things. He&#x27;s asking questions that you don&#x27;t answer over two years or five years. You answer over a thousand years. I think it&#x27;s <a href="https://web.stanford.edu/dept/SUL/library/extra4/sloan/mousesite/EngelbartPapers/B5_F18_ConceptFrameworkInd.html">Augmenting Human Intellect</a> is the title of that paper. So he&#x27;s certainly somebody else that I think is a very interesting thinker.</p><p id="4e5f0c53-3fe9-49a4-9e0f-50e84840b555" class="">There&#x27;s something really interesting about the ability to ask an enormous question, but then actually to have other questions at every scale. So you know what to do in the next 10 minutes that will move you a little bit towards that, you know what to do in the next week. You also know what your job is for the next thousand years. Actually, I think <a href="https://en.wikipedia.org/wiki/Elon_Musk">Elon Musk</a>&#x27;s (<a href="http://www.perell.com/blog/2016/9/3/the-magic-of-elon-musk">my article on the magic of Elon here</a>) vision of settling Mars is an interesting one. And maybe even potentially eventually terraforming it. That&#x27;s not a five-year project. That&#x27;s another big one. Well, even better making your humans an interplanetary species. That&#x27;s an interesting sort of large-scale project.</p><p id="3cd5e929-4b5d-4e54-bb17-d915afc90a32" class=""><strong>DAVID:</strong></p><p id="8fa9f632-cd53-4072-a27f-ea078a6a58c9" class="">So I have to ask if you don&#x27;t want to answer this question, that&#x27;s fine. Do you have a hypothesis for the 21st-century project?</p><p id="3cda1684-8eb9-40e8-85c0-868532738fc9" class=""><strong>MICHAEL:</strong></p><p id="0096bb4f-70f4-4d6e-81b8-e1455538edd9" class="">All right, so a very obvious answer that I don&#x27;t want to go down is to say it&#x27;s artificial general intelligence or let&#x27;s just rule that out. I think a more interesting answer. Let me give you the boring version of the more interesting answer. First, I want to say something about cryptocurrency, that the most interesting ideas around that have to do with finding new ways. I mean, what a new type of financial instrument ideally will allow people to do is to coordinate in a way that was not previously possible. So in 1471, there&#x27;s the invention of modern maritime insurance and that enabled all sorts of exploration to take place that wasn&#x27;t funnily possible, basically because it allowed people to pool risks. So as an investor you weren&#x27;t going to lose everything you own if the ship didn&#x27;t come back, instead you&#x27;d take a small loss and it was okay. So modern maritime insurance was this just wonderful invention.</p><p id="57a22b52-f44a-480f-bc52-3e847d1e8f47" class="">I believe it&#x27;s true that there&#x27;s probably just an enormous number of such similarly sized, similarly important financial instruments waiting to be discovered. Historically, it&#x27;s been very hard to deploy a new financial instrument. You need lots of centralized infrastructure. Basically, you needed to run a bank. And that&#x27;s, to me anyway, potentially the most interesting thing about having truly decentralized currencies, which are fully programmable, is the ability for individuals who are not CEOs of banks to devise new financial instruments. And just start deploying them at scale. So an example of one that I very much like is due to <a href="https://en.wikipedia.org/wiki/Alex_Tabarrok">Alex Tabarrok</a>, it&#x27;s called the dominant assurance contract. It&#x27;s basically an idea. It&#x27;s sort of <a href="https://www.kickstarter.com/">Kickstarter</a> on steroids. So it&#x27;s a little bit complicated. In Kickstarter, as I&#x27;m sure you know, you have this situation where if you don&#x27;t get your project funded to a particular level, everybody gets their money back and what Tabarrok proposed doing was really a sort of a much more extreme version of that.</p><p id="5f4c43aa-4877-426f-adf7-1f80880dc3a2" class="">He proposed to set up a situation where, let&#x27;s say you want to fund, I don&#x27;t know, let&#x27;s say a public swimming pool somewhere, and let&#x27;s say there&#x27;s the swimming pool is going to cost $400,000. Where you run this sort of, this dominant assurance contract, a kind of Kickstarter++, to raise $500,000. So you&#x27;re going to get $100,000 bounty on top. But if it does not succeed, if you don&#x27;t get people invested at that level, you give back and there&#x27;s an extra premium which you give back to the people who bought in initially. So the first person to put up 10 bucks might actually get $13 back. As you get closer to the $500,000 threshold, of course, people basically just get back whatever they put in and it&#x27;s designed to incentivize people to make this actually work.</p><p id="2d6fb119-f5b9-4a07-9220-ea9a729bdc2d" class="">You actually set up a fully functioning market basically. People are now incentivized to provide public goods like swimming pools because they can potentially make a profit if it fails, but also people outside, you know, are incentivized to find things which are going to fail and invest in them actually increasing the likelihood that they will succeed. So you&#x27;ve set up this very interesting mechanism. It&#x27;s basically Kickstarter. But I think if all the incentives are appropriately designed, it&#x27;s probably likely to be significantly more effective at funding certain types of goods. I mean, it&#x27;s never been tried at scale. The key point is that some of these cryptocurrencies actually potentially make it very easy to implement marketplaces like this. And that kind of thinking, it&#x27;s plausible to me anyway that the 21st century, maybe that&#x27;s what it turns out to be about. It&#x27;s about actually inventing new types of markets. Which is really a means of inventing new types of collective action. Anyway, do I believe that? Not sure. That&#x27;s a good science fiction novel. Anyway.</p><p id="8b43bf49-c34a-47d3-b3a2-c12f269ea12f" class=""><strong>DAVID:</strong></p><p id="6788b391-4e81-4a44-9cdb-08c3c70224ec" class="">Well, Michael Nelson, thank you so much for coming on the podcast.</p><p id="1808c45c-041b-4c76-85c3-a5062ed0a7f6" class=""><strong>MICHAEL:</strong></p><p id="152edcea-c2c1-4ca0-a6e6-38b642082196" class="">Thanks, David.</p><p id="1623dbbf-2a21-48ec-af08-97a44d57d6e3" class="">Hey again, it&#x27;s David here. You can support the North Star Podcast by leaving us a review on <a href="https://itunes.apple.com/us/podcast/north-star-podcast/id1170914572?mt=2">iTunes</a>, or you can share the podcast on <a href="https://twitter.com/?lang=en">Twitter</a> or Facebook.</p><p id="62918212-23fa-4a58-99c2-e006181c0597" class="">To keep up with the show, <a href="http://perell.com/join">subscribe to my mailing list.</a></p><p id="477316a4-3f47-41b1-af07-303c5293c1e7" class=""><a href="http://www.perell.com/work/">North Star Media</a> helps companies build brands on the Internet. Through blog posts, books, videos, and podcasts, like this one, we build trust and generate attention.</p><p id="7f43d115-8de8-48c2-ad4e-4a88abdc48ed" class="">If you would like to learn more about North Star Media, you can visit my website, perrell.com, or connect with me directly on <a href="https://twitter.com/david_perell">Twitter at @david_perrell</a>. If you enjoyed this episode, you&#x27;ll also liked the episode with <a href="http://www.perell.com/podcast/tyler">Tyler Cowen</a>, who writes about economics, technology, and culture. In that episode, Tyler shares some seriously counterintuitive points on travel, the millennial generation and how he thinks about learning and the future.</p></div></article></body></html>

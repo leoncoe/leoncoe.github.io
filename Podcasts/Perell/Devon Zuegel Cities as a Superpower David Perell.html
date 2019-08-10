@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Devon Zuegel: Cities as a Superpower — David Perell</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="8024055f-4b4f-431b-a0d5-7a8c23459c7c" class="page sans"><header><h1 class="page-title">Devon Zuegel: Cities as a Superpower — David Perell</h1></header><div class="page-body"><p id="8e0372cb-7dcd-425c-978d-119b5d228b2b" class="block-color-gray"><a href="https://www.perell.com/podcast/devon-zuegel">https://www.perell.com/podcast/devon-zuegel</a></p><p id="b17a7870-fa8e-4607-908b-bbd0e66a85b3" class="">
+</p><figure id="2cb57593-f2b8-41e3-a582-45df37236422" class="image"><a href="https://static1.squarespace.com/static/55576406e4b02e4679105dc2/5814e6a96b8f5b0e59aed181/5b769050758d466a5614b1b6/1539353789573/Devon.jpg?format=1500w"><img src="https://static1.squarespace.com/static/55576406e4b02e4679105dc2/5814e6a96b8f5b0e59aed181/5b769050758d466a5614b1b6/1539353789573/Devon.jpg?format=1500w"/></a></figure><p id="56d7ce43-0d53-40ed-b12f-5d7440a3b8d9" class="">My guest today is Devon Zuegel, a writer of code and writer of words who spends her time unlocking human potential through incentive design and tools for thought and cities. In this conversation, we jump from coordination problems to urban planning to travel to architecture. We compare cities like Singapore and San Francisco and talk about the power of urban density and architecture to make us happier and healthier. Then, we talk about writing, specifically the three tiers of common knowledge, how to find good ideas, and the concept that Devon calls playing chess with yourself.</p><p id="60577013-9f88-4b8d-b9e0-68dfff7ae108" class="">One thing sticks out from this podcast and other conversations with Devon. Above all else, Devon lives in obsessive pursuit of high leverage ways to spend her time and energy. In the past, that’s led her to computer science and in the future, I suspect it will lead her to cities and infrastructure. Why cities? Devon offers an excellent answer. Cities are big enough to have real importance in the world and small enough to be nimble and somewhat understandable and there are a lot of cities. You can actually hope to make some comparisons in a way that you can’t really do with countries.</p><p id="f415249f-c626-4d34-bd8e-9ddd6b4c1101" class="">Please enjoy my conversation with Devon Zuegel.</p><figure id="a14001d4-a1a3-4795-ad61-cf90f9dd6138" class="image"><a href="Devon Zuegel Cities as a Superpower David Perell/DgAolrIUEAEZUzi.jpg"><img style="width:700px" src="Devon Zuegel Cities as a Superpower David Perell/DgAolrIUEAEZUzi.jpg"/></a></figure><h3 id="748bb6d9-bc51-421b-9f0b-345dcebd7c87" class=""><strong>Links</strong></h3><p id="cb5f8f8c-6d76-4ca0-ad6e-108a4806816e" class=""><strong>Devon’s articles related to this episode:</strong></p><p id="a9f5dec4-bab5-404f-9b06-f31421f104a2" class="">2:03 Devon on coordination problems and the problems they’ve caused, such as climate change and housing issues, and how clever solutions to these problems are the reason humans have progressed so much in the past hundreds of years</p><p id="05429c40-4bc3-4ee4-b4db-bdbeb0307d63" class="">6:19 Human cognition and thought as it is augmented by media, cities and blockchains and the benefits of this augmentation</p><p id="b2457691-aa23-47b9-b02b-a2c38cc7ed8e" class="">8:10 The most classic tool for thought and why it’s such a catalyst for healthy and productive cognition, long term and short term memory function and increased IQ</p><p id="7ff24f49-3ca7-4c58-81b4-27bc48ea4c26" class="">16:41 Devon’s writing process and why she defines it as playing chess with herself</p><p id="1bdf7328-8f89-4b19-b4bc-f1e26614340b" class="">17:45 How Devon has been able to get her writing to flow and the three categories of topics available to write about, common knowledge, obscure knowledge and the intersection in the middle</p><p id="fb956b04-a6ad-4968-a8bd-847318ae7c25" class="">20:17 Devon’s theory of on why people in San Francisco are so flaky in comparison to sister cities like Chicago, Los Angeles and New York City</p><p id="3b4c2bd6-6a73-4b3e-ada5-4b9c2f39eab2" class="">28:16 How Devon chooses what rabbit holes she wants to go down prior to writing an article and how to make most topics interesting by creating a model around the idea</p><p id="59634374-7711-443c-bcc2-084db10fcd77" class="">32:25 What makes Singapore so interesting to Devon, in regards to history, culture, GDP growth, etc. and her major observations after visiting the country</p><p id="0652a221-525e-45a3-93a8-a091c5495f83" class="">47:20 The moment Devon became aware of the effect of architecture and how it can make employees less involved with their colleagues by not promoting micro-interactions</p><p id="6d8f894a-ab22-4fbf-a2ae-605be56fedbc" class="">50:53 The five metrics that a house should be described with, that are never used, when being promoted on websites like Airbnb, Zillow, Craigslist, etc.</p><p id="571a7e3d-a9a3-4915-b11d-f4037f08880b" class="">57:00 Devon chooses the three metrics that she’d pick when it comes to the city she lives in and the home she’s living in for maximum interaction, convenience and mental economy</p><p id="0c6e4a9d-dc69-47c2-be05-bd76d3c349ae" class="">1:03:16 <em>Algorithms To Live By</em> and why Devon sees it as the best self help book she’s ever read, despite it not being a self help book</p><p id="779e2653-f44d-4ab8-91b2-ca7e32682e6c" class="">1:05:37 Devon’s opinion on Georgism and how people talk about economics as a spectrum from capitalism to socialism or communism and the third category of economic goods that it doesn’t touch upon</p><p id="343f59b7-685b-4a80-a498-12e4ed4f2882" class="">1:07:30 Devon’s changing opinions and her epistemic status placed on each of her blog posts written with a strong opinion</p><p id="040c2edb-42c3-41d7-904c-16c9d78386a6" class="">1:10:03 Devon’s philosophy of travel and why she views it as scale free regardless of how many or little places you visit</p><p id="7aa066e2-4d32-4bdc-b9e5-d6a83d7e4604" class="">1:11:51 Devon’s philosophy of productivity and how she writes down dozens of notes and uses long form emails to repurpose her ideas into publishable articles</p><h3 id="3cd46988-ded2-41e2-a745-7418b91dcc1c" class=""><strong>Quotes</strong></h3><p id="e36a77f4-b259-4c3f-b12a-aaec1bac7d21" class=""><em>“I am very interested in coordination problems. I think that they explain a lot of the problems that we see in the world, everything from climate change to nuclear disarming to issues in cities to making it so that people can actually live where they are the most productive to housing policy. I could go on and on. The solution to coordination problems is incentive design, and clever solutions that are some of the reason humans have been able to progress to the extent they have throughout the past few hundred years.”</em></p><p id="c06a8b06-0b8b-4de8-8677-08916c4a47df" class=""><em>“The most classic tool for thought, and one that I think we tend to take for granted, is writing. Most people think of writing as a way to communicate ideas that they’ve had in their head to other people. Obviously, it does serve that purpose and people sell books for a reason. But, I think it goes way beyond that.”</em></p><p id="0a593792-ec07-44fc-a8bb-cad1a09f3122" class=""><em>“In the last year, I have found that writing has gotten a lot easier for me. There’s probably a lot of reasons for this but I think the core is that I realized there are three categories of topics you can write about. There’s the stuff that everybody knows that is trivial to write about because it’s easy. On the other end, there’s stuff that nobody knows yet or nobody around you knows yet, so it takes a lot of time to figure it out and it takes a lot of research. Now, there’s this middle area between common knowledge and really obscure knowledge of stuff that you have a unique perspective on because of where you happen to be in life and you understand it so intuitively that you can just talk, think and write about it fluidly. But, a lot of people don’t know it yet. That’s the sweet spot.”</em></p><p id="a73279e0-5750-4ff5-afc8-a61946a3b861" class=""><em>“For me, it’s very important that I can walk places. Walking is a way to interact with your community in these small ways, every single day. The way people get comfortable in a place and in a social group is not through one really intense interaction, but through a bunch of smaller ones where you see things from different angles. You experience, what does my neighborhood looks like on a sunny day, on a cloudy day, or when I’m tired. These tiny, trivial things help you understand, much better, how things function. You get to know the vibe so much better and you meet people you wouldn’t meet if you were in an Uber.”</em></p><p id="a9c541fb-9b2f-495c-87e0-8980f0d1bc80" class=""><em>“Algorithms To Live By is the best self help book I’ve ever read and it’s not intended to be a self help book, it’s intended to be an algorithmic look at certain problems that people see day to day. But, it helps me frame certain problems that I personally run into in terms of the algorithmic complexity. I realized the stress that I was feeling about certain things I was worrying about, were actually totally rational.”</em></p><h2 id="0b12e1dd-139d-4988-8e2d-fb17c13352c6" class="">TRANSCRIPT</h2><p id="e92a850c-bdfe-4ad2-ab91-1064a969f144" class=""><strong>DEVON:</strong></p><p id="8f32a101-8ffa-43d8-9359-d3d32d2b9cda" class="">I am very interested in coordination problems. I think that they explain a lot of the problems that we see in the world. Everything from climate change to nuclear disarmament to issues in cities and making it so that people can actually live in where they&#x27;re the most productive, in housing policy. Well, I could go on and on and on with the list. So the solution to cooperation problems is incentive design. And I think clever solutions to incentive design are some of the reasons why humans have been able to progress to the extent that they have throughout the last few hundred years. So a primary example is contract law, it makes it possible for people to trust one another. Other examples are the development of risk and the concept of commodifying the risk.</p><p id="bc1f3e6e-55b9-4c50-9141-107635682aa6" class=""><strong>DAVID:</strong></p><p id="bbdd89b2-7619-47f3-9670-666e4c0cbb29" class="">I was having a conversation yesterday in another podcast and the guest was saying that in 1471, what happened was people were able to pool maritime risk. And what happened was it let big expansive ship voyages happen because you could pull risks together. And so if you invested in a ship and say that ship broke down, then you wouldn&#x27;t lose all your money. And by pooling risk and by coming up with new financing and coordination solutions, you could do things that weren&#x27;t previously possible. I thought that was really interesting.</p><p id="a91a401a-2c94-4def-9a2f-29b381ac5386" class=""><strong>DEVON:</strong></p><p id="9f29c7a7-579a-4fe6-ae74-23f3a5a15c37" class="">Totally. That&#x27;s a great example. Actually. Old maritime risk looks a lot like venture capital today wherein venture a lot of things fail. A lot of things fail spectacularly. But if you can spread out that risk across a whole pool of investments, it only takes a few to like really, carry the whole fund. In the case of maritime investments, a lot of the ships broke down, they had problems. But if one ship came back with a whole load of goods that could repay all of the rest of the costs. However, most, most investors back then couldn&#x27;t take that risk because most of them would have failed. They might&#x27;ve lost all their money before they hit that one big one. And so by the development of that maritime risk, they were able to get past that sort of short-term problem and to get into the run longer returns.</p><p id="ef255f89-1766-4513-9405-695c7388b814" class="">I think that&#x27;s a really good metaphor for all sorts of problems that we run into wherein the short term it&#x27;s rational to do a thing that is not as interesting, that it&#x27;s not as lucrative, but it&#x27;s also not as risky. But if we&#x27;re able to coordinate as a society, as a company or whatever level you want to talk about. So one more concrete example to bring it down from like highfalutin, venture capital and maritime risk, you could just look at cooperation problems as simple as when you&#x27;re dating someone for the first time, there&#x27;s that standard wait three days until you text them back after you met them because you want to come off as cool. You don&#x27;t want to come off as desperate, right? But if you really like each other, like all this is going to signal is that you don&#x27;t like them very much.</p><p id="62ab99f0-85cb-4292-bf28-49d6b54d3815" class="">And that may be rational for you because you don&#x27;t want to come off as desperate. But if you&#x27;re both doing that, you end up with an outcome where it seems like you don&#x27;t like each other very much and it takes a really long time to actually realize that you do. Ideally, you would have some neutral trustable third party who could be a person A, person B, out Alice and Bob like you both like each other. You told me that you liked each other, just go for it. You know, have fun. And I think a lot of healthy relationships that I&#x27;ve seen have actually started in this way because of some small quirk at the very beginning. It can be super useful, but a lot of the pain that I see my friends going through when they date is literally just the result of playing games because rationally, you&#x27;re supposed to. It&#x27;s basically a prisoner&#x27;s dilemma. And so if you can have someone who forces you into the correct quadrant where everyone is better off, that&#x27;s much better.</p><p id="8cefc75f-29ce-4f9b-a228-d541978fdfe5" class=""><strong>DAVID:</strong></p><p id="63fe8b96-9f13-44d5-9f6c-6238e35a5186" class="">So then let&#x27;s jump into sort of human cognition and human thought. Maybe begin with media. What interests you? Sort of when I think of where this conversation is going to go today. So much of it is about augmentation, right? Like cities augmenting the potential for humans interact and making that so much easier. And blockchain augmenting human coordination is making that easier. And then here with thought and having tools, augmenting human thoughts and letting us go places that we probably wouldn&#x27;t be able to go if we were stuck in the mountains on our own.</p><p id="8b357c82-7b40-4eed-9ed0-b792e39cdff4" class=""><strong>DEVON:</strong></p><p id="2b724337-74cf-4dfe-99ee-aec3b2ae9c1c" class="">I think the underlying reason I&#x27;m interested in incentive design is because it allows us to unlock human potential and allows people to do much cooler stuff that makes them happier, healthier, makes life more worth living. I see ways to augment our cognition as serving that same purpose though from a different angle. The umbrella term that people sometimes give this is tools for thoughts and we have basically the same brains that we and our ancestors had thousands of years ago, but we&#x27;re able to do so much more. Part of that is because we&#x27;ve developed incentive design. The other reason is because we&#x27;ve developed tools for giving our cognition more leverage. And I use the term leverage actually very specifically. You can only get so strong no matter how much you lift. How once you go to the gym, like you&#x27;re still not going to be an order of magnitude stronger.</p><p id="e76cc0ed-7789-482d-a47c-e794c89890a1" class="">You&#x27;re definitely not going to be two orders of magnitude stronger. However, if you design an engine, if you just even add a lever that gives you that leverage, you can do so much more with your muscles. I see that that translates directly to your brain. The most classic tool for thought and one that I think we tend to take for granted is writing. Most people think of writing as a way to just communicate ideas that they&#x27;ve had in their head to other people. It obviously does serve that purpose. People sell books for a reason, but I think it goes way beyond that. So one thing that writing does for you is it expands your working and your long-term memory. With the long-term memory, it&#x27;s pretty obvious. You take notes, maybe you don&#x27;t remember all the details, but you can look them up later.</p><p id="b9a267c2-85f5-4e07-81c8-e14731ff027c" class=""><strong>DAVID:</strong></p><p id="679e2264-1c5f-41a1-8dcf-98f112610b0f" class="">To your point, even today I was writing something this morning and I wrote something that I wrote about a year ago and I have no recollection of writing it and I read it and I was like, wow, that&#x27;s actually pretty smart and it really helped me, but I think to your point, there&#x27;s a permanent element of writing and being able to sort of work through sentences and craft them, makes it so that you can achieve thoughts because of the repetition and the sort of tweaking and editing of writing that you can&#x27;t do if you&#x27;re just speaking like we are right now.</p><p id="93e65acb-2420-4a16-bffc-99dbbcad65e6" class=""><strong>DEVON:</strong></p><p id="749fa79b-0ad4-4194-85ce-6faf8ed244e5" class="">100 percent. And I&#x27;ve also had that experience more times than I can count of like coming across something I&#x27;ve written and being like, oh, this is interesting, I wrote that. That came out of my brain. And as long as you have enough of a pointer to that idea that you can find it when it&#x27;s necessary, or it gets surfaced by accident because you happen to open up an old notebook. That&#x27;s extremely powerful. It makes you much better at remembering. I think even more importantly, a writing helps you with your short term memory, your working memory. There have been a lot of studies showing that a working memory is one of the highest things correlated with IQ and the ability to solve problems.</p><p id="051e7c10-3a66-4869-90d3-7bfe5b5b0d3a" class="">And I think the reason for this is because if you have good working memory, you can hold a lot of state in your head and you can sort of fiddle with that state. You can hold contradictory but potentially correct ideas and outcomes in your head while you work through the problem. And then they collapse into one at the end.</p><p id="d6d8cd58-aa99-442e-bf8b-44c42aaba046" class=""><strong>DAVID:</strong></p><p id="08193210-e640-485b-9527-2861113d683c" class="">Describe state real quick for someone who doesn&#x27;t have the computer vocabulary that you do.</p><p id="0d59c3d7-b721-4479-8fe3-da0f40f5624f" class=""><strong>DEVON:</strong></p><p id="02b9234e-236d-4341-aed0-47aa6c3440e9" class="">So state is what is the current status of the world right now. Let&#x27;s say you&#x27;re working through a personal problem and with your family or something, and you want to go through step by step and sort of understand the implications of what different people have done. You&#x27;re getting the story from different friends, like maybe you&#x27;re helping reconcile like your aunt and your uncle or something like that, having marital problems and you want to understand how they got to that point and how, given where they are right now at that point, like how different changes result in better or worse outcomes. Understanding the current state of the situation and then like fiddling with it and being able to hold all of those sort of partial computations in your head are really important to be able to compare them and to be able to move forward and find a solution.</p><p id="d14f3b4e-1ea5-45fa-ad8b-62017be0280d" class=""><strong>DAVID:</strong></p><p id="38941dc7-2c3b-4c68-8769-3255be9f84d9" class="">So you&#x27;re saying that writing and sort of computers at large now help us hold more state so then we can move on to higher-order tasks that perhaps aren&#x27;t memory, that our brains are really well suited for.</p><p id="f4a7ef0d-e7ef-4ede-acb0-a5b0f0824943" class=""><strong>DEVON:</strong></p><p id="9cdee3c5-6905-4f57-a25f-a80c2fc2ead1" class="">Exactly. And they&#x27;re more interesting. And working memory can kind of provide abstractions. I think the best metaphor for working memory or external working memory is like scratch paper, that there&#x27;s a reason why math teachers always tell you, feel free to use as much scratch paper as you want. That&#x27;s not just because they hate trees and they want to waste all paper. It&#x27;s because being able to externalize that process is really, really helpful. Offload is the perfect word.</p><p id="5418a040-0a30-4138-8c27-ad433ccbba55" class=""><strong>DAVID:</strong></p><p id="603497b2-2ccc-4477-b491-524d19613492" class="">So back to writing.</p><p id="e2bb3c83-b058-4ab8-81fa-1a115c5b128d" class=""><strong>DEVON:</strong></p><p id="5fb5d736-77e4-467e-ad76-610d1315bda6" class="">I think it actually goes even much further than memory. With writing, it is fundamentally the process of externalizing an idea which allows you to play with it in ways that I don&#x27;t think are so easy when it&#x27;s in your head. I&#x27;m certainly not capable of it. Writing things down can reduce the amount of ego that you have as you fiddled with an idea. Maybe I&#x27;m just crazy, but when I wrote them down and almost pretend like the person who wrote that wasn&#x27;t me, it was like, that&#x27;s past Devon or someone else entirely. I can detach myself from it much more in a way where, when I am a thinking through something just in my head and lying in bed wondering. I&#x27;m not going to be as rigorous about it. Now that&#x27;s not strictly worse. There are other things like everyone has great thoughts in the shower for instance. It&#x27;s very common. But it doesn&#x27;t serve all purposes, especially if you&#x27;re trying to vet and find the nooks and crannies of an idea. When you write it down, when an idea has inconsistencies or gaping holes, they are clear and right in the face when it&#x27;s written down in a way that is just so easy to gloss over when they&#x27;re in your head.</p><p id="9f4de1e5-ca8a-4455-80dd-bfc7eabb4e6b" class=""><strong>DAVID:</strong></p><p id="513b27f2-f453-4cdf-807c-1b60e058e3e7" class="">And also when you&#x27;re speaking, you can sort of gloss over some of the inconsistencies with emotion, right? If I speak really deeper and confident with what I&#x27;m saying, actually there&#x27;s an element of trust there. It was really funny. So we had a meetup in Queens a couple of weeks ago and my buddy goes on <a href="https://www.snapchat.com/">Snapchat</a> stories and he goes really confidently, coming to the meetup and he goes &quot;Did you know that the reason it&#x27;s called Queens is because <a href="https://en.wikipedia.org/wiki/Elizabeth_II">Queen Elizabeth</a> came to New York in 1754?&quot; and you&#x27;re sitting there being like &quot;Man, you know, why are you being so smart here?&quot; And then he finishes the thing and he goes &quot;Well, I just made that up, but you believe me because I said it so confidently.&quot; So what writing does is it strips out the emotion out of a form of communication and it allows logic to take over emotion.</p><p id="dddcb7b6-0c5a-461a-9472-f7c2e83d71c0" class=""><strong>DEVON:</strong></p><p id="87634ed5-7632-405e-8e09-6bc25cb52709" class="">Right. And it allows you, it gives you something like almost physical to move around and change. I&#x27;m a really big believer that constraints are actually a good thing in your thinking because if you&#x27;re completely working in a vacuum, you have nothing to push off of. You have no feedback cycles. Whereas if you can just get a draft onto the page, you can fiddle around with it so much more. And I find that writing that draft in the first place, that&#x27;s usually the hardest part, but once I have something to work off of, it gets much, much easier. It helps you find implications that you didn&#x27;t realize there were, which again, I don&#x27;t fully understand like the cognitive science behind why this is. But by putting it on the page, you start seeing these almost trails in your head of like, given this, given I said this, what are the implications there?</p><p id="7e1446b1-9462-4d2b-8b36-a2d5098e8a93" class="">And you can actually follow those trails and like come back to them after you&#x27;ve written them down and realize, oh, this thing does have an implication I hadn&#x27;t considered. One of my favorite things to do when I&#x27;m writing is just looking up synonyms for words. And the reason is not just to make myself sound smarter. Though, that&#x27;s always a plus. But much more importantly is that by looking up synonyms, you can think about which words don&#x27;t make sense here. Even though they are technically synonyms. And why they don&#x27;t make sense and analyzing that is extremely useful. It&#x27;s sort of a generator function for coming up with new ideas. Similarly, I think choosing the right word is also really important. Words come with such heavy connotation that picking the right one can be the difference between concepts really striking home and like feeling kind of flat.</p><p id="140f23a8-d813-4c90-86b3-70f651449e5d" class="">So I highly recommend people using sources when they write, all over the place. I actually use sources when I write code as well, for variable names and class names and things like that, because it helps you. Computer science and programming is basically the art of abstractions and abstractions is another way of saying names mostly. And coming up with really good names for things is a really critical piece of being able to write good software. So I think the source, I go to <a href="https://www.thesaurus.com/">thesaurus.com</a> probably 300 times a day. I have never actually counted, but it&#x27;s a lot of times. I&#x27;ve always idea called playing chess with yourself.</p><p id="e3488d1e-35ba-4532-814f-60c9e594903c" class=""><strong>DAVID:</strong></p><p id="6cb637e3-8d4b-4915-a06c-64c2d66bc690" class="">Walk me through that.</p><p id="e03675ce-6f1e-4d8c-af3b-41517f3b340f" class=""><strong>DEVON:</strong></p><p id="fa972733-c402-421e-a89a-320c6d29cebc" class="">So I think writing, especially the writing process, before you&#x27;ve published, as kind of like playing chess or yourself. There&#x27;s that <a href="https://www.pixar.com/">Pixar</a> short, it&#x27;s called like <a href="https://www.youtube.com/watch?v=9IYRC7g2ICg">Geri’s Chest Game</a> or something like that. And it zooms in on this guy sitting on a park bench playing chess and his partner isn&#x27;t around.</p><p id="343e20f9-d164-406d-b349-54071969f777" class="">And you&#x27;re like, oh, I guess maybe they went to the restroom, maybe they&#x27;re coming back and then all of a sudden the camera zooms in and he&#x27;s like on the other side, playing with the white pieces now. And then he flips back and forth and you realize he&#x27;s just having a ton of fun and playing against himself. And he&#x27;s really excited against himself. This is a hard thing to do inside of your own head, but it&#x27;s actually a lot easier when you&#x27;ve externalized something because once you have that writing on the page, you can treat that as sort of another person almost. And play around with it in a way that is just much harder when you&#x27;re by yourself.</p><p id="17c75f63-5542-4511-b8ef-aae4cbe410db" class=""><strong>DAVID:</strong></p><p id="a6df2c45-b789-4296-aba6-1cc6953a48f3" class="">Totally. And then the other thing is I think you have sort of an uncanny knack for generating unusual ideas and I don&#x27;t say this to discredit you, but I think that you&#x27;ve built some systems to make that a hell of a lot easier. Walk me through different tiers of common knowledge. So I got an email last week from a guy who said, I love your writing, but the biggest thing preventing me from writing is that I always think that everybody else knows the things that I know and that&#x27;s the biggest thing. Stopping. And I responded and I said, well, that&#x27;s not necessarily the case, but I wasn&#x27;t able to formulate something that I think that you&#x27;ve been able to grasp in terms of different ways of thinking about what is common knowledge? If you could describe that. And then how does that translate to writing and drafting an idea?</p><p id="b6ecde15-17d0-4508-b3c9-6ffe0ea82180" class=""><strong>DEVON:</strong></p><p id="f4c66ca4-15a0-465d-8510-38d72c374ed8" class="">Yeah, that&#x27;s a great question. So in the last year, I&#x27;ve found that writing has gotten a lot easier for me. There&#x27;s probably a lot of reasons for this, but I think the core one is that I realized there&#x27;s sort of three categories of topics that you can write about. There&#x27;s the stuff that everyone knows that&#x27;s like trivial to write about it because it&#x27;s easy. The sky is blue. Okay, good. That&#x27;s awesome. No one wants to read that. Very common knowledge. On the other end, there&#x27;s stuff that no one knows yet or no one around you knows yet. And so it takes a really long time to figure it out, requires a lot of research. I can point to some examples of things I&#x27;ve written where I&#x27;m very proud of this writing that I&#x27;ve done, but it was a slog all the way through.</p><p id="6dd5a09b-b0e0-494e-abed-3b848d99505a" class="">Some of the stuff that I wrote about, the federal housing administration last year, just required poring through hundreds of documents from old <a href="https://www.hud.gov/program_offices/housing/fhahistory">FHA</a> manuals and things that I don&#x27;t know if people have looked at in a while and I found some novel stuff, but it also was a ton of work. Now there&#x27;s this middle area between common knowledge and like really obscure knowledge of stuff that you have a unique perspective on because of where you happen to be in life and you understand it so intuitively that you can just talk and think about it fluidly. But actually a lot of people don&#x27;t know it yet and I think that that is the sweet spot for generating a lot of streams.</p><p id="34a56225-ae39-4e5f-9103-7a888d2cdfec" class=""><strong>DAVID:</strong></p><p id="c85b8fcd-1e0a-4c98-a9ac-0ba49b08ab34" class="">How would you know when that&#x27;s true?</p><p id="b479e3d2-c60f-4ac5-89d8-7dc16d807369" class=""><strong>DEVON:</strong></p><p id="ee35206f-44e3-46fa-9c30-435410e7646c" class="">That&#x27;s a hard question. For a long time, I just thought that this the way I think is the way that everyone thinks. And so I was like, no one really wants to read about like my theory on flaking in San Francisco. Everyone in SF knows that already.</p><p id="db1befb2-8f30-4e88-8c73-2dfabccdf269" class=""><strong>DAVID:</strong></p><p id="61ab592d-9e84-4940-b17c-a7f009d02e03" class="">But what&#x27;s your theory on flaking?</p><p id="2df9026d-a7d4-4868-b68a-7d569c02f87f" class=""><strong>DEVON:</strong></p><p id="3a9922b8-c476-48d5-9c94-00c66d03f819" class="">I haven&#x27;t lived really in any other city, but my impression from talking with friends is that the rate of flaking is extremely high, with friends, with romantic partners, et cetera, relative to sort of sister cities like New York or Chicago or LA. I think part of the reason is that people in my social circles in San Francisco really understand opportunity cost well. There&#x27;s a very casual culture here where it seems like an acceptable flake. And we also are like, even more so than other millennial types, are very technologically savvy.</p><p id="59a27621-c6ad-45e5-8c43-9e32c6e81d08" class="">So if 10 minutes before your coffee date you&#x27;re like, oh, sorry, I got caught up in something. Can we reschedule next week? It feels trivial because it&#x27;s just a text. You&#x27;re not going to literally stand them up because they just won&#x27;t show up. But the problem with this is that it&#x27;s another cooperation problem where we ended up in this equilibrium where it feels acceptable for everyone to flake all the time and just not show up to their commitments. But then like everyone&#x27;s worse off because your scheduling is more complicated. You never really know. If things are going to happen when you think they&#x27;re going to happen, you kind of don&#x27;t want to be seen as like the pathetic one who doesn&#x27;t cancel the plan. So you almost are incentivized to flake because if someone flakes on you enough times, you&#x27;re like, well, I don&#x27;t want to look like an idiot.</p><p id="625fd725-a3e2-4426-a22a-f062167e33a2" class="">I don&#x27;t want to be taken advantage of here. So, next time we make plans I&#x27;m going to double book and see which one feels more interesting that day. And I think that leads to a real breakdown of trust and like happiness and satisfaction with relationships. Since I realized this, I&#x27;ve personally made a stance where I&#x27;m like, I will not flake on something unless I have an exceptionally good reason. And my friends I&#x27;ve noticed have also started to like follow up with me where I&#x27;ve put a stake in the ground. It helps that I wrote a blog post about it. I put a stake in the ground of like, I don&#x27;t want this to be okay anymore because it&#x27;s like making everyone&#x27;s life worse.</p><p id="b04d6f85-9e81-4239-b32b-d96ec8baa84b" class=""><strong>DAVID:</strong></p><p id="6f06c50d-0196-4da0-98de-b1e9d88d925b" class="">What about San Francisco makes flaking uniquely common here?</p><p id="e8d31345-8e37-4711-97a6-9fc0cafaa135" class=""><strong>DEVON:</strong></p><p id="3a6fb6a9-0f4c-404d-ab83-8ec5c913bcdb" class="">I think there&#x27;s a mentality of casualness where if you walk around the city, no one&#x27;s ever dressed up. I mean, literally today I am wearing yoga pants and a tee shirt, and people want to look mostly clean cut, but they&#x27;ll wear athletic gear almost all the time. I think that is indicative of a broader social casualness. Certain social norms are not as strong and in fact, the social norm is to not have strong social norms. And if you want to come off as like cool and casual. If someone is placed on you and you say something and you&#x27;re like, hey dude, you flaked on me last time too. That&#x27;s sort of like a point against you. You&#x27;re seen as uptight or something. Maybe LA is also more similar to this, but I think like in New York, I feel like there&#x27;s more of a seriousness in the way people interact where it&#x27;s like your people get dressed up when they go out.</p><p id="4f1f1615-9099-4f8c-9ceb-0370dc81c307" class="">Like when I go to New York, I always feel super underdressed. I think that carries over to a lot of parts of the culture. Where you don&#x27;t break dates unless you have a good reason. Whereas I can look back on my calendar before I had all of these thoughts and honestly I was either breaking or having commitments broken on me like 50 to 70 percent of the time. And I don&#x27;t think I&#x27;m unique in this because I&#x27;ve had conversations with a lot of people on my team.</p><p id="8af6d64c-84e7-445f-bdef-ab0813b54572" class="">So I want to go back to writing, but I just want to summarize why I think that falls into the second category of common knowledge. So the first category is things that everybody knows like the sky is blue. The third category is things like the history of <a href="https://www.hud.gov/program_offices/housing/fhahistory">FHA</a> housing, which probably requires a lot of research and nobody knows those things. But the second category is things that everyone sort of has a common framework for discussing like flaking. But because you are in a social circle that has a high opportunity cost in San Francisco, you have unique insight into that problem. And when we have a common knowledge, a common way of speaking about something and you have unique insight into that same sort of thing, that is when you should go pursue an idea and share it with the world.</p><p id="b36d5279-83c6-455c-9987-99bc96920ef0" class=""><strong>DEVON:</strong></p><p id="cbeac9f1-f18f-4316-9d2f-10e29fe39844" class="">Totally. I think that&#x27;s a really good framing of it. I especially like the term common knowledge. Because I don&#x27;t think anything I said in the post was surprising to anyone, but I think finally sitting down and putting the pieces together as to why all of this stuff comes together, I think is the difference. And just taking the time to sort of reflect on like various dynamics in your own life I think can be a really powerful generative tool.</p><p id="16c6d988-1e1a-4c1a-abfa-f7b3a4e6b35f" class=""><strong>DAVID:</strong></p><p id="e4643a25-9600-481e-9db9-c4e709fb6d9c" class="">I gotta ask, as you think about your writing, you think about your learning sort of your process for living, so to speak. It&#x27;s cool because I like people like this. Your process for living is also a process for sharing, right? It&#x27;s almost like a co-dynamic between the two where you live, you share, you share, you live, and I think that they, they sort of co-evolve and develop. Who were the people who have really inspired you to become like that and who were the mentors, digital or physical that have really inspired you?</p><p id="19eb4667-a209-492c-9289-209b59c3043c" class=""><strong>DEVON:</strong></p><p id="429e0cc5-1284-4446-b5bd-f4fa4fbcc8a8" class="">There have been a lot. And this actually ties really nicely into the framework of like common knowledge to obscure knowledge. I think I used to think that a writing had to be this big formal process where you sit down with an argument or a spectrum and you try to decide where on that spectrum of arguments you lie and then you dive deep into the literature and you study it, and then you pop out weeks later and you&#x27;ve like displayed to the world this thing, this masterpiece you&#x27;ve been working on. A lot of writing does follow that. A lot of great writing. And I don&#x27;t think people should stop doing that by any means, but I think there&#x27;s this other type of writing that is treat your ideas less as a final project product and more as a process.</p><p id="c7195ea2-dad3-4e6f-8d0b-64a9dea6a1d7" class="">Someone who I think does this very well, I don&#x27;t know him personally, is <a href="https://stratechery.com/">Ben Thompson</a> at <a href="https://stratechery.com/">Stratechery</a>. He writes about the same stuff day after day, but each time he writes about it, he turns it a little bit in his mind. He comes at it from a slightly different angle and over the course of years he has built this canon of like what aggregation theory and he has this whole vocabulary that he&#x27;s built up and you can see when you go back to his earlier writing, the idea is not fully developed at all, but the writing itself was the thing that developed the ideas. And I think that that is a huge mindset shift that I&#x27;ve had where I used to think first you have the ideas and then you write them down, but actually, you should have some seed of an idea. But then when you start writing, that&#x27;s what actually brings it out and like causes it to flourish and grow. Another person who&#x27;s played a really big role in helping me realize the value of this is <a href="https://marginalrevolution.com/">Tyler Cowen</a> (<a href="http://www.perell.com/podcast/tyler">my podcast episode with Tyler</a>). His blog, <a href="https://marginalrevolution.com/">Marginal Revolution</a> is just like one of my favorite things on the internet. It&#x27;s the most ridiculous set of things. It&#x27;s the intersection of all stuff and he doesn&#x27;t take it that seriously.</p><p id="515a0632-0a8d-4607-8c1a-7d2a32c27908" class=""><strong>DAVID:</strong></p><p id="1164347f-2db6-4b84-b274-7292d6e82343" class="">Right. And the juxtaposition of ideas that you find there puts your brain in crazy places because he&#x27;ll share, NBA basketball, his recent trip to <a href="https://en.wikipedia.org/wiki/Ethiopia">Ethiopia</a>, and then markets and everything in some weird market that you&#x27;ve never heard of. And I think that really cool ideas and really cool ways of thinking come not necessarily when you discover a new idea, but when you juxtapose ideas that you&#x27;re vaguely familiar with and then your brain just goes in weird places through that.</p><p id="1247c7ef-d8d6-4840-8ef9-81db55ef4441" class=""><strong>DEVON:</strong></p><p id="a80b49ec-5943-4af9-b29d-cbf9d72df024" class="">Yeah, by having this huge diversity of sources and ideas, it allows for a type of lateral thinking that I think is really missing in the world. And something I particularly love about Tyler&#x27;s work is that he both does and doesn&#x27;t take it seriously at all. So by does, I mean he does, he spends all of his time doing this and he cares about deeply. So he&#x27;s serious in that sense, but he also treats it as this big game where he&#x27;s just like, you know, I&#x27;m just having fun, I&#x27;m pursuing the things I find interesting and I will go down the rabbit holes that seem interesting and ultimately they will become useful.</p><p id="d28ec4b5-13b5-4714-856a-ed30b51b96d9" class=""><strong>DAVID:</strong></p><p id="880ec0d3-d768-4a12-adc6-3b5c38650144" class="">So talk about that. So that is a really important part of the learning journey, especially on the internet. so if you take before the internet, right? Like, think of the process of going into the library to research a project in college, right? You go to the librarian and you say take me to history and then it&#x27;s between like book number 800-899 on the little codes and sort of you spend time in history. But you said something there that I don&#x27;t think you realize that you said, but it is what it means to learn on the internet. It&#x27;s sort of having hunches and ideas that certain rabbit holes are going to be interesting and having the audacity to go down those rabbit holes. But how do you gauge what rabbit holes do you want to go down?</p><p id="effe39ba-03ec-4a06-892a-d8d00110c278" class=""><strong>DEVON:</strong></p><p id="238fb42d-5b2c-4d80-bb7b-4248eeaf31b1" class="">So I think it doesn&#x27;t matter. I actually think that almost everything can be interesting if you try to build a model for it. Now so things aren&#x27;t interesting if you try to just rote memorize stuff and I think that that&#x27;s going to be true with basically every topic actually. However, if you try to understand why things happen and build a causal model in your head, everything&#x27;s interesting. When I was much younger I felt like, ugh, I like playing sports but I don&#x27;t really enjoy watching sports. And I think this is a pretty typical like nerd opinion to have. But I realized that if you actually watch a game and you tried to understand sort of where the threads are, like if you pull this thread here, what happens to the fabric over there, have this ongoing game. It&#x27;s extremely fascinating. Same with a mortgage history. Like if the <a href="https://www.hud.gov/program_offices/housing/fhahistory">FHA</a> had done this like tiny little thing differently, like what would have been the rippling effects downstream and why do you think that&#x27;s true? What are the other explanations for that same behavior? So I don&#x27;t think the specific rabbit hole really matters that much as long as you are actively forcing yourself to build a model.</p><p id="802cbc8c-7d9e-4bbf-934a-1563f4650670" class=""><strong>DAVID:</strong></p><p id="a6ae4324-0a0c-4c08-8f91-2b8a450f5164" class="">It&#x27;s interesting because I was just watching the NBA finals and with the <a href="https://www.nba.com/warriors/">Warriors</a>. So Stephen Curry, the reason where he is so good, is because after he passes the ball, he runs to the corner and tries to catch it and you just watch it and it&#x27;s like, it&#x27;s amazing to watch. But just, it&#x27;s funny because. And then I would also watch switches on screens and what not. These are things that sound advanced, but they&#x27;re super simple. And just by having two or three things that I could sort of hook to, then it opened the door for the rest of it. And it was funny because to go back to Tyler when, whenever I try to learn something the best advice that I&#x27;ve gotten from <a href="https://marginalrevolution.com/">Tyler Cowen</a> is the idea of entry points. Find something that you like, something that it&#x27;s intuitive, a metaphor that you like, start there. And then as you begin any sort of learning journey, start with an entry point that you&#x27;re familiar with and use that as your balances, your crutch to go explore new territory.</p><p id="492676c6-527e-4d97-9e66-9b0984f0c603" class=""><strong>DEVON:</strong></p><p id="18f5df3a-ee19-48dd-88b4-718e95ff3f3a" class="">I strongly agree with that. So in high school, I thought of myself as much more of a liberal artsy type of person. I was always pretty good at math and science and so on. I didn&#x27;t struggle but it just didn&#x27;t click until I was 16, 17. My boyfriend and I at the time rebuilt a 67 Mustang that he owned and we did an engine swap. We replace the rear end, we did a lot of work on this car. And suddenly all of the engineering and engineering related skills that I&#x27;ve picked up over time became fascinating. I was like, I want to understand how all this works. I picked up something like thermodynamics books and like this, this car was the entryway to all sorts of things and now this is a particularly useful one because if we did it wrong we would die while we were driving it. So like we had pretty good motivation to figure stuff out. But I think finding some sort of entryway into that is critical. And I mean working on the car has literally changed my career in the sense that I don&#x27;t think I would have gone into mechanical engineering and then computer science if it hadn&#x27;t been for that thing. I mean the guy helps too, but the car was like really this concrete thing I could imagine in my head and then want to understand the pieces that made up the whole thing.</p><p id="51e5efe4-54fb-4bf7-90c6-7cd190de03c7" class=""><strong>DAVID:</strong></p><p id="86a9e66a-ad58-4e06-b5a0-e9bf179cf411" class="">Totally. Well, I want to switch gears and talk to you about the thing that I&#x27;m most excited to talk to you about today, which is really cities and with the intersection of architecture and incentives. Maybe we can start with Singapore and I&#x27;m going to ask that selfishly because I&#x27;m really interested in Singapore. I think there&#x27;s a lot to learn from Singapore, but you were also just there and <a href="http://devonzuegel.com/post/a-day-in-singapore-part-i-urban-identity">you&#x27;ve written a lot about Singapore</a>. What is so interesting to you about Singapore?</p><p id="f9ba377e-98cc-4954-bf42-50d774686407" class=""><strong>DEVON:</strong></p><p id="f0d1e379-b53e-41d2-b0c7-04002149611c" class="">Oh man. What is not interesting about Singapore? So Singapore I think is one of the most interesting countries in history. And that&#x27;s saying something, given that it&#x27;s only been around for I think 50 or 60 years. It is a city-state. It&#x27;s only about 5 million people. It is ethnically extremely diverse. There are ethnic Chinese, ethnic Malays, ethnic Indians, and many, many other groups there as well. And it&#x27;s one of the safest places in the world and it has a booming economy and it has been for a long time, seen as like a center of stability in a region that has not always been stable. So all of those things are incredible about Singapore and that would be crazy for any city or any country, but especially considering where they came from, where they had, I don&#x27;t remember the exact number, but they had GDP, I think equivalent to like Vietnam in the sixties, and now they have significantly higher GDP than almost any country in the world. One of the highest. Now GDP doesn&#x27;t measure everything, but it correlates with a lot of important things. The reason I think if I had to pick one reason why I&#x27;m fascinated by Singapore, it&#x27;s because it has one of the weirdest types of governance ever.</p><p id="3743158b-9649-4cbd-9489-6dfd2aef306b" class=""><strong>DAVID:</strong></p><p id="2766cfe0-30a0-425f-9e3d-c32e510b5230" class="">Describe the governance.</p><p id="87c6b80c-524d-4c6b-b753-e5037896c345" class=""><strong>DEVON:</strong></p><p id="eedc528b-1c3c-44b6-b9bb-83864fb2a8a5" class="">The governance is increasingly less so now, but it&#x27;s quite to totalitarian. It&#x27;s not very Democratic at all.</p><p id="e50b3f65-1dec-4b03-8b3b-4edf29468ec5" class=""><strong>DAVID:</strong></p><p id="3dc15138-f00f-41cc-9be4-8956ca6419b8" class="">It&#x27;s funny because my first thought is whoa, that&#x27;s not good. But it seems like you&#x27;re hinting at something else.</p><p id="325a07b7-0399-4143-858b-baa38c04f10b" class=""><strong>DEVON:</strong></p><p id="0235d09b-d963-4a5d-8a2a-fda045eee62b" class="">I also think it&#x27;s not good. And if the whole world were run the way Singapore is run, I don&#x27;t think that would be a good thing for the world. In part because of the specific things that Singapore does, like it still has like physical punishment and so on for not very big crimes. But then also beyond physical and capital punishment. It also just like having one system for the whole world is not a great thing. It&#x27;s extremely fragile. Things can go wrong in ways that ripple across the entire world. Now that sounds extreme, but I bring that up because I think Singapore is interesting because it is the opposite. Not only does it not, not only is the whole world not governed the way Singapore is. Singapore is tiny. So even if you really strongly dislike what Singapore is trying to do, what it&#x27;s experimenting with, it&#x27;s relatively easy to leave.</p><p id="d9c38dc9-ecc5-480e-87ec-9398bc66f68b" class="">Now I want to add the strong caveat that like leaving the country you were born in is never an easy decision. And I am not like underplaying that. But it is relatively much easier than leaving a massive country that is not deeply interconnected with the world. And so the thing I find exciting about this country is that it provides this room for experimentation at a relatively low cost. If the entire United States were to take on an experiment, say universal basic income or something else entirely, and if it were to go wrong, it would just, it would be a disaster. It could cripple the country and it would affect roughly 20 million people, something like that. And like you also wouldn&#x27;t even really be able to know if what the causal mechanism was if UBI was the thing that screwed up or something else entirely.</p><p id="0ece1c0b-9450-4722-8fc9-83ade5ea6d4d" class="">Whereas if you can run a bunch of smaller experiments, which this is the idea of federalism, then you can actually compare the results. People can leave if they really don&#x27;t want to be part of this experiment. And I think this is really important. People don&#x27;t like the concept of being experimented on and I get it, but if we don&#x27;t experiment with new models, we&#x27;re never going to improve. And so I think the question shouldn&#x27;t be, should we experimental or should we not experiment. It&#x27;s like, yes we should, but we should find the ways to have the greatest diversity of experiments while also minimizing the cost.</p><p id="98d7c8f8-ada8-4e14-87b1-d75d3c5d2570" class=""><strong>DAVID:</strong></p><p id="205a6491-af03-4068-a696-2f62e8a25224" class="">Right. Like a lot of what China&#x27;s doing is sort of A, B testing cities, but the downside risk is impacting millions and millions of people. And I think to your point about minimizing the downside, you know, you could argue that they&#x27;ve gone too far.</p><p id="6969cfb4-98d5-4db0-bf8e-127fbbc09a0e" class=""><strong>DEVON:</strong></p><p id="6333a64e-221e-4450-bfb4-345e16de0c4c" class="">Yeah. I think there&#x27;s a <a href="http://slatestarcodex.com/">Slate Star Codex</a> blog post that has a great word for this. It calls it <a href="http://slatestarcodex.com/2014/06/07/archipelago-and-atomic-communitarianism/">archipelago communitarianism</a>. The concept is like we could have a bunch of cities or very small countries, that had radically different systems and the only promise that they make to each other is that they won&#x27;t stop the people from leaving those places if they really want to. Maybe there are a few other rules too. I&#x27;m not gonna remember the entire details of the blog post, read it a few years ago, but I love this idea of having like little islands of extremity to really push an idea to its limit. And if it, if everyone leaves them, that means that that&#x27;s not what people wanted.</p><p id="374745b4-dde2-4d93-ada9-e8acf978102a" class=""><strong>DAVID:</strong></p><p id="0056ac2b-3cf4-4747-badc-794190f02261" class="">Well, that&#x27;s sort of where the whole <a href="https://en.wikipedia.org/wiki/Exit,_Voice,_and_Loyalty">voice exit loyalty</a> idea of crypto is coming from. Traditionally in terms of countries, you could voice and you could sort of vote and you could say we want to change the way that things are run by speaking up and there&#x27;s an exit where you can leave. But traditionally with citizenship, you haven&#x27;t really been able to leave your country. Even if you&#x27;re abroad, you still have to pay taxes as an American citizen. And so you&#x27;re forced to be stuck between voice and loyalty. Whereas now we&#x27;re switching to where you can still voice your opinion, but if you don&#x27;t like it, you can exit. And there&#x27;s a lot of freedom that I think comes with that.</p><p id="3efc3f45-bc21-4964-bda5-9f6978df3b13" class=""><strong>DEVON:</strong></p><p id="c53171b0-ce57-4085-9fb3-6d9523561b39" class="">Yeah. I think it&#x27;s not just that you can still voice your opinions and also you can leave, it&#x27;s that you can voice your opinions often better if you have a very small community. A single person has much more sway over the outcome. So it seems very likely to me that it&#x27;s much easier for a person in a very small community to be able to make a change in that community to begin with and like shape it in their own image than it would be for a massive country like the US or Brazil or something like that. So by bringing it down to a smaller scale, you both get added exit rates, but you also get a greater voice.</p><p id="b0c66749-6870-4625-8eee-ac87d385b23d" class=""><strong>DAVID:</strong></p><p id="51ab207e-f443-4c3e-8b13-05634726108b" class="">Totally. So you were just in Singapore. What stuck out about being in Singapore to you? Let&#x27;s go to two places. What is the biggest thing that surprised you when you were there? And what is the biggest thing that you&#x27;ve been thinking about since you came back from Singapore?</p><p id="74bcab78-a011-47c1-8343-f8499919d0fc" class=""><strong>DEVON:</strong></p><p id="182bcbaa-75bc-4d98-872c-ebc190573867" class="">I knew that Singapore had great Infrastructure. I knew that its citizens were well educated, that a lot of its systems just worked. But I didn&#x27;t realize how much this is embedded in the psyche of the place. It&#x27;s not just that like, stuff works well and some people forget about it and like go ahead and do their own thing. It&#x27;s like the most central place of the city right next to M<a href="http://www.singapore-guide.com/food-dining/maxwell-hawker-centre.htm">axwell&#x27;s Hawker Center</a>, which is like a big destination in the core of the city. There&#x27;s this place called the URA, the urban research association. I don&#x27;t remember the exact acronym. Basically, it&#x27;s this like big gallery on urbanism and like what it means to be an effective city with good governance and what it will take for this to continue and get better over time.</p><p id="8aeae827-bd10-40ce-be7b-76210548c865" class="">I went into this gallery exhibit because I can&#x27;t keep away if you say that it&#x27;s like an urban museum. I&#x27;m like, okay. It&#x27;s Devon catnip. I couldn&#x27;t help but to go in. And I was there at 3:00 PM on a Tuesday and it was full of students, the sense that I got is that like every Singaporean student probably goes there like once a year. I don&#x27;t even think that we have a gallery like that in San Francisco. And certainly not in the center of the city and kids definitely don&#x27;t go there all the time.</p><p id="dbf929bf-4cdd-47be-8528-7fc9aa373994" class="">There was this overall sense of understanding of why things work so well, how things won&#x27;t necessarily keep working well in the future unless we do something about it and like a sense of responsibility that people in the community have to like be a presence voice, which seems very contradictory with some sort of a more totalitarian style of ruling. But Singapore may be the only place in the world where there&#x27;s a brain drain into the government and not out of it. That is very consistent with what I saw. It&#x27;s very deeply respected to be a good technocrat. Someone who understands how systems work and like truly wants to make them better.</p><p id="b48ab8fd-9c9d-4b89-9262-332b51e7fdd6" class=""><strong>DAVID:</strong></p><p id="0c616318-fffd-423a-a866-f2d7e5b39fb4" class="">They pay well, what else?</p><p id="fa5bd62d-bb40-4dc2-8882-1a50038bf87d" class=""><strong>DEVON:</strong></p><p id="49cf4c7e-5d48-4002-85d0-257f949073bf" class="">They pay very well. There&#x27;s really high prestige going in. I haven&#x27;t really thought about this too hard.</p><p id="4b479e46-449b-49fe-851c-3f066262da5c" class=""><strong>DAVID:</strong></p><p id="87cdf12f-d61a-4b81-a556-ffb568ff1ff6" class="">Okay. Then we&#x27;ll switch gears. So you said something really interesting about cities before we were recording the podcast that I thought that you phrased perfectly and that you&#x27;re especially drawn to cities because they&#x27;re in this middle of scale, right? Where they&#x27;re big enough to have an importance on the world stage, right? Like a city like New York, San Francisco, Singapore, they&#x27;re a big deal. But then there are small enough to be nimble and still sort of understandable like it&#x27;s hard to sort of wrap your head around what it means to be American because they&#x27;re just so much going on here, but then also sort of what you were talking about earlier in terms of experimenting. There&#x27;s a lot of them so you can sort of abstract lessons from each one. And so it&#x27;s this perfect size, perfect density, perfect volume that makes cities really interesting to study. Right?</p><p id="7f47417f-770e-4d88-a732-c18086a59474" class=""><strong>DEVON:</strong></p><p id="3ba1ea92-e32b-494e-8dbc-fdce7e231251" class="">Totally. I think that the nimbleness is really important. There is some digital ID that Singapore is rolling out for all of its citizens pretty soon and they&#x27;re going to just do it. They have 5 million people, which is a lot of people to roll something out to, but it&#x27;s big enough for this ID to really matter, but it&#x27;s small enough where they&#x27;re like, we can just do this, we can just, we can just make it happen. And I think that&#x27;s thrilling that you can experiment with something of that size. At the same time, you have this really tight feedback loop. If your trash isn&#x27;t picked up tomorrow, you&#x27;re gonna notice within a week you&#x27;re going to probably start writing letters and like your trash better get picked up. I think at the national level, the feedback loops are much longer and it&#x27;s just harder to know if people are governing you well at all. And that&#x27;s a recipe for disaster. It leads to much more misalignment of incentives.</p><p id="02f6d562-277e-46d0-86bd-b9a8e9fd27dd" class=""><strong>DAVID:</strong></p><p id="0ab3f27f-998c-40ad-9fb8-a479d487c01f" class="">Definitely. Tight feedback is key to learning.</p><p id="d4bd1d78-d348-43a6-a595-04a6a37ffaf5" class=""><strong>DEVON:</strong></p><p id="68e9de67-1751-4442-b294-f0545a41adea" class="">It&#x27;s key to everything. Like if you don&#x27;t have a tight feedback loop, you&#x27;re just not really going to improve I think, and you&#x27;re actually very likely to do things that aren&#x27;t purely for signaling that you care as opposed to actually doing the right thing.</p><p id="a15be96d-6ebe-474e-8a10-e83d092ed922" class=""><strong>DAVID:</strong></p><p id="ded06f0c-4785-4e62-97d3-3abccce7bdbb" class="">Go off on that because that&#x27;s an idea I haven&#x27;t explored.</p><p id="113e8082-6eaa-49a5-879b-ee0c841548ec" class=""><strong>DEVON:</strong></p><p id="de4943dd-5a9a-4d64-827d-5213a17bd2f0" class="">Yeah. Officials in the US tend to do grandstand a lot, at the federal level. And the reason for this is because they don&#x27;t even really know if they&#x27;re having the impact they want to have or that their constituents want them to have. The only real information that people get on both sides is like what someone said, even after the facts, even a decade later, it can be very difficult to draw any meaningful causality stemming from a particular leader. I think that&#x27;s true in any organization ever. Even as small as a single person organization. You can&#x27;t do randomized controlled trials on like everything or almost anything. But the problem just grows in scale to a huge extent as you get bigger. I think if you can keep it to a smaller size, it&#x27;s like, well, you either did your job or you didn&#x27;t. And the problems are much more manageable, the relationships are less opaque. It&#x27;s just a much more transparent system overall.</p><p id="d2e4e2b6-ffd1-471b-b33f-c6bf8f01229e" class=""><strong>DAVID:</strong></p><p id="9a88f4c1-d9fc-43c1-bec2-07697ac18f6b" class="">Totally. So, I mean, for me what&#x27;s been really interesting is in New York studying art decor, one thing that I love about architecture is I&#x27;ve been thinking about this idea a lot, where a lot of history is sort of subject to the narrative fallacy where it&#x27;s written by the winners and the really good book on this is <a href="https://www.amazon.com/Peoples-History-United-States/dp/0060838655">The People&#x27;s History of the United States by Howard Zinn</a>. He admits that it&#x27;s biased, but he tries to tell American history from the perspective of the losers. And if you have a generic understanding of American history, you&#x27;re going to get so many ideas pumped into your head that are totally different. So what&#x27;s really cool about architecture is, if you look at something like the <a href="https://en.wikipedia.org/wiki/Chrysler_Building">Chrysler building</a> and at the very top of it and in the lobby and sort of the birds hanging off the side, you know, 60 feet below the top of the building, you can see this like technological enthusiasm, this almost sense of like a utopian spirit that technology in the twenties and the roaring twenties was going to come and save the world. And through the architecture of New York, you can really understand the city in a way that understanding history might not allow you to do.</p><p id="dc1f6916-4030-4c45-93c0-359239eef2b4" class=""><strong>DEVON:</strong></p><p id="b088254b-a114-4766-a2be-c3a39c09cb9a" class="">Yeah. And I think it&#x27;s especially interesting to see how buildings change over time in reaction to that original time when it was created and how they shift. I think the moment when I really became aware of the importance of architecture was in my very first job, we started out in this very small office that was cozy and like my desk was far away from the restroom and the kitchen. So when I wanted to take a break, I&#x27;d have to walk past everyone and I&#x27;d have like a little conversation and I felt very positive about all my coworkers and I feel like we had a really good rapport. About halfway through my time there, we moved into a totally different building. It was supposed to be fancier, it was nicer by everything you could put on paper.</p><p id="847ae7d3-38ec-40d7-9589-b7d7296704e8" class="">But the shape of the rooms was super messed up. Basically, everyone was very close. It was more like a doughnut where like all of the good stuff was in the center and good stuff, meaning, like the kitchen. And so you didn&#x27;t have to walk past anyone to go see it, which was kind of nice if you&#x27;re focusing on a problem or you want some alone time, there are pluses to that, but you don&#x27;t end up having these interactions. And as a result, I almost immediately started feeling like the only people I knew in the company were my team and a lot of the work that I was supposed to be doing was cross-functional. So this made me significantly worse in my job just immediately. Now, of course, this doesn&#x27;t stop you from having coffee with a coworker and the sales team or something or organizing something with the product team or you know, inviting them to sit at your table at lunch. But these micro-interactions are really critical for building that rapport, for making, keeping people on context. I almost felt like I was a remote worker, and I don&#x27;t mean to insult remote work. I think that there are huge pluses to that, but it&#x27;s really undercut the benefits of being in the office as soon as we moved into this new place.</p><p id="e946c951-34cc-4382-a0e0-6f3acb008271" class=""><strong>DAVID:</strong></p><p id="4b887755-7fa3-45b1-9667-42ad67895d08" class="">It&#x27;s funny because I feel like so much of architecture now, we place such an emphasis on the outside of a building what most people see. But I don&#x27;t know that we have the same sort of rich discussions about the experience of actually being somewhere. And I guess the example that comes to me is natural light. Like I value natural light in indoors just to such a high degree. It&#x27;s like the number one thing that I care about in a building, but so often we look at the outside of buildings, so we say, oh that&#x27;s beautiful. It looks great in a photo, but the experience of being inside of it, I don&#x27;t actually know that the incentives are aligned for architects to think about that.</p><p id="8a8e130c-fbf1-4da0-83be-7d2a1e89ab4f" class=""><strong>DEVON:</strong></p><p id="7ae7a843-e5f1-4022-bfa1-6ab3847bfb1a" class="">I agree. I mean if you have ever spent time looking for an apartment on <a href="https://craigslist.org/">Craigslist</a> or a place on <a href="https://www.airbnb.com/">Airbnb</a>, actually everything and I&#x27;ll explain that later. But on craigslist it&#x27;s like it tells you the square footage, it tells you how many rooms, how many bathrooms there are, which are obviously important details, but it does very little to describe features like natural light and things that make you actually happy, how livable it is. I think part of the problem for this is that it&#x27;s a much harder thing to commoditize, which means that like it&#x27;s harder to measure. It&#x27;s harder to compare two things, there&#x27;s not a strict measure that you can really use. But it really matters. It really matters a lot. The experience of being in a place is totally different from the way people will often describe a room, at least in describing a room in comparable terms. I think maybe it seems possible. Maybe someone just needs to build a vocabulary for it.</p><p id="d8cd208a-d535-47df-b052-b6e7fcb4ebdb" class=""><strong>DAVID:</strong></p><p id="26c21da1-3626-4cef-87c9-668de5148847" class="">Okay. Let&#x27;s play a little game. So if you had to take five metrics for deciding a house on <a href="https://www.zillow.com/">Zillow</a>, right? We have rooms square foot, but if you had five metrics that don&#x27;t exist right now, what would it be? You do some, I do some.</p><p id="2255c460-43da-412e-aadf-585cf4e6e78a" class=""><strong>DEVON:</strong></p><p id="4e102b3e-74ea-4c95-b2ce-553bcc588016" class="">Okay. I kinda like this, I&#x27;m thinking of it sort of like the, you know, the big five personality. It&#x27;s kind of like that.</p><p id="7dfe03d3-1325-4ab0-aecd-f688927f17b9" class=""><strong>DAVID:</strong></p><p id="b8f9eb43-387e-4356-9f15-d7b747ab4d6d" class="">So you get three, I get two.</p><p id="99289176-13c0-4800-98fc-9e75efa43f28" class=""><strong>DEVON:</strong></p><p id="a25aeaaf-14d4-4805-b14f-2187fb2a2b69" class="">Let&#x27;s see, I&#x27;d say flexibility. Like how much can you change the space to fit your own needs? Is it like very tightly custom designed? The purest example of this would be like the cabinets are built into the walls so you can&#x27;t move the cabinets. Versus like a lot of ability to move stuff around.</p><p id="e8c71a70-3f81-4bff-936f-258b15566965" class=""><strong>DAVID:</strong></p><p id="fb95fdd1-e529-4cbe-893d-5316bde6a100" class="">Mine is the density of power outlets. Most houses don&#x27;t have nearly enough.</p><p id="f46d92fd-c175-47bd-a095-fb8f4a834cc6" class=""><strong>DEVON:</strong></p><p id="95b690ab-c4a4-4f3e-a731-fe36e5738233" class="">Oh my god. The computer science building at <a href="https://www.stanford.edu/">Stanford</a> has almost no power outlets, which is insane because you go there for the office hours and you know, everyone&#x27;s there for hours and hours and hours and everyone&#x27;s computer starts dying around hour three and there&#x27;s one power outlet and the whole building. Yeah, that needs to change.</p><p id="3b389207-273f-4d07-b605-15ba5415ace9" class=""><strong>DAVID:</strong></p><p id="dc614b9e-a0d6-4033-8dfd-2eb3b1f727dd" class="">Here&#x27;s another one. Where I really like houses where the rooms are super private and the open spaces are super public. So you have the kitchen, the living room, the dining room, all sort of in the same room because at the houses that I grew up in, the kitchen was always separate from the dining room. And so whenever we would cook as hosts, It was always sort of awkward because you sort of had to choose. Whereas you get this awesome communal vibe, but I think it really helps with family dynamics if all that is sort of in the same room and it has really good natural light and there&#x27;s a nice ambiance in there because then people can cluster there. But then you balance that with like the privacy of the rooms.</p><p id="faae41c8-29e5-437d-bac5-08992a5bb180" class=""><strong>DEVON:</strong></p><p id="7b837a66-c085-4911-8c6b-2571257a5215" class="">I&#x27;ll expand that one to like the ability to pass through. So in the house I live in right now, it&#x27;s very hard to get to the backyard.</p><p id="1399fd61-4a48-46c5-bc7b-e848e7f7df37" class=""><strong>DAVID:</strong></p><p id="16428a40-dba7-4bc1-b602-1dd98c1c5dc4" class="">Yeah, describe this house because it&#x27;s actually really cool. It&#x27;s a commune with 10 people, but like really intelligent people here.</p><p id="b30025b5-c569-468f-b730-dd6702ac2454" class=""><strong>DEVON:</strong></p><p id="ec8e69d0-f6d6-47c3-9e4b-e759a429bd0c" class="">We call it an intentional community because commune has a lot of economic implications that probably don&#x27;t apply. So I&#x27;m one of 10 people who live in this house. We&#x27;re actually expanding to an upper floor and it&#x27;ll be 16 soon. And we&#x27;re just a group of people who we all care a lot about, having really easy relationships and what that means is I think a lot of the most meaningful and happiness-inducing experiences and interactions that you&#x27;ll often have will be these little micro-interactions. It&#x27;s very similar to what I was talking about with my old office. Where if it&#x27;s really expensive to meet up with someone and hang out with them, it takes money, time, and energy. You have to have to call them, which seems like not a big deal. But here&#x27;s an intention that&#x27;s necessary therefore it to happen. You&#x27;re only going to become close with people where you have an explicit reason to do so. Like sort of a motive almost. Whereas if you&#x27;re just in the same place, this is why people love college so much. If you&#x27;re just in the same place with a lot of people who are energetic, motivated, ambitious, like these amazing things will happen where you&#x27;ll just bump into each other throughout your day and like amazing things will happen without intention and I think that&#x27;s amazingly valuable and really easy to undervalue.</p><p id="e2b45add-d4a3-4741-8b22-981873ec6a5a" class=""><strong>DAVID:</strong></p><p id="08941f13-eaef-4b5c-9163-4569574478dd" class="">You make a really good point because that&#x27;s almost in a place where that&#x27;s not the case. Having relationships where you meet somebody right away is almost the mark of a good friendship. It was Saturday night, 11:00 PM a couple of weeks ago. My friend calls me and he goes, what are you doing right now? And it was the first time that happened to me in New York, but it was this like moment in our friendship where in order to do that. Like that happened all the time in college. Like that&#x27;s college 101. Oh, what are you doing right now? But for it to happen in New York? First of all, was like shocking to me and second of all it was like this mark of our friendship where to get there with somebody takes so much more work because of the way that New York is built and that happens daily in this house here, which I think is really cool.</p><p id="ab6d7c48-babe-401e-ae4c-931bfb172224" class=""><strong>DEVON:</strong></p><p id="8c793a9b-69fb-40c8-a8ae-363c17d678d2" class="">It&#x27;s amazing. I mean, it&#x27;s amazing you say that that&#x27;s the case in New York because New York is probably one of the best places in the entire US for this. Like in the opposite sense of what you&#x27;re talking about. Now imagine if you guys lived in <a href="https://en.wikipedia.org/wiki/Irvine,_California">Irvine, California</a> or a far-flung suburb of Salt Lake City or something comes up for you to meet up with this person. Like right now it&#x27;s just, you jump on the subway, you&#x27;re there in a few minutes. Not that big of a deal. In those places, you have to like get in your car. Maybe you have to get your snow boots on. You can&#x27;t get drunk and go home, which is also a good way to bond with people. Also, when you arrive, it will likely just be the two of you, probably no one else was invited, whereas like in a city, maybe you meet up at a bar where there&#x27;s like a bunch of other random people around you who ended up being really interesting.</p><p id="5d279b84-78c5-4a56-b4fc-7eac9dc1e047" class="">Actually one of my closest friends. I met like at an event at the <a href="https://www.moma.org/">MoMa</a>, and just because we like bumped into each other at a mixer afterward. That wouldn&#x27;t have happened if we weren&#x27;t in the city. You don&#x27;t have things like the MoMa in far-out suburbs. And so this is like another example of not just architecture but the general built environment, having dramatic effects on the way you actually interact with the world.</p><p id="4cf12ac7-aaf9-4344-a35a-af9bf0e062b2" class=""><strong>DAVID:</strong></p><p id="50a82508-72c7-4d60-b099-64594d79ad74" class="">So let&#x27;s play another game. If you were to take, I gave you three, we&#x27;re just going to do metrics again, three metrics or three data points that you could pick and you&#x27;re going to choose where you live, the house that you lived, a location, what city, what the house looks like, what would the three that you picked be?</p><p id="97e30e28-313e-48a4-beb9-731724268ec3" class=""><strong>DEVON:</strong></p><p id="8806bfb9-e18e-470e-a243-e3072890dff4" class="">That&#x27;s a good one. One would be, how long does it take for you to walk from where you live to like your top 10 favorite locations in the city? I think if the answer is a long time and especially if the answer is like you can&#x27;t even walk there, that&#x27;s not a good sign for me. Now I don&#x27;t mean this to be normative for everybody. Other people do have other preferences. Some people want to like go on a big ranch in Idaho and like never see another human. Again, totally not my type but good for them. I&#x27;m not saying it&#x27;s the case, but for me it&#x27;s very important that I can walk places.</p><p id="4ca34b6c-94a2-45d4-b2b5-5083aee5b73c" class="">I think the reason for this is because walking is a way to interact with your community in these small ways every single day where I think the way people get comfortable in a place in a social group is not through just like one really intense interaction, but through a bunch of smaller ones where you sort of see things from different angles you experienced, you know, what does my neighborhood looked like on a rainy day, what does my neighborhood look like when it&#x27;s a cloudy day, what does it look like when I&#x27;m kind of tired? And these sound like tiny, trivial differences. But you can understand much better how things function. Maybe usually on a sunny day people will like to sit outside at Maxfield&#x27;s coffee down the street, but on a different one, people sort of tuck inside and it has this closer vibe. You get to know the vibe just much better and you end up meeting people that you probably wouldn&#x27;t meet if you were in an <a href="https://www.uber.com/">uber</a> going from point A to point B all the time. So walking is one.</p><p id="b4aabd00-0a01-42c5-ac33-ce3e55d322a4" class="">Another one would be if for random and sort of once in a while type things like I had to get a necklace fixed the other day, how easy is it for this to be a part of your daily routine? So is it like you have to drive like way out of your way and find some really specialty store to do it? Or like what I did, I was able to walk two blocks away. There&#x27;s a little jeweler who was able to fix it in three minutes and I walked back and that was like not even my whole lunch break. That was just a little pause in the middle of my day. I grabbed coffee on the way and I came back and up until that point, I had no idea that jeweler was there and we had a nice conversation. But it was just right there. And I love that my whole community can be inside of this little circle. Number three.</p><p id="4283231d-4790-4146-88eb-f1e54195c041" class=""><strong>DAVID:</strong></p><p id="43b04780-26a1-40a4-8ae9-5fb281a49186" class="">I&#x27;ll give you my three real quick. So my first one would be natural light, as I&#x27;ve said many times before. That&#x27;s super important to me. The second one, yours is walking, for me, it&#x27;s like not having to use a car. So I actually sort of like taking public transportation so I just don&#x27;t like driving and I don&#x27;t really like being in cars. So those are the two. The third one would be I like being able to walk, especially to food. Like at my old apartment I was super close with everyone who worked at the bagel shop and I&#x27;m pretty close with all the ladies who work at maya taqueria, my local taqueria. And the last one would just be a high density of super intellectually hungry people, which for me is why I&#x27;ve chosen to live in New York.</p><p id="8cd59432-1888-4d70-8a7c-2a69f1570fb6" class=""><strong>DEVON:</strong></p><p id="766b1536-db5f-46cd-befc-8f56e778bd62" class="">Oh, I see. So we can expand this beyond built environment. I would definitely make that my third one as well. This is why I&#x27;m in San Francisco, New York maybe is a good choice too, but there is just always someone I can talk to about whatever crazy idea I have going in through my head or is going through their head any given day. I find not everybody here necessarily wants to discuss these ideas, but by using <a href="https://twitter.com/?lang=en">twitter</a> you can actually find these people and like create this strong core where I&#x27;ve basically tricked my brain. The thinking that like everyone around me is just this crazy monster of ideas, continually coming up with new things.</p><p id="1241bea4-174b-4125-ba1a-1011b4178293" class="">There&#x27;s so much intersection of like different types of people doing work in the city. Everything from like researchers to engineers to entrepreneurs to artists. And unfortunately, fewer these days, as a city gets more expensive. And they&#x27;re all just mixed together in this pretty small city where you can always find them. But then I think the important component is you also have to have some tools that sort of overlay this to help find them. Just walking around the city. Like I was talking about before, won&#x27;t surface all of these people and you also are less likely to get outside of your current network if you just stick in your small neighborhood.</p><p id="0f3b4836-1dec-4500-a865-853a7d27613c" class=""><strong>DAVID:</strong></p><p id="c45b1f91-203e-4d42-b0fa-f89bc8883434" class="">Let&#x27;s do a quick fire round. So I&#x27;m going to ask you like five, six questions and try to keep your answers to like 30 seconds or less. Why do you love <a href="https://en.wikipedia.org/wiki/Stewart_Brand">Stewart Brand</a> so much?</p><p id="dd26523d-4312-40f5-b82a-0d6a29e30b07" class=""><strong>DEVON:</strong></p><p id="46949806-7597-48ac-a9d0-7620f8e41ae3" class="">He is a polymath. A lot of people take crusades on things. They pick one idea and they just drive it for years and years. Stewart takes hundreds of ideas and makes them all good and is still able to keep a really strong sense of identity despite not having like one thing that he ties himself.</p><p id="e90282dd-ace2-433d-bfd2-e0d162e9e340" class=""><strong>DAVID:</strong></p><p id="cd0f9b5b-74e9-4f99-a936-d532bcea21c9" class="">So I have a theory that personality will end up being almost like the last mode and that sort of so much of what&#x27;s happening in society right now is like brands are sort of disappearing where many people have less likely to have a favorite brand. But I think that the internet has made it really easy to connect with people. And Stewart Brand is always sort of been a pioneer of technology and I think that people can move around and explore different things through their personality in ways that institutions can&#x27;t. And I think that that&#x27;s really helped somebody like Stewart Brand. I don&#x27;t actually think that focusing on the same thing is like a vector that really matters when it comes to consistency with a person.</p><p id="c0b52f91-8bab-4f26-817f-2ed99cd5b73f" class=""><strong>DEVON:</strong></p><p id="219e3f87-aab4-49c6-95af-b18dbedb6160" class="">I think that&#x27;s true. And I think Stewart and Tyler are two fantastic examples of this being 100 percent possible. I think that most people don&#x27;t realize that and they think that they have to pick one thing and so that you see that reflected in a lot of people&#x27;s careers or at least they like abstract away the more nuanced. I think everyone has slightly more scattered set of things that they think a lot about, but they have to tell this one consistent story to the rest of the world. And I think that we&#x27;re starting to finally see that. Like you don&#x27;t have to do that. You can do a lot of things.</p><p id="9a33f831-ae02-405d-8aa8-47a979d38094" class=""><strong>DAVID:</strong></p><p id="fa6a4b56-400c-49ac-b911-567510b7a131" class="">Totally. Fire round. <a href="https://www.amazon.com/Algorithms-Live-Computer-Science-Decisions/dp/1627790365">Algorithms to Live By</a>. Why do you love that book so much?</p><p id="5814ad8b-acad-4e17-acb3-4e672d0627b2" class=""><strong>DEVON:</strong></p><p id="da65f987-e47b-4bfe-a168-89154c615201" class="">It&#x27;s the best self-help book I&#x27;ve ever read and it&#x27;s not intended to be a self-help book. It is intended to be an algorithmic look at certain problems that people see in day to day, but it helps me frame certain problems that I personally run into in terms of like literally the algorithmic complexity. And I realized that the stress that I was feeling about certain things I worried about was like actually totally rational.</p><p id="d30466c7-fa61-48f6-b991-1240533db8d6" class=""><strong>DAVID:</strong></p><p id="7ada7107-b05b-4f06-bbc7-423fce24cd61" class="">Real quick, one example from the book that sort of sticks with you?</p><p id="f5de7eb8-f782-41a1-92dd-c5ec0685859a" class=""><strong>DEVON:</strong></p><p id="64f2cb9f-223f-4c99-8c65-f8cbd1636bfe" class="">I think one of my favorite examples is when they talk about the scheduling problems, scheduling my calendar is something that you stress me out a lot because there&#x27;s so many things you could do and so little time and sequencing matters. There are so many layers of constraints that you can put on it in infinite level really. And basically, what they reminded me, they analogized it to scheduling and computers like processes. They were like, this is not a solved problem in the sense of like we don&#x27;t have an efficient solution to this. We use heuristics. So don&#x27;t worry, this is what I took out of it. It&#x27;s like, don&#x27;t worry like your life also is not going to be perfectly scheduled and just pick something.</p><p id="97417332-4596-442a-81f5-de4197cee4a8" class=""><strong>DAVID:</strong></p><p id="416e019e-5e2c-4f23-873f-00ba0dcf3305" class="">Something I know nothing about. <a href="https://en.wikipedia.org/wiki/Georgism">Georgism</a>.</p><p id="3959fe57-56ac-40b8-9d51-85539cb08e80" class=""><strong>DEVON:</strong></p><p id="21ba9795-bfdd-4f7d-bef7-abf69ae96171" class="">Georgism. Oh, I don&#x27;t know if I can do a lightning round on that. So I&#x27;ll just touch on one thing. I think people usually talk about economics as a spectrum from like capitalism to socialism or communism. And I think what this really misses out is that there&#x27;s sort of a third category of economic goods. So people usually think of capital and labor as like things and people basically. But there&#x27;s this third category of resources, things that no one created. They aren&#x27;t people, they are things, but they are different kinds of things. So land, air, water resources, et cetera. And something that capitalism and socialism treat. They&#x27;ve treated all of those resources as something under capital and that is incorrect because if you tax things that people have created, it will reduce the amount that they create those things because they are just incentivized to do so.</p><p id="78cbdd2f-aa4e-429c-8d2c-9c8e37a8fe9a" class="">However, if you tax land, If you tax resources, those effects don&#x27;t occur. The same amount of land and resources will continue to exist.</p><p id="898a7b69-d865-4a41-9002-4053d2ebeb70" class=""><strong>DAVID:</strong></p><p id="0c8aebdd-221b-47d1-bd48-266ba6a337b6" class="">Why isn&#x27;t it more popular?</p><p id="ac21157f-cc79-40d9-8191-18d518f522a3" class=""><strong>DEVON:</strong></p><p id="b714259d-0f18-480a-b4ef-8e5a9cba541d" class="">My guess is that it&#x27;s just a question of path dependence in history. There was a period in the late 1800&#x27;s, right after <a href="https://en.wikipedia.org/wiki/Henry_George">Henry George</a> wrote his famous <a href="https://www.amazon.com/Progress-Poverty-Press-Henry-George/dp/1409943666">Progress and Poverty</a>, at which this book was the number two best seller after the bible for like a decade. So it was extremely popular at one point. But I think if my guess is that he just wasn&#x27;t really good at evangelizing the idea. And history took its course, but I don&#x27;t know if I have a great explanation beyond that.</p><p id="ba8cc0c8-8706-4d07-8015-92e8f14af496" class=""><strong>DAVID:</strong></p><p id="f59d62b7-9be1-4d41-8227-45bacb627340" class="">Well, we can rekindle it. strong opinions, weakly held?</p><p id="83d86fb0-9078-44fd-9dd1-ee8463104e4d" class=""><strong>DEVON:</strong></p><p id="0829e85d-e59e-436a-b60f-b96e5fd7cb37" class="">I have a lot of very strong opinions, but I also am infamous or perhaps famous for changing them in high school, I was extremely libertarian. I now am deeply sympathetic to most libertarian ideas, but I have since done a 180 in terms of why I hold the object level views that I do. Something I emphasize a lot is a sharing those deltas with people, because otherwise you may end up still making the same actual decisions in life or supporting the same policies, but if your underlying reasons why have changed, people&#x27;s models should still be updated. And so the section on <a href="http://devonzuegel.com/">my blog</a> where I include lists of opinions that I once held, how they&#x27;ve changed, why they&#x27;ve changed.</p><p id="a90d866b-a464-472e-9dec-34f03661861c" class=""><strong>DAVID:</strong></p><p id="5a4c1994-bf60-404c-b06a-5783e13dbee6" class="">It back to the idea of viewing learning as a process, not a problem.</p><p id="f0ef8cd3-974b-448d-866d-3906efbab0af" class=""><strong>DEVON:</strong></p><p id="a12bb32e-b8ce-41b9-9225-21376bf5c224" class="">Exactly. And another component of that is I put an epistemic status at the top of everything I write.</p><p id="74302e42-b41f-435f-8194-b8fbc4c8fd4f" class=""><strong>DAVID:</strong></p><p id="e0d3d2cc-8305-4234-a754-6d11445046f5" class="">What does that mean?</p><p id="d0fd7ac6-7c47-4a14-9a3e-f845fef07748" class=""><strong>DEVON:</strong></p><p id="f499421f-c7e2-4448-986a-b9089a402780" class="">Well, what it means is that I&#x27;m lazy actually. So an epistemic status is basically describing how confident you are in a claim, how sure you are that it&#x27;s true. Usually, I don&#x27;t, I&#x27;m never 100 percent true of anything. I&#x27;m much more often, it&#x27;s like 60 percent or something where I&#x27;m confident enough to say it. But I want you to know that there is ambiguity here. People have complimented me on this and I didn&#x27;t really understand why because they&#x27;re like, oh, you&#x27;re so modest. There&#x27;s so much humility here. But actually the reason is there&#x27;s a lot of stuff I want to be able to say, but I don&#x27;t want people to think that I don&#x27;t. Which I mean I do want to stand behind my ideas, I&#x27;m not cowardice thing, but it&#x27;s like there&#x27;s, I wrote a post on Singapore where I basically said this is a really good model.</p><p id="0199b451-7ab8-4667-91d0-882082f32b57" class="">Some of the stuff we discussed earlier and I do stand by all of the facts that I stated there, but my confidence in like the ultimate claim that their model is a good one is not 100 percent sure. Like there&#x27;s a chance that I&#x27;m missing something. Maybe I like calculated magnitudes of things wrong and so I want to like make it clear to people that my mind could be changed on this topic and it also helps other people in terms of understanding how much of an authority are you on this.</p><p id="0779da83-1141-486e-9211-2ee202f67ec9" class=""><strong>DAVID:</strong></p><p id="69e55303-943f-413a-b683-b1c9e4128408" class="">I think that would help as well too. Now more on your philosophy of travel.</p><p id="2a37f432-00f2-466f-8b6f-86c324d1d95b" class=""><strong>DEVON:</strong></p><p id="f7bf4637-2d4d-4a1f-86d0-0d17a3595f95" class="">My philosophy of travel, I see travel as scale-free or a fractal where I think you could go to as many or as few different places and still learn just as much. So I&#x27;ve recently been opting much more for the go to many places.</p><p id="abb21b5e-f59d-4ad7-ad0f-93a94b04153c" class="">I&#x27;ve been traveling a lot this year, but part of me thinks I should just stay, spend all of my time in San Francisco and just explore every single neighborhood, every single nook and cranny in this place. Because I mean, again, a friend that I just recently met, he works on the same block and he&#x27;s been working on this block for years and we had never crossed paths. And he&#x27;s now a person that I talk to a lot. He has a lot of really interesting ideas. The company that you worked for is interesting. And it just goes to show that like there&#x27;s so much life on this one block that I live on. And yet, like I hadn&#x27;t fully explored this one block. And so sometimes I feel guilty where I&#x27;m like, it&#x27;s much more expensive to fly to <a href="https://en.wikipedia.org/wiki/Bangalore">Bangalore</a> than it is to just like walk outside my door and go to the coffee shop and have a conversation with a person.</p><p id="8a5bac3a-3dad-4c16-b97c-4b1e76ca53e7" class=""><strong>DAVID:</strong></p><p id="f827e358-12fa-4b28-b277-512047938ab2" class="">You could get a latte every single day with that money and you wouldn&#x27;t feel guilty.</p><p id="a72f4d17-b28e-46b5-aeba-27e59dc88917" class=""><strong>DEVON:</strong></p><p id="cebaa707-cc15-4545-991b-6642e7de514f" class="">You wouldn&#x27;t feel guilty at all. And so this is sort of where obviously you&#x27;re going to see a huge amount of difference if you go to like <a href="https://en.wikipedia.org/wiki/Jakarta">Jakarta</a> versus San Francisco, but I think you actually get as much though, at a different magnitude of difference, if you really look for them in those places.</p><p id="57c87986-61c3-452b-95b6-e579bebc8500" class=""><strong>DAVID:</strong></p><p id="f60ac5b5-4f1b-4437-b551-664443bf206d" class="">You publish a lot of content. This is the last question. You publish a lot of content and you do it regularly and it&#x27;s high quality. What is your philosophy of productivity and output?</p><p id="5b9be34b-1c4f-476d-93b3-a2bfd3134e05" class=""><strong>DEVON:</strong></p><p id="67961c93-b0e6-400c-a7b7-ce5c9115ae19" class="">My philosophy of productivity. I&#x27;d say just writing everything down as I think of it. I use <a href="https://evernote.com/">Evernote</a> for the most part, if I&#x27;m biking, which I am a lot of the time. I will make a little audio note which I&#x27;ll then later transcribe. And it&#x27;s not because all my ideas are good, but because they are often, once I&#x27;ve written them down, I will often see themes emerge over weeks or months that then turn into a more concrete thing. And it also gives me a lot of stuff to work off of overtime where like I write dozens of notes every single day. I also read a lot of emails, a week-long pen pal emails of stuff that is not very filtered a and not super well written. But after I&#x27;ve written it I&#x27;ll see, oh, I&#x27;ve had sort of similar conversations with like five different people.</p><p id="ac81f370-9dad-4738-8940-8c1b8a70cdd4" class="">Maybe there&#x27;s something to this, like the fact that I keep touching on this concept means that like I should dig in more and then with all of these notes and all of these emails that I&#x27;ve written up until that point, I then also have all this content that I can like take in work off of. So it&#x27;s often trivial to write published posts because I have stuff like seventy, eighty percent of the way there. I just have to like put it together, understand what the pieces are, you know, use my thesaurus, find some more synonyms and put it out there.</p><p id="33a1d2fc-46de-4c6f-89a0-ae35cde9f1b5" class=""><strong>DAVID:</strong></p><p id="909644e4-4161-48f2-8387-b10fd9c5cddc" class="">Well, Devon, thank you so much for your time today. Thanks for coming on the podcast.</p><p id="da799dcb-98b1-4c5d-abb8-3906f1262dd8" class=""><strong>DEVON:</strong></p><p id="6d7e8737-8d5a-48c8-8df0-f48ad7b03c83" class="">Thank you. This was a blast.</p><p id="c66a3a3d-2d57-455c-b7fa-a1362b3e4b5a" class="">You can support the North Star Podcast by leaving a review on <a href="https://itunes.apple.com/us/podcast/north-star-podcast/id1170914572?mt=2">iTunes</a>. Or you can share the podcast on <a href="https://twitter.com/?lang=en">Twitter</a> or <a href="https://www.facebook.com/">Facebook</a>.</p><p id="77768fa0-78af-4d50-a152-64dee9c5a178" class="">To listen to other episodes or learn more about the North Star, you can connect with me directly at <a href="http://perell.com/">perell.com</a> and you can always reach out on <a href="https://twitter.com/david_perell?lang=en">Twitter at david_perell</a>. And if you enjoyed this episode, you’ll like the episode with <a href="http://www.perell.com/podcast/albert">Albert Wenger</a>, a partner at Union Square Ventures. In this conversation we talk about Albert’s fourth coming book, <em>World After Capital, </em>and how technological progress has shifted scarcity for humanity. When we were foragers it was food that was scarce, during the Aquarian age it was a fight for land. Following the industrial revolution, capital became scarce. With digital technologies, scarcities are shifting once more. We need to figure out how to live in a world after capital, where the only scarcity is our attention.</p></div></article></body></html>

@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Daniel Gross: Dreams and Determination — David Perell</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="bcae6ae5-d1a2-46ca-a4b4-9b75df0918c7" class="page sans"><header><h1 class="page-title">Daniel Gross: Dreams and Determination — David Perell</h1></header><div class="page-body"><p id="a47acf04-860f-48dd-8a98-f8cea15990cf" class="block-color-gray"><a href="https://www.perell.com/podcast/daniel-gross">https://www.perell.com/podcast/daniel-gross</a></p><p id="9510b4db-a39b-4081-966c-a66fc3ebe79b" class="">
+</p><figure id="8c349868-e2f4-4bf5-aaf5-890e2f2b7982" class="image"><a href="https://static1.squarespace.com/static/55576406e4b02e4679105dc2/5814e6a96b8f5b0e59aed181/5bac0ef09140b731c4ae50e5/1539799823384/DflqqvfU0AAM9Ja.jpg?format=1500w"><img src="https://static1.squarespace.com/static/55576406e4b02e4679105dc2/5814e6a96b8f5b0e59aed181/5bac0ef09140b731c4ae50e5/1539799823384/DflqqvfU0AAM9Ja.jpg?format=1500w"/></a></figure><p id="63430807-ce13-47ad-b72a-d7380dff39dd" class="">My guest today is Daniel Gross, a partner at Y Combinator, the world’s best startup studio. Daniel focuses on artificial intelligence at Y Combinator and recently founded AI Grant, a distributed AI Research Lab.</p><p id="94913450-968c-4cb9-906b-58d816ba905b" class="">Daniel was born in Jerusalem, Israel and was accepted into the Y Combinator Program in 2010. At the time, Daniel was the youngest founder ever accepted. In 2013, Cue was acquired by Apple. At 22, Daniel was leading several search and AI efforts across the company spanning iOS, OS X and Apple Watch.</p><p id="8b130b76-8ca7-4a97-a25f-0955592980d4" class="">In 2017, Daniel joined Y-Combinator as a Partner. He launched <a href="https://ycombinator.com/ai">YC AI</a>, Y-Combinator’s first vertical dedicated to investing in AI companies. In 2018, Daniel founded <a href="https://pioneer.app/">Pioneer</a>. Pioneer is a search engine for the millions of “<a href="https://www.nytimes.com/2018/08/09/technology/talent-opportunity-gap-pioneer-fund.html">Lost Einstein’s</a>” — extraordinarily creative people around the world who have the talent, but lack opportunity. Once identified, Pioneer and makes small investments to support whatever project they’re working on.</p><p id="bd710c87-7f8f-4c20-8d3d-eca08db930fb" class="">In this episode, Daniel talks about the experience of coming to America and starting a company with Y Combinator. He talks about the power of seeing life like a video game with levels, and fast, continuous feedback. Daniel also shares lessons from John D. Rockefeller on business, decision making, and company building. Finally, Daniel talks about Israel and shares his insights on why the country is so innovative.</p><figure id="6b5cb703-a702-4934-b928-fba58aa78fc5" class="image"><a href="Daniel Gross Dreams and Determination David Perell/DgAoiVVUcAARgPZ.jpg"><img style="width:600px" src="Daniel Gross Dreams and Determination David Perell/DgAoiVVUcAARgPZ.jpg"/></a></figure><p id="a531a2a6-ef51-4969-ac62-30b7d2bd9b87" class="">5:40- Daniel talks about some of things he became fascinated with early on in life.</p><p id="e0a6054f-3449-4046-b741-8cb950be5919" class="">8:20 How Daniel took an early interest in coding through video games and reverse engineering.</p><p id="aba2b149-e184-4b45-973e-04b423fd5a9c" class="">8:50 The “gamifacation” strategy Daniel uses to set goals and motivate himself.</p><p id="e5e155cb-3cd9-47cf-aa6a-ea57efebf98b" class="">9:20 “Everything in life is some form of a video game” Daniel explains how life can be similar to a video game in terms of seeing stages of life as levels, and setting goals and strategies to progress one from level to the next.</p><p id="c92a353d-56b2-4e0b-b2cc-8fb9f8e21e89" class="">11:22 Daniel delves into what motivates people and specifically how our need for approval is not necessarily something to be ashamed of.</p><p id="6b6b0ba3-a60f-4bb9-8135-b6fbea569f89" class="">14:00 Daniel talks about YC’s earlier years and his first encounter with Steve Jobs.</p><p id="1fb131aa-4446-4ffb-b731-695216b24a80" class="">16:00 Daniel describes his initial vision to create a “personal” search engine capable of sorting through your own personal data.</p><p id="294bc077-1ff2-42db-9fbc-690dc7089c07" class="">17:10 Daniel explains a variety of features and functions that AI and his coding have on iOS and OS devices</p><p id="dd7a136c-7d5e-40c0-b60b-9715f0bb3fbf" class="">18:15 How will we interact with artificial intelligence in the future?</p><p id="f08a31d5-a94b-4a68-8da4-85d68c82d418" class="">21:00 The pitfalls of trying to superimpose the current futuristic thinking rather than expecting the unexpected.</p><p id="675905c3-059a-4f14-a84d-0835e1e8f993" class="">22:56 New tech often seems like a toy or novelty at first, up until it becomes mainstream.</p><p id="0a8d8016-dae8-4a7c-8765-9f1264d19a4d" class="">23:27- Daniels offers his perspective on the bottlenecks we have on scientific progress and the current lack of diversity in terms of ideas.</p><p id="a3adeb4e-cd2c-4a99-9177-d3ac2e43da3b" class="">26:00 Entry barriers most start ups have to face and overcome when entering AI development.</p><p id="428fd8ed-340b-474c-b48e-939b48b8041e" class="">27:32 Daniel speaks about Assembly A.I., a start up that YC worked with.</p><p id="b70c6dd9-ad9c-4da3-aec7-d8364576cfe4" class="">29:30 Daniel explains the benefits of reevaluating a strategy when stuck on a challenging “level.”</p><p id="58f8a5ce-457f-4b6c-b7ff-29ca6eb8c472" class="">34:45 David suggests the first steps to perusing progress is surrounding yourself with great people or ideas.</p><p id="a28e0642-7fe9-40a2-8865-500cf8675205" class="">35:09 Reverse engineering your vision, into a plan. How to set “levels” as goals when playing the game of life.</p><p id="79f1a18e-8318-419e-9940-9053da42bdc3" class="">37:39 How vital of a role our environment plays in our development and pursuit of of progress.</p><p id="b0f82c3f-ea18-4248-8912-f3376bf2d539" class="">38:15 Optimizing for a city versus a small group and the importance of one’s surroundings when pursuing a goal or idea.</p><p id="ca9f9d14-d405-44b6-a9b5-cc0f4f78ea7a" class="">39:38 Social/professional groups and their validity while shifting to a digital format. How strong are our online relationships when it comes to motivating us?</p><p id="4e2347d3-3d18-4b2f-9a62-6341f3b8f94f" class="">43:06 What makes Israel so different and innovative?</p><p id="d4767dac-76d5-4045-8fb7-7686745f144d" class="">45:20 Daniel describes the first and second Intifada in Israel and the resulting send of community that was cultivated during the shared suffering.</p><p id="e098410f-e83e-4add-975f-1232bf21bc2b" class="">47:46 “Scarcity creates greatness” How Israel innovates out of necessity rather than experimentally.</p><p id="f1d868f4-531a-4536-b43e-74e349bb7317" class="">51:30 The “harsh” culture of Israel and its contribution to the deterrence of pursuing potentially good or risky ideas.</p><p id="7076ef31-b402-44e2-9e8d-4ec680469ffd" class="">53:45 How optimism can be both a positive outlook for growth, but can also lead to false or unrealistic expectations</p><p id="66723021-5d03-4216-8d53-654d49855d99" class="">57:00 Daniel on how we can learn from history when looking at it from a cyclical point of view.</p><p id="fc3ed1a3-ffc4-4367-bb6d-3e8d7b0df675" class="">1:00.24 – How ‘stupid little ideas” can turn out to be some of the most innovative endeavors when pursued.</p><p id="c6541724-1178-4b31-aec1-106cf25b54c5" class="">1:01.38 “Fitness as a ticket of admission to the world” and how it enables us to better experience more aspects of life.</p></div></article></body></html>

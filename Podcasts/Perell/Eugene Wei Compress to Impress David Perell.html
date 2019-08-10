@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Eugene Wei: Compress to Impress — David Perell</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="e54f0e17-942a-4458-86f4-4f5c60d9f002" class="page sans"><header><h1 class="page-title">Eugene Wei: Compress to Impress — David Perell</h1></header><div class="page-body"><p id="02be0df1-e8d2-41ca-b01e-5acf5eff1d88" class="block-color-gray"><a href="https://www.perell.com/podcast/eugene">https://www.perell.com/podcast/eugene</a></p><p id="7014d4d0-d2fe-4cd5-a384-0bf016b103e5" class="">
+</p><figure id="70bad1cc-6f34-4d85-a73e-0ccc926bf59a" class="image"><a href="https://static1.squarespace.com/static/55576406e4b02e4679105dc2/5814e6a96b8f5b0e59aed181/5a52ca29652dea46dbea62d1/1563203671357/Screenshot+2018-01-09+18.48.22.png?format=1500w"><img src="https://static1.squarespace.com/static/55576406e4b02e4679105dc2/5814e6a96b8f5b0e59aed181/5a52ca29652dea46dbea62d1/1563203671357/Screenshot+2018-01-09+18.48.22.png?format=1500w"/></a></figure><p id="0db551cb-7b6f-48ef-8622-2c80cb77ad88" class="">Today’s guest is Eugene Wei, who&#x27;s spent his career working at some of the world’s best technology companies including <a href="https://www.amazon.com/">Amazon</a>, <a href="https://www.hulu.com/">Hulu</a>, and <a href="https://www.facebook.com/">Facebook</a>. He joined Amazon in 1997 after graduating from Stanford and it was at Amazon that he watched Jeff Bezos turn a small little internet bookstore into “The Everything Store” that were all so familiar with. After leaving Amazon, Eugene moved to New York to become a film editor before moving to Los Angeles to become a director.</p><p id="590acff1-9b70-4a81-852d-40d4f1f96f85" class="">That summer he joined the company that would become Hulu, leading the product, design, editorial, and marketing teams. And since then, he founded and sold a startup called Erly, and worked as the head of product for <a href="https://flipboard.com/">Flipboard</a> before joining the Facebook as the head of video at <a href="https://www.oculus.com/">Oculus</a>.</p><p id="c32f010e-3b32-40d7-bada-6f4939ab710b" class="">In this conversation, we talk about the spiritual significance of the second law of thermodynamics and its impact on movies, company building, and personal growth. We talk about the principles of communication and draw lessons from Jeff Bezos on how to communicate clearly and memorably. And finally, we take lessons from Eugene’s time living in Los Angeles and Silicon Valley and explore the ever-fascinating intersection of media and technology. And before we begin, you can find links to his blog, <a href="http://www.eugenewei.com/">Remains of the Day</a>, along with my favorite posts below.</p><h2 id="12b2a89d-cbca-4ec9-bb12-97735cfef098" class="">Links:</h2><p id="b04ce82c-3e2d-4a0d-89fe-b37ba0477a4a" class="">Find Eugene online:</p><p id="08bd0356-6174-42b2-a2fd-1016e4b7d7f4" class="">Mentioned in the show:</p><ul id="cbfb3dcd-4072-439b-98a1-28bbcfc40d93" class="bulleted-list"><li>Eugene’s Iliad discussion [9:35]</li></ul><p id="d3d32e9d-db3a-4e97-bff7-d0c2d9b2c1e5" class=""><strong>Books mentioned:</strong></p><p id="cb39b5cf-9f78-4a2d-ac23-2d0d0dd2a862" class=""><strong>People mentioned:</strong></p><h2 id="43ae365d-636c-4039-ba9b-3a71dbfb0fb8" class="">Show Topics</h2><p id="dd0e7c57-0590-4386-9978-ec0ab46b71b0" class="">0:32 - Some information on the episode guest, Eugene Wei and a bit of background on his career.</p><p id="0758dfa4-1cb3-459c-850a-d89893139956" class="">1:58 - Introduction to Eugene, what life was like for him early on, and what he got into as a kid. Also, a bit on how he got into the filmmaking scene.</p><p id="fad0bd8f-effc-4a96-bfe2-80a0656b9fd5" class="">3:32 - Eugene on some of the biases from his parents that he faced regarding a career choice, and a bit on him convincing them to move out west and away from Chicago.</p><p id="7486b88b-22ba-4495-a8c3-5906a7846745" class="">4:56 - What Stanford was like back when Eugene was growing up, how his parents felt about his choice to go there, what things he ended up exploring while there, and what he majored in.</p><p id="2ecaf7c0-91b3-438a-934b-fc78fa93b036" class="">6:55 - How learning with both sides of the brain influenced Eugene after college and how it has been useful for him in the professional context. “I think the general idea of following your interests so that you have an inherent sort of motivator for learning is just super-critical.”</p><p id="84a0c345-4b12-476d-a45a-392a51cb5e7a" class="">7:54 - Thoughts on underestimating the advantages of a somewhat generalist education compared to an education in a specific field. How having a broad set of skills and a general education has helped him more than if he were to specialize in one field.</p><p id="12523dfd-a158-49ed-8bff-0da6ca601b8a" class="">9:50 - Eugene on the importance of being deeply intellectually interested in his work.</p><p id="1359011c-bbf3-44de-82eb-541e5911076b" class="">10:32 - Eugene’s journey towards receiving a job with Amazon in 1997, the choices he made regarding college, and him realizing the growing wave that was the internet back then.</p><p id="7c14528b-bd4c-44c7-b7d5-664795071b49" class="">14:11 - Eugene discussing Born to Rebel, an influential book that he read while in high school, and how this impacted him. Also, Eugene discussing fighting the conformist nature that comes with being an older sibling, and some discussion on how the younger sibling likely has a rebellious nature.</p><p id="ce74b9ba-14bf-4e68-9c73-a87074aba345" class="">15:40 - Further discussion on challenging the conformist nature, pushing yourself into new and challenging areas to grow, and Eugene talking about his decision to leave Amazon and go to film school. “To start over and be a student again forces you into a different frame of mind.”</p><p id="8a531dc2-421e-419b-8a64-336802df87a2" class="">17:35 - How leaving Amazon to start over and go to film school taught Eugene valuable lessons and positively impacted him.</p><p id="315e0d02-48a3-4f6c-81ca-8a0ef35e38f7" class="">18:28 - What the second law of thermodynamics is and how it played a role in Eugene’s journey. Some more on him pushing out of equilibrium for growth, as well.</p><p id="36e58232-f4f2-4ce2-97dd-65e667c994b0" class="">22:01 - What Eugene did for work when he first got into filmmaking and some more thoughts on what the journey did for him. Also, a bit on his next job, which was working for the company that eventually became Hulu.</p><p id="055fdcdc-812f-4ae0-9063-7f5c748fc708" class="">24:18 - Eugene’s thoughts about the different streaming platforms around that time that he began working for the company that eventually became Hulu.</p><p id="2aaa2292-d951-4148-92b9-7717491c8d37" class="">25:45 - What Eugene learned about how the media and technology industries operate and where they intersect. Some thoughts on media and tech companies in general and thoughts on their futures, as well.</p><p id="aaab3166-94dc-4c62-a9ea-48b454302daf" class="">30:16 - Eugene describing the free agent model and its contrast with vertical integration. A bit more on how various media companies have changed and some of the strategies that they use. “In 2013, 18 of the top 25 films were sequels, prequels, or extensions of existing stories or popular streams.” “In box office earnings, sequels make 8 times as much as originals.”</p><p id="2ae88a7e-b558-4d7a-a621-f24fc64423d9" class="">35:10 - The self-perpetuating platforms that a majority of movies are now and a bit on how media companies look to buy story optionality to promote future stories.</p><p id="b6c394a3-5eb4-4e1f-8e5b-9153dd10c073" class="">37:49 - What it was like working for Amazon in 1997 and working close to Jeff Bezos. Also, what it was like watching a company like that grow and why Amazon originally started with selling books.</p><p id="c91134d3-2a10-4fba-a817-2397bfba271b" class="">41:40 - What Eugene learned from Jeff Bezos himself and a bit of insight on how Jeff worked. Also, the importance of thinking based on first principles, and some guidelines necessary for developing these first principles. “To derive first principles, you need access to raw data or you&#x27;ll forever be getting secondhand principles from other people.”</p><p id="4842d685-659f-427f-93ca-b638e4243147" class="">43:33 - Eugene further discussing developing first principles, accessing raw data necessary for developing them, and the necessity for failure.</p><p id="ecf7c68b-1271-44cf-a5a6-12ae384357f1" class="">44:58 - The unique ways that meetings are run at Amazon, why Jeff banned the usage of Powerpoint, how Powerpoint distorts people’s thinking, and some more things that Jeff did to improve various aspects of the company and its employees.</p><p id="9f868328-87a7-4544-8437-309f4be52f43" class="">49:47 - Eugene on what you should do as a CEO once your company grows larger and more successful, and some thoughts on a few things that make successful and effective companies.</p><p id="3d37c532-d79c-4f4a-bb12-9add2ed1c99c" class="">52:04 - How language is encoded in various media, the immense communicative aspects of visual media compared to literal, and some thoughts on us being visual learners. Also, how watching someone do their job is much more effective compared to reading about how to do that job.</p><p id="18908ebf-71e2-46ba-aebc-dd14e439b474" class="">1:02:08 - Story and narrative being a very powerful way to encode information in addition to media, and some more thoughts on visual and narrative mediums being the most effective ways to learn.</p><p id="ed498b4d-a74f-409a-a4e0-598a3317ddc8" class="">1:04:12 - The positive benefits that countries gain from gaining widespread TV for the first time and some thoughts on how TV can be beneficial to us.</p><p id="868c760f-ead0-4aa3-85dc-a96a660da606" class="">1:05:49 - What Eugene’s favorite writers have in common and why they are his favorites. Also, a bit on the different style of directing by Terrence Malick. How Terrence uses the visual medium in unique ways to get closer to consciousness and what it’s actually like to perceive the world.</p><p id="9658d78c-6c17-4cfe-8edf-88ac817938b3" class=""><em>You can support the North Star Podcast by leaving a review on </em><a href="https://itunes.apple.com/us/podcast/north-star-podcast/id1170914572?mt=2"><em>iTunes</em></a><em>. Or you can share the podcast on </em><a href="https://twitter.com/?lang=en"><em>Twitter</em></a><em> or </em><a href="https://www.facebook.com/"><em>Facebook</em></a><em>.</em></p><p id="c3ee6ec5-50c5-4c2f-97c8-28832bd208ea" class=""><em>To listen to other episodes or learn more about the North Star, you can connect with me directly at </em><a href="http://perell.com/"><em>perell.com</em></a><em> and you can always reach out on </em><a href="https://twitter.com/david_perell?lang=en"><em>Twitter at david_perell</em></a><em>. And if you enjoyed this episode, you’ll like the </em><a href="http://www.perell.com/podcast/tyler"><em>episode with Tyler Cowen</em></a><em>, an economist at </em><a href="https://www2.gmu.edu/"><em>George Mason</em></a><em> with deep interests in food, music, art, and travel.</em></p></div></article></body></html>

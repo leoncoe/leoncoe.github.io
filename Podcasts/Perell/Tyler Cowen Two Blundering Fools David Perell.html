@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Tyler Cowen: Two Blundering Fools — David Perell</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="227dd08e-7053-4997-bc37-8aad7aab479c" class="page sans"><header><h1 class="page-title">Tyler Cowen: Two Blundering Fools — David Perell</h1></header><div class="page-body"><p id="e5339db7-a9f2-4133-89dc-98f6a457a7df" class="block-color-gray"><a href="https://www.perell.com/podcast/tyler">https://www.perell.com/podcast/tyler</a></p><p id="599f1391-2c9a-4f74-a46e-aea17df64710" class="">
+</p><figure id="839da52d-0095-49a9-a556-b8e333f6ddb4" class="image"><a href="https://static1.squarespace.com/static/55576406e4b02e4679105dc2/5814e6a96b8f5b0e59aed181/59ed5f018c56a88ac98b48bd/1540561588775/DMhw-LAW0AESp-x.png?format=1500w"><img src="https://static1.squarespace.com/static/55576406e4b02e4679105dc2/5814e6a96b8f5b0e59aed181/59ed5f018c56a88ac98b48bd/1540561588775/DMhw-LAW0AESp-x.png?format=1500w"/></a></figure><p id="80c632bc-dc5d-40d9-9896-7e0b21130139" class="">Tyler Cowen is an economics professor at George Mason University. He runs the Mercatus Center, which bridges the gap between academic ideas and real-world problems. He blogs every day at <em>Marginal Revolution, </em>writes for Bloomberg, and hosts his own podcast called Conversations with Tyler. He writes about economics, arts, culture, food, and globalization.</p><p id="457d43e8-0b41-433d-b6bb-238eb0a5d597" class="">As I prepared for this episode, I settled on three things that I wanted to focus on: how Tyler thinks about travel, the rise of China and India, and how he learns so much. Enjoy this exploration of knowledge and culture, and I hope you laugh with us along the way.</p><p id="40e8eac9-00b7-455c-914e-0df4c7d11fe5" class="">I particularly recommend Tyler’s most recent book, <a href="https://amzn.to/2Cheerb"><em>Stubborn Attachments.</em></a></p><h3 id="d5491e4f-9213-4e9f-92ab-5659670c4978" class=""><strong>Transcript</strong></h3><p id="92426fcd-b5f9-4b4d-869b-d452d66baba7" class=""><strong>David</strong>: Tyler Cowen, welcome to the North Star.</p><p id="296c6859-2bd3-4161-8332-a12d7c776a63" class=""><strong>Tyler</strong>: Thank you for having me.</p><p id="e19e5248-8d45-48cd-8b09-0650b0a92652" class=""><strong>David</strong>: So tell me a little bit about where you grew up in northern New Jersey. What was growing up like for you and what were you into as a kid?</p><p id="8f31e507-0b14-4274-9df5-49c830b92feb" class=""><strong>Tyler</strong>: I was born in Kearny, New Jersey, Hudson county, which was a blue collar town, and my father climbed some kind of career ladder from having been bankrupted at thirty, to being upper, upper middle class, so I caught different parts of that income stream. I went to a great high school where I had four or five close friends who were super smart and had a blast. We were like a nerd fest before nerds were cool and I learned something every day but not from the teachers. I loved it and I just knew New York City.</p><p id="db290285-e3f7-4e93-bc12-8003d438ef32" class=""><strong>David</strong>: Well, let&#x27;s dive into it. I think that one thing that&#x27;s really interesting about the Internet is I like to say it rewards obsession in a way that the world didn&#x27;t use to and I think a byproduct of that is nerd culture is, is cool now.</p><p id="014dd1e6-3d9f-4a0f-a754-34542750f26e" class=""><strong>Tyler</strong>: You know, I specialized in the style of learning before there wasn&#x27;t an internet and then when the Internet came along, I feel it made me like 20 times more productive. So I&#x27;m very lucky to have gotten this extreme productivity boost at about age 40, which is very rare in careers. There are people who might have some kind of productivity turning point when they&#x27;re 29 or 22, but to get it at age 40, it&#x27;s given my life a very different trajectory.</p><p id="47d80bfa-ff58-4de3-8400-dfd458d882c1" class=""><strong>David</strong>: So I know you wrote a book about that, but talk about what was that productivity boost like, how do you think about productivity, and how did that boost manifest itself?</p><p id="93d73df0-2e65-4914-bf9e-d683e70c9da6" class=""><strong>Tyler</strong>: Well, I worked very hard for years at trying to absorb more information and absorb it quickly and order it effectively and when the way you do that is driving around to used bookstores and carry used books home and read them, well, that&#x27;s a wonderful thing to do, but when you can just go to your iPad or your laptop and whoosh, it&#x27;s all there, you&#x27;re going to do a lot better.</p><p id="70d2001a-7291-46a2-ac7e-e3ca760559f7" class=""><strong>Tyler</strong>: Whereas people who say do research, they&#x27;ve been made more productive by the Internet in other ways, but they&#x27;re less concerned with absorbing information. So I feel I&#x27;ve gotten a relative gain compared to many other people.</p><p id="0b4a733f-7417-475f-bfd8-6212744f5e30" class=""><strong>David</strong>: So does that mean that you&#x27;re hopping around between different subjects? Like if I go on marginal revolution, I could go from traveled economics to then yesterday, right, about North Korea and America. So are you hopping around or how has that style of learning changed over the years?</p><p id="3e61e8a3-0c45-4347-bb9d-3cc65cdbba9b" class=""><strong>Tyler</strong>: I have long-term study plans, like part of my long-term study plan is to understand India and China much better. So that&#x27;s kind of a 10 year project that I&#x27;m always in the middle of, but of course using the Internet to help me makes it much easier. Plus travel, travel being a key to learning. We&#x27;ll get back to that. Uh, and then during the day I just try to keep up with the flow, the flow of good articles and new ideas.</p><p id="06fc8b44-1b0f-4abf-8bb8-e0aa0b2fc61f" class=""><strong>Tyler</strong>: And you know, the flow always beats me. But you wake up at seven, you go to bed at 11:00 PM, there&#x27;s interruptions, you exercise, you eat, but the day is the flow, the flow is your day, like it or not.</p><p id="f4ea6416-3296-43ce-bc06-f9beba8255c4" class=""><strong>David</strong>: Dodging bullets and trying to survive. So there was analogy I got a couple months ago of if, if you&#x27;re learning is a ship, when you try to steer something for long-term, so say that you want to learn about India in the next 10 years. The advice that I got which I thought was quite good was just steer your ship. So change your twitter feed, change your social streams one or two degrees. How do you think about it?</p><p id="45610267-4cbf-4a46-a5bc-2dff2ce3ef89" class=""><strong>Tyler</strong>: I view myself as a prisoner of my passions. So what helps me is to be very motivated to do what I do. So I don&#x27;t sit down and strategize like what&#x27;s my optimal career plan?</p><p id="280f208d-359c-4e29-b028-18a6f1912e6b" class=""><strong>Tyler</strong>: I just think what&#x27;ll keep me involved and I figure they kind of compound interest on that learning will just accumulate and as long as I&#x27;m having fun, I&#x27;ll stay motivated like way past other people and that&#x27;s going to go well for me. So it&#x27;s almost a deliberate absence of strategy except for motivating me.</p><blockquote id="50dbf3e2-da5d-4d85-a66c-b033dc84174b" class="">Compounding fuels success in almost anything. Albert Einstein once called it the 8th wonder of the world. pic.twitter.com/1QcE9Q1hsU— ᴅᴀᴠɪᴅ ᴘᴇʀᴇʟʟ ✌ (@david_perell) October 23, 2017</blockquote><p id="f0a829ba-595a-42e5-b788-01b0a81d5f63" class=""><strong>David</strong>: What are those core passions?</p><p id="c45bb958-96b7-4d44-be5b-3cb66fd5184e" class=""><strong>Tyler</strong>: Travel of course, food, just social science and generally walking through the world on a given day and you see things like you go to Barnes and Noble, they offer like a loyalty card, buy more books with us, we&#x27;ll give you a discount and you think, well, why are they doing that? How does that make economic sense? And you want to try to figure it out so you just want to try to figure things out. It&#x27;s almost a Sherlock Holmes like game and there&#x27;s always more and more and more and more and more and it drives you crazy, but it&#x27;s fun.</p><p id="b48bcc15-3c68-436e-afd4-2d211732587a" class=""><strong>David</strong>: What is it about China and India in particular that appealed to you?</p><p id="76d63642-1090-4e1d-be35-40ad590220e4" class=""><strong>Tyler</strong>: Obviously they&#x27;re two highly populous countries. The US could have a billion more people and we&#x27;d still be, you know, the third most populous country in the world. China now by at least one measure has the world&#x27;s largest GDP and I&#x27;m an economist. India is probably headed to having the world&#x27;s largest GDP. So it does go back and think, imagine you&#x27;re a British person in 1910, like what should you study? Where should you travel? Well, the United States. To complain that you don&#x27;t like the pollution or not all the food is what you expect. It&#x27;s irrelevant, right? You go to the United States, if you don&#x27;t, you&#x27;re kind of a dummy. So for me right now, China, India, that&#x27;s like the United States in 1910. I feel obliged to learn it more by obligation, but it&#x27;s fun. It&#x27;s also a passion.</p><p id="a32d904d-ab53-45ad-9b13-bcfd6ec9c4ac" class=""><strong>David</strong>: So when you&#x27;re going about learning something like China, India, of course you&#x27;d go to the <a href="http://www.nytimes.com/topic/person/michael-bloomberg">Bloomberg New York Times</a>, but I think that there is, to back to nerd culture, there are probably certain sections of the Internet of the world that will give you a very rich experience that the average person wouldn&#x27;t get.</p><p id="886bf955-76e0-4445-a0f1-61f535c27c28" class=""><strong>David</strong>: You seem to be very good at that. How have you been thinking about studying China in India in a way that most people wouldn&#x27;t think about?</p><p id="ac39d9c1-1dca-48ef-b4f2-59f7da14cf24" class=""><strong>Tyler</strong>: China and India I consider hard to learn because when you read about their histories, things don&#x27;t fall into intuitive categories that maybe they do for Chinese people for instance, but all the different dynasties, they tend to blur together. You could read the same Chinese history book a bunch of times in a row and at the end you&#x27;re still confused and you don&#x27;t really know how to place it all, so to pick some side areas, so for me, Chinese food or Indian classical music or certain features of Chinese geography or ethnic regional culture and to learn those well and just keep on attacking the elephant from all these different sides rather than just, &quot;Oh, I&#x27;m going to sit down and read this book on Chinese history.&quot;.</p><p id="2eb38cc3-096d-49f2-b45d-6e1124fc2b0d" class=""><strong>Tyler</strong>: That tends not to work. It works really well for like Paris or the Florentine Renaissance, but for unfamiliar parts of the world and I look for these sideways in the door.</p><p id="15811665-1266-43ec-8d32-bca57608c4ab" class=""><strong>David</strong>: Well, let&#x27;s dive into China first. Where in China have you been and what have the really striking experiences been for you during your travels set?</p><p id="e220e17e-0a68-4d3e-907c-35dd76f1f013" class=""><strong>Tyler</strong>: My goal is to go to all the provinces in China in a significant way and not just putting a toe in. I&#x27;m past the halfway point. My favorite part of China is the west and the southwest, especially Yunnan province. It&#x27;s highly exotic. It&#x27;s about half regional minorities. That has some of China&#x27;s best food. It&#x27;s extremely reasonably priced that has remarkably little pollution by Chinese standards. People are very friendly, uh, there are actually quite pro-american because of the history of America. Helping them out in the war against Japan is just amazing fun.</p><p id="791fa8b1-d796-4694-8a52-5a77ae3bc5a1" class=""><strong>Tyler</strong>: I think right now it&#x27;s probably the best trip in the world is to go to western China.</p><p id="af48fdbf-09e2-40ac-b946-e4ed3d604a67" class=""><strong>David</strong>: Wow. So western China and eastern China, of course, because we&#x27;re just talking about GDP, it seems like most of that would be concentrated in eastern China. So let&#x27;s start with western China. What is it about it that makes it so interesting and is it authentic to what&#x27;s happening in China because it is so different demographically.</p><p id="fea930d1-6d75-4514-9774-4befe421eb7e" class=""><strong>Tyler</strong>: Authentic is a tricky word. So if you go to Oregon is not authentic America. Well yeah, but it&#x27;s not typical either. Nor is New Jersey. So southwestern China, it&#x27;s just accessible and it&#x27;s fun. So Beijing I love. It&#x27;s fantastic. Everyone should go multiple times, but in some ways it&#x27;s a tough slog. A lot of the city is ugly. The pollution can be awful and it&#x27;s so large. It&#x27;s not really walkable for the most part, although it&#x27;s walkable within neighborhoods.</p><p id="ed9e9967-d7b4-442b-a058-41c7fac6a72e" class=""><strong>Tyler</strong>: You can go to Beijing and think you don&#x27;t really like China. That&#x27;s the wrong impression. So I would say Udon, it&#x27;s like this backdoor into China and it will open up ways of thinking about China and then when you go to Beijing you&#x27;ll like Beijing a lot more. So you know, to get to Udon, you probably have to go through Beijing to fly there. So yeah, stop in Beijing for a day, but find the back doors that get your passions and that&#x27;s going to be western China.</p><p id="22ff3fe5-307d-4f38-81d4-6dfde1479e2d" class=""><strong>David</strong>: And now in terms of what I would consider, I don&#x27;t know if this is totally true, but that&#x27;s how I model China. There are four big mega cities. You know there&#x27;s, there&#x27;s the manufacturing center, Hong Kong, Shanghai and Beijing. Can you talk about the differences between them?</p><p id="0278a7f6-c55c-46d5-ae23-c9e3bbba9b79" class=""><strong>Tyler</strong>: Well, Guangzhou and Chongqing are also mega cities. Some people believe Chongqing, which now has been made its own province is bigger than any other locality in China. We don&#x27;t even know because there are so many people who are within China, in essence, illegal migrants. We&#x27;re not sure how many people are are there. The different parts of China until recently have not been economically integrated, so they have cuisines that are quite unlike each other, maybe more unlike each other than different European cuisines. Visually, some parts will look the same because these mega cities have been built up recently using more or less common patterns so you can have the deceiving impression that you&#x27;re going to the same place over and over again, even though you&#x27;re traveling to many parts of China, but European say that about the US often like &quot;Oh, the whole country feels the same.&quot; If you live here, you know, it&#x27;s not true, right? There aren&#x27;t really significant differences.</p><p id="37cb6be7-8514-4025-b471-3a0bbf129c77" class=""><strong>Tyler</strong>: So to go to Hunan Province or to go to Shenyang in the northeast, which is near North Korea, or go to, you know, Chengdu in Sichuan and forgive all my pronunciations which are not proper Chinese. Uh, you&#x27;re seeing much more diversity than anything you&#x27;re likely to do in either Europe or the US. You&#x27;re seeing what&#x27;s now the world&#x27;s most important country. Again, I can&#x27;t stress how favorable the prices are. You can stay in a five star luxury hotel in most parts of China other than Beijing or Shanghai for less than $100 a night and it will be, you know, a wonderful quality experience and the best food in the world, you know, a meal will never have to cost you more than $20 unless you order a highly unusual dish like shark fin soup. So if you&#x27;re on any kind of budget, there was no reason not to go.</p><p id="c74cb905-e1a7-48fa-8235-e0bc4724e0d9" class=""><strong>Tyler</strong>: Crime is close to zero for women overall it&#x27;s quite safe. I mean everywhere it has some problems, but as the world goes, one of the best areas to travel in solo if you&#x27;re a woman. The main reason not to go is air pollution. But again in the west that&#x27;s a much smaller problem.</p><p id="8a5dc4b9-31c5-4a5a-91ad-1f57745c4615" class=""><strong>David</strong>: Right. I was reading that there have been 16,000,000 new bikes installed in China in the last year and a half and, and a lot of people are saying that the changes in transportation there may do something at least to help boost the air pollution, which I thought was interesting, but I want to dive into infrastructure. How has being in China, uh, changed the way that you think about infrastructure and sort of the way that you think about how development happens?</p><p id="2fc49de6-7a14-4011-9bf7-ee5478e3db11" class=""><strong>Tyler</strong>: Infrastructure is their specialty. They have, what is one of the world&#x27;s two or three best train systems given how large the country is, that&#x27;s important. A remarkable thing about traveling and mainland China is you can wake up in the morning and one city and be in almost any other part of China the same day just by taking a train trip and you&#x27;ll see amazing things on the way. But in terms of planning your journey, everything is within a day without having to mess around with flights and with flights, you don&#x27;t see what&#x27;s in between. So you can go like Beijing to Shiyan see the terracotta warriors, that&#x27;s maybe about six hours. So there&#x27;s this remarkable sense of freedom you have because of the infrastructure. Along so many dimensions, now they are probably more innovative than we are. And to see that is impressive, we Americans are so complacent and smog. We think where the world&#x27;s innovators, the Europeans lag behind true on average, but China does something like the payment system.</p><p id="9f1e2107-e139-4ded-992d-24be337df038" class=""><strong>Tyler</strong>: There&#x27;s this way quicker and much better and you&#x27;ll come back here and curse, like having a, you know, stick your chip in the thing and it doesn&#x27;t always work. They&#x27;re rebuilding their world in some ways. They&#x27;re outdoing us.</p><p id="ab50ac04-7ef9-46ea-986c-840193f69a0d" class=""><strong>David</strong>: In terms of innovative. How do you define innovative and in what sense do they have an advantage by by not having had the PC and being able to jump straight to sort of a mobile first world?</p><p id="d77a3c2a-e239-47f4-a4f4-a55d94779a45" class=""><strong>Tyler</strong>: In some cases, they&#x27;re just not locked into older systems as you mentioned. Also, this is more disturbing. We should be bothered by this by having less rule of law. They can just &quot;do things and get them done&quot; and that&#x27;s not always a good thing. A privacy law. They don&#x27;t have the concerns you would have in Europe or the United States, but a Chinese payment typically is you take out your smartphone, you scan a qr code, it can be done in a second and a half.</p><p id="1cb6dac5-3f12-463a-9491-9ddc17f06ade" class=""><strong>Tyler</strong>: The error rate seems to be very low. Uh, it&#x27;s processed perfectly well. It&#x27;s cheaper, better, quicker and more convenient than what we do and they beat us and we&#x27;re not really catching up. And we need, uh, to absorb that lesson for the first time maybe ever. But at least for a long time, the US now has a peer country. Like Soviet Union was never that peer, only with weapons were they a peer. China in terms of creativity and GDP. Arguably right now is a peer. You ought to go and learn from your peer, right? How can you not do that?</p><p id="6dfa6e30-e55b-4b57-8694-80f7b75ecb7d" class=""><strong>David</strong>: Yeah. I couldn&#x27;t agree more. I was talking to a friend last night. I think Hong Kong might be a good place or Shanghai might be a good place to spend a couple of years, but I want to talk about travel in terms of how do you think about travel?</p><p id="da401e3d-fa2e-4fb1-81fa-e175f461f381" class=""><strong>David</strong>: So I&#x27;ll be honest, I did a euro trip recently and I didn&#x27;t get quite the experience that I wanted because before we had never really come to a consensus on what does travel mean and it&#x27;s not something that a lot of younger people, at least in my, in terms of my friends really think about. So how do you think about travel and what are you looking to do when you do travel?</p><p id="724b26cb-378e-4b7d-af68-639274bdfa09" class=""><strong>Tyler</strong>: I like to go weird places. So I did a European trip this summer. It was in August. I went to Macedonia. The country where people hardly ever go. Most of the tourist are either Russian or Serbian. Uh, but certainly not many Americans are there. Again, it&#x27;s completely safe. Prices are very favorable. I had perfect weather, beautiful sights, tenth century monasteries, all kinds of sculpture. Remarkably good cheeses, breads and meats, wonderful food, wonderful lake fish. A lot of history. A lot of geopolitics you understand much better why the Balkans are messed up and just like how Bulgaria, Greece, Macedonia, Serbia, Kosovo fit together together.</p><p id="3d78e1cd-c771-4265-bbc0-8163ad9e778f" class=""><strong>Tyler</strong>: I&#x27;ve tried reading that in books. I can&#x27;t grasp it. I go there, but the mix of going there and the books, somehow it all works and you see this country where the politics are so different from what we&#x27;re used to in Europe. You just again have to reexamine everything. So I say to people like, go weird, like yes, at some point you should see Paris, but if all you do is see Paris, maybe you&#x27;ll be a little bored. Where did you go?</p><p id="b81f9444-a38c-4140-a748-47611d353d11" class=""><strong>David</strong>: In Europe?</p><p id="2286f59a-60b3-4a0f-b28d-c1a181d81a2b" class=""><strong>Tyler</strong>: Yeah.</p><p id="095500f8-32b3-4a14-a0e3-1dbd44659834" class=""><strong>David</strong>: We went to Amsterdam, Berlin, Prague, Vienna, and Budapest.</p><p id="926e3add-d1d5-4a36-a256-c074db9d2e0b" class=""><strong>Tyler</strong>: You should have seen Paris! Those are all the same, it&#x27;s like an airport shopping mall.</p><p id="412c7e14-febe-4e58-b5fe-4a73abc3d302" class=""><strong>David</strong>: I couldn&#x27;t agree more and exactly. And then, so over the new year&#x27;s I was in Chile.</p><p id="b596080e-fedd-4c25-a08f-8adca4b26120" class=""><strong>Tyler</strong>: One of my favorites by the way.</p><p id="80de6d49-8780-47c1-8f98-ed4e840b29e3" class=""><strong>David</strong>: So my dad is a total nut. And so what we did was, it was new year&#x27;s day and we went to go see some hieroglyphics up in the Atacama desert in the northern part of the country. It&#x27;s the driest place in the world.</p><p id="13276b2d-2376-4559-a52c-62f427b3dc98" class=""><strong>Tyler</strong>: And one of the best trips you can take.</p><p id="cc631f00-a18d-43fc-8e16-3dd77d3c278c" class=""><strong>David</strong>: Yes, it was wonderful. So it&#x27;s new year&#x27;s day and we&#x27;d go to the person at the front of the hieroglyphics and we say at where&#x27;s the closest place to get lunch? And he said, it&#x27;s new years day, it&#x27;s all closed. So he said, but I have a friend, she can cook you food. So we go into this little town, all adobe houses, just a gravel streets. And this woman, Sherry and her husband had left her. She was quite lonely unfortunately, but we spent the entire afternoon with her. She, you know, she had chickens in the backyard, llamas in the backyard and it was the richest experience I had in a long time traveling.</p><p id="7f3b6a13-0df4-4793-9c4f-975f2278d0c3" class=""><strong>Tyler</strong>: And the food there is excellent, right? It&#x27;s quite safe. Infrastructure is surprisingly good given how remote it is and there&#x27;s some magic to Chile, some kind of warmth but also efficiency where it just hits that sweet spot and it&#x27;s both familiar and exotic at the same time.</p><p id="b2113992-60b3-428d-b9d9-53581f791862" class=""><strong>David</strong>: Yeah. All right, back to India. So, now we&#x27;ll get into India. So how have you been thinking about learning about India? I know at least in India is much, it&#x27;s very different in terms of there&#x27;s a lot of different languages, lots of different cultures. I think a lot of westerners don&#x27;t realize that.</p><p id="2dec18fb-241b-484d-b1bc-075252fce400" class=""><strong>Tyler</strong>: I&#x27;ve been quite a few times to India. I&#x27;ve never gotten sick. I&#x27;m very fortunate. Some people do. I&#x27;m not sure how to weigh this risk, but I&#x27;ve done all kinds of things. Eating what I&#x27;ve wanted and just been fine every day. Maybe it&#x27;s just because I travel a lot. Indian classical music I think is one of mankind&#x27;s greatest creations ever. I would say going to the classical music festival in Chennai in December, I took my daughter to that. We both loved it. For food, India and China. Clearly the two best countries in the way better than any Michelin Guide and way cheaper. Everything is new and fresh and undiscovered and diverse. India&#x27;s tough in a way that China isn&#x27;t. So, China is poorer than what we&#x27;re used to, but there&#x27;s some grinding poverty in the countryside, but for the most part going around is not depressing. In India it can be. The air pollution can be worse than in China. The population density, the cities are out of control in a way you would not say about China. Chinese cities are way less dense than outsiders expect.</p><p id="9d807e04-35e4-4ef5-a71a-36d8479464b4" class=""><strong>Tyler</strong>: Hong Kong is much denser than most parts of the typical Chinese city would be. So being in a Chinese city is a lot more pleasant than people expect, especially, uh, if it&#x27;s not a major city, but India, my goodness, traffic, monsoon, disease. But there&#x27;s something about the notion of ideas there. The religion, spirituality kind of syncretic something that is just magic and creative and nowhere else in the world do you get it and you&#x27;re just bombarded with it the whole time. And people fall in love with India and they should. And you will. It&#x27;s tough. I could, you know, you gotta be ready.</p><p id="00e880d3-9fd5-4474-b563-25f9fb16d481" class=""><strong>David</strong>: Talk more about the spirituality aspect because it&#x27;s almost become trendy to talk about the eastern thought and, and, and whatnot. And I&#x27;m not discrediting it, but I think it&#x27;s miss misinterpreted by many westerners.</p><p id="e27e0245-b522-4c7f-b8f0-54333fd2bf7c" class=""><strong>Tyler</strong>: Keep in mind, I&#x27;m not myself a religious person. I wouldn&#x27;t even say I&#x27;m spiritual. I don&#x27;t really believe in anything in particular. So when I say it&#x27;s rich in religion and spirituality, that for me actually has mixed sides and it may be partly a reason why India is not richer or has problems with public health, but the old saying when it comes to religion, every Indian is a millionaire, maybe is true, but don&#x27;t think it&#x27;s an entirely positive thing. But the ways in which religious ways of thinking suffuse the entire culture, uh, there are few other countries where that runs so deep and so thick and also in a diverse way. You have multiple religions including Christianity. And to learn those by going to India is one of the things you get there. It&#x27;s one of the world&#x27;s largest countries with Muslims, right? Maybe it&#x27;s number three and I think. Indonesia number one, Pakistan, number two.</p><p id="8e6bcace-3d32-4d08-90a3-a495d4cacea1" class=""><strong>Tyler</strong>: I&#x27;m not sure if India is ahead of Bangladeshi behind it for Muslims, but obviously it&#x27;s significant for Muslim culture. Janes, different kinds of Hindus, Sikhs and every city, every state is so different in a way people will engage with you is so fresh and this kind of deep burning curiosity to somehow incorporate what you know into what they think. Uh, to me there is very strong and I find very attractive.</p><p id="a6276fe8-95d6-4652-9b8a-ee6f03553832" class=""><strong>David</strong>: This is going to be sort of part of a broader question. Are you reading books, blogs and we&#x27;ll start there and then we&#x27;ll get to the distinction between books and blogs and different forms of media.</p><p id="dae28b33-c20b-412d-bbc6-ff36c228f6b5" class=""><strong>Tyler</strong>: If it&#x27;s India and China, uh, I take very different approaches. India, I find reading books much more useful than for China. Maybe it&#x27;s because of the history intersects with European history more. But reading books on India, a lot more sticks with me than with China. Uh, I haven&#x27;t found that many good blogs on India. It may just be my defect, but if you just read plenty of books on India and go and in terms of cinema and music and cuisine, try to actually learn things about those before you go. Fashion, design, textiles, studying history of Indian textiles is one of the best ways to learn Indian history and it can structure your tourism and where you go and maybe even what you buy. So there were more entry points for India. Whereas for Chinese music, I mean I&#x27;ve tried, I liked Chinese opera, but I don&#x27;t find it that useful. A lot of it to me, I just don&#x27;t enjoy Chinese popular music. I enjoy much less than Indian popular music. So for China it&#x27;s much more important that I be there and talk to Chinese people, which you can do here as well of course.</p><p id="8b627709-ab27-4d8f-be7c-b2181ee6b7b6" class=""><strong>Tyler</strong>: So I approached those two countries in a very different way. And India also I find I have a kind of stamina problem. I&#x27;m in very good health. I walk a lot, travel a lot, but it&#x27;s hard for me day after day to be outdoors in Indian cities all day long. Just like pollution, noise, different indignities. I can&#x27;t do it. Uh, with China, unless it&#x27;s a very smoggy day I can. In India I paced myself much more. I spent a lot more time indoors. It&#x27;s a little bit inefficient.</p><p id="4ab05803-8048-4a13-8774-7b18f0625573" class=""><strong>David</strong>: So let&#x27;s get back to different forms of media. How do you think about books versus blogs? It&#x27;s something that I debate a lot with my friends. Um, how do you think about it and what advice would you give to younger people as media begins to shift like it is.</p><p id="41111886-fa26-4a8d-bc57-e19f5121ac3a" class=""><strong>Tyler</strong>: I mean mostly books are still better. There&#x27;s way more knowledge in books than blogs and it&#x27;s easier to find out how good a book is by reading reviews. Not that reviews are perfect, but you get a sense, you know, maybe blogging peaked about 10 years ago and I&#x27;m happy that I&#x27;m still blogging. Like our readership actually is not down at all. It&#x27;s maybe up a little, but I don&#x27;t think in general, blogs are a good way to learn about countries. They&#x27;re very good for a particular food scenes. Like where should I eat in Mumbai? There&#x27;ll be a food blog about Mumbai that will be way better than any book and then use the blog. But history of India, you know, just read some good books and they&#x27;re there, read Indian fiction. Find these other entry points, like history of Indian textiles.</p><p id="ce491fdc-7eaf-4b36-924e-a34aa3146ec0" class=""><strong>David</strong>: That&#x27;s interesting that you talk about entry points. Is that something that you apply in other domains?</p><p id="9523b4b7-9582-45d5-9085-ba0c2f85c931" class=""><strong>Tyler</strong>: Everything always has entry points. If you try to learn things head on, I just find I fail usually, entry points I succeed. More motivated pieces, start to fit together.</p><p id="9c6462a4-2d55-47cc-ad6d-ab90c0c77187" class=""><strong>David</strong>: Recent example?</p><p id="c2784689-c409-4e42-b5af-ad1e2b4e1fe4" class=""><strong>Tyler</strong>: Well, take Macedonia, so I&#x27;ve been learning more about Macedonia history by studying, reading about Macedonian woodcarving. So by woodcarving you learn something about the religion, you learn something about the monasteries, you&#x27;re learning what were the errors, where they were most creative, where it&#x27;s just rereading political history I don&#x27;t get-.</p><p id="e0bddefa-c37a-408c-a824-60f33d7e17f3" class=""><strong>David</strong>: Like reading the Wikipedia page.</p><p id="9b28b1f2-def6-4a7d-a97b-78d6c24cb484" class=""><strong>Tyler</strong>: That&#x27;s right. So uh, there are always other entry points for any place and you know, they need to be ones that interest you, but basic ones are going to be food, music, art, design. Architecture is a very good one. Right. Architecture in Macedonia is very interesting. I read quite a bit about that.</p><p id="85d82f9b-8d78-4b48-850c-57d549c78788" class=""><strong>David</strong>: I&#x27;m curious to hear more about architecture and different from Macedonia to India to China.</p><p id="b4654870-c556-4b8e-9e7c-3af911efc681" class=""><strong>Tyler</strong>: Take the main city in Macedonia, Skopje. it had a complete makeover within the last 10 years. And they put up a large number of statues in a kind of older style, almost eastern European brutalist style. Many people hate them, some people quite like them for the most part. I liked them, but if you imagine some parts of Las Vegas, which are a bit garish and they put up big things to impress the viewers. A lot of Skopje looks like that, but it&#x27;s done not In the kitschy way, but with, you know, uh, no wink from the eye and with no smile on the face, they just did it. And the city has been transformed and it&#x27;s this major political issue and it was a dispute should they have spent so much money. So one way to learn Macedonia is to learn about the statues dispute.</p><p id="7db88ca9-ae13-47f1-aad2-8e463c7882fe" class=""><strong>Tyler</strong>: And then so many of the statues are historically controversial. Like there&#x27;s a statue of someone who would seem to be Alexander the great, but the Greeks can&#x27;t claim Alexander the Great. So if it&#x27;s explicitly Alexander, the Greeks get upset, will be more concerned with blocking their entry into the European Union. So it&#x27;s Alexander, but it isn&#x27;t Alexander and just by reading about the statute that both is and isn&#x27;t Alexander the great at the same time is a great way to learn about Macedonian history, politics more generally, international relations. So I think architecture is one of the best entry points and it&#x27;s something you always see, right? Like you can&#x27;t avoid it anywhere you go. And if it&#x27;s ugly, often so much the better.</p><p id="336ef336-eff7-411f-a188-91c42f7f4dfe" class=""><strong>David</strong>: Now to China, the balance or the almost to the juxtaposition of totally modern these grand structures. And then the old.</p><p id="ead7d61b-d28d-4c0c-9384-71fc435e9fd7" class=""><strong>Tyler</strong>: It&#x27;s hard to find good old things in many parts of China. There are the old neighborhoods which they&#x27;re clearing out of Beijing, but there&#x27;s still some left. Uh, those to me are very charming just to walk through them. I can do, you know, for hours that&#x27;s fun and they&#x27;ll have great places to eat. Chinese mega cities. Uh, they are an acquired taste. The last one I was in was Chongqing, which is in western China. It&#x27;s, you know, maybe 20,000,000 people just in enormous number of skyscrapers and they&#x27;re not that distinctive, but the rivers of the city and the way it&#x27;s laid out, it nonetheless has a distinctive field and if you walk around it enough, you will get that. Uh, and the ugliness or at least the non attractiveness of the architecture I actually like it. It is something you need to learn, but it&#x27;s, it&#x27;s part of what being there means, you know, it&#x27;s not all gonna look like Venice, nor do I want it to.</p><p id="7340fa61-cb79-464f-9fd9-5181fcd8b83d" class=""><strong>David</strong>: So when you go into these cities and you&#x27;re meeting people and trying to learn as much as you can, is that similar to the way that you conduct your Conversations with Tyler series? What is your philosophy of interviewing so to speak?</p><p id="4e72c0fc-c4a4-4379-8026-20520bf5c5ee" class=""><strong>Tyler</strong>: You know, I picked the people I want to talk to, so I&#x27;m very selfish. I&#x27;m not paid to do this, so I should have fun. On average, I spend maybe a month preparing for a guest. Maybe I&#x27;ll have done that reading all right. But even then I&#x27;ll reread it. So it&#x27;s gotta be like, look, I want to spend a month doing this or like why, you know, I&#x27;m not, I don&#x27;t care about you all listeners now and it&#x27;s a way of focusing my reading. It&#x27;s actually an entry point. So I&#x27;m going to interview <a href="https://www.nytimes.com/column/ross-douthat">Ross Douthat</a> in December. I&#x27;m friends with Ross, he&#x27;s a great thinker, awesome columnist.</p><p id="52dbef97-dd09-4b66-9ed4-863eaefe1510" class=""><strong>Tyler</strong>: But Ross for me is also an entry point actually into understanding Catholicism. And if I just sat down and read about the Catholic Church, a lot of it would be boring. But if I read, well I&#x27;m going to try to figure out what does <a href="https://www.nytimes.com/column/ross-douthat">Ross Douthat</a> think about this Catholic issue. I learned so much more about Catholicism because Ross is my entry point. So I picked guests to be entry points.</p><p id="b4846144-e8e7-4999-918f-76302b6bfd63" class=""><strong>David</strong>: And then when you&#x27;re actually doing the interview, what are you thinking about? What, what, how are you thinking tactically about that?</p><p id="4edd3ff8-8ee9-40c5-ab57-86ff5d57f7d8" class=""><strong>Tyler</strong>: I don&#x27;t know if people should emulate each other because you know, we&#x27;re all different, but I take everything that person has done and I hold it in my mind all at the same time right before and during the interview. And that&#x27;s extremely strenuous, so for me to do one of these interviews is the most strenuous thing I do in life. Much harder than giving a talk and I&#x27;m quite exhausted when it&#x27;s over, even though they do much more of the talking because having to hold all the information in my brain, it&#x27;s like playing a very hard chess game.</p><p id="9019a439-772f-46f4-9e28-81e6f7dc2f46" class=""><strong>Tyler</strong>: And then when the interview&#x27;s over, I lose like 90 percent of it within half an hour. But maybe it&#x27;s made my understanding of things deeper. Uh, but during the interview I feel I have access to kind of everything I&#x27;ve taken in, almost in a magical way. Uh, I&#x27;m not sure other people can or should emulate that, but that&#x27;s how it is for me. It&#x27;s very intimidating. I think people have realized now when they&#x27;re interviewed by me, I kind of know some of their stuff better than they do and I&#x27;m not that slow, so I&#x27;m not trying to screw them over and make them look stupid at all. Quite the contrary. But when someone&#x27;s trying to make you look really smart, it&#x27;s actually harder than when someone&#x27;s trying to refute you.</p><p id="f64e70f3-2695-40d1-a0a6-c6443f314f93" class=""><strong>David</strong>: That&#x27;s interesting. In <a href="https://medium.com/conversations-with-tyler/ben-sasse-tyler-cowen-book-twitter-trump-cb5b4a435323">your interview with Ben Sasse</a>, it was really wonderful. I&#x27;ve listened to it three or four times. I&#x27;ve read his books since and what really struck me was the notion of a multi career life, the idea that it used to be perhaps that you worked for a corporation the rest of your life or be a tenured professional like yourself, but now that&#x27;s beginning to change. How should young people be thinking about that?</p><p id="3368c779-b19a-4b2a-a189-5a6621cc81e5" class=""><strong>Tyler</strong>: Yeah, teaching yourself how to learn and relearn. So there&#x27;s all this talk, oh, I learn from my school, or you know, business will retrain me someday. No one retrains you, your business, your employer might help you, but you&#x27;re retrain yourself. That&#x27;s one reason why wage inequality is up. Not many people are good at this. So learning how to retrain yourself, I think getting mentors in any new area is very, very important. It&#x27;s still underrated even though I think it&#x27;s pretty highly rated. Uh, I mean, those are some basic tips I would give people.</p><p id="b0085180-6903-4308-865f-d2797b215847" class=""><strong>David</strong>: In terms of mentors, I&#x27;ll push back on you a little. Is it worth taking the time to actually get a mentor in real life? Like what would the benefit of that when I could listen to your Conversations with Tyler series and all these other incredible podcasts and in some ways that are a similar mentorship. It&#x27;s just not so personal.</p><p id="776ad702-e7ea-4542-a190-f9a80f9bdacf" class=""><strong>Tyler</strong>: It&#x27;s great to do that, but a mentorship by being alive and physical makes so many things emotionally vivid for you. And I think for eighty percent of people, uh, that&#x27;s extremely important. So the mentor is like another kind of entry point into something. And some click happens in your mind, like why something is important. You learn by meeting the person and interacting with them and it may just be two or three hours in your life. It doesn&#x27;t have to be an ongoing thing. Right? Uh, and I think we still undervalue that, trying to meet those few right people who will open a few intellectual doors for you.</p><p id="6100a9b7-1984-4bd6-9804-f064f48c35bd" class=""><strong>David</strong>: So who have the mentors has been for you? I know your, when you were getting your, uh, PhD in economics and then, uh, Mr. Shelling, right?</p><p id="f0091d6d-b91a-46fa-9318-cc9371206520" class=""><strong>Tyler</strong>: At Harvard, he was an important mentor for me and also he gave me a vision of what it could mean to succeed that I hadn&#x27;t quite had before, but my most important mentors, you know, I was a teenager. So there was a fellow named Walter Grinder. Probably my most important mentor. I met him, I&#x27;m guessing I was 14 and Walter at the time was not a, he&#x27;s never had really worldly success, but he was the person I met who had read and understood more books than anyone else and he still would be one of the few like of anyone I&#x27;ve ever met who&#x27;s read and understood more than anyone else.</p><p id="7422dbbd-bfc2-416e-964e-fff6161ca9ef" class=""><strong>Tyler</strong>: And I just saw that in him and I thought like, well I want to be some version of this. And that was one of the biggest events in my life was meeting and getting to know Walter Grinder.</p><p id="4c602022-0e56-4857-95f2-5021f2be4de0" class=""><strong>David</strong>: Keep going on that. That&#x27;s really interesting.</p><p id="711f0db1-2b12-4750-b352-31a03d4febe9" class=""><strong>Tyler</strong>: And I think it wasn&#x27;t easy for me to see Walter. I didn&#x27;t drive, he was a friend of my father&#x27;s like we had some meals together. I met him some number of times or take the bus into New York, see him there, but it wasn&#x27;t an amazing amount of contact, but the contact we had, I got that vision and I would always ask Walter, well, Walter, what should I read? And I would read what he recommended, but what he recommended was actually not important. What was important was to kind of see the wheels turning in his head, like how he thought about what he was reading was way more important than any particular book he recommended.</p><p id="437dab3b-140c-4523-b035-156510c351a7" class=""><strong>David</strong>: Do you have rules for how you think about those things?</p><p id="74bc4f1c-dae9-4c50-b48b-c4b5eb2bbe60" class=""><strong>Tyler</strong>: I don&#x27;t know if there are rules, but thinking strategically and philosophically about management is one of the most important things almost anyone can do because it&#x27;s hard for me to think of anyone who is as productive solo is with other people and other people can multiply both your impact and your learning by many, many, many times. Right? Like if you had to go to a bookstore and read all the books on management, they&#x27;re kind of a harbor right? There are kind of like self-help books. They&#x27;re cliches. It&#x27;s like building a team is important, they&#x27;re boring, maybe they&#x27;re even wrong. So the entry points for management are so hard and I think they are people and it goes back to mentors. Maybe you can only learn whatever it is you know about management from mentors and not management books. But that, too, is oddly under appreciated for something that&#x27;s so oversold. It&#x27;s nonetheless underappreciated.</p><p id="55b72030-f4c0-4d43-981e-fefc152a4a9b" class=""><strong>David</strong>: In <a href="https://www.goodreads.com/book/show/31283667-stubborn-attachments">Stubborn Attachments</a>. Your most recent, I don&#x27;t know if I could call it a book, but it was something of that form. Yeah, output. You talked about the power of compounding and what is it? Of course it&#x27;s important and finance and of course people have uh, many people have a elementary idea of it. But what do you made that sort of the, the core theme of that book? and why?</p><p id="50dee17f-aefb-4178-8630-e376f91305df" class=""><strong>Tyler</strong>: Yeah, so much of what people write is autobiographical. So I could give you a kind of objective philosophical answer as to why I think compounding is important. But I prefer to give you a biographical answer. So right now I&#x27;m 55 and I started on all the assignments at actually 13 or 14, so that&#x27;s over 40 years of stuff. So I&#x27;m not old. I&#x27;m, you know, in good health and very full of energy. But like, no more years of history. I&#x27;ve had more years of learning. So the idea, you should have a very long time horizon and be totally determined and persistent and like none of us are really that able or smart at all. We&#x27;re all kinds of blundering fools. But if you just get some rate of improvement and just let it keep on compounding, I mean you can do pretty well. I&#x27;m a big believer in that as a form of biography. Same is true with travel. I think every year I traveled better and more wisely and it&#x27;s more fun for me because I learned things from the last time I travel. So you always want to be on some kind of cycle. Our curve where you&#x27;re compounding.</p><p id="33babb47-4978-496f-96e6-46c256052de2" class=""><strong>David: </strong> I&#x27;m glad I&#x27;m not the only blundering fool then. Um, so. So when did that become clearer and clearer to you? When did you begin to have an intuitive sense of that and then what were, as somebody who&#x27;s 23 years old, somebody who&#x27;s just beginning their career, what would I not understand about compounding that, you know.</p><p id="76505eee-7e75-4ba9-843d-1365db33cb8a" class=""><strong>Tyler: </strong> In my early forties, I actually realized what I was doing, so I was doing it for over 25 years and not even knowing what I was doing, which makes me really a blundering fool. But the things I had learned much earlier, like started to pay off in my research and my books, like ideas finally gelled after 25 years. And also the Internet gave me a platform for putting them out there. My abilities to sort of think about and evaluate projects became sharper and a lot of things came together for me, you know, in my early forties, which is probably later than average. And then I kind of thought back then, you know, I&#x27;ve been kind of working towards this for a long time and I didn&#x27;t even know it.</p><p id="718153e6-f06a-4f8b-a241-1d77422ad051" class=""><strong>David: </strong> The book, out of all the ideas that you&#x27;ve written about, the one that is truly fascinating to me is <a href="https://www.amazon.com/Average-Over-Powering-America-Stagnation/dp/0525953736">Average Is Over</a>. Can you give a brief overview and how have your ideas from that book changed over time?</p><p id="ab259603-50d0-474d-a6e9-9d6a8e0f3d5a" class=""><strong>Tyler: </strong> <a href="https://www.amazon.com/Average-Over-Powering-America-Stagnation/dp/0525953736"> Average Is Over</a>. I think it came out four years ago now. I&#x27;m not sure, but it basically looks at the implications of a world where computers can do so much and artificial intelligence is here and on the way. So I think if people just falling into two categories there, they&#x27;ve either found a way that the computer augments their skill and then they can do very, very well in life or they&#x27;re in some way competing against computers and software and then the chance they lose is actually pretty high. Like if you were to play an ordinary travel agent 25 years ago, right now you&#x27;re probably doing something else. Maybe you can plan boutique holidays or wealthy people, but odds are, you know, <a href="https://www.expedia.com/">Expedia</a> and <a href="https://www.orbitz.com/">Orbitz</a> have outcompeted you. So this is driving some of the income inequality, which is not a comfortable reality, but I think it&#x27;s one we have to face. And what we want to do is get as many people as possible on the better side of that division.</p><p id="c948d361-f20d-428b-9d05-fc2772e2291b" class=""><strong>Tyler: </strong> And part of the book is how to do that and how to think about this for your own career, your own skills.</p><p id="88ca96ad-940d-44da-9591-6f3d4827c0da" class=""><strong>David: </strong> You mentioned self learning. What else would be the big important things?</p><p id="eea75b94-3d08-4b05-8e03-199ef960b8fe" class=""><strong>Tyler: </strong> Conscientiousness, persistence, determination, kind of very old school moral virtues I think matter much more now than they did 25 years ago. That&#x27;s counter-intuitive. But if you just stick to some version of classical morality and keep a long time horizon, I think today opportunities have never been better. But of course it&#x27;s not easy for most of us to do.</p><p id="fb057b4c-7866-4431-aa3d-f230b3f9f8b9" class=""><strong>David: </strong> Has in terms of opportunities then, has the Internet changed how you think about planning? Like are you&#x27;re thinking about planning on shorter time horizons more opportunistically?</p><p id="b506c2cf-620e-4479-b2b4-c7dea726c91a" class=""><strong>Tyler: </strong> Yes, and I&#x27;ve never thought that much about planning anyway. That&#x27;s one of the ways in which I&#x27;m a blundering fool.</p><p id="0404b9df-2a0f-4703-b356-d27ce5b04f8d" class=""><strong>David: </strong> Haha, we&#x27;re going to call this episode &quot;Tyler Cowen is a blundering fool.&quot;</p><p id="a7abbca2-84e6-45d4-80b8-4f10a44318a2" class=""><strong>Tyler: </strong> Haha. And again, everything I&#x27;m saying, I&#x27;m not recommending for other people. I would just stress how different people are, find your own way, but just to tell you how I&#x27;ve thought about it for myself, I said if I can find things that to me are fun, compounding will kick in in my favor and all the blunders I make in the meantime will come out in the wash. I really actively maybe recommend against that for most people. But that was my so-called planning, was to have fun.</p><p id="7d428507-29dc-4e8f-a9b1-13ff618fb69e" class=""><strong>David: </strong> Wonderful. Going to do a little pivot here. You seem to have a big love for basketball and the <a href="http://www.nba.com/">NBA</a>, but besides basketball, what do you love about the NBA?</p><p id="f21ee85d-8f1e-41fe-9424-816805d75b60" class=""><strong>Tyler: </strong> It&#x27;s drama, right? It&#x27;s better than most theater, but it&#x27;s actually happening. So what really matters to the people? You don&#x27;t have to suspend belief. It&#x27;s an entry point into understanding a lot about America.</p><p id="2af654c9-7847-4beb-b9ad-66a9c3e89ef1" class=""><strong>Tyler: </strong> The NBA in particular is an entry point to understanding a lot about race. The NBA is far more international than before and it&#x27;s a way of being in touch with parts of American life and commercialization and also media and television that otherwise I wouldn&#x27;t necessarily intersect with that much and it&#x27;s just plain outright fun. And last night I watched the <a href="http://www.nba.com/wizards/">Wizards</a> play their first game of the year.</p><p id="f77db6ee-3708-47f8-bca6-d278bd5c922c" class=""><strong>David: </strong> That <a href="https://en.wikipedia.org/wiki/John_Wall_(basketball)">John Wall</a> dunk was crazy.</p><p id="fd488d12-3fc7-4fe1-b470-fd2a0757ee8e" class=""><strong>Tyler: </strong> It was, it was kind of an awful ugly game and I&#x27;m not going to watch again for a while. I got it out of my system and I&#x27;ll follow every game. And as the playoffs approach, I&#x27;ll watch it a bit more. I&#x27;m going to a game December fifteenth with <a href="https://www.brookings.edu/experts/philip-a-wallach/">Philip Wallach</a>. That&#x27;ll be great fun. And he and I will talk social science.</p><p id="a1f8102a-5cc7-4b94-9b00-578f7b3274fe" class=""><strong>David: </strong> There we go. Well, I&#x27;m going to try to go tomorrow night, but I want to dive into the Wizards. I&#x27;m curious to hear about what you said about NBA in America, sports in America. I, uh, it was with some friends the other day and I argued that sports was actually the best way to learn about America and now I&#x27;m going to use your entry point theory. What do you have to say about that?</p><p id="cc2e01d5-5086-410e-9a61-487471afd526" class=""><strong>Tyler: </strong> I had breakfast with <a href="http://www.washingtonpost.com/people/george-f-will">George Will</a> a few weeks ago when I said to him, you know, today you probably understand the country better if you read the sports page than if you read the news page. It&#x27;s more like what people are actually doing. There&#x27;s something quite normal that sports but sports. It&#x27;s also extremely bizarre. You care so much about like your team, which is arbitrary. Like these guys. They&#x27;re not from Washington. I don&#x27;t even identify with Washington. I don&#x27;t know them that might be bigger jerks than the <a href="http://www.nba.com/celtics/">Boston Celtics</a> and I root, you know, very hard for them to beat the Celtics and you realize how much of like human nature is expressive. How much some of it&#x27;s like politics. Uh, you know, how much in some ways sports, like mirrors hunting and some very old pastimes of male competition and bonding. It&#x27;s also a way of studying how statistics matter, what you can measure and not measure. Management, teamwork. Sports is a wonderful entry point for all these things.</p><p id="293aa24f-4224-4b76-850d-62423ed1c84b" class=""><strong>David: </strong> Sports abroad in other countries. What have your experiences been? To go back to the beginning of this conversation.</p><p id="4d0abdbb-e795-4b55-acf5-345ede9159de" class=""><strong>Tyler: </strong> I once saw a professional basketball game in New Zealand, which is a much lower quality of play, but that too is interesting. I tried to see a game in Spain. I failed to. I&#x27;d love to see professional basketball game in China. Uh, I consider that an under-explored area where I&#x27;d like to do more.</p><p id="72f740a9-2ddc-4b82-a81c-46c8730be724" class=""><strong>David: </strong> Yeah.I find the relationship interesting, to go back to basketball. The relationship between China and America with the NBA.</p><p id="81cf82b6-a332-445f-a958-e95465dadb25" class=""><strong>Tyler: </strong> A great entry point into China, is to read all of that stuff in <a href="https://en.wikipedia.org/wiki/Stephon_Marbury">Marbury</a>. His experiences in China and you will see sides of China much more clearly than you would get out of reading a book on Chinese history.</p><p id="bf3719f0-b93a-4f66-8d7e-a1eb2f71d668" class=""><strong>David: </strong> What is that story about again?</p><p id="2d3523b7-80fb-466a-9dc2-3ca71ef1574f" class=""><strong>Tyler: </strong> Well, <a href="https://en.wikipedia.org/wiki/Stephon_Marbury">Stephon Marbury</a> was sort of a top player here, but not actually that good. And he shot the ball too much and he was out of control and not a great teammate. And uh, he had some injury problems. He quit. He reinvents himself in China and he&#x27;s a huge success in China. They&#x27;ve even erected statues to Stephon Marbury and China&#x27;s, he&#x27;s a major endorser. He&#x27;s had his own movie, I think for awhile a TV show. And how Chinese treat celebrities and how they think about African Americans and how they reward athletic excellence in ways in which they&#x27;re either more tolerant or more rewarding or more brutal. Like compare the story of Stephon Marbury with China&#x27;s own <a href="https://en.wikipedia.org/wiki/Yao_Ming">Yao Ming</a> who it seems was bred, eugenically bred to be a star basketball player. That too, is insight into China. Basketball, one of the best entry points into China.</p><p id="02d291c7-3915-4a22-83e0-c6dee8b65ecb" class=""><strong>David: </strong> Chinese celebrity. Let&#x27;s go down that rabbit hole.</p><p id="b88905be-526a-4739-ac50-5c698f150b09" class=""><strong>Tyler: </strong> So, China of course is a big country and the media are very important and they have <a href="https://web.wechat.com/">Wechat</a>, which is more powerful than our <a href="https://www.facebook.com/">Facebook</a>. It performs some similar functions, but more. Uh, China has become a celebrity culture in a very short period of time. And in some ways it&#x27;s copied a somewhat earlier version of American celebrity culture than we have now. Now it&#x27;s in some ways more Internet based, but Chinese celebrity is a sign of China being domesticated and less authoritarian than you might think reading the news pages and it&#x27;s very aspirational and to see what celebrity looks like and a culture that is much more aspirational than ours. Ours is much more complacent. That to me is a very interesting contrast.</p><p id="bfe90afa-8389-44ef-8c2f-030251f57725" class=""><strong>David: </strong> We gotta dive into the complacency. Compare the similarities and the differences in terms of complacency between China and America. Because when I see the data, I concur with your argument, but living in Manhattan, it&#x27;s not what I feel whatsoever.</p><p id="c34a877d-2c2b-49c6-b64c-b25d5fd1eaa5" class=""><strong>Tyler: </strong> Manhattan, of course, is an outlier and when you say Manhattan, there are many Manhattan&#x27;s. But if you think about China, my first visit was 1989. There were hardly any cars. Everyone was on a bicycle. Maybe you&#x27;d be lucky to have a bicycle. It was a very, very poor place. And now, uh, it&#x27;s about as.... Well, it has a higher total GDP than ours, but it&#x27;s better off than most other emerging economies per capita. They&#x27;ve had a 35 or more year run, that&#x27;s one of the two or three most impressive runs in human history ever, and this is the only one for a billion plus people. So it could be the most important event in human history ever. Or one of the top three or four. So just that alone is like, oh my goodness. But there&#x27;s still high risk in China.</p><p id="f9239b24-7248-454a-8579-b7f96bf09071" class=""><strong>Tyler: </strong> If you don&#x27;t get out there and like master something, that risk will come and get you and crush you. If you were born into an educated family in this country, that&#x27;s typically not the case. Someone can take care of you or you can get a job or a degree where you get by. You can be a slacker. Um, China, people expect everything to change every 10 years. It has been for them. They&#x27;re used to this, they consider it a norm. They&#x27;re not complacent. Life there is much more stressful in most ways. It&#x27;s much less pleasant in many ways. But it&#x27;s also more real and at least in that one big way. And now they are determined to outdo us and they&#x27;re making a real go with it. That&#x27;s like, how can you not want to go and see that?</p><p id="978847c6-969f-4384-88f5-a801888721f9" class=""><strong>David: </strong> Also as a young person, I first of all feel compelled to make that change, but also not something that, of course the American media is covering very much.</p><p id="66757f32-d143-4ed3-8e63-551a5fcbc418" class=""><strong>Tyler:</strong> There&#x27;s so many articles on millennials, right? Millennial this, millennial that. So in a sense, all ideas about millennials are covered whether they&#x27;re true or false, but none of them seem to get any traction is I suppose how I view it.</p><p id="8a822f26-a501-4b23-8255-c34d3032b04f" class=""><strong>David:</strong> So how do you view the millennial generation?</p><p id="b24a28ee-0c0a-4a64-ae25-588feca0e9f6" class=""><strong>Tyler: </strong> They&#x27;re the nicest, most tolerant generation we&#x27;ve had, but I don&#x27;t think that&#x27;s an entirely good thing. And so far they&#x27;re slated to be a relatively complacent generation. Maybe somewhat less ambitious, taking fewer chances, wanting safe spaces, which makes sense given the constraints they had been faced. But I worry that they&#x27;re not replenishing America&#x27;s cultural capital for generations to follow.</p><blockquote id="18fec66d-1735-42c5-a440-fc514a116ad1" class="">Ah, the millennial question 😯😯😯Millennials are the nicest, most tolerant generation we’ve ever had. But it’s not entirely a good thing... pic.twitter.com/ejXISxt5Mu— ᴅᴀᴠɪᴅ ᴘᴇʀᴇʟʟ ✌ (@david_perell) October 23, 2017</blockquote><p id="5003925b-e12e-417a-8859-08f2092a556c" class=""><strong>David: </strong> Talk about those constraints. But also, I&#x27;m interested in the dichotomy of millennials are both complacent and entitled.</p><p id="165d9a46-dba8-4bb9-aadd-b3df51a49c1c" class=""><strong>Tyler: </strong> A lot of millennials grew up in families that had a lot of wealth, right, more than ever before. That leads to a sense of entitlement. There is way more helicopter parenting for these people than ever before, which I think is mostly a negative, but they also grow up in this slow job market. Sometimes very slow depending on their age, no fault of their own. They grow up in a much more globalizing world, so an investor is thinking like, should I hire this millennial or should I send my capital to Vietnam where someone will be just as smart, maybe harder working and do something for a tenth of the wage, and we see a lot of people choosing the ladder. I wouldn&#x27;t say that it&#x27;s anyone&#x27;s fault, but it makes it a different world. You either decide, well, I&#x27;m going to be the next <a href="https://en.wikipedia.org/wiki/Mark_Zuckerberg">Mark Zuckerberg</a>, and there&#x27;s a class of people like that who&#x27;ve been phenomenal, or you just decide like, look, I can&#x27;t really compete. It&#x27;s gotten too hard, but these stocks have wealth or enough. I can protect myself. The Internet is fun. TV is great. Maybe people are into recreational drugs, whatever level or kind of sex nuanced way easier to get them before.</p><p id="95729e6b-8ff2-49a1-bf74-9bab63e767df" class=""><strong>Tyler: </strong> It&#x27;s like, well, why not do that? That&#x27;s pretty good. Right?</p><p id="59086f2c-6dac-437b-8057-4b7829170979" class=""><strong>David: </strong> Right. I mean it&#x27;s funny because I see almost all so many of these ads in New York are surrounded around &quot;It&#x27;d support you to just stay home and we will bring it all to you.&quot;.</p><p id="b870bcf9-8739-4947-a71d-a3a3352fd9f2" class=""><strong>Tyler: </strong> That&#x27;s why the <a href="https://www.amazon.com/">Amazon</a> will deliver whatever or <a href="https://www.netflix.com/">Netflix</a> streaming, everything&#x27;s delivered now and that to me is the cultural negative even though obviously it&#x27;s super convenient.</p><p id="21219bda-eea5-4542-aa99-d5d2b81ae295" class=""><strong>David: </strong> So what is it about China and India? What is in the water there that is having things be different because of course they have the Internet.</p><p id="762e507e-5e10-4b21-93f5-97f34f001bc2" class=""><strong>Tyler: </strong> Well they&#x27;re much poorer so that&#x27;s something bad in the water and they&#x27;re growing at much higher rates because they&#x27;re doing catch-up growth and the background level of risk there is very high, which again makes living there extremely unpleasant, not for the billionaires, but for most ordinary people, their incomes can fluctuate much more. Trying to get good healthcare in China, much, much harder than here at any price you may have to pay. And then bribe your doctor again. Even then the, you know, the pharmaceuticals you get might just be fake. You&#x27;ll never really know until you live or die. We don&#x27;t face that kind of challenge and our healthcare system is pretty screwed up, right? So, uh, that makes them less complacent.</p><p id="087e0bfd-c1dd-4e16-914e-9a10ea6f1aeb" class=""><strong>Tyler: </strong> So the idea that not all good things come together, I feel is very hard for America to grasp right now. And the fact that we&#x27;ve made our lives pleasant and safer, which on net, I favor that that&#x27;s also very costly. Again, it&#x27;s a point being made by myself, by others, but it&#x27;s not appointed distraction.</p><p id="4e830833-c288-43ae-8a1b-a4a4518bd0d2" class=""><strong>David: </strong> Yeah, I thought what you said on a previous interview was just that mediocrity is underrated.</p><p id="5d2a3c17-8842-41ee-abe9-cf280d4813de" class=""><strong>Tyler: </strong> That&#x27;s right, mediocre life is a great life. Like if you can just keep it going live til 80, whatever your thing is, the Internet, the drugs, the sex, some nonlinear combination thereof. There were like, you have your three kids, uh, you know, it&#x27;s going to be diverse, but like, that&#x27;s really good. You cannot be starving, but you don&#x27;t have to be Mark Zuckerberg. And if I think of myself, uh, you know, I&#x27;m not like really of wealth, but I think I have a better life than, you know, most really wealthy people. It&#x27;s more fun, more challenging.</p><p id="6349fd5a-f818-49bb-abbe-f211bb9097ae" class=""><strong>David: </strong> Well, the final question I&#x27;m asking you is then, what are the tenants that you&#x27;ve looked for in terms of building that life and in terms of what has given you that life? What are the things you know, the pillars of what makes it so enjoyable for you?</p><p id="48cb4fba-0924-4a7d-b2f9-47a6ed26f705" class=""><strong>Tyler: </strong> You know, I think so much of what we are we&#x27;re born with, um, so we admit that about yourself, like figure out what you&#x27;re really good at, which is going to be something for almost everyone. Like try to build on that. Be pretty honest with yourself about what you&#x27;re not good at. Like it has to be fun because you need to stay motivated and it&#x27;s a more competitive world order. But the opportunities are there and uh, you know, do something different than what I did, but do something like I&#x27;m waiting for you to do something for me. Here I am impatient, wanting more fun. You do it, bring me stuff.</p><p id="62f91bb9-8c09-4ff8-8a32-17fb6be12369" class=""><strong>David:</strong> OK, well now I want to hear more.</p><p id="4925b94c-a757-492e-a999-f7bf8f8a7231" class=""><strong>Tyler: </strong> My main idea is not any idea at all. It&#x27;s a method. It&#x27;s a personal method and it&#x27;s a method of learning. It&#x27;s take wherever you&#x27;re at and just try to push your understanding deeper. Don&#x27;t spend time telling yourself that you&#x27;re right and other people are wrong and try to talk about other people being wrong as little as possible. If someone bugs you in your twitter feed, don&#x27;t let it bug you, either ignore them or stop following them because you&#x27;ll start thinking how right you are and how wrong they are. That will screw up your learning path. Just like stay the compounding returns of learning more and more curious, better and deeper questions. Your current level of understanding is always that of a blundering fool in some way, but you want to be waltzing along that curve on the compounding returns and just always asking better questions and just obsess over that and so much getaway from like a fixed doctrine of, you know, whatever.</p><blockquote id="9360e809-f889-4ee2-9a14-bc9fa8663b47" class="">Incredible advice. “My main idea is not any idea at all… it’s a method of learning. Always ask better questions and obsess over that.&quot; pic.twitter.com/aWpryqWfb1— ᴅᴀᴠɪᴅ ᴘᴇʀᴇʟʟ ✌ (@david_perell) October 23, 2017</blockquote><p id="3f8f510d-e548-4a3b-9c75-37e4f710130c" class=""><strong>David: </strong> Yeah, because that&#x27;s what&#x27;s so hard about about university is it like tells you almost what I know, what I need to do or know what I need to learn it. It&#x27;s like the antithesis of curiosity.</p><p id="0155275a-064d-4431-9952-60a3a3ebb413" class=""><strong>Tyler: </strong> Yes, and it&#x27;s too homework geared, which is a crime. High school, all the more so and our education system is failing us and this thing called the Internet has come along and for actual learning has so out competed what we call education.</p><p id="fc41984c-5744-46cc-9302-5e2ec0ffbc65" class=""><strong>David: </strong> It&#x27;s not even close.</p><p id="d7ad03f1-49a4-4bed-8c3b-89dab6c90ffa" class=""><strong>Tyler: </strong> It&#x27;s not even close and so much of the internet is free. It&#x27;s not all free but free or fairly cheap and it works on principles that are so much better than what you&#x27;re given in so many classes. So I think the time is right for some real revolution where what we call education in some ways becomes more like the Internet and we&#x27;re going about it wrong.</p><p id="46a96400-a2e1-4ff4-87db-66d52e225e2e" class=""><strong>Tyler: </strong> So what we&#x27;re doing now is we&#x27;re taking education as we knew it and we&#x27;re adding on the Internet, which I&#x27;m all for by the way. So you assign a <a href="https://www.youtube.com/">YouTube</a> video in your class and students email you again? Fine. No reason not to be excited about that, but the real gain is to make the Internet the center and they add on the education at the fringes and we&#x27;re very far from doing that.</p><p id="d6df2502-9140-4429-96e3-6f6fa8439835" class=""><strong>David: </strong> So then as information becomes abundant, the scarce resources should then shift into something else. So what is becoming scarce?</p><p id="74b82ebb-474d-4491-a4a0-b84ceb0125f2" class=""><strong>Tyler: </strong> Motivation, and that&#x27;s the theme in my book <a href="https://www.amazon.com/Average-Over-Powering-America-Stagnation/dp/0525953736">Average Is Over</a> that you asked about. How can you motivate yourself, how can you motivate others? The real scarce input is the preacher, the moral leader, the inspirer, the mentor or the role model. That is what is scarce in our world and we don&#x27;t even know it.</p><p id="c71c14e2-02ef-40d3-acb7-26e55b8618c9" class=""><strong>Tyler: </strong> And it&#x27;s hard to produce, right? Actually we may get more of it through the Internet itself, but still it&#x27;s hard to produce and for a lot of people, a lot of it has to be in person. Like you&#x27;ve read a lot of my stuff or heard me, but like now we meet the first time and I hope at least I&#x27;m something different to you. Maybe I&#x27;m worse?</p><p id="51f6206c-7a36-4447-af09-62118cec7f83" class=""><strong>David: </strong> You&#x27;re a blundering fool, Mr. Cowen. Hahaha.</p><p id="b09282e5-71b4-405a-9d01-ca3dac330b53" class=""><strong>Tyler:</strong> Haha, well, I&#x27;m happy if I&#x27;m not different at all. So there&#x27;s something about meeting the person where you reevaluate all the rest. That&#x27;s just so fundamental.</p><p id="4b972dd5-8a3c-4f8f-809d-40d4943a5f61" class=""><strong>David: </strong> I&#x27;ll tell you, this is what I feel with almost every single person. So with people who I ask of course are generally the people I tend to respect the most. So they start off through social media. What I found really interesting is they are there, they&#x27;re almost like godly and then you meet them and you realize that they&#x27;re human and then on like the far side of their humanity is their exceptionalism of like, you can do it, but because you can do it and you know how much work goes into that, then you begin to have this really deep admiration for many of these people.</p><p id="d9036e69-aaf9-4f25-8c78-217959d37c5d" class=""><strong>Tyler: </strong> Someone just emailed me a question. It was, what&#x27;s your readers biggest misconception about you? And it&#x27;s a brilliant question. Partly it&#x27;s such a good question because I don&#x27;t know the answer even though it&#x27;s like about me. You think, oh, you know about yourself. But if people ask you a question about you, you don&#x27;t know the answer to, it&#x27;s a very good question.</p><p id="0f05d5b7-ee4d-40e3-a018-d32da07758e6" class=""><strong>David: </strong> What did you respond with?</p><p id="305ad0d5-4237-40d0-b2ba-80917307d15a" class=""><strong>Tyler: </strong> Uh, I asked the question back. (Both laugh)</p><p id="92f04741-431d-40a8-ad58-05bc2b03e185" class=""><strong>Tyler: </strong> The answer I got was uh, I&#x27;m more serious in print and on the blog and more a kind of genial or enjoying things or playful in person.</p><p id="aa31438a-aa14-4689-a835-122323995206" class=""><strong>David: </strong> You are very playful. You&#x27;re very playful. But I knew that because because every interview, about five percent is funny. There&#x27;s always humor and humor is just, it&#x27;s very important to be able to humanize in that way.</p><p id="3e79af72-24ac-4d60-b442-56ac59d5cf92" class=""><strong>Tyler: </strong> It&#x27;s the emotionally vivid thing. It&#x27;s the entry point. Like humor is an entry point for learning almost anything.</p><p id="f91f0388-184a-4fa9-9bef-c627224cd07f" class=""><strong>David: </strong> Huh, what do you mean by that?</p><p id="492d6f51-7d15-497a-bea1-ffec59b64cbe" class=""><strong>Tyler: </strong> If you want to learn about like cheese, don&#x27;t read a cheese book. Start with the <a href="https://en.wikipedia.org/wiki/Monty_Python">Monty Python</a> skit about going into the cheese shop where he recites all the cheeses that they don&#x27;t have. You learn names of cheeses much better that way than if you try to learn about cheese.</p><p id="b9102021-b837-4227-8626-b7e63803bec7" class=""><strong>David: </strong> So is humor like music in that sense?</p><p id="f2f97d4c-2064-4430-9142-3b5d74cdd28a" class=""><strong>Tyler: </strong> Exactly. Music&#x27;s a great way to learn about cultures and travel, humor. So the Monty Python skit where they try to summarize, proves it. If you don&#x27;t know of it, watch it online. There&#x27;s a competition, summarize <a href="https://en.wikipedia.org/wiki/Marcel_Proust">Proust</a>. You&#x27;ve got to do it in 10 seconds. Of course it&#x27;s a many volume work with not even all that much plot, so it&#x27;s hard to summarize and you see people being blundering fools trying to summarize it. And this gets over in two and a half minutes. The best way to start understanding Proust is to view something funny on Proust.</p><p id="0923b1ae-0597-4d3e-992f-7151911e09fb" class=""><strong>David: </strong> There we go. Start a restaurant. So hopefully some ethnic food and podcast series. Well this was a great jumping point into Tyler Cowen. Thanks for coming on the North Star.</p><p id="47a02100-d990-4877-941a-1d074a65b66a" class=""><strong>Tyler: </strong> My pleasure. Thank you.</p><p id="d29a599c-826a-4ece-86d1-e094d2162625" class=""><strong>David: </strong> Hey again, it&#x27;s David here. One more time. You can support the Northstar podcast by leaving us a <a href="https://itunes.apple.com/us/podcast/north-star-podcast/id1170914572?mt=2">five star review on iTunes</a>, or you can share the podcast on <a href="https://twitter.com/?lang=en">Twitter</a> or facebook and to listen to other episodes or learn more about the North Star. You could connect with me directly at <a href="http://www.perell.com/">Perell.com</a>. And you can always reach out on <a href="https://twitter.com/david_perell">Twitter @david_perell</a>. And if you enjoyed this episode, you&#x27;ll also like <a href="http://www.perell.com/podcast/josh">the episode with Josh Wolfe</a>, where we talked about the magic of learning, science, and economics.</p><p id="0822c5eb-1fa4-4f33-ba1d-1f14e420610f" class=""><strong>Tyler Cowen&#x27;s Books:</strong></p><p id="b0c2cd98-ceaa-4f45-a769-1303937d098a" class=""><strong>Other Links:</strong></p><p id="bfe87891-d577-4a64-b62d-9a1fcf2d09d3" class=""><strong>Connect with Me (I love meeting new people):</strong></p><p id="c92088f3-5d52-4acb-8f57-9a6096594c65" class="">Email: david@perell.com</p></div></article></body></html>
