@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>[Podcast] The 4-1-6 Defense with Tyler Walker, Defensive Backs Coach Muskingum University</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5051d884-5dce-48d3-a901-cd521f5d3d56" class="page sans"><header><h1 class="page-title">[Podcast] The 4-1-6 Defense with Tyler Walker, Defensive Backs Coach Muskingum University</h1></header><div class="page-body"><p id="96045666-f793-4228-b0de-0b7b8cf2eabb" class="block-color-gray"><a href="https://blogs.usafootball.com/blog/7417/podcast-the-4-1-6-defense-with-tyler-walker-defensive-backs-coach-muskingum-university">https://blogs.usafootball.com/blog/7417/podcast-the-4-1-6-defense-with-tyler-walker-defensive-backs-coach-muskingum-university</a></p><p id="80e24730-85f0-40ba-9afa-f8b6947f605b" class="">
+</p><figure id="27ca466f-8f6d-4938-b871-e91c8e27a6b2" class="image"><a href="Podcast The 4 1 6 Defense with Tyler Walker Defens/PodHero.jpg"><img style="width:640px" src="Podcast The 4 1 6 Defense with Tyler Walker Defens/PodHero.jpg"/></a></figure><p id="d0aec344-7b6f-4c1f-a820-2c26fec7f184" class="">On today’s Coach and Coordinator podcast, host Keith Grabowski talks with Tyler Walker, defensive backs coach, special team coordinator and recruiting coordinator at Muskingum University (Ohio). Prior to arriving at Muskingum, Walker was an assistant coach at Catholic Central High School (Mich.), where he worked primarily with the receivers and helped lead the Shamrocks to 14-0 overall record that was capped off by a Michigan High School Athletic Association Division 4 state championship. Walker joins the podcast today to talk about the 4-1-6 defensive scheme as a whole, specifically in regards to the secondary.</p><p id="2be3a3c6-feca-451f-8f7f-bdad7c1b03c3" class="">Show Notes:</p><p id="08abadd7-4e31-410e-966f-debfaff26717" class="">1:15 Coach’s experience during his first year at Muskingum</p><p id="d22f0567-5289-4d03-ab52-2f71eee3a617" class="">2:39 Efforts of the staff to change the culture at Muskingum</p><p id="10380d3e-2ee4-4b06-982d-e72b29e43718" class="">5:02 Muskingum’s defensive philosophies</p><p id="23a3ba66-d9ec-418b-be68-f7fc68efe592" class="">8:36 4-1-6</p><p id="ced83ffe-b1df-4a5a-bd18-6b859c596f64" class="">10:20 Which RPO is easier to plan for</p><p id="d7c15115-a82e-4a56-b4a2-2c83ac4da66a" class="">12:00 How they dictate who gets the ball in the RPO game</p><p id="5f15baf3-c6ae-4636-acfa-fbb105d5e2e9" class="">14:00 Similarities between his front and tight front</p><p id="2d65f9a4-bc19-4823-9353-ed2fd896bca6" class="">15:50 What kind of hybrid players coach is looking for</p><p id="db9b56ca-9f5e-460d-8eae-d9f377da09c3" class="">17:40 What problems do big body offenses give to this defense</p><p id="cfd58a30-41f8-457f-a999-df11daf4d46e" class="">19:58 Preparing in camp</p><p id="4fdfae81-cc2c-4f9c-a6cd-cc80d3c8f0d8" class="">22:50 Secondary responsibilities</p><p id="78c2702e-66bc-4a5e-a236-8ce4667d89bb" class="">26:03 Meg adjustment</p><p id="12555e9c-6f6f-45b8-821b-b71a9ed5d67d" class="">28:29 Safety run support</p><p id="e1554819-72cc-4296-a1a5-43267b0d7b2d" class="">30:12 Installation and drill plans</p><p id="43826416-cf09-4db9-ad98-85ed1e5174eb" class="">32:41 Efficient game planning</p><p id="468269f0-d740-43d3-9a9b-88a5873da6a8" class="">36:38 Matching up-tempo offenses</p><p id="63433575-87b2-4da1-9de3-6f8111dc8188" class="">39:37 Balancing his duties as special teams coach with his defensive responsibilities</p><p id="b273a953-b508-491b-88e2-44ed6af1ce17" class="">46:25 Winning edge</p><p id="2835569a-c41a-4f11-8f7a-d04fa1a80f6b" class="">Connect with Coach</p><p id="81b54e77-c3b3-4375-9d57-fa45373a4c97" class="">Twitter: @CoachTWalker</p><p id="3aa09b33-4006-42df-b263-fe416c990619" class=""><strong>RELATED CONTENT:</strong></p><h3 id="d7e32a7a-ef0a-4cac-8b7d-639d1bda9bf1" class="">COACHES: FIND THE WINNING EDGE</h3><p id="d8d904e0-867f-4a5c-88c0-ff6400f53dde" class="">Reinforce your playbook and improve your knowledge with Coaches&#x27; Notes. Create your account and start your 7-day free trial!</p><figure id="7d51b420-47cb-4ed1-be7b-c87c85ed1f68" class="image"><a href="Podcast The 4 1 6 Defense with Tyler Walker Defens/buzby11.jpg"><img style="width:612px" src="Podcast The 4 1 6 Defense with Tyler Walker Defens/buzby11.jpg"/></a></figure><figure id="ae93ddc7-6032-4ff6-a29a-92c004b71b5e" class="image"><a href="Podcast The 4 1 6 Defense with Tyler Walker Defens/Hero.jpg"><img style="width:640px" src="Podcast The 4 1 6 Defense with Tyler Walker Defens/Hero.jpg"/></a></figure><figure id="66b93e50-7824-42e5-88e9-3acdea7df33d" class="image"><a href="Podcast The 4 1 6 Defense with Tyler Walker Defens/CAHero.jpg"><img style="width:700px" src="Podcast The 4 1 6 Defense with Tyler Walker Defens/CAHero.jpg"/></a></figure><figure id="eec7d05d-bb2c-4c84-9233-232079635e4a" class="image"><a href="Podcast The 4 1 6 Defense with Tyler Walker Defens/2322028229.jpg"><img style="width:700px" src="Podcast The 4 1 6 Defense with Tyler Walker Defens/2322028229.jpg"/></a></figure><figure id="2bb24d63-218c-48a8-8efd-218822165dd3" class="image"><a href="Podcast The 4 1 6 Defense with Tyler Walker Defens/2332028229.jpg"><img style="width:700px" src="Podcast The 4 1 6 Defense with Tyler Walker Defens/2332028229.jpg"/></a></figure></div></article></body></html>
