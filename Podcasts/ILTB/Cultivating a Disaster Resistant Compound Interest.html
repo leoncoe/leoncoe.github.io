@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Cultivating a Disaster Resistant, Compound Interest Machine – Brent Beshore [Invest Like the Best, EP.10]</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b32ed65b-f5eb-4378-83f9-ed7b51b50f17" class="page sans"><header><h1 class="page-title">Cultivating a Disaster Resistant, Compound Interest Machine – Brent Beshore [Invest Like the Best, EP.10]</h1></header><div class="page-body"><p id="301f8a32-94c0-4393-9b17-7b9318820aaf" class="block-color-gray"><a href="http://investorfieldguide.com/beshore/">http://investorfieldguide.com/beshore/</a></p><p id="1fd3decd-2ab5-4f2b-aacc-02fbac77a559" class="">
+</p><p id="c2dbb628-f662-4511-a1b7-b03f60366186" class="">This week’s guest is Brent Beshore, Founder and CEO of <a href="http://adventur.es/">adventur.es</a>, a family of companies that invests in family-owned companies. Brent has a very specific mission with this company, to cultivate a disaster resistant, compound interest machine. At just 33 years of age he has already built a portfolio of private companies that has produced impressive results. He’s done all this out of the limelight and with no outside investors. Brent discusses his rewarding but difficult journey and what he has learned, including sourcing and evaluating businesses, how he and his team have improved profitability at his portfolio companies after acquisition and so much more. The description of his process starting at 21:40 was very unique–I learned a lot of about evaluating smaller, private businesses.</p><p id="9811cb23-4653-4305-9367-4cd80bd8707c" class="">If you are not already, subscribe to <strong>Invest Like the Best</strong> here:</p><p id="0fc1a96a-1287-464d-9096-3e2413afafc2" class="">Please enjoy!</p><p id="e3300edd-82b2-41b5-bea1-fb3697149c1e" class=""><strong>Books Mentioned</strong></p><p id="edf86ea9-ae26-4e56-b55a-d3b814b26b5e" class=""><a href="https://www.amazon.com/Mistakes-Were-Made-but-Not/dp/0544574788/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1478543885&amp;sr=1-1&amp;keywords=mistakes+were+made+but+not+by+me">Mistakes Were Made (but Not by Me): Why We Justify Foolish Beliefs, Bad Decisions, and Hurtful Acts</a></p><p id="acec5f70-142e-4882-9e81-9593512f724c" class=""><strong>Links Referenced</strong></p><p id="94d54ef9-2426-4a5a-b76b-4ca95031cc49" class=""><strong>Show Notes</strong></p><p id="29f1da29-b9dc-4379-b1c5-d7bff0d0b679" class="">1:34 (First Question) – Start with some background on Brent and how he has gotten to this point.</p><p id="ab4886c6-9a63-46c9-9253-ac1ecb1ad486" class="">3:14 – Brent highlights the types of companies he wants to get involved with and what they hope to accomplish with their acquisitions.</p><p id="06316ba8-c914-4ffc-ab5f-a5bb268d8079" class="">4:20 – Looking at Brent’s early background, including what he studied in school and some of his early jobs</p><p id="46e66a44-aa27-44e8-ad1d-765cdfb8e29b" class=""><a href="https://www.wlu.edu/">Washington &amp; Lee University</a> – Produced most presidents, also top party school</p><p id="e6c4a5b6-08d5-4791-839d-d75d3b3387d2" class="">6:58 – A look at his first business and how that led him to the entrepreneurial journey of buying companies</p><p id="14cc9eff-0390-4ba4-a72b-f7930b0ad4d5" class="">8:56 – How Brent was able to use his own capital to make his first acquisition and grow from there</p><p id="8078901f-0354-480a-8c00-860d846dd57b" class="">11:51 – Some of the books that have influenced Brent’s earliest strategies</p><p id="489591f0-45d7-4b1f-bb32-2c3637ed983b" class="">12:36 – <a href="https://www.amazon.com/Poor-Charlies-Almanack-Wisdom-Charles/dp/157864366X/ref=sr_1_2?s=books&amp;ie=UTF8&amp;qid=1478543858&amp;sr=1-2&amp;keywords=poor+charlie%27s+almanack">Poor Charlie’s Almanack: The Wit and Wisdom of Charles T. Munger</a></p><p id="6c92cc62-fb54-428a-b7a4-8eafcfb43cee" class="">12:48 – <a href="https://www.amazon.com/Fish-That-Ate-Whale-Americas/dp/1250033314/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1478543844&amp;sr=1-1&amp;keywords=the+fish+that+ate+the+whale">The Fish that at the Whale</a></p><p id="a92bf05b-ad27-451a-bc51-00b06b161a90" class="">13:20 – <a href="https://www.amazon.com/Wild-Company-Untold-Banana-Republic/dp/B00C2IFM4C">Wild Company: The Untold Story of Banana Republic</a></p><p id="932b60d6-d603-49f5-8cca-4ee190e0c9d2" class="">15:24 – <a href="https://www.amazon.com/Mistakes-Were-Made-but-Not/dp/0544574788/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1478543885&amp;sr=1-1&amp;keywords=mistakes+were+made+but+not+by+me">Mistakes Were Made (but Not by Me): Why We Justify Foolish Beliefs, Bad Decisions, and Hurtful Acts</a></p><p id="69bf2cdc-174b-484b-8048-fe39b5d94387" class="">15:59 – <a href="https://www.amazon.com/Honest-Truth-About-Dishonesty-Everyone-Especially/dp/0062183613/ref=sr_1_4?s=books&amp;ie=UTF8&amp;qid=1478544713&amp;sr=1-4&amp;keywords=dan+ariely">The Honest Truth About Dishonesty: How We Lie to Everyone–Especially Ourselves</a></p><p id="be61bb16-2a75-43d0-9bb2-f902189601c1" class="">16:34 – How Brent secures capital to buy companies and the discussion of debt</p><p id="36db92ca-d9c9-4645-a69b-524e2d3add43" class="">18:03 – A look at some of the holdings in Brent’s portfolio</p><p id="fa0794d5-b8c2-4a3c-896c-2e741a9c5402" class="">21:40 – Patrick asks Brent what he looks for when choosing an investment target</p><p id="fd63c74d-2622-4612-b395-40872734f455" class="">26:11 – What motivates the people who are on the other side of the table that are willing to sell their companies to people like Brent.</p><p id="7d622dc0-5926-4fee-bb93-1396873357ec" class="">29:16 – Would Brent ever consider outside capital on an investment</p><p id="437fb3ad-bfff-46b4-b462-adca8efd306d" class="">30:27 – The type of returns that Brent is seeing on his investments</p><p id="c9efc4c7-999a-41f9-bc86-d4325464e5f0" class="">34:10 – How Brent is able to get the profitably model to grow quickly in their investments, often with some pretty simple improvements</p><p id="21c63e58-170b-4285-b160-840720e8f738" class="">40:40 – What are the benefits of content marketing to boost your business</p><p id="cba9c3b2-1ca5-44d7-9706-09b5e81baa57" class="">44:32 – <a href="https://www.amazon.com/Robert-Collier-Letter-Book/dp/8087830679/ref=sr_1_1?ie=UTF8&amp;qid=1478552120&amp;sr=8-1&amp;keywords=robert+collier+letter+book">The Robert Collier Letter Book</a></p><p id="299eb0ca-960c-4bb5-99a4-953030af5015" class="">44:38 – <a href="https://www.amazon.com/Scientific-Advertising-Claude-Hopkins/dp/1603866361/ref=sr_1_1?ie=UTF8&amp;qid=1478552149&amp;sr=8-1&amp;keywords=scientific+advertising">Scientific Advertising</a></p><p id="b644faca-2811-4a9a-a73a-5f57c391d4d8" class="">45:32 – A closer look at marketing with respect to his business <a href="https://www.influenceandco.com/">Influence &amp; Co.</a></p><p id="e6417a88-58f4-43d6-a46b-d0fdb22cb7e8" class="">48:39 – The conversation shifts to data and how Brent incorporates that into his business decision. Plus, his relationship with <a href="https://www.farnamstreetblog.com/">Shane Parrish of Farnam Street</a></p><p id="937b0d32-a49f-4f5d-bd81-0e8acca9447c" class="">53:01 – Patrick asks Brent about his opinion of the public markets</p><p id="e99b06d8-7724-4edb-bad4-1ba501bcf991" class="">55:31 – Looking at Brent’s most interesting days both personally and professionally</p><p id="942ea222-ce18-43f9-8b20-5cfc96ec2e23" class="">1:01:00 – A look into Brent’s foray in wine making with his wife and the <a href="https://www.vivino.com/wineries/beshore">Beshore family vineyards</a>.</p><p id="7c549d30-12a7-448a-9d47-99e0fe69bcb1" class="">1:04:36 – Looking at debt beyond money; culture debt, code debt, systems debt, expectations debt and more.</p><p id="140f2c34-6e95-4669-88fb-c3dd3f1ecf63" class="">1:09:39 – What is the biggest miss that Brent has ever had, and what lessons did he learn from that and other deals he hasn’t done.</p><p id="a9891620-4fea-441d-8c35-7d32ff44f739" class="">1:12:37 – What about ones that Brent said no to but then it was a good move</p><p id="4d7e22fd-a69e-4558-a8a4-6e30a8fccf3f" class="">1:15:57 – Brent explains his theory of not over-negotiating for a company that he is bidding for</p><p id="80867be8-f5e7-441e-8f92-7cc5de06a6c4" class="">1:18:46 – The personality traits and skills that would help people thrive in the small to mid-market private investing space</p><p id="3b150d92-3b0f-439b-98b5-f7505548d363" class="">1:25:58 – What is the motivation for Brent to continue doing this</p><p id="5692e02c-e55d-4044-b48a-7d920995b468" class="">1:28:22 – The daily values and habits that have aided Brent in his career</p><p id="c56bb8ae-851f-4fae-a216-452383d2a50e" class="">1:30:55 – The kindest thing that anyone has ever done for Brent professionally</p><p id="1dc46709-a207-4cc7-af56-d5de4db105a6" class=""><strong>Learn More</strong></p><p id="3e5a4fa9-4789-47a3-8a6d-47e2216fc389" class="">For more episodes go to <a href="http://investorfieldguide.com/podcast">InvestorFieldGuide.com/podcast</a>.</p><p id="842a3403-67d3-482e-b7b0-eea8392cff1f" class="">Sign up for the book club, where you’ll get a full investor curriculum and then 3-4 suggestions every month at <a href="http://investorfieldguide.com/bookclub">InvestorFieldGuide.com/bookclub</a></p><p id="a866ecb1-cc64-4d7f-aaa3-a64213b19017" class="">Follow Patrick on twitter at <a href="https://twitter.com/patrick_oshag">@patrick_oshag</a></p></div></article></body></html>

@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Premeditated Success, with Jim O’Shaughnessy – [Invest Like the Best, EP.29]</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="79432805-20e3-4890-aba3-94e6c4bbd697" class="page sans"><header><h1 class="page-title">Premeditated Success, with Jim O’Shaughnessy – [Invest Like the Best, EP.29]</h1></header><div class="page-body"><p id="860b9a10-46b2-4c5b-809c-d35c5f8fdcd2" class="block-color-gray"><a href="http://investorfieldguide.com/jim/">http://investorfieldguide.com/jim/</a></p><p id="bd2ab0d1-d987-4ba4-b37d-f0a79b48d4a8" class="">
+</p><p id="9b78c221-f1b8-434b-a65b-32d2e3cb6c35" class="">My guest this week is my father, Jim O’Shaughnessy. He was a pioneer in quantitative equity research, part of an early group of explorers who combed through data to find factors which predicted future stock returns. While we’ve both written extensively on factor investing, we chose to mostly avoid that topic for this conversation. Instead, we discuss what has been a fascinating and colorful career on Wall Street. We talk about the power of premeditation, formative books, and his crazy experience during the dot-com boom when he ran a robo-advisor 15-years ahead of its time.</p><p id="23dbf2d1-faf3-414c-9017-fe9763260281" class=""><strong>Links Referenced</strong></p><p id="cd383b9f-5f28-4afc-a347-7169bba13b12" class=""><strong>Books Referenced</strong></p><p id="b8b6b2d9-d023-4916-aebf-5a600618253f" class=""><a href="https://www.amazon.com/Invest-Like-Best-Computer-Managers/dp/0070479844/ref=asap_bc?ie=UTF8">Invest Like the Best: Using Your Computer to Unlock the Secrets of the Top Money Managers/Book and Idks</a></p><p id="97300e31-a229-4c04-a804-af483f1b5fca" class=""><strong>Show Notes</strong></p><p id="9584d329-8463-4489-880b-a9c88a9f12ba" class="">2:50 – (first question) – How Jim got interested in investing and spent a lot of time at the James J. Hill research library in St. Paul, Minnesota.</p><p id="789dbcfe-1321-44c5-8704-120e35b40149" class="">6:03 – Going in depth on IA (Jim’s grandfather and Patrick’s great grandfather) and how character is fate</p><p id="bdf48954-4e5a-4416-9771-fa553a7830d2" class="">10:24 – Exploring the idea of pre-meditation and how it works</p><p id="a57b376d-8c1a-4e09-a300-df4abd6aa922" class="">11:47 – Why you need to be bold</p><p id="617685bc-43af-49ef-b2da-5db8dfdc5330" class="">13:03 – <a href="https://www.amazon.com/Invest-Like-Best-Computer-Managers/dp/0070479844/ref=asap_bc?ie=UTF8">Invest Like the Best: Using Your Computer to Unlock the Secrets of the Top Money Managers/Book and Idks</a></p><p id="86eb2c7e-274f-498c-8c8b-25c3642a36b0" class="">13:29 – <a href="https://www.amazon.com/What-Works-Wall-Street-Fourth/dp/0071625763/ref=sr_1_1?ie=UTF8&amp;qid=1489628865&amp;sr=8-1&amp;keywords=What+works+on+wall+street">What works on Wall Street</a></p><p id="9b362a56-04e1-48bf-8ece-58234e2c34cd" class="">13:44 – Why you must be able to remove the emotion from investing</p><p id="508d456b-2b39-4769-ab29-88f34df795c3" class="">16:01 – How factor based investing can be derailed very easily if you don’t have discipline to follow it</p><p id="d6c1d6d8-29b7-427b-a8ea-8d62e89a6b35" class="">17:49 – <a href="https://www.linkedin.com/pulse/factors-commodities-christopher-meredith-cfa-1">Factors are not Commodities (Chris Meredith)</a></p><p id="342a4131-b332-4be4-b9b8-b1ed75702bf9" class="">18:57 – Looking at the mentoring relationship between Jim and Patrick, highlighted by an important mantra “look it up.”</p><p id="8ab1001c-fd77-4a1b-8326-d569c17664b1" class="">20:09 – 5 Books Jim would subscribe</p><p id="cc2f890a-cfa5-40c0-99c5-b971e5f6b496" class="">20:32 – <a href="https://www.amazon.com/Dao-Jing-Book-Way-Laozi/dp/0520242211">Dao De Jing: The Book of the Way</a></p><p id="90b07581-d57d-4d94-a6a4-a97d9ea7a916" class="">21:07 – <a href="https://www.amazon.com/Adventures-Bystander-Peter-F-Drucker/dp/1560007389/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1489628807&amp;sr=1-1&amp;keywords=adventures+of+a+bystander">Adventures of a Bystander</a></p><p id="ffe97b42-f2fd-4848-bd45-3d230523630d" class="">21:46 – <a href="https://www.amazon.com/Surely-Feynman-Adventures-Curious-Character/dp/0393316041/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1489628785&amp;sr=1-1&amp;keywords=surely+you%27re+joking+mr.+feynman">Surely You’re Joking, Mr. Feynman!</a></p><p id="9f5d2a85-83d9-4b03-8573-576acf3ed853" class="">22:24 – <a href="https://www.amazon.com/Zen-Art-Motorcycle-Maintenance-Inquiry/dp/0060589469/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1489628767&amp;sr=1-1&amp;keywords=zen+and+the+art+of+motorcycle+maintenance">Zen and the Art of Motorcycle Maintenance: An Inquiry Into Values</a></p><p id="8c357c36-bac0-4c41-a5c3-56eb51c08eca" class="">23:06 – <a href="https://www.amazon.com/Complete-Poems-Plays-1909-1950/dp/015121185X/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1489628717&amp;sr=1-1&amp;keywords=complete+poems+of+ts+elliot">The Complete Poems and Plays: 1909-1950 (T.S. Eliot)</a></p><p id="ad2d2925-a2f1-49fd-95c5-cd5a3e0a59e3" class="">23:31 – <a href="https://www.amazon.com/Cloud-Atlas-Novel-David-Mitchell/dp/0375507256/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1489628649&amp;sr=1-1&amp;keywords=Cloud+atlas">Cloud Atlas</a></p><p id="3db4b151-80da-4f39-9b0f-7e31ade90250" class="">23:52 – <a href="https://www.amazon.com/Misbehavior-Markets-Fractal-Financial-Turbulence/dp/0465043577/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1489628628&amp;sr=1-1&amp;keywords=the+misbehavior+of+markets">The Misbehavior of Markets: A Fractal View of Financial Turbulence</a></p><p id="0f732d15-7d1c-49f7-b9b6-c7b3703e6c78" class="">24:33 – <a href="https://www.amazon.com/When-Breath-Becomes-Paul-Kalanithi/dp/081298840X/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1489628585&amp;sr=1-1&amp;keywords=when+breathe+become+air">When Breath Becomes Air</a></p><p id="f41f7e0a-739e-4de0-a8a9-34e73373004f" class="">24:57 – Looking at the stage of his career that Jim felt most alive</p><p id="b7daa2fb-b080-47cf-82da-fa3bad56371e" class="">26:08 – <a href="https://www.amazon.com/Wealthy-Barber-Common-Sense-Financially-Independent/dp/1559580968/ref=pd_sbs_14_t_2?_encoding=UTF8&amp;psc=1&amp;refRID=GNA0177RM9CFN8KQ3NXX">The Wealthy Barber: Everyone’s Common-Sense Guide to Becoming Financially Independent</a></p><p id="8953556a-dbf9-42cf-a180-4615b8c3c9d5" class="">28:04 – Looking at the first robo advisor like portfolio that Jim launched, Netfolio</p><p id="8a6a2a96-f841-4dd7-9d8e-0667715be34b" class="">31:45 – <a href="http://www.barrons.com/articles/SB953335580704470544">Burning Up (Barron’s)</a></p><p id="6528c969-0d9f-4482-bf94-9477be0d729a" class="">35:13 – The evolution of emotional response and the four horsemen of the investment apocalypse</p><p id="52e2d854-b32c-41ee-9a25-667288f9e711" class="">37:10 – <a href="https://www.amazon.com/Pogo-Complete-Sunday-Strips-Through/dp/1560978694">Pogo</a></p><p id="8da246ff-12fe-4791-8cfb-f4fe92cb3fef" class="">38:17 – <a href="http://thereformedbroker.com/2014/08/07/fired-managers-outperform-hired-managers/">Fired Managers Outperform Hired Managers (Josh Brown)</a></p><p id="bfb7117f-b406-449a-9092-2e6ec03ac9e1" class="">39:50 – Biggest lessons learned from running businesses</p><p id="7de566d7-faae-45b5-aa77-6498c403a392" class="">45:24 – <a href="https://www.amazon.com/Snowball-Warren-Buffett-Business-Life/dp/0553384619/ref=sr_1_1?ie=UTF8&amp;qid=1489628290&amp;sr=8-1&amp;keywords=snowball+warren+buffett">The Snowball: Warren Buffett and the Business of Life</a></p><p id="d383c601-225c-4a69-bbf3-d5fbf48af073" class="">45:32– Something Jim is most proud of in his career.</p><p id="8fd4112a-6add-4db3-834e-b6c194330687" class="">47:38 – Back to pre-meditation and wondering what roles in plays in luck and success</p><p id="f902afb9-792c-4937-b913-5890bd6dcf32" class="">52:55 – Most memorable day of Jim’s career</p><p id="ecfc3ee9-2603-4edd-9b38-5165f35c6ed2" class="">54:03 – What does Jim that looks hard to outsiders, but is really easy for Jim</p><p id="61537675-47c1-4aeb-8368-7e732c4150a5" class="">57:02 – What are some skills that Jim believes you can get better at with hard work</p><p id="c694cb4a-51b3-46d9-a354-2696644b16c4" class="">58:14 – <a href="https://www.amazon.com/How-Win-Friends-Influence-People/dp/0671027034/ref=sr_1_1?ie=UTF8&amp;qid=1489628202&amp;sr=8-1&amp;keywords=how+to+win+friends+and+influence+people">How to Win Friends and Influence People</a></p><p id="1b34cb48-27e4-4425-a7a1-0e85631ff694" class="">1:02:53 – Kindest thing anyone has done for Jim</p><p id="13f05374-041a-45db-8b63-e42ca3372b9c" class=""><strong>Learn More</strong></p><p id="328d31dc-be93-4104-89e5-85ab2e446cb0" class="">For more episodes go to <a href="http://investorfieldguide.com/podcast">InvestorFieldGuide.com/podcast</a>.</p><p id="1384e04d-188b-4ad2-b0ad-8fe6ee19fd76" class="">Sign up for the book club, where you’ll get a full investor curriculum and then 3-4 suggestions every month at <a href="http://investorfieldguide.com/bookclub">InvestorFieldGuide.com/bookclub</a></p><p id="66793ce9-90c5-4e8c-bad5-a9da39fe8da8" class="">FOR ITUNES</p><p id="893da51e-06f8-4c0d-aa95-45d8dfcf0efb" class="">For comprehensive show notes on this episode go to <a href="http://investorfieldguide.com/chenmark">http://investorfieldguide.com/jim</a></p><p id="af0b62fd-5406-44ec-b712-dcff5b270571" class="">For more episodes go to <a href="http://investorfieldguide.com/podcast">InvestorFieldGuide.com/podcast</a>.</p><p id="b898e737-3682-47aa-aa56-08f168c83b2e" class="">Sign up for the book club, where you’ll get a full investor curriculum and then 3-4 suggestions every month at <a href="http://investorfieldguide.com/bookclub">InvestorFieldGuide.com/bookclub</a></p><p id="0bb96179-5c70-4b8d-8b65-58aa58168bd1" class="">Follow Patrick on twitter at <a href="https://twitter.com/patrick_oshag">@patrick_oshag</a></p></div></article></body></html>
