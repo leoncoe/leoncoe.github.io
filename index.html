@@ -607,4 +607,46 @@ return " ";
 </p><blockquote id="26080fff-f140-4143-8cb3-51bd3b7ed41d" class="">“Extraordinary resourcefulness, his almost superhuman capacity for work, his
 hardiness and lack of concern for personal comfort, his disregard of danger; and despite his reputation for driving them remorselessly, despite his sharp tongue on occasion, despite his exacting standards, they were also speaking of his concern for them, of his fellow­feeling with them, of his utter lack of pretension or pomposity, of the fact that he was manifestly moved, and only moved, by the interests of the sufferings of his troops. He would, they said, do anything for them, and they knew it. Above all, they had come to know that with him they would win.&quot;</blockquote><p id="c062f968-80a3-467d-9fd6-423c13dcc517" class="">
 </p><h2 id="57461dc2-5979-4ab5-a2fa-e145bceb6635" class="block-color-blue_background">Experience</h2><p id="76acce4c-6720-4d8f-b8b4-792137585423" class="">
-</p><ul id="2b799f1c-40ee-47df-a230-25716c15fba5" class="bulleted-list"><li><strong>Co-Founder at </strong><strong><a href="http://sayvoco.com">VoCo</a></strong><ul id="5f197df5-6034-4ce3-be7f-4806bbab3f2b" class="bulleted-list"><li>2018-Present</li></ul></li></ul><ul id="e53e3ac8-fa18-4980-8965-7f1fbf702b2a" class="bulleted-list"><li><strong>Marketing at Essentium</strong><ul id="0b538dd5-e24f-43ee-99d5-4ea9d35462c5" class="bulleted-list"><li>2017-2018</li></ul></li></ul><ul id="556bd814-7ba0-4cac-b3da-9809b41f0a31" class="bulleted-list"><li><strong>Startup Aggieland &amp; Seed Sumo</strong><ul id="f3a4f1a6-283d-4449-8ca7-9bfe2210308a" class="bulleted-list"><li>2016</li></ul></li></ul><ul id="d23c6f73-cd85-493c-9553-827932113c2c" class="bulleted-list"><li><strong>Texas A&amp;M &#x27;17</strong><ul id="fd1b48ee-3723-4b94-9d5d-5469aec24b1e" class="bulleted-list"><li>2013-2017</li></ul></li></ul></div></article></body></html>
+</p><ul id="2b799f1c-40ee-47df-a230-25716c15fba5" class="bulleted-list"><li><strong>Co-Founder at </strong><strong><a href="http://sayvoco.com">VoCo</a></strong><ul id="5f197df5-6034-4ce3-be7f-4806bbab3f2b" class="bulleted-list"><li>2018-Present</li></ul></li></ul><ul id="e53e3ac8-fa18-4980-8965-7f1fbf702b2a" class="bulleted-list"><li><strong>Marketing at Essentium</strong><ul id="0b538dd5-e24f-43ee-99d5-4ea9d35462c5" class="bulleted-list"><li>2017-2018</li></ul></li></ul><ul id="556bd814-7ba0-4cac-b3da-9809b41f0a31" class="bulleted-list"><li><strong>Startup Aggieland &amp; Seed Sumo</strong><ul id="f3a4f1a6-283d-4449-8ca7-9bfe2210308a" class="bulleted-list"><li>2016</li></ul></li></ul><ul id="d23c6f73-cd85-493c-9553-827932113c2c" class="bulleted-list"><li><strong>Texas A&amp;M &#x27;17</strong><ul id="fd1b48ee-3723-4b94-9d5d-5469aec24b1e" class="bulleted-list"><li>2013-2017</li></ul></li></ul></div></article>
+	<!-- Load Stripe.js on your website. -->
+<script src="https://js.stripe.com/v3"></script>
+
+<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+<button
+  style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+  id="checkout-button-sku_FbFN0LeSqNh4lh"
+  role="link"
+>
+  Checkout
+</button>
+
+<div id="error-message"></div>
+
+<script>
+  var stripe = Stripe('pk_live_RuQaUghAhT8oRZc9AhH0oxQV');
+
+  var checkoutButton = document.getElementById('checkout-button-sku_FbFN0LeSqNh4lh');
+  checkoutButton.addEventListener('click', function () {
+    // When the customer clicks on the button, redirect
+    // them to Checkout.
+    stripe.redirectToCheckout({
+      items: [{sku: 'sku_FbFN0LeSqNh4lh', quantity: 1}],
+
+      // Do not rely on the redirect to the successUrl for fulfilling
+      // purchases, customers may not always reach the success_url after
+      // a successful payment.
+      // Instead use one of the strategies described in
+      // https://stripe.com/docs/payments/checkout/fulfillment
+      successUrl: 'http://leoncoe.github.io/success',
+      cancelUrl: 'http://leoncoe.github.io/canceled',
+    })
+    .then(function (result) {
+      if (result.error) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer.
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+</script></body></html>
