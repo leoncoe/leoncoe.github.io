@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Inventing the Future with Lux Capital’s Josh Wolfe</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="77b8d936-e1c1-4865-8cc6-bc820087d945" class="page sans"><header><h1 class="page-title">Inventing the Future with Lux Capital’s Josh Wolfe</h1></header><div class="page-body"><p id="cca0d2c0-cd3a-493d-bb94-460baa48990a" class="block-color-gray"><a href="https://fs.blog/josh-wolfe/">https://fs.blog/josh-wolfe/</a></p><p id="8c682f76-001b-4e05-a86a-97235d501137" class="">
+</p><p id="4bd5e179-c7cb-4e94-a086-d4db6b5433a8" class="">Josh Wolfe, co-founder of Lux Capital discusses how to unearth the unexplored ideas that will reshape our future. We also talk parenting, decision making, and which generation has the best rap.</p><figure id="51f671ca-f7f1-4135-8e73-17e727b8e630" class="image"><a href="Inventing the Future with Lux Capital s Josh Wolfe/j-wolfe-500px.jpg"><img style="width:500px" src="Inventing the Future with Lux Capital s Josh Wolfe/j-wolfe-500px.jpg"/></a></figure><p id="45e201d2-044a-4f9f-81bc-5179efc6b17f" class="">Today, I’m joined by Josh Wolfe (<a href="https://twitter.com/wolfejosh">@wolfejosh</a>), co-founder and managing partner of <a href="https://www.luxcapital.com/">Lux Capital</a>, a venture capital firm that backs entrepreneurs and scientists who are tackling real problems in unconventional ways. Lux has funded a variety of emerging tech and science ventures, including: 3D printing, machine learning, artificial intelligence, flying robots, surgical robots, synthetic biology, satellites, space, drones, smart homes and virtual reality.</p><p id="7428c8e2-b681-4fed-b9b8-d1c77f42c248" class="">Today’s podcast has to be one of the most eclectic conversations we’ve ever recorded on The Knowledge Project. Josh and I talk about investing, pitching ideas, how to create a collaborative work culture, effective decision making, Santa Claus, and even dabble in some old school rap.</p><p id="2a6e07e3-6a34-45af-805c-8e1c0bef7579" class="">And you’re not going to want to miss the processing framework he created for evaluating information. (He calls it “Fitzgerald, Twain, and Schopenhauer.”) With so many different fascinating discussion topics, statistically, there <em>has</em> to be something of interest for every one of our listeners. :)</p><p id="3f1c20c7-672b-40b8-b957-6b2734429ba2" class=""><strong>Here are a few sneak peeks from our discussion:</strong></p><p id="62bc070c-d23f-4928-9e74-e7640e8d897b" class=""><strong>The crazy thing about venture capital is, you often have no priors.</strong> You have no prior comps that you can look at because the most important companies that are going to exist, never existed before. And so you’re trying to figure out, extrapolating from the recent past into an unknown future.</p><p id="fd859ecd-7d53-4126-aec5-34263260e4f0" class=""><strong>We’re trying to find something that we think nobody else has discovered or found. </strong>And we actually, even though we view ourselves as contrarian, we want people to agree with us, just—later. And so it’s really finding these people asymmetrically distributed, and then being the midwives to get it out to the masses, later.</p><p id="ff4338af-e8c0-460d-b77e-54e584609f01" class=""><strong>Now it’s very hard in the early, nascent, embryonic stages of a business</strong>, to really know if somebody is going to be an absolute genius or a total fraud. Because the best storytellers are also the best con men. Amazing narrative storytelling ability that captures all of the best and worst things about humanity. It captures our aspiration, our virtues, our sense of status, desire, greed, and people that are able to tap into that, who understand people, I think are really influential with people, are almost always predictive of great success.</p><p id="ea53e497-d4e2-4922-aaae-12db5b3d26b9" class=""><strong>When you look at the panoply of things in life, there is so much randomness</strong>. Of course you have to be smart, and when you see an opportunity you seize it, but there’s so many things where just a chance meeting or somebody that you’re meeting with who is in a good mood or a bad mood—it could have been a totally different situation on a singular pivoting turn of events, one fulcrum of an individual.</p><p id="d08ee3eb-1fe7-4073-8147-d941675a10a1" class=""><strong>I’ve been in that situation, where I’m distracted, </strong>I’ve got something else on my mind, and the person that I’m sitting across from is suffering from the misfortune of the circumstances of that moment. And there’s other times where I just ate a great lunch, and I just had some chocolate and caffeine, and I’m feeling great and I just got great news from my wife about something else and I’m in an ebullient mood, and it’s totally changed the circumstances. Has nothing to do with the person that I’m sitting across from, but the circumstances are just in their favor at that moment.</p><p id="f9b4912f-1531-4b33-abd2-f927649fd662" class=""><strong>Somebody that is a great storyteller is really good for a startup business</strong> because they can recruit really well. They are telling a story where you meet with that person, and one of my partners used to call it, somewhat inappropriately, the Pampers effect. You’re like, wetting yourself, you’re like, “Oh my god, I need to join this person. I need to invest with them.”</p><p id="a8c04642-d9af-4453-a554-775735d1ebaf" class=""><strong>I always turn my turret of attention to this very sophisticated two-word question, “What sucks?”</strong> And it’s amazing in the same way that big investors often don’t ask, “Does it work?” about a technology, you just turn to something and you look around, almost everything that we use—everything that was invented—started with somebody saying, “Huh, that sucks. You know, that could be better.”</p><p id="cd6e7f79-35c7-45b9-8988-68620a38c6d1" class=""><strong>I have a quote internally, which everybody has been indoctrinated by,</strong> which is that failure comes from a failure to imagine failure. So venture, by definition, is a cheerleader business. You’re optimistic. You’re promoting the future. You’re supporting companies that against all odds are likely to fail and you are cheering them on. But I think internally and privately, you have to anticipate what is everything that could possibly go wrong with this company, so that you can help to put time, and talent, and money to prevent those bad things from happening.</p><p id="84e00bb9-49b4-4290-8081-598da5526986" class=""><strong>The first thing that our CEOs hear from me</strong> when we make an investment, or I join the board, is “I want that bad news.” Good news, you’re going to get applause from me. All right, I’m going to slap you on the back and say, “Great job.” There’s nothing that I can help with. But I am your partner, I am invested with you, I want the bad news. I want to know what happened, what’s going wrong, because that’s where I can actually help.</p><h2 id="b1220dc2-f2d0-439a-ba05-b236323730a8" class="">Listen and Learn</h2><h2 id="14136e7b-f28d-4866-908b-96e5871aab25" class="">Transcript</h2><p id="7959d7f3-cc4f-4dd0-a3d7-f0165bf4c1d1" class=""><a href="https://www.fs.blog/membership/">Members of our learning community</a> have access to podcast transcripts, exclusive AMA’s, and so much more. If you’re not a member, a transcript for this episode is <a href="https://gum.co/AWArw">available for purchase.</a></p><p id="b5ce1444-c3bc-452a-a059-33c2cb38c20f" class="">***</p><p id="d133d062-a5cd-4d8f-9bee-6ebdd43470fa" class=""><strong>Members can </strong><a href="https://lc.fs.blog/t/inventing-the-future-my-interview-with-lux-capital-s-josh-wolfe/10969"><strong>discuss this podcast</strong></a><strong> on the Learning Community Forum. To access the member’s dashboard, </strong><a href="https://fs.blog/prime/"><strong>click here.</strong></a><strong> </strong></p></div></article></body></html>

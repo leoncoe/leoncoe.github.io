@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Winning at the Self-publishing Game with Hugh Howey [The Knowledge Project Ep. #63]</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="9d589227-a1d2-4bdc-aa9f-b43cea023304" class="page sans"><header><h1 class="page-title">Winning at the Self-publishing Game with Hugh Howey [The Knowledge Project Ep. #63]</h1></header><div class="page-body"><p id="cca627f5-16a5-4db0-ab35-69ceb1557630" class="block-color-gray"><a href="https://fs.blog/hugh-howey/">https://fs.blog/hugh-howey/</a></p><p id="1781316c-a9f2-4f4f-a998-abb6852753e8" class="">
+</p><p id="6317a458-8a71-4f6e-b2bd-8cf18beeeccc" class="">Hugh Howey had two dreams: to make a living from writing and sail around the world. In this interview, he describes how he did both, why traveling is so good for the soul, and how he sold millions of books on his own (even turning down a 7 figure book deal.)</p><figure id="abb42ecd-4e2b-40ae-b3b3-b8c62e52dc69" class="image"><a href="Winning at the Self publishing Game with Hugh Howe/h-howie-500px.jpg"><img style="width:500px" src="Winning at the Self publishing Game with Hugh Howe/h-howie-500px.jpg"/></a></figure><p id="3c5bd18f-16a2-4f08-a882-fb4a65b50cbf" class="">On the podcast today is Hugh Howey (<a href="https://twitter.com/hughhowey">@HughHowey</a>) adventurer, self-publishing phenom and the author of over a dozen best selling books, including his breakout novel, <a href="https://geni.us/UbknxgV"><em>Wool</em></a>.</p><p id="37eab5b6-4b38-49f9-aff0-4f87cf53e951" class="">Hugh was a pioneer in the online publishing space, reasoning that if an author held on to their book rights, controlled pricing, and managed distribution, they could reach more potential readers and keep more of the profits. He was right. He’s sold millions of books through this model which has allowed him to pursue his second love: nearly 4 years ago, he shoved off into the sea on his custom built catamaran, The Wayfinder to sail around the world.</p><p id="7de2ecf5-f27c-4281-806c-7f1269cb4855" class="">In this fascinating discussion, Hugh and I talk about the ancient art of wayfinding, why traveling is such a powerful way to connect to other people, and how it has impacted his world view. Hugh then gives a masterclass in writing and publishing your own book. We talk about his writing routine, dealing with insecurities, the pros and cons of big publishing houses and much more. If you’ve ever considered writing a book, this is not an episode you want to miss.</p><p id="2682b0ae-e1df-4056-8fad-d38d8a1f6d9b" class=""><strong>Here are a few highlights from our conversation:</strong></p><p id="e13487ff-8ea0-4bb2-8f0d-c3d7861d3a6d" class=""><strong>Probably the craziest thing from these deep immersions</strong> in these cultures is how universal human nature is and how similar we are everywhere. We really focus on very slight differences in order to try to group people or make it easy for ourselves to assign labels to different groups, but the things that we have in common are so numerous, I think we take them for granted.</p><p id="2cdd4d3e-fe65-4d8b-95c7-6a547e18b972" class=""><strong>Someone in the audience asked, “How do I write my first novel?”</strong> and Caroline Todd stood up and slapped the table and blew our hair back just kind of yelling at the room, like, “You stop talking about writing, you stop dreaming of writing, you stop telling people you’re going to write and you sit down and you write.” And I realized all the excuses that I give myself and all the doubt was right in that advice. I just needed to sit down and write, and the only thing stopping me from being a writer was myself and my insecurities.</p><p id="196cb9ca-1d9c-4efc-b67a-ea1872b7e2bd" class=""><strong>A lot of our calcification, the inability to break our stasis</strong> and launch our lives in a different direction, is that feeling that we should have done it 10 years ago and we’ve lost the opportunity and now we can’t do it. But 10 years from now, we’re going to think the same thing about this very moment today.</p><p id="a3924e67-8513-42ef-9ae4-9eacdc3bd485" class=""><strong>Everyone’s writing process is different</strong>. Some people can sit down and write, “Once upon a time,” and then a whole novel can flow out. Some people have to outline really heavily. And for me, I like to basically have a movie that I’ve seen that no one else has seen, and it’s my favorite movie of all time, and I want to describe it in such vivid detail to someone who can’t watch a movie, they can only read a book. That’s my writing process.</p><p id="50f13c73-0567-4e10-9363-595bd49ee752" class=""><strong>I think that’s the hardest part about being an avid reader and trying to write,</strong> is that we compare our writing to the great stuff we’ve been reading and we have to not do that. We have to realize that the books that we love also existed as rough drafts and just embrace the mistakes and the rough nature of our writing.</p><p id="32de04a5-0df9-4d2c-8c03-5a848810c7b6" class=""><strong>I think the feeling that we know we should have made better decisions earlier,</strong> for some reason, instead of learning from that, it actually paralyzes us. It makes us feel like all the moments in my life where I could have seized the opportunities ahead of me are all gone. And I guarantee in another five or 10 years you’re going to look back at today as the day that you had the free time, the inclination, the talent to change your life.</p><p id="5b9f71c4-aa17-4d00-b350-d5b44acaa4eb" class=""><strong>You can’t get there in one day, but I’m going to start nudging</strong> … If you can just maintain that consistent energy in one direction, it’s incredible what you could deflect over a long period of time. And for me, just one hour a day of writing, you’ll write a novel in a year guaranteed, and if you don’t care about the quality of that novel, it’ll be better than you think.</p><p id="caec5e66-1d9f-4956-a0e5-c7b640585578" class=""><strong>I’d tried for 20 years, since I was 12 years old</strong> and wrote my first <em>Hitchhiker’s Guide to the Galaxy</em> ripoff. Got two or three chapters in and realized I didn’t know where this was going. I didn’t believe in myself, I didn’t like when I was writing, I felt like an imposter. Writers had to be people who were much smarter than me and went to university to learn how to do this, or they had to be born with the writing gene in them because their parents were writers. I had no idea how any of this worked, I just knew that I wasn’t good enough, and for 20 years, I thought that.</p><h2 id="afb41a80-c39a-47f5-8f54-08bc6269739b" class="">Listen and Learn</h2><h2 id="7e71f169-8886-4249-bfad-ccf1aa748d29" class="">Transcript</h2><p id="dbf0d384-8fb1-4bfd-aba6-408eec05f1fd" class=""><a href="https://www.fs.blog/membership/">Members of our learning community</a> have access to hand-edited podcast transcripts, exclusive AMA’s, and so much more. If you’re not a member, a transcript for this episode is <a href="https://gum.co/axlCF">available for purchase</a>.</p><p id="833659e3-adf7-4df2-a506-2b0fdbc351f4" class="">***</p><p id="d7e3a81d-70eb-4aa5-9147-ef5c71da15ce" class=""><a href="https://lc.fs.blog/t/winning-at-the-self-publishing-game-with-best-selling-author-hugh-howey/16136"><strong>Members can discuss this podcast</strong></a><strong> on the Learning Community Forum. To access the member’s dashboard, </strong><a href="https://fs.blog/prime/"><strong>click here.</strong></a><strong> </strong></p></div></article></body></html>

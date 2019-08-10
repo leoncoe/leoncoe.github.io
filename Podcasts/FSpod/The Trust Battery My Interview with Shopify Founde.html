@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>The Trust Battery: My Interview with Shopify Founder Tobi Lütke\</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="d049b533-8964-471d-9a73-007cfe6b429f" class="page sans"><header><h1 class="page-title">The Trust Battery: My Interview with Shopify Founder Tobi Lütke\</h1></header><div class="page-body"><p id="9923580b-c51f-445e-a578-c699213ec2e7" class="block-color-gray"><a href="https://fs.blog/tobi-lutke/">https://fs.blog/tobi-lutke/</a></p><p id="61adb34f-27d8-4f66-b0a6-9c19e4d19a49" class="">
+</p><p id="893d323e-2d75-4362-b9a1-53c6bca54f92" class="">Shopify founder and CEO Tobi Lütke (<a href="https://twitter.com/tobi">@tobi</a>) weighs in on building the “biggest small company in the world,” trust batteries, and what video games are really doing to the minds of our youth</p><figure id="4dd18989-9014-41d4-bb6d-a84d8d7951e8" class="image"><a href="The Trust Battery My Interview with Shopify Founde/t-lutke-500px.jpg"><img style="width:500px" src="The Trust Battery My Interview with Shopify Founde/t-lutke-500px.jpg"/></a></figure><p id="5e263650-f09a-4432-ba0f-91605ebddba4" class="">Today, I interview fellow Ottawan and the founder and CEO of Shopify, Tobi Lütke. In case you’re still new to the internet, <a href="https://www.shopify.ca/">Shopify</a> is the largest ecommerce platform that allows people to easily set up online storefronts to sell everything from jewelry to surfing lessons.</p><p id="41ee30f5-6632-4832-8df2-43a33ff73dd4" class="">Shopify began as a simple two-man operation selling snowboards online, but it became clear rather quickly that it had the potential to grow into much more. Now Shopify employs more than 4,000 people and supports more than 600,000 businesses online. It’s a remarkable story, with a remarkable leader at the helm.</p><p id="4f50ea6d-de14-4174-be6a-c28040a276a5" class="">There was so much I wanted to talk to Tobi about that we hop around quite a bit. Here are some excerpts:</p><p id="32de6c73-f712-407e-a4b6-6cdc3dc41bc5" class=""><strong>I’m pretty open about just playing video games a lot.</strong> I play video games with my kids. A lot of people know my opinion, but their role in people’s lives is sort of misunderstood. I get in these conversations and parents ask me, “Hey, my son’s playing this video game the entire time, and how should I put constraints on this,” and all these kind of things. Everyone always ends up coming into these conversations very apologetically. Almost like, “I as a parent lost control and now I need to course correct.” I’m always frustrated with this because obviously, you can have too much of a good thing, but there’s a weird way that people perceive video games in society, which is not true about so many other things. For instance, if the same parents come to me and say, “Hey, my son is playing chess all day.” It would never happen, right?</p><p id="b518a175-ceb3-4985-a1e2-330935ca55be" class=""><strong>We want to make it so simple to partake in entrepreneurship</strong>, to add your own voice to what’s going on in the world, and so, we wanna lower the bar, lower the learning curve, make it something that almost everyone can do.</p><p id="134ffb78-cda8-4b0b-b378-d1878da4f281" class=""><strong>I think that there is a difference between how you build a company in a primary talent market and sort of secondary talent markets</strong>, which primary talent market really is the Bay Area for a technology company, or LA for film, right? For instance, one of the biggest differences in secondary places is, if I hired someone, the chance that we are gonna still work together in a decade from now is super high. That doesn’t sound like a big change, but it changes absolutely everything for the company. It means that it’s a much better idea to hire for future potential rather than for current skill. These basic ideas all start having way more dividends because the people, after you make them better, they stay with you longer, you get to benefit.</p><p id="e2bff57d-7167-4c97-af8a-2a8fa90a11e6" class=""><strong>There are three kinds of processes.</strong> There’s a kind of process that makes things that were previously impossible to do, possible. That’s good. Then there’s a kind of process that makes something that was previously possible significantly simpler, which is also good. And then there’s everything else. I bet you 99.9% of all process that exists in corporate America is the third category, which is actually just telling people to behave slightly different from what common sense tells them to do.</p><p id="453b033f-0854-4b7a-a138-3f879cba0e05" class=""><strong>[The] Trust battery fits in perfectly with the topic of your entire world, it’s just a mental model for how to think about the relationship between people</strong>, right? It’s something that actually exists, but is rarely documented. People sort of think about trust as almost an on/off kind of thing. Like, I trust my mother, I don’t trust the NSA. But, it’s really a gradient. It’s really something with a lot of different points on this particular spectrum, right? If people meet each other, especially in a curated context like a company, like both of us start working here, and we both got hired, so we both ran through the gauntlet of how to be hired here, so that means we probably will trust each other, let’s say, 50% right off the bat. Then we have these interactions, we have a meeting like the one we just talked about, the combatant idea, or we just talk about an idea, we come up with something even better, we work well together. This slowly charges, right? I think it’s useful to have this metaphor between people because it allows you to sort of talk about the trust that exists between two people without actually becoming personal. So much about working in teams is the way you communicate working together, the way you give each other feedback.</p><p id="1cc8a003-4b00-44be-a7b3-b6beb68586b2" class=""><strong>I think the most important thing that people have to understand is how un-doable is a decision?</strong> If an idea is fully un-doable, I want people to almost, you know, make it as quickly as they can. The problem is that you can never un-VC fund yourself. When a decision is something that you can’t take back, then it’s worth really, really understanding.</p><p id="3ec398ac-7ce4-4b9f-ba97-a13f95ac1950" class=""><strong>I strive to never make a wasted mistake.</strong> We tend to refer, even internally, when there’s failure, we tend to refer to it as the discovery of things that did not work, right?</p><p id="a2eb0b20-36da-4a5b-a918-94a63baf8a1f" class=""><strong>It really helps with the right kind of mindset.</strong> From the earliest days, no one’s ever gonna commit more egregious bugs to the Shopify codebase than I did. No one’s gonna accidentally cause more downtime than I did. I’ve committed every managerial sin in the book, and I have unbelievingly patient people who work for me, who allowed me to grow into the role I’m playing now in this company over time, even though it took me very long time to adjust to this. You learn from it all.</p><p id="9e5e7ec1-e25f-49c8-a8a1-9c2f460accab" class=""><strong>About five years ago, I got introduced to shaving with a straight razor.</strong> I found that starting the day, just making the lather, doing something that’s actually difficult right off the bat in the morning, every morning, it’s just one of those random things, that starts the day. You cannot zone out doing this, right? You’re doing this for five minutes, you’re committed to a craft. It’s something you can get better at. There are serious consequences for the mind drifting and doing something else. It’s almost a little bit meditative. I would say starting the day with something in the routine that’s not super autopilot to do, starts the day out in the right way.</p><p id="0121ba27-3151-4517-ba06-507aa97dfe77" class=""><strong>We think about Shopify a little bit as it’s sort of the fire flower from Mario</strong>. You find one and then you can throw fireballs. You just got a superpower. We want to be a superpower that people discover and have skills that they never thought they would have. Your descendants, your grandchildren will refer to you as an entrepreneur because at some point you signed up for Shopify and somehow made it work. But it’s not Shopify that did it, it’s you. It’s empowering people, giving them opportunities for self-actualization.</p><h2 id="9c61cc4c-6e45-4790-818b-4bec397353b4" class="">Listen to the Entire Interview</h2><h2 id="52f9d639-1c6c-4b7c-8d38-cba6b28d87f2" class="">Transcript</h2><p id="bbd2211b-0421-4891-b934-4065cef0ccb0" class=""><a href="https://www.fs.blog/membership/">Members of our learning community</a> have access to podcast transcripts, exclusive AMA’s, and so much more. If you only want a transcript for this episode with Tobi, grab one for $7 <a href="https://gum.co/yTlXX">here</a>.</p><p id="d6e8c824-e133-4e1c-93f9-32d418aed542" class="">***</p><p id="51db2ecd-c13c-4d0d-af85-729b86770f92" class=""><strong>Members can discuss this podcast on the </strong><a href="https://lc.fs.blog/t/the-trust-battery-my-interview-with-shopify-founder-tobi-lutke/4949"><strong>Learning Community Forum</strong></a><strong>.</strong></p></div></article></body></html>
