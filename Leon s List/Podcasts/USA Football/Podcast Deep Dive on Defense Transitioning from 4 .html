@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>[Podcast] Deep Dive on Defense - Transitioning from 4-2-5 to 3-4 &amp; Five Fights w/ Slade Calhoun, DC Munford HS</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="e7d461d3-1502-4674-952c-508d4ef131fe" class="page sans"><header><h1 class="page-title">[Podcast] Deep Dive on Defense - Transitioning from 4-2-5 to 3-4 &amp; Five Fights w/ Slade Calhoun, DC Munford HS</h1></header><div class="page-body"><p id="9fac3a34-1315-4882-b18b-0665b2893d6d" class="block-color-gray"><a href="https://blogs.usafootball.com/blog/7411/podcast-deep-dive-on-defense-transitioning-from-4-2-5-to-3-4-and-five-fights-w-slade-calhoun-dc-munford-hs">https://blogs.usafootball.com/blog/7411/podcast-deep-dive-on-defense-transitioning-from-4-2-5-to-3-4-and-five-fights-w-slade-calhoun-dc-munford-hs</a></p><p id="5688fec8-ed5a-4da5-89b1-8e8a0cb1e59e" class="">
+</p><figure id="aa5c6d2e-264d-4ee8-a62b-d108526fee2c" class="image"><a href="Podcast Deep Dive on Defense Transitioning from 4 /DDD2.jpg"><img style="width:640px" src="Podcast Deep Dive on Defense Transitioning from 4 /DDD2.jpg"/></a></figure><p id="76723109-9665-486f-b37b-b06944ccc828" class="">On today’s Coach and Coordinator podcast, the “Deep Dive on Defense” series continues as Slade Calhoun sits down with guest host Chris Vasseur. Calhoun is the defensive coordinator at Munford High School in Tennessee and was featured on USA Football’s “Film to Field Friday” segment featuring the Fight to Track. Calhoun joined Vasseur to talk about his transition from a 4-2-5 defense to a 3-4 defense as well as some feedback on his experience with the Advanced Tackling System and the Five Fights.</p><p id="6b9a816a-7410-43fe-bca3-3953e2793a4d" class="">Show Notes:</p><p id="2436924b-5eaf-45f9-b138-bad105143f5c" class="">0:42 Coach’s journey</p><p id="fec154a2-a26a-4686-ab0e-2d4e1ab04d56" class="">4:40 How close was Coach’s defense to TCU’s</p><p id="6ffaf449-f671-4197-9043-7799fefd9e29" class="">10:12 Language system</p><p id="4fdea387-b85d-4b06-8b1c-a8d74e497149" class="">13:36 Calling a defense</p><p id="dd15d999-cb80-494f-94fc-0d521827677e" class="">16:06 Tying together front and secondary</p><p id="6d79d353-931f-4fe9-8d97-cb417d80ebbf" class="">17:19 Reason for changing defenses</p><p id="e16012fd-226b-40bf-8963-4b296b846a21" class="">20:25 Why Coach changed the entirety of the system</p><p id="63e0ffdb-96fd-4e05-a756-5b4914448cd1" class="">22:32 What coaches who are switching to an odd front need to be aware of</p><p id="0d69bd49-df08-477c-9342-6f79e0fd4dc5" class="">24:18 When to stop thinking in terms of conversion as opposed to the new front</p><p id="5514dc29-16d1-436b-8ce6-41d8222f5bdc" class="">28:24 Go-to vs. balanced pro I</p><p id="32612107-6e52-403a-b0c5-0abc6611c043" class="">32:45 Fitting coverage vs. 10 and 11 personnel</p><p id="949857b8-e461-41cf-81f5-a1a442439db9" class="">35:45 Effect RPOs have had on defenses</p><p id="69151e9f-925d-4077-a4a9-8b1df0c90922" class="">38:43 Chasing ghosts</p><p id="5934e6ef-b736-43ff-ae62-5640ef871d13" class="">42:13 Other transitions coach had to make</p><p id="9a5a3919-d512-4407-964b-9dec47ee8485" class="">46:00 Other concerns with transitioning to new defense</p><p id="3b9b3fc6-9292-4c8f-bbab-db4d631b9213" class="">49:18 New coverages with defensive change</p><p id="30e88d31-063f-442c-880e-1999d5a3a1f0" class="">52:09 Overlap</p><p id="c894bc25-7dab-4a0d-8b6d-d77bfbe2e92a" class="">54:09 Not being afraid</p><p id="31aff04b-bef2-47a4-835e-3b52f9e0b9fc" class="">58:46 Coach’s thoughts on the Five Fights</p><p id="f5b58d25-f3a3-412e-a1cb-f736c3e04be6" class="">1:10:16 Pressure Situation Call</p><p id="b40a8033-87a8-47f5-95eb-0c3fd15e5ebe" class=""><strong>RELATED CONTENT:</strong></p><h3 id="78aad49c-6330-43e4-af57-4cfee177b3ad" class="">ADVANCED TACKLING SYSTEM - AVAILABLE NOW</h3><p id="257da29c-e5c4-407c-aa12-209824541c0b" class="">Your defense is only as good as each tackler. Equip your staff with a common language, a systematic teaching progression and evaluation tools to coach better tacklers.</p><figure id="7616cf2c-c880-4ce2-b06f-f482950517ec" class="image"><a href="Podcast Deep Dive on Defense Transitioning from 4 /buzby11.jpg"><img style="width:612px" src="Podcast Deep Dive on Defense Transitioning from 4 /buzby11.jpg"/></a></figure><figure id="6e612ac6-185f-4337-a652-7f6cdd5f04a9" class="image"><a href="Podcast Deep Dive on Defense Transitioning from 4 /Hero.jpg"><img style="width:640px" src="Podcast Deep Dive on Defense Transitioning from 4 /Hero.jpg"/></a></figure><figure id="89d6f288-0da1-4da1-9cb9-107ae7786516" class="image"><a href="Podcast Deep Dive on Defense Transitioning from 4 /2312028329.jpg"><img style="width:700px" src="Podcast Deep Dive on Defense Transitioning from 4 /2312028329.jpg"/></a></figure><figure id="1b71cef6-59a1-4314-9e4b-e088edd677e7" class="image"><a href="Podcast Deep Dive on Defense Transitioning from 4 /2322028229.jpg"><img style="width:700px" src="Podcast Deep Dive on Defense Transitioning from 4 /2322028229.jpg"/></a></figure><figure id="7d5ea481-b138-4cf1-8b2e-ed526a52867c" class="image"><a href="Podcast Deep Dive on Defense Transitioning from 4 /2332028229.jpg"><img style="width:700px" src="Podcast Deep Dive on Defense Transitioning from 4 /2332028229.jpg"/></a></figure><figure id="70c880f9-cc69-459b-a76b-697317795f54" class="image"><a href="Podcast Deep Dive on Defense Transitioning from 4 /2342028229.jpg"><img style="width:700px" src="Podcast Deep Dive on Defense Transitioning from 4 /2342028229.jpg"/></a></figure></div></article></body></html>
