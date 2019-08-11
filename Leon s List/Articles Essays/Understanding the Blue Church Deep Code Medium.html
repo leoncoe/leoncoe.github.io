@@ -1,0 +1,568 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Understanding the Blue Church - Deep Code - Medium</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="87bc7803-ecd9-4ee3-92a7-706194c96382" class="page sans"><header><h1 class="page-title">Understanding the Blue Church - Deep Code - Medium</h1></header><div class="page-body"><p id="c49d454e-e09c-4b86-b5a0-83dc0b2727ce" class="block-color-gray"><a href="https://medium.com/deep-code/understanding-the-blue-church-e4781b2bd9b5">https://medium.com/deep-code/understanding-the-blue-church-e4781b2bd9b5</a></p><p id="84288a67-f272-4602-a1ea-b2b01ff01f8e" class="">
+</p><figure id="2222589a-5f3e-41a9-bc13-b532a3667768" class="image"><a href="Understanding the Blue Church Deep Code Medium/1J67znSw5X_82Q7GCvrwn9Q.jpeg"><img style="width:60px" src="Understanding the Blue Church Deep Code Medium/1J67znSw5X_82Q7GCvrwn9Q.jpeg"/></a></figure><figure id="e7a23e1a-6eaf-4a48-bfb0-a57843c0cfcb" class="image"><a href="Understanding the Blue Church Deep Code Medium/1J67znSw5X_82Q7GCvrwn9Q 1.jpeg"><img style="width:700px" src="Understanding the Blue Church Deep Code Medium/1J67znSw5X_82Q7GCvrwn9Q 1.jpeg"/></a></figure><p id="76cce209-73c5-401f-8475-b74ce7bcfac2" class="">In my <a href="https://medium.com/rally-point-journal/situational-assessment-2017-trump-edition-d189d24fc046?source=post_page---------------------------">Situational Assessment: 2017</a>, I quoted a post from Reddit:</p><blockquote id="cf543756-3fd7-45f1-b40b-e74471e319c6" class="">“The Blue Church is panicking because they’ve just witnessed the birth of a new Red Religion. Not the tired old Christian cliches they defeated back in the ’60s, but a new faith based on cultural identity and outright rejection of the Blue Faith.” — /u/notjfao</blockquote><p id="2d99f004-bca1-4178-9183-1e53c9618648" class="">A number of folks noted that they were not familiar with the concept of the Blue Church and wondered what was meant by it. The Democratic Party? Liberalism? Progressivism? As I mentioned in SA:2017, I had originally lifted the idea wholesale from that Reddit post with only an intuitive sense that it (and its juxtaposition with a Red <em>Religion)</em> was useful and pointed at something real.</p><p id="65fafee6-57a5-4d8c-b5c9-c04d9d070698" class="">In this essay, I dive into the concept. Below I endeavor to provide an answer that is adequate to Deep Code. I believe that the results are well worth the effort, but this is not a simple journey. Few things of importance these days are. If we want to get to the bottom of the contemporary situation, we are going to have to get comfortable going deep.</p><p id="d9a4aa65-db29-454f-a7bc-9bc2494bdbec" class=""><strong>The abstract is this: the Blue Church is a kind of narrative / ideology control structure that is a natural result of mass media.</strong> It is an evolved (rather than designed) function that has come over the past half-century to be <strong>deeply connected with the Democratic political “Establishment” and lightly connected with the “Deep State” to form an effective political and </strong><strong><em>dominant</em></strong><strong> cultural force in the United States.</strong></p><p id="5c1a6532-f3f6-4305-b25a-6503f0606048" class="">We can trace its roots at least as far back as the beginning of the 20th Century where it emerged in response to the new capabilities of mass media for social control. By mid-century it began to play an increasingly meaningful role in forming and shaping American culture-producing institutions; became pervasive through the last half of the 20th and seems to have peaked in its influence somewhere in the first decade of the 21st Century.</p><p id="ddf42680-72de-4b23-8fcb-996fc20bc6b1" class=""><strong>It is now beginning to unravel.</strong></p><p id="f3d55180-a385-47ed-9d05-06c7745bc34e" class="">In part it is unravelling because of developing schisms within its master narrative, the Blue <em>Faith</em>. These are important, but they are not the subject of this essay. In this essay, I am focusing on what I think is both much more fundamental and much less obvious: deep shifts in technology and society that are undermining the very foundations of the Church. Shifts that render the Church <em>itself</em> obsolete.</p><p id="0a9b7b36-89d7-420b-911f-7e97c8682014" class="">If you are ready for a deep dive, come on in. The water is warm.</p><figure id="10388d7c-b8bc-4e50-9a74-aba38f5dd991" class="image"><a href="Understanding the Blue Church Deep Code Medium/13q55dxQxJZ9zpbFRRCoaVQ.jpeg"><img style="width:60px" src="Understanding the Blue Church Deep Code Medium/13q55dxQxJZ9zpbFRRCoaVQ.jpeg"/></a></figure><figure id="e7e81bd7-2b63-48f2-b8e0-1b9ec865daec" class="image"><a href="Understanding the Blue Church Deep Code Medium/13q55dxQxJZ9zpbFRRCoaVQ 1.jpeg"><img style="width:700px" src="Understanding the Blue Church Deep Code Medium/13q55dxQxJZ9zpbFRRCoaVQ 1.jpeg"/></a></figure><h2 id="832e92b6-0e3f-4026-a30e-5c250865200d" class="">Complexity and Control</h2><p id="cd2ade2c-7154-462d-8cad-ab13c582c6f4" class="">Yaneer Bar-Yam’s book <a href="http://necsi.edu/publications/mtw/?source=post_page---------------------------"><em>Making Things Work</em></a>, does an excellent job explaining the relationship between complexity and the kinds of control structures that we humans build to try and manage that complexity. For those who want to go deeper, I recommend the whole book. The basic idea is actually pretty simple.</p><p id="85bbcd31-abcc-4520-871b-3af9ac8d565f" class="">Imagine a boat. We are going to row that boat, starting with but one paddle. If you’ve ever learned to canoe, you know that this isn’t simple. There is an art to it. You have to hold the paddle correctly, you have to learn how to put it into the water, how to stroke, how to return. The difference between doing it well and doing it poorly is significant. But, with a little practice, almost everyone can get at least reasonably capable of rowing their canoe.</p><p id="3c901da2-2ce8-4289-8ee3-a15e584201f7" class="">This is a “management of complexity” problem. The relationship between oar, water, boat and person is complex. All of these systems are feeding back on each other in subtle and hard to predict ways. But the “control capacity” of a standard-issue human is up to the task. The human body, adapted to things like walking upright on two legs and throwing rocks has enough control capacity to manage this level of complexity.</p><p id="0617a94e-3330-4c55-b0cd-a80e2531d9f1" class="">Now add another oar. Generally, even someone experienced with a single paddle takes a little while to get it figured out. In particular, you have to learn how to simplify the problem by constraining some of the degrees of freedom of the paddles. Perhaps you fix the oars to the boat so that they can only traverse a single path. Certainly, you are going to have to make sure that you are paddling both oars in the same rhythm. By getting the oars into “coherence,” you can get the complexity of the problem inside your control capacity.</p><p id="f5c91a71-8199-4e4c-ae0b-853b805f630f" class=""><strong>Coherence is one of the most important concepts in the management of complexity. When you take two systems (two paddles) and synchronize them, you radically simplify the complexity of the overall system. By getting two paddles into coherence, you are able to turn two paddles that you can’t manage into one big paddle that you can manage.</strong></p><p id="3bac55c7-54b8-436b-936f-9ed1f1816d33" class="">Now add another person to the mix. Side by side — each with one oar. This kicks the complexity up a lot. We are now dealing not only with two oars, we are dealing with two different control structures. And, of course, the only way to get things moving is for the control structures to get into coherence. Fortunately, humans are pretty good at this too. Like dancers or musicians playing together, we have a lot of bandwidth for small group synchrony. Getting into flow together takes some doing, but with a little practice we can manage this complexity.</p><p id="aaace240-1597-4021-a535-beacd7f59a7e" class=""><strong>Now add another ten people into the boat. This is a real problem. </strong><mark class="highlight-yellow_background"><strong>The complexity of this overall system exceeds the natural control capacity of “group flow”. </strong></mark><strong>Try as you might, it is darn near impossible for a group of twelve people to “self organize” into an effective rowing team.</strong></p><p id="759ff4fc-914c-4569-983e-c11897834206" class=""><mark class="highlight-yellow_background"><strong>Unless you put someone in charge.</strong></mark></p><p id="50ff72c9-7687-4ff4-b47c-91c88b5d017b" class=""><strong>Add someone to the front of the boat whose job is nothing but synchronizing the whole team (“stroke!”) and reduce everyone else’s job to responding to the signal coming from that leader (“stroke!”) and suddenly the system comes back into control.</strong> In effect, you’ve replaced thirteen individuals with one “group of people” and one “leader” in a control hierarchy. This is a radical simplification. As the Greeks and Romans of old discovered, it scales. As long as the people rowing the boat stay inside their box and focus only on doing their job, and as long as the coxswain says in a simple rhythm, you can stack dozens of rowers and get the job done.</p><p id="52406f9b-05c4-4fd6-b5e1-b540a78d0247" class="">Notice what happens here. In particular, notice what has to happen up and down the control hierarchy. The bandwidth (the amount of signal) going up and down the hierarchy has to be extremely simple. (“Stroke!”) Imagine if the rowers had to paddle <em>and</em> converse about where the boat should go. It couldn’t be done. Imagine if the coxswain had to try and control <em>two</em> boats simultaneously. Except in the very rare circumstance that the two boats could be consistently and precisely coherent, it couldn’t be done.</p><p id="5036428d-949b-4699-81fb-c061efaae99b" class=""><mark class="highlight-yellow_background">These are the core concepts to understand the Blue Church. The complexity of the system. Our ability to simplify the system. The control bandwidth available to manage the simplified system.</mark></p><figure id="fe6676d1-d901-4132-bd84-3502cacb5ade" class="image"><a href="Understanding the Blue Church Deep Code Medium/1zuOYVuubP5ZZznni06sHdg.jpeg"><img style="width:60px" src="Understanding the Blue Church Deep Code Medium/1zuOYVuubP5ZZznni06sHdg.jpeg"/></a></figure><figure id="7c740441-74d2-4987-86f3-93b58c2fbe96" class="image"><a href="Understanding the Blue Church Deep Code Medium/1zuOYVuubP5ZZznni06sHdg 1.jpeg"><img style="width:700px" src="Understanding the Blue Church Deep Code Medium/1zuOYVuubP5ZZznni06sHdg 1.jpeg"/></a></figure><h2 id="9ccfd7a4-10cd-4d54-87a9-a75d9a77658c" class="">The Complexity of Modern Life</h2><p id="062be120-a103-4380-b393-781c748dd16f" class="">In 1860, the population of the United States was 30 million people. Six short generations later, the population had increased tenfold to over 300 million people.</p><p id="ab5dae9c-dfce-4d52-8b23-324f719177bf" class="">Consider this. For the first millennium A.D., the human population was relatively constant. Over the next six hundred years, it only barely doubled. Then, suddenly, with the beginnings of the industrial revolution it began to take off. By the 20th Century, the rate of growth in the United States (and the world) absolutely skyrocketed. The past 150 years have witnessed an unprecedented explosion of population, and along with that population, an explosion of social complexity.</p><p id="f3c53f03-5f5b-4356-ad87-dd88fe962ddd" class="">By <em>any</em> measure of social complexity, the transition from the 19th to the 20th Century was extraordinary. For the first time in human history, the population shifted from a rural to an urban majority bringing the <a href="http://www.pnas.org/content/104/17/7301.full.pdf?source=post_page---------------------------">increased pace of life</a> and social interaction that comes with big cities. Horses gave way to railroads which were replaced by automobiles and then airplanes — shrinking <a href="http://www.mnn.com/green-tech/transportation/stories/how-fast-could-you-travel-across-the-us-in-the-1800s?source=post_page---------------------------">the world into a single connected meta-community</a>. We went from Darwin <em>first postulating</em> evolution in 1859 all the way to Crick and Watson’s DNA in 1953. We went from the first theory of electromagnetism in 1864 to the <em>actual deployment</em> of the Atomic Bomb in 1945. This was a hell of a century.</p><p id="5b9e43e7-1574-443a-a843-c85bd96c6ee3" class="">And just like in our example of adding a dozen people to our boat, this expansion of complexity created a problem. The forms of social control that had been used to get us to the 19th Century were inadequate to the levels of novelty and complexity of the 20th Century. Society cannot function without a regulatory structure adequate to its level of complexity.</p><p id="d8f77215-a4a3-4f04-9778-e06c3d6d4ed2" class="">The Blue Church was the emergent solution to this problem.</p><figure id="e6c4a72c-f1c3-43b7-b585-a1f521819ef1" class="image"><a href="Understanding the Blue Church Deep Code Medium/1Z2ElDtuB5PypxiKOVTb0_g.jpeg"><img style="width:60px" src="Understanding the Blue Church Deep Code Medium/1Z2ElDtuB5PypxiKOVTb0_g.jpeg"/></a></figure><figure id="deb40aa4-aaa1-4789-bed3-16d4af8108e7" class="image"><a href="Understanding the Blue Church Deep Code Medium/1Z2ElDtuB5PypxiKOVTb0_g 1.jpeg"><img style="width:574px" src="Understanding the Blue Church Deep Code Medium/1Z2ElDtuB5PypxiKOVTb0_g 1.jpeg"/></a></figure><h2 id="df6436df-4815-4ab8-9d83-b73c0fa49360" class="">Understanding Media</h2><p id="98b9a2f5-4e6e-4496-bd8b-dfa6d28d3544" class="">Technology is not neutral. As Marshall McLuhan wrote, when we innovate technology, “we become what we behold. We shape our tools and then our tools shape us.”</p><p id="d932c095-7c52-4c7e-82be-a2373354934b" class="">McLuhan’s theories are subtle and powerful. In fact, it is hard for me to imagine anyone being able to navigate the contemporary environment without at least a good grasp of his principles. If you’ve never read his stuff, I recommend <a href="https://www.amazon.com/Understanding-Media-Extensions-Marshall-McLuhan/dp/0262631598?source=post_page---------------------------">Understanding Media: the Extensions of Man</a>.</p><p id="f66d0d13-6a99-49c3-9cb5-cef211c8384b" class="">I’m not going to try and recapitulate McLuhan’s work here. Instead, I’m going to steal some portions of it and recast it in a very different form to make it accessible for our present purposes.</p><p id="1479f502-878b-493a-859f-4adb28df2f40" class="">Imagine a landscape of rolling hills. Now imagine rain falling evenly on this uneven ground. What is going to happen? Well, eventually, the water is going to run downhill, gather in the valleys and, depending on the actual shape of the terrain, either form into a flowing river or gather into a lake or pond.</p><p id="0f034b77-369c-4db1-8cc1-fa5fef26ca88" class=""><strong>Once you know the “shape” of a particular space and the nature of the forces acting in it, you can make some neat predictions about how it is going to play out. Of course, the future is never locked down. </strong>The lake might overflow and transform into a waterfall. A meteor might fly out of the sky and change the shape of the whole space. But, subject to certain constraints, you <em>can</em> predict the future.</p><p id="79305c4b-cdf6-43b4-82b1-5c194d3abeec" class=""><strong>Media is like a landscape. </strong>The kind of human social dynamics and psychologies that form around an oral tradition are quite different than those that can (and do) form around a literate media.</p><p id="43fa65d4-901a-4c64-bc3e-26326a30e7ce" class="">The 20th Century brought a number of technological advancements. One of the most important was the emergence and development of “mass media.” While the various kinds of mass media (newspaper, radio, television) are different, as “mass” (or “broadcast”)<strong> media they share a basic shape: they are </strong><strong><em>asymmetric</em></strong><strong>. One to many. Author to audience. Coxswain to rowers.</strong></p><p id="932d6481-10d2-413d-8f7d-3ec9c57f42eb" class=""><strong>Not everyone can get access to the printing press, the radio station or the television broadcast booth. </strong><mark class="highlight-yellow_background"><strong>Those few that can are the ones to get to </strong></mark><mark class="highlight-yellow_background"><strong><em>create</em></strong></mark><mark class="highlight-yellow_background"><strong> the narrative. Everyone else is the </strong></mark><mark class="highlight-yellow_background"><strong><em>audience</em></strong></mark><mark class="highlight-yellow_background"><strong>.</strong></mark><strong> We read, listen, watch. But not much else.</strong> (Actually, we do one very important thing else, but I’ll get to that in a moment.)</p><p id="3493bcb1-e479-45ed-9075-b278fafd481b" class=""><strong>The key insight for this post is that as an audience </strong><strong><em>we are coherent</em></strong><strong>. </strong>As a mass, we transform from millions of diverse individuals into one, relatively simple, group. So long as we can be maintained in this coherence, we present something that can be managed.</p><p id="2d0a3e0d-eb8b-4ac7-9e18-5ff21a8fc64e" class="">This is the formal core of the Blue Church: <em>it solves the problem of 20th Century social complexity through the use of mass media to generate manageable social coherence</em>.</p><figure id="e01d4b95-ecc8-4519-96c4-86f11a414833" class="image"><a href="Understanding the Blue Church Deep Code Medium/1LDZofWt1_ejXOjLni63NhA.jpeg"><img style="width:60px" src="Understanding the Blue Church Deep Code Medium/1LDZofWt1_ejXOjLni63NhA.jpeg"/></a></figure><figure id="a388e395-6735-4e23-82aa-bc463751b2ae" class="image"><a href="Understanding the Blue Church Deep Code Medium/1LDZofWt1_ejXOjLni63NhA 1.jpeg"><img style="width:700px" src="Understanding the Blue Church Deep Code Medium/1LDZofWt1_ejXOjLni63NhA 1.jpeg"/></a></figure><h2 id="94838115-e8da-4f1e-b7be-9375883b34a4" class="">The Formation of Good Opinion</h2><p id="54e60ad7-a24e-4dd1-8d6a-fb2abaf24097" class=""><strong>Once you grasp the basic shape of the Blue Church control structure, you begin to see it everywhere. There is a basic bi-directional flow. In the upwards direction there is the flow of “credentialed authority.” The “experts” who are authorized through some legitimizing process to be permitted to form and express their opinions through some form of broadcast media. In the downwards direction, these “good opinions” which anchor and place boundaries around our collective social coherence.</strong></p><p id="86430cca-77df-4dae-87e4-1983953625e6" class=""><strong>Consider academia. The students are the audience. Their job is to pay attention to the credentialed authority. To listen and watch closely and to learn from the professor the nature of “good opinion” in this particular domain. If they do a good job in this, that is, if they can answer questions correctly according to the authorities’ evaluation process, then they pass. If not, they fail.</strong></p><p id="9ea758dc-ff95-44be-8cc7-35131fa57e18" class=""><mark class="highlight-yellow_background"><strong>While the content matters, the form is crucial. </strong></mark><strong>Regardless of the specific subject matter, </strong><strong><em>every</em></strong><strong> class is a lesson in how to play the Blue Church game.</strong></p><p id="c4672b4c-1bb7-4fea-bdd0-cf1f80d867c6" class="">The professors, in their turn, are authorities largely because they did a good job being students and were invited into the authority hierarchy. Here they learned the nuance and boundary of good opinion, the social pecking order (Harvard is at the top thank you) and the ins and outs of being a good expert.</p><p id="c911e24c-ee91-40f0-87db-95e4b3121819" class="">Don’t get me wrong. I’m not saying that the academy is propaganda or bullshit. In fact, in many ways, the opposite. It works. This process of academic credentialization has proven to be a powerful engine for filtering out nonsense and searching for truth. While there have been a lot of digressions (string theory) and inappropriate authorizations (economics), in the main, the 20th Century expertise machine has been the crown jewel of civilization.</p><p id="c33938be-8634-41ec-9df9-13f9b175b180" class="">What I am pointing to here is the formal structure. Broadcast. Asymmetry. An architecture that enables a scalable division of labor for social sensemaking and decision making. No one could possibly try and understand even a small fraction of what is going on in the world. So we break the problem up into bits, hand the smaller problems up the expertise hierarchy where they are processed and reduced to simple shared “good opinion” which is then broadcast down and out to the whole population.</p><p id="5f37f0ef-5479-471a-a8bd-ef69c66c8629" class="">This gets us good answers to hard problems and, more importantly, gets us <em>all</em> more or less on the same page. And *this* enables us to run a modern society.</p><p id="e67cff45-8d93-4b54-b185-84496972fbbc" class="">For example, imagine what street traffic would look like if everyone had their own opinions about what should happen. Disaster. But as long as we all agree, implicitly and without much consideration, that a red light means “stop” then suddenly millions of people flinging tons of steel about at sixty five miles per hour is manageable.</p><p id="659d866f-e662-45c4-862d-65b8e15f3ac3" class="">Similarly, as long as we all agree that “free trade is a good idea”, or that “borders should be protected,” or that “healthcare is a human right,” or that “people should be treated equally,” or that “carbon emissions lead to global warming” then the still enormously difficult job of designing and implementing policies based upon these assumptions and frameworks can be managed and the ship of state moved forward. (“Stroke!”)</p><figure id="d9e93643-1d40-455a-895e-77bd6157db65" class="image"><a href="Understanding the Blue Church Deep Code Medium/1yUhTvHBBpfnjnS1cxESOSg.jpeg"><img style="width:60px" src="Understanding the Blue Church Deep Code Medium/1yUhTvHBBpfnjnS1cxESOSg.jpeg"/></a></figure><figure id="81cee0e5-7d85-45a1-a966-46c0e9b0017f" class="image"><a href="Understanding the Blue Church Deep Code Medium/1yUhTvHBBpfnjnS1cxESOSg 1.jpeg"><img style="width:620px" src="Understanding the Blue Church Deep Code Medium/1yUhTvHBBpfnjnS1cxESOSg 1.jpeg"/></a></figure><figure id="5aeed3dd-9bc9-4de6-8170-f4c21ce9a10b" class="image"><a href="Understanding the Blue Church Deep Code Medium/1DhDnSQo5Ycm-1ityA7Rg5Q.jpeg"><img style="width:60px" src="Understanding the Blue Church Deep Code Medium/1DhDnSQo5Ycm-1ityA7Rg5Q.jpeg"/></a></figure><figure id="ef4abbeb-076a-400c-870b-da3cefe3b4d8" class="image"><a href="Understanding the Blue Church Deep Code Medium/1DhDnSQo5Ycm-1ityA7Rg5Q 1.jpeg"><img style="width:700px" src="Understanding the Blue Church Deep Code Medium/1DhDnSQo5Ycm-1ityA7Rg5Q 1.jpeg"/></a></figure><figure id="76696660-362e-459f-8fbd-8a38ab48be0b" class="image"><a href="Understanding the Blue Church Deep Code Medium/1IPF3hkaPZCjpQtZaPFmITQ.jpeg"><img style="width:60px" src="Understanding the Blue Church Deep Code Medium/1IPF3hkaPZCjpQtZaPFmITQ.jpeg"/></a></figure><figure id="c739a1a1-fa43-4bbd-a8df-53854bdcd7d2" class="image"><a href="Understanding the Blue Church Deep Code Medium/1IPF3hkaPZCjpQtZaPFmITQ 1.jpeg"><img style="width:700px" src="Understanding the Blue Church Deep Code Medium/1IPF3hkaPZCjpQtZaPFmITQ 1.jpeg"/></a></figure><figure id="41840a9d-97e5-47a4-a6a0-4bec68e4c125" class="image"><a href="Understanding the Blue Church Deep Code Medium/1aqjV6TWPtqJL8wNXTCstPA.jpeg"><img style="width:60px" src="Understanding the Blue Church Deep Code Medium/1aqjV6TWPtqJL8wNXTCstPA.jpeg"/></a></figure><figure id="54d13dd7-5949-44fd-b8b5-c7fb18fcaccc" class="image"><a href="Understanding the Blue Church Deep Code Medium/1aqjV6TWPtqJL8wNXTCstPA 1.jpeg"><img style="width:700px" src="Understanding the Blue Church Deep Code Medium/1aqjV6TWPtqJL8wNXTCstPA 1.jpeg"/></a></figure><figure id="ea809be6-5e30-435f-906b-15732b669acb" class="image"><a href="Understanding the Blue Church Deep Code Medium/1AcWyOemE5Jfpf7hl2V1Xgw.png"><img style="width:60px" src="Understanding the Blue Church Deep Code Medium/1AcWyOemE5Jfpf7hl2V1Xgw.png"/></a></figure><figure id="20da64b9-1662-4f9b-b532-e11f32bf4b7a" class="image"><a href="Understanding the Blue Church Deep Code Medium/1AcWyOemE5Jfpf7hl2V1Xgw 1.png"><img style="width:700px" src="Understanding the Blue Church Deep Code Medium/1AcWyOemE5Jfpf7hl2V1Xgw 1.png"/></a></figure><p id="0bfde3f9-ff87-4614-a602-3a654aecc4d1" class="">
+</p><p id="06cfd011-49d8-4d09-b92c-69339b5d09c9" class="">
+</p><h1 id="4986daa1-52e6-49a4-afd2-4302ca33909f" class=""><strong>Life in the Blue Church</strong></h1><p id="83ef8a9c-3637-4d65-9755-2da261f373a0" class="">Going deeper, the actual playing out of the Blue Church control structure is influenced by three characteristics of human beings:</p><ol id="c61df388-59ab-4820-ab5d-7a3226cdbe23" class="numbered-list" start="1"><li>We are a pack animal constantly trying to make sure we have high status within the pack;</li></ol><ol id="a2063c5e-cffa-402b-85eb-e2065a2c84cc" class="numbered-list" start="2"><li>We have a really hard time distinguishing between “having attention” and “deserving attention;”</li></ol><ol id="0c810fd4-ff1a-4ae7-b0fd-243f35942972" class="numbered-list" start="3"><li><mark class="highlight-yellow_background"><strong>We principally learn by doing and emulation (not by thinking).</strong></mark></li></ol><figure id="024a1844-374f-48cc-8de4-f664e606d72b" class="image"><a href="https://miro.medium.com/max/60/1*yUhTvHBBpfnjnS1cxESOSg.jpeg?q=20"><img src="https://miro.medium.com/max/60/1*yUhTvHBBpfnjnS1cxESOSg.jpeg?q=20"/></a></figure><figure id="151955a0-3f43-42e4-ac0b-30cd2056ea9b" class="image"><a href="https://miro.medium.com/max/775/1*yUhTvHBBpfnjnS1cxESOSg.jpeg"><img src="https://miro.medium.com/max/775/1*yUhTvHBBpfnjnS1cxESOSg.jpeg"/></a></figure><p id="df1c3f05-8076-47fc-8ef2-5df1f0aae131" class="">The first characteristic leads to one of the most important reinforcement functions that maintains the Blue Church: social signaling. In Blue Church society, to hold and express good opinion means that you are part of the pack, in the tribe, on the team. Holding and expressing good opinion brings social benefit. More importantly, <em>failing</em> to hold and express good opinion can be ruinous.</p><p id="8961237b-e074-4a95-b7d9-93540a8b53bb" class="">This social dynamic means that good opinion is self-reinforcing. There is no need for a top-down thought police or such. Once enough people are coherent around good opinion, natural human social dynamics will kick-in to maintain that coherence.</p><p id="61c63df5-e8b8-4ce5-a06e-9ec4becc425f" class=""><strong>This one is easy to test for yourself. If you live in any big city in the United States, go to a social gathering and simply express an opinion that is out of line with Blue Church orthodoxy. Then watch closely. Particularly watch the reactions of members of the opposite sex. Pretend that you believe, for example, that climate change isn’t real. Or that Islam or Feminism are dangerous ideologies. What will quite likely happen is that you will be “out grouped.” At a </strong><strong><em>physical</em></strong><strong> level, way below conscious consideration, you will be assessed and found wanting. Not a good mating prospect. Not a good social ally.</strong></p><p id="d8dd741e-c1ae-4b34-8642-2d0b43805414" class="">Interestingly, this is true largely regardless of where you live in the social hierarchy. Regardless of whether you are a twenty-something just learning how to play the game or a senior expert trading on your good standing, social pressure will provide a strong signal on how to stay in coherence.</p><p id="629dd569-2f15-4dc6-b3af-9d95f1e0d256" class=""><strong>After all, if you have worked for decades to achieve a high level of social standing, this is a lot to risk for having bad opinions.</strong> Ask <a href="http://www.alternet.org/noam-chomsky-versus-islamophobe-sam-harris-has-new-atheist-movement-been-hijacked-bigots?source=post_page---------------------------">Sam Harris</a> and <a href="http://m.thespec.com/opinion-story/7207346-opinion-jordan-peterson-a-little-shy-on-proof/?source=post_page---------------------------">Jordan Peterson</a> and <a href="https://www.youtube.com/watch?v=CFLX4x6y6r8&amp;source=post_page---------------------------">Steven Pinker</a> — all of whom are high experts who have recently begun to find themselves on the wrong side of good opinion.</p><p id="f68b3f94-1ba5-4e85-9b51-5b1f4ada775d" class=""><strong>The downside result of this social reinforcement, of course, is the echo chamber where opinions that violate good opinion are removed from discourse — even when they are valuable and important.</strong> And the contemporary Blue Church has definitely developed into an echo chamber. <strong>There is always room to play *within* good opinion, of course. In fact, the Church offers a broad menu of good opinions to try on and play with.</strong> As long as you play within the coherence of good opinion, you are free to roam. You have the freedom to be Lady Gaga <em>or</em> Taylor Swift. But mind the gap. Social reinforcement has gotten very sensitive in the wake of the Trumpocalypse. If you step on the third rail, you are in for a shock.</p><figure id="4492c9fd-a7df-4935-922a-3073995a45eb" class="image"><a href="https://miro.medium.com/max/60/1*DhDnSQo5Ycm-1ityA7Rg5Q.jpeg?q=20"><img src="https://miro.medium.com/max/60/1*DhDnSQo5Ycm-1ityA7Rg5Q.jpeg?q=20"/></a></figure><figure id="aa07f9f0-9e6f-455c-8e85-e4f1652dd843" class="image"><a href="https://miro.medium.com/max/875/1*DhDnSQo5Ycm-1ityA7Rg5Q.jpeg"><img src="https://miro.medium.com/max/875/1*DhDnSQo5Ycm-1ityA7Rg5Q.jpeg"/></a></figure><h1 id="3e5cb4c7-bccd-4f0a-9db8-fa534113d867" class=""><strong>The Blue Church and Culture</strong></h1><p id="0a48b413-59f0-4d26-be98-ed2dd975869e" class="">The habit of seeking authority is not merely a product of Blue Church training. It is, in fact, one of the more hard wired aspects of being human. We are a social animal and we are constantly on the lookout for people to watch and learn from. In many ways, this capacity is the “<a href="https://www.amazon.com/Secret-Our-Success-Evolution-Domesticating/dp/0691166854?source=post_page---------------------------">secret of our success</a>” and the foundation of culture itself. However, when we look at our hardwired “attention allocation” functions, we discover that human beings use a pretty simple model: pay attention to the people who other people are paying attention to.</p><p id="7d5f75d8-b525-4a34-b9f1-e29f607a6bab" class=""><mark class="highlight-yellow_background"><strong>As a society, we are obsessed with who has attention, and conspicuously less interested in whether it is deserved.</strong></mark></p><p id="1b32f173-cddf-45a9-a539-14f9a583a357" class="">Among many things, this deficit leads to the cultural consequence of “celebrity”. Since having attention is hard to separate from deserving attention, simply having the camera pointing at you implicitly confers upon you some of the power and credentials of authority. This is why we find ourselves in the situation where Hollywood entertainers and professional athletes are empowered to steward good opinion far beyond their <em>actual</em>expertise.</p><p id="3a70365b-450e-477a-b106-36dfbbe3efdf" class="">In a broadcast world, merely being “on camera” is to be credentialed. Regardless of your actual capabilities, insight, or character, if you can somehow manage to get on camera you are granted actual audience *and* social authority (Kim Kardashian). By contrast, if (for some reason), access to the camera is prevented, withheld or otherwise not achieved, your lack of access results in both lack of practical audience *and* questionable authority — regardless of your actual capabilities, insight or character (Bernie Sanders during the primaries).</p><p id="f32c6411-0bce-49c9-b2fa-f8e4e6568b57" class="">As it turns out, this fact played an important role in precisely how the Blue Church came to be, why it ended up allied with the Democratic Establishment and why it chose the particular content of the Faith. More on that in the next post perhaps.</p><figure id="0e827d40-126a-4d34-9649-ee3e2f12548b" class="image"><a href="https://miro.medium.com/max/60/1*IPF3hkaPZCjpQtZaPFmITQ.jpeg?q=20"><img src="https://miro.medium.com/max/60/1*IPF3hkaPZCjpQtZaPFmITQ.jpeg?q=20"/></a></figure><figure id="c7924c6f-bbb2-4171-88ca-f4a5d77129eb" class="image"><a href="https://miro.medium.com/max/875/1*IPF3hkaPZCjpQtZaPFmITQ.jpeg"><img src="https://miro.medium.com/max/875/1*IPF3hkaPZCjpQtZaPFmITQ.jpeg"/></a></figure><p id="c1a2e848-2f3e-4c0e-9721-197c5c7c812e" class="">Here is the kicker. Being on camera gives you authority <em>even if you aren’t real</em>. This is why pop culture plays such an important role for the Blue Church. <a href="https://en.wikipedia.org/wiki/Carroll_O%27Connor?source=post_page---------------------------">Carroll O’Connor</a> was somewhat influential as a celebrity. But his character <a href="https://en.wikipedia.org/wiki/All_in_the_Family?source=post_page---------------------------">Archie Bunker</a> lives high in the cannon of the Blue Church. Every week for years, millions of people gave their attention to the Archie Bunker family and tuned in to the social signaling of good (and bad) opinion. At a human level, the signaling was very clear. Even as a young child I could read the signs (and monitor the laugh track). Archie was an archetype of a fading good opinion, rapidly moving out of favor; while the rest of the family represented an emerging good opinion in the process of establishing its position in the social field.</p><p id="05757959-4805-4b2a-93a2-deecdce536b1" class="">Yes, we humans can discern between real people and fictional characters. But the importance of pop culture in the operations of the Blue Church shouldn’t be underestimated. Broadcast is powerful. When tens of millions of people are consistently entrained to narratives honed to a sharp edge by market forces to be hyper-capable of grabbing and holding attention, it is going to have an effect. This is particularly true when the entire culture has been trained for generations to learn, think and act within the authority framework of the Church.</p><figure id="e9842ee6-70a5-456d-be30-a46f099a16f0" class="image"><a href="https://miro.medium.com/max/60/1*aqjV6TWPtqJL8wNXTCstPA.jpeg?q=20"><img src="https://miro.medium.com/max/60/1*aqjV6TWPtqJL8wNXTCstPA.jpeg?q=20"/></a></figure><figure id="dbadbc5a-a57c-4a39-9308-cf266d17cc9e" class="image"><a href="https://miro.medium.com/max/875/1*aqjV6TWPtqJL8wNXTCstPA.jpeg"><img src="https://miro.medium.com/max/875/1*aqjV6TWPtqJL8wNXTCstPA.jpeg"/></a></figure><h1 id="ec9800dd-1aab-4e97-a85d-a9707c02cac0" class=""><strong>Do as I say, not as I do</strong></h1><p id="31f59360-5347-4d75-94ac-5f140e5acbd0" class="">The contents of popular culture and the good opinion of authorities are important aspects of the Church, but the most central and subtle lesson taught by the Blue Church is the Blue Church itself.</p><p id="e2b6aa4e-fe4f-4249-bf45-438c3624e889" class="">Whether you are learning algebra, or reading about history, or watching a basketball game or listening to your favorite musician, the commonality among all of these is the asymmetric relationship of broadcast. Pay attention, watch and listen closely, learn and express “good opinion” and act accordingly. The content is important, but far more important is the form. The content varies. The form is consistent.</p><p id="cdf1249f-5961-486f-8dca-961bc3c48588" class="">Just like the rowers entrained to the cadence of the coxswain, we have all of us trained for the vast majority of our lives to find, adopt and execute on some kind of master narrative. Some story that is complicated enough to respond to life but simple enough to be managed. Some framework of assumptions, axioms, truths, truth making and authority that takes the absolutely overwhelming complexity of the modern world and allows us poor apes some easy way to move forward in a coordinated fashion.</p><p id="0babd9ba-6bf7-4e44-9e4c-fe446b8a1c22" class="">This fact explains a whole lot about what is going on in America (and most of the West) today. Perhaps it helps explain why the left is always trying to find a narrative to simplify and make the world manageable. It might even explain the mania on the left for psychoanalysis. After all when your principal social responsibility is to respond correctly to authority and deftly read where you are in the field of good opinion, being able to peek behind the psychological curtain is an advantageous skill. (And if you really want to go deep, the ability to dismiss bad opinion as <em>psychopathology</em> is one of the most subtle, and surprisingly common, techniques of the Church.)</p><p id="a44a964e-ca34-4c50-988e-6a2b6c97920f" class="">In any event, the near monopoly of the Church on our ability to make sense and meaning of the world certainly helps to explain why the ongoing <em>collapse</em> of the Blue Church is creating so much anxiety.</p><figure id="bd692a24-31f8-462a-bfcc-633f136e02c5" class="image"><a href="https://miro.medium.com/max/60/1*AcWyOemE5Jfpf7hl2V1Xgw.png?q=20"><img src="https://miro.medium.com/max/60/1*AcWyOemE5Jfpf7hl2V1Xgw.png?q=20"/></a></figure><figure id="b916b002-b2a5-405d-b642-93ca318132ce" class="image"><a href="https://miro.medium.com/max/875/1*AcWyOemE5Jfpf7hl2V1Xgw.png"><img src="https://miro.medium.com/max/875/1*AcWyOemE5Jfpf7hl2V1Xgw.png"/></a></figure><h1 id="8372c853-4581-48e8-bedb-2c91ffa2a81f" class=""><strong>The End is Nigh</strong></h1><p id="e439589f-d560-4133-92c7-77ae2c423ed9" class="">There are many reasons why the Blue Church is crumbling. Some of it has to do with an increasing friction among the diverse sub-narratives that have gathered under Blue, particularly where the fundamental incoherence of “identity politics” is reaching a tipping point (and is being <a href="http://takimag.com/article/god_bless_the_right_wing_social_justice_warriors_gavin_mcinnes/print?source=post_page---------------------------#axzz4c9ac2BrG">pushed into what feels to me like a nihilist endgame by the alt-right</a>). However, while this tension is important, I don’t think it is fundamental. Instead, to identify the real existential threat to the Blue Church, I return to our our two core concepts: technology and complexity.</p><p id="89a928f8-fdd2-46da-b32e-00a79a9c0456" class=""><strong>One primary driver behind the collapse of the Blue Church is the swift replacement of the very mass media it is premised upon with a new </strong><strong><em>symmetric</em></strong><strong> kind of media — the Internet. </strong>This new media presents a niche for coherence that is very different from the one that gave rise to the Blue Church. It is a fundamentally different landscape. Like polar bears condemned to extinction by a thawing ice cap, the Blue Church’s days are numbered by the relentless erosion of broadcast mindshare to the new much more symmetrical media of the Internet.</p><p id="b068a2d0-6470-4a01-bb79-4ee2d99c9e22" class="">As I discussed in <a href="https://medium.com/rally-point-journal/situational-assessment-2017-trump-edition-d189d24fc046?source=post_page---------------------------">Situational Assessment: 2017</a>, I assign a significant portion of the surprising victory of the Trump Insurgency to the fact that the transfer of power from broadcast to digital has crossed the tipping point.</p><p id="376ddb66-1ed3-4679-b4cf-5dadd32dae99" class="">It is this technological transition that leads me to the conclusion that while the Blue Church (and its allies in the Deep State and the Establishment) can certainly struggle and hold for a while, their day is done. The climate is changing and they must adapt or die.</p><p id="617dccf6-0510-4054-88b3-dcd9c05fba93" class="">And then there is the question of complexity. The Blue Church emerged in response to the explosion of complexity of the 20th Century and the capacity of mass media to form a control structure that was adequate to that complexity.</p><p id="5b8d566c-a3d5-435f-94ca-d4fe20be8829" class="">It worked. But the 20th Century didn’t stand still. In fact, it accelerated. In the face of this ongoing acceleration, the Blue Church control structure is <em>no longer adequate</em>. The level of complexity of the 21st Century is simply outside of the control capacity that is possible within the form of the Blue Church. Unless we abandon the Church and move to a new approach, our race into the future will be increasingly out of control.</p><p id="08cdfad6-b49c-47b5-b41e-7b6edeedeb02" class="">However, and this is a profoundly important point, we currently know of no form of control structure that is adequate — even in principle.</p><ol id="aa5e2553-87e6-498f-b08a-39de53375284" class="numbered-list" start="1"><li>Our entire approach to managing complex systems like our environment is flawed. Until the late 20th Century we could get away with this flaw because we weren’t powerful enough to matter. This has changed and as Joe Brewer has been <a href="https://medium.com/@joe_brewer/why-being-realistic-feels-like-doomsday-thinking-3eddf421ff59?source=post_page---------------------------">writing about beautifully</a>, we need to level up quickly. We need to switch from trying to manage complex systems with complicated control structures and invent entirely new techniques for intrinsically up regulating the complex systems that make up our natural world. We don’t yet know how to do this.</li></ol><ol id="f3726fa9-5ebf-41bb-b9ce-1ac589162378" class="numbered-list" start="2"><li>Complex systems that include human beings are different. Unlike atmospheres and nitrogen cycles, people can forecast, strategize and adapt hyper-rapidly to our environment. Dave Snowden calls this <a href="http://cognitive-edge.com/blog/whats-in-a-name/?source=post_page---------------------------">anthro-complexity</a>. We have to innovate an entirely new approach to governance that is adequate to the challenging set of problems posed by anthro-complexity. We <em>really</em> don’t know how to do this.</li></ol><ol id="5c2bd119-0395-493f-b4e6-6a61f768889b" class="numbered-list" start="3"><li>Finally, we have to come to terms with the real nature of technology, the difficult to predict feedback loops of how we affect technology and how it affects us. And then we have to figure out how to navigate the actual consequences of <em>exponential</em> technology — on ourselves and on our lived world. Most people aren’t even prepared to think about how to do this.</li></ol><p id="5c3b6770-78c2-4889-a5a0-3ea80755cc3e" class="">In the context of these challenges, the Blue Church is simply in way over its head. The world is just too big and moving too fast for this kind of control hierarchy to keep up — even when it is trying to do its best, it is going to get in the way. Addressing these challenges is going to require the innovation of an entirely new approach to how we collectively make sense of and act in the world.</p><p id="d88ba66e-6fb1-48a4-87e2-62ff7d6e9307" class="">I have been referring to the solution with the term “collective intelligence” and have discussed some of the issues in a short video <a href="https://www.youtube.com/watch?v=r3OlG4OmczI&amp;source=post_page---------------------------">here</a> and in an older Medium post focused on blockchain efforts in the space <a href="https://medium.com/deep-code/the-future-of-organization-b26219e5fc95?source=post_page---------------------------">here</a>.</p><p id="b1984645-b677-468b-a0b3-122799663e2b" class="">The brief on collective intelligences is that we really know very little about them. Perhaps the most robust version of a highly decentralized collective intelligence that has so far emerged is the Red Religion / Trump Insurgency that I discuss in <a href="https://medium.com/rally-point-journal/situational-assessment-2017-trump-edition-d189d24fc046?source=post_page---------------------------">Situational Assessment: 2017</a>. As I mention in that post, for a number of reasons, I do not believe that this particular kind of “dCI” will get us where we need to go. But it presents a very useful case study. For those who want to dig deeper, I recommend taking a look at the work posted by Gustavo in <a href="https://medium.com/rally-point-journal/collective-intellignce-and-swarms-in-the-red-church-49f6a6d04825?source=post_page---------------------------">Rally Point Journal</a>.</p><p id="1ebd6391-4c27-41e3-9042-45e32a09be3f" class="">If you know of other people who are doing good work here, please mention them in the comments. If you feel like you are in a position to help the small group of people who are gathering around trying to at least begin to ask the right questions, drop me a line.</p><h1 id="397d8e27-d38c-4104-9ecb-3ff786fb9ab5" class=""><strong>In Conclusion</strong></h1><p id="e6e1bab5-5c9c-4973-9e5b-fceef45920d6" class="">Well, that ran a bit long. I hope some of you found it worth sticking it out to the end. I had intended to spend some time on the actual content of the Blue Faith, but that had to be cut. If you are interested, let me know in the comments. If enough people care, I’ll take a swing at it and perhaps at the Establishment and the Deep State to boot.</p><p id="b8767b0d-32b4-4e22-91cb-7a7b847053c8" class="">[Author’s note, I have never read “Yarvin” or his articulation of “the Cathedral.” This material could have inspired the original use of the concept by the Reddit author. If what I have written here is close to Yarvin’s analysis, that is interesting. If not, well, that is interesting too.]</p></div></article></body></html>

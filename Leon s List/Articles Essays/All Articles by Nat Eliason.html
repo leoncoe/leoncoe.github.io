@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>All Articles by Nat Eliason</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5861cc27-250d-4345-a01d-f77fef019dd8" class="page sans"><header><h1 class="page-title">All Articles by Nat Eliason</h1></header><div class="page-body"><p id="3d080b0e-44ec-4162-ae2b-77093ec3797f" class="block-color-gray"><a href="https://www.nateliason.com/blog">https://www.nateliason.com/blog</a></p><p id="0300e661-0750-4f06-bf1b-b72a032987fe" class="">
+</p><h2 id="abf05cc1-394e-4fac-ab79-061dfafdd6a4" class=""><a href="https://www.nateliason.com/blog/beyond-happy-hour">Beyond Happy Hour</a></h2><p id="a5fe5124-418b-4f2b-833c-ff827e07aae5" class=""><a href="https://www.nateliason.com/blog/beyond-happy-hour">Because happy hour is such an easy default, replacing it takes effort, but I’ve found some good ways to introduce more sober social activities into your schedule.</a></p><h2 id="3070dbf5-3f60-4dc5-9c54-36a2c2da3630" class=""><a href="https://www.nateliason.com/blog/notion-goals-productivity">How to Use Notion to Set, Track, and Hit Your Goals</a></h2><p id="4dac705c-94eb-4e42-9939-e93fa73499b7" class=""><a href="https://www.nateliason.com/blog/notion-goals-productivity">To show you just how powerful of a tool Notion can be, here’s my entire system for tracking my annual goals down to my daily focuses, how it interfaces with my other tools, and how you can use it to get more done yourself.</a></p><h2 id="0c7edfc5-648a-4688-b866-5d554c0b25a7" class=""><a href="https://www.nateliason.com/blog/cup-leaf-cafe-3">Cup &amp; Leaf Cafe pt. 3: Getting Our Permits</a></h2><p id="ada72c75-d66c-46e0-bcab-e6b34a6b582a" class=""><a href="https://www.nateliason.com/blog/cup-leaf-cafe-3">After 4 months of going back and forth with the city, we finally have all the permits we need to start work on the Cup &amp; Leaf cafe! Here&#x27;s everything that went into the permitting process, and the bumps we hit along the way.</a></p><h2 id="82f7ec96-e156-494c-97a1-2c3f6a6d3f21" class=""><a href="https://www.nateliason.com/blog/cup-leaf-cafe-2">Cup &amp; Leaf Cafe pt. 2: Finding and Leasing a Commercial Space</a></h2><p id="20df3044-7f31-4ae6-808b-46b7b35ab8d6" class=""><a href="https://www.nateliason.com/blog/cup-leaf-cafe-2">In part two of the Cup &amp; Leaf cafe series, I explain how we found and signed on a commercial space for creating the cafe.</a></p><h2 id="b8b5fcdf-90ba-4945-b158-a4ba9bd61e81" class=""><a href="https://www.nateliason.com/blog/learn-marketing-projects">The 6 Best Cheap Project Ideas for Learning Marketing</a></h2><p id="f46716b3-88de-4380-9f15-6f3a1c8b165b" class=""><a href="https://www.nateliason.com/blog/learn-marketing-projects">If you&#x27;re just starting out, projects are absolutely essential to learning marketing and becoming competent enough to get hired. Here are some ideas for things you can work on to learn marketing.</a></p><h2 id="89feafc5-45d3-47ea-baca-25c010cbbe64" class=""><a href="https://www.nateliason.com/blog/cup-leaf-cafe-1">Cup &amp; Leaf Cafe pt. 1: Why Would I Open a Cafe?</a></h2><p id="6eb78a62-ec6b-4c1d-a55e-d788b5301fc3" class=""><a href="https://www.nateliason.com/blog/cup-leaf-cafe-1">We&#x27;ve officially signed the lease and started work on the Cup &amp; Leaf cafe in Austin Texas. Here&#x27;s what led to the decision to start it, and why it makes more sense than you might think.</a></p><h2 id="f585381e-7ad8-4815-8911-dc7e05048818" class=""><a href="https://www.nateliason.com/blog/airtable-goals">How to Set, Track, and Reach Your Goals Using Airtable</a></h2><p id="42561d9b-8b11-40bc-a7fc-82869fc49d4f" class=""><a href="https://www.nateliason.com/blog/airtable-goals">My system for taking big target goals and breaking them down into the simple steps you can take each day to reach them.</a></p><h2 id="f73d4d9f-9e51-46d6-9339-39e44db2858e" class=""><a href="https://www.nateliason.com/blog/personal-crm">An Easy, Fast, Personal CRM for Making and Maintaining Friendships</a></h2><p id="235296f1-c531-4585-a271-f59d2fe360e1" class=""><a href="https://www.nateliason.com/blog/personal-crm">It&#x27;s hard to meet new people and keep in touch with them after college. This is the system I&#x27;m using to remember who I&#x27;m meeting, what they&#x27;re interested in, where they live, and to stay in touch with them.</a></p><h2 id="2b13ef87-3f87-41c8-afe4-4622a053c352" class=""><a href="https://www.nateliason.com/blog/best-books-articles-2018">The Best Books and Articles I Read in 2018</a></h2><p id="14a07f7b-6f06-4295-900d-0d8f239bc82a" class=""><a href="https://www.nateliason.com/blog/best-books-articles-2018">A collection of the most interesting books and articles I read throughout 2018, to give you some ideas for the holidays or 2019.</a></p><h2 id="100164d5-8cff-46f1-b72b-4f5953cfe838" class=""><a href="https://www.nateliason.com/blog/systems-without-goals">Systems Without Goals is a Path to Mediocrity</a></h2><p id="c8354f0d-07f3-46dd-aa85-62136b100c8f" class=""><a href="https://www.nateliason.com/blog/systems-without-goals">The idea we should dispense with goals and focus on systems has taken the productivity-sphere by storm, but it&#x27;s a terrible strategy for accomplishing anything interesting.</a></p><h2 id="9b5ed0bb-0321-4dca-887b-0c3a6388f901" class=""><a href="https://www.nateliason.com/blog/raise-money">How to Raise $25,000 in One Day Without Investors</a></h2><p id="a22c0c1e-ae90-40f6-aa95-ada0fbdd7535" class=""><a href="https://www.nateliason.com/blog/raise-money">For my first company, I raised $25,000 from investors after spending months courting and pitching them. Now, I realize there&#x27;s a faster, much better way to do it.</a></p><h2 id="ef8d4d2b-4ce0-41a4-93fc-b43a21be55c2" class=""><a href="https://www.nateliason.com/blog/liars-poker">How to Play Liar&#x27;s Poker (The Card Game)</a></h2><p id="51bfb170-0a4f-4da9-b6b7-4a554f867694" class=""><a href="https://www.nateliason.com/blog/liars-poker">Liar’s Poker is a card game based on probability, memory, and deception. It can be played with 2 or more people, with 8 being a good maximum. 4-6 is ideal, in which case a game typically lasts 20-45 minutes.</a></p><h2 id="bbaa2f9a-71dd-4243-af6f-b748adc2f608" class=""><a href="https://www.nateliason.com/blog/growth-machine-year-one">Growing Growth Machine: How We Went from 0 to $100k MRR in One Year</a></h2><p id="c79f63a6-cd2f-40c9-a624-df329b818d2c" class=""><a href="https://www.nateliason.com/blog/growth-machine-year-one">How we grew our content marketing agency from zero to $100k MRR in one year, where we&#x27;re going from here, and some advice for other agency or service business owners.</a></p><h2 id="b1913621-b5ef-48c9-a5c6-975c2f0a0c08" class=""><a href="https://www.nateliason.com/blog/quit-shampoo">Two Years with No Shampoo: My Results, and How to Quit it Yourself</a></h2><p id="8ccc79f6-18aa-4695-8aa6-7e0899038799" class=""><a href="https://www.nateliason.com/blog/quit-shampoo">I stopped using shampoo (and conditioner) two years ago. Here&#x27;s what happened, what I&#x27;ve seen change in my hair, and how you can quit shampoo yourself.</a></p><h2 id="17ec5331-cc39-468a-939c-a2ab8baa5b61" class=""><a href="https://www.nateliason.com/blog/webflow-vs-wordpress">Webflow vs. WordPress: Why I Moved My Site to Webflow</a></h2><p id="738013d6-fe0d-4fa4-bc01-8addd3f0a851" class=""><a href="https://www.nateliason.com/blog/webflow-vs-wordpress">I’ve been using WordPress for 4 years, but now I’ve moved this site, and am moving my other sites, exclusively to Webflow. Here’s why.</a></p><h2 id="7544545d-b6bf-476b-899a-e21f2db28cf3" class=""><a href="https://www.nateliason.com/blog/productive">How to Be Really, Really, Ridiculously Productive</a></h2><p id="e6684acf-6b50-4d30-b404-ddce3beba411" class=""><a href="https://www.nateliason.com/blog/productive">A complete system you can use to be crazy productive, including everything from macro-level goal setting level down to the daily habits to keep you on track.</a></p><h2 id="bf765b09-37b0-485d-b9f3-e1fd59927ada" class=""><a href="https://www.nateliason.com/blog/social-disobedience">The Need for Social Disobedience</a></h2><p id="83ed6503-e3c4-4142-bfe6-ee91b4037dbc" class=""><a href="https://www.nateliason.com/blog/social-disobedience">For every person so intolerant of other views that they block you on Facebook, there are two or more others who will think “finally someone said something.</a></p><h2 id="d18c918e-51aa-4e55-8323-fc5a34417528" class=""><a href="https://www.nateliason.com/blog/nat-chat-launch">Nat Chat is LIVE! College is Broken, So What Should Young People Do?</a></h2><p id="d1ba3ece-013a-4c17-a487-44011b081c91" class=""><a href="https://www.nateliason.com/blog/nat-chat-launch">What do you do if you’re a student or recent grad who feels like they don’t fit in the world of grades, lecture halls, and one size fits all careers?</a></p><h2 id="4242924d-65b0-4dac-bb72-c150ed04efff" class=""><a href="https://www.nateliason.com/blog/reverse-kegels">Practice Reverse Kegels to Last Longer in Bed</a></h2><p id="4757c563-6ff3-4cf1-8f75-544735b9e931" class=""><a href="https://www.nateliason.com/blog/reverse-kegels">Exactly how to do the #1 BEST exercise for increasing your stamina in bed and giving you more control over your ejaculation.</a></p><h2 id="1f37219f-5ec1-4a1a-aaad-361b81d748de" class=""><a href="https://www.nateliason.com/blog/kegel-exercises-for-men">Kegel Exercises for Men</a></h2><p id="ca342f18-b75c-4cc0-8516-ad645ac478df" class=""><a href="https://www.nateliason.com/blog/kegel-exercises-for-men">Learning how to do kegels will help you strengthen your pelvic floor muscles to beat premature ejaculation, avoid erectile dysfunction, and have stronger erections.</a></p><h2 id="b784e72b-4316-4713-9f6f-350999a62e07" class=""><a href="https://www.nateliason.com/blog/psychology-myths">16 Popular Psychology Myths You Probably Still Believe</a></h2><p id="3b8bafdb-d164-4d86-9983-c8a98b6bef0d" class=""><a href="https://www.nateliason.com/blog/psychology-myths">With fewer than half of major psychology studies failing reproduction, it&#x27;s not crazy to assume a new psych study is more likely to be false than true.</a></p><h2 id="d508e99f-d820-4048-8493-500a04d901f3" class=""><a href="https://www.nateliason.com/blog/start-ecommerce-business">How to Start an Ecommerce Business in 3 Weeks: Launching Cup &amp; Leaf</a></h2><p id="20200408-4e24-4812-b674-bee50eda0b29" class=""><a href="https://www.nateliason.com/blog/start-ecommerce-business">Including finding a supplier, setting up the online store, packaging and preparing the initial products, designing the blog to drive sales, and launching!</a></p><h2 id="f61eb5ad-c1f3-41e2-9cc6-0967ddb3b33c" class=""><a href="https://www.nateliason.com/blog/delete-facebook">Yes, You Should Delete Facebook. Here&#x27;s Why.</a></h2><p id="84fce8b5-3895-42c2-b323-fe5b6092ee65" class=""><a href="https://www.nateliason.com/blog/delete-facebook">Quitting Facebook does actually matter. It sends the message that companies can’t, and shouldn’t, try to have that much power over our lives. If Facebook thinks they can keep focusing on addiction, ad revenue, and data collection with no consequences, they’ll keep doing it.</a></p><h2 id="09bf4489-b070-497d-a617-be967821f275" class=""><a href="https://www.nateliason.com/blog/better-writer">21 Tactics to Help You Become a Better Writer</a></h2><p id="b6b70aff-19c7-4905-a0ee-dc650b90afd0" class=""><a href="https://www.nateliason.com/blog/better-writer">While I still feel unqualified to tell you how to write better, I decided it could be helpful if I shared the advice that’s helped me improve.</a></p><h2 id="6ebcdeaa-b592-455a-90a7-ea3c9bb713bf" class=""><a href="https://www.nateliason.com/blog/25">6 Lessons from Year 25</a></h2><p id="b0cbb61d-85c2-403f-b80a-33c2c160f4dd" class=""><a href="https://www.nateliason.com/blog/25">Today is my 25th birthday, so I thought it would be fun to reflect on a few lessons I’ve (hopefully) learned this year. A “year-in-review” post with less of the “look how much money I made.”</a></p><h2 id="87ffab6f-3d2e-4cca-8793-fbfb16613011" class=""><a href="https://www.nateliason.com/blog/invest-in-something">Forget Commitment: Invest in Something</a></h2><p id="df8b0a99-f833-4679-828e-d2aa185e57b8" class=""><a href="https://www.nateliason.com/blog/invest-in-something">If you grew up in rural North Dakota with a dozen mates your age, and no intentions of leaving the lovely Billings County, you’d feel perfectly comfortable getting married in your early 20s.</a></p><h2 id="ba5f8e58-9159-44b1-b959-c23af2f08590" class=""><a href="https://www.nateliason.com/blog/easy-keto">Easy Keto: How to Sustain a Ketogenic Diet with 5 Simple Rules</a></h2><p id="d9be1d70-7af7-4674-8223-52a0b4ce954f" class=""><a href="https://www.nateliason.com/blog/easy-keto">Follow these five rules, and you should have no problem getting into and staying into ketosis. The first week might be a little rough, but after that you’ll find it’s a surprisingly easy diet to live on.</a></p><h2 id="6070fe8e-cf78-4e93-b421-ebe91caa693f" class=""><a href="https://www.nateliason.com/blog/level-3-thinking">Level 3 Thinking: A Unified Theory of Self-Improvement</a></h2><p id="553a80f3-4026-4037-9652-719c9df52cdc" class=""><a href="https://www.nateliason.com/blog/level-3-thinking">A model for how to improve our thinking. For how to be a little less dumb, naive, or mistaken. How to broaden our perspectives, learn more effectively, and accelerate personal development.</a></p><h2 id="28aecfd0-f016-477d-aa85-64e664296443" class=""><a href="https://www.nateliason.com/blog/best-books-2017">The 12 Best Books I Read in 2017</a></h2><p id="24570b08-8483-4b89-bb06-689cd441864b" class=""><a href="https://www.nateliason.com/blog/best-books-2017">This year I read 60-65 books. You can find get my notes from all of them, and these were my favorite 12 that I’d highly recommend anyone read next year.</a></p><h2 id="fa057dc3-bf0b-4bee-8189-bb886d9d37f0" class=""><a href="https://www.nateliason.com/blog/what-you-should-learn">A Simple Exercise to Discover What Skills You Should Learn</a></h2><p id="8d65a787-5999-4bf1-9d99-b7ec8123b829" class=""><a href="https://www.nateliason.com/blog/what-you-should-learn">You can use the Internet to teach yourself anything. This exercise will help you figure out exactly what skill, or skills, you should focus on.</a></p><h2 id="44d47027-ab04-4b8d-a34d-71b686696667" class=""><a href="https://www.nateliason.com/blog/high-quality-inputs">Cultivating High-Quality Inputs for High-Quality Outputs</a></h2><p id="ae9f55f6-de23-41f3-a233-d02c38f148f2" class=""><a href="https://www.nateliason.com/blog/high-quality-inputs">Unless we want to become info-obese, unable to resist the tasty clickbait in front of us, we’ll need to fight our evolutionary tendencies.</a></p><h2 id="7dc53602-4b55-41da-9993-85183e559186" class=""><a href="https://www.nateliason.com/blog/best-books-college-students">The 18 Best Books for College Students to Read Before Graduating</a></h2><p id="82529b58-7817-4aac-afa0-f57998e40393" class=""><a href="https://www.nateliason.com/blog/best-books-college-students">These are the must-read books for college students, high school students, and any young adult trying to take more control of their life.</a></p><h2 id="20951737-7dd9-45ae-99be-bd1829f959be" class=""><a href="https://www.nateliason.com/blog/productivity-daily-system">How to Be More Productive with a Daily System for High Output</a></h2><p id="b413d8ab-9777-4e12-8a95-405ae8e39e88" class=""><a href="https://www.nateliason.com/blog/productivity-daily-system">This systems makes productivity effortless. It minimizes the amount of self-control you need to do your best work. It makes productivity a habit.</a></p><h2 id="6093fc30-0aff-45a8-8bd8-70febe17fcbd" class=""><a href="https://www.nateliason.com/blog/goal-setting">The Goal Setting Template for a High-Output Life</a></h2><p id="376b92a5-60c2-4c58-b3fb-1fb3b3fcd2e3" class=""><a href="https://www.nateliason.com/blog/goal-setting">What we need is a reliable system for clarifying big life goals, and then breaking them down into manageable pieces. A template for maintaining high output.</a></p><h2 id="6931a42b-1340-4232-a6f3-ea19fb5f4e20" class=""><a href="https://www.nateliason.com/blog/start-a-podcast">How to Start a Podcast in 2019: 8 Steps from Idea to Launch</a></h2><p id="4de4ab61-dbe4-4ef2-8835-e351cda511bf" class=""><a href="https://www.nateliason.com/blog/start-a-podcast">Now that I’ve gone through it twice, I’ve figured out a step-by-step method you can follow to easily start, record, edit, and publish your own podcast.</a></p><h2 id="d901d6cd-9858-4608-9245-97712edc06bc" class=""><a href="https://www.nateliason.com/blog/learning-plateau">How to Break Through Any Learning Plateau and Never Stop Growing</a></h2><p id="8f00fb56-af07-437e-9ee1-0bd649d3ac90" class=""><a href="https://www.nateliason.com/blog/learning-plateau">Any time not spent improving the weakest part of your skill is a waste. When you see you’re stuck, start improving the weakest part of your skillset.</a></p><h2 id="a3a4ac29-ab60-4ab1-9fa8-b083c4da7e2d" class=""><a href="https://www.nateliason.com/blog/motivation">The Motivation Machine: How to Get &amp; Stay Motivated for Any Goal</a></h2><p id="ffed8ade-829d-4853-9813-85619148ff5b" class=""><a href="https://www.nateliason.com/blog/motivation">What I designed is a motivation machine, a reliable system you can use where any goal you desire will be started and completed.</a></p><h2 id="b9704a34-a352-45ff-a83e-2232d83e8292" class=""><a href="https://www.nateliason.com/blog/article-mvp">The Article MVP: How to Test Business Ideas Fast, Free, and Solo</a></h2><p id="29333d70-b9f5-4568-996c-ed7c2fb00a40" class=""><a href="https://www.nateliason.com/blog/article-mvp">In a world of infinite opportunities, one great business challenge is picking which opportunities to go after.</a></p><h2 id="7cc84a6a-2fcd-4dba-89f3-e3f3776f4b5c" class=""><a href="https://www.nateliason.com/blog/facebook-freedom">How to Free Yourself from Facebook (While Keeping Messenger)</a></h2><p id="6e7f7d9f-faa7-4719-8eef-cd036fd10b07" class=""><a href="https://www.nateliason.com/blog/facebook-freedom">At one point, Facebook was fun and exciting to use, but for many, it’s now somewhere between a compelled membership and a guilty addiction.</a></p><h2 id="498044de-c73f-4963-a759-eef1cd3b8c62" class=""><a href="https://www.nateliason.com/blog/search-to-social">The Destructive Switch from Search to Social</a></h2><p id="9a60a96f-b4cb-4e11-880f-1251bb0ee49d" class=""><a href="https://www.nateliason.com/blog/search-to-social">When your life can be spent partying for free on the Las Vegas strip, it’s hard to choose to go to the library instead.</a></p><h2 id="3bf319dc-6154-489e-95fc-54efc39f8e9e" class=""><a href="https://www.nateliason.com/blog/spotlight-effect">The Spotlight Effect: Why No One Cares About That Thing You Did</a></h2><p id="83aae5ef-1700-41d0-8c42-0f8a60c6149b" class=""><a href="https://www.nateliason.com/blog/spotlight-effect">Unfortunately, most people spend their days obsessed with what other people are thinking about them, never realizing that no one is thinking about them.</a></p><h2 id="dd7e0e84-df46-4316-9b53-c7d68e7071bc" class=""><a href="https://www.nateliason.com/blog/bitcoin-crypto-reading-list">The Best Articles to Learn about Bitcoin, Ethereum, and Cryptocurrency</a></h2><p id="0f0b0d6f-0e90-4097-96ef-ab211c5229ec" class=""><a href="https://www.nateliason.com/blog/bitcoin-crypto-reading-list">Trying to learn more about cryptocurrencies and the blockchain but not sure where to start? Here&#x27;s a great collection of articles and white papers to guide you.</a></p><h2 id="bd0a6577-7421-4c34-b8da-34b367f9604c" class=""><a href="https://www.nateliason.com/blog/new-city">How to Move to a New City</a></h2><p id="9b1d3ad0-87af-4e82-b43b-74d6bde51f53" class=""><a href="https://www.nateliason.com/blog/new-city">From moving around so much, and having to quickly get situated and comfortable in new cities, I’ve become somewhat of an expert at moving to a new city.</a></p><h2 id="ad08caa9-64d0-4a79-950e-2ab15df2315e" class=""><a href="https://www.nateliason.com/blog/fake-news">Fake News is a Real Problem</a></h2><p id="f6274ace-60ab-4bd1-80ee-f2cc46ab127a" class=""><a href="https://www.nateliason.com/blog/fake-news">With incentives that decrease the quality of reporting to the point of being fake, the problem won&#x27;t go away. We must be better consumers of information.</a></p><h2 id="5e2f4717-6d24-4b54-8d5b-480abd77ee26" class=""><a href="https://www.nateliason.com/blog/best-marketing-books">The 10 Best Marketing Books for Growing Any Business</a></h2><p id="7facdec7-5ce7-4531-9cca-0f802db132e9" class=""><a href="https://www.nateliason.com/blog/best-marketing-books">If you&#x27;re starting learning marketing, or have been doing it for years and are looking to improve your mental models, here are the best books I’ve found.</a></p><h2 id="130dbfa6-9649-4044-bc2d-d6adea32ccb3" class=""><a href="https://www.nateliason.com/blog/invest-bitcoin-cryptocurrency">How to Easily Start Investing in Bitcoin and Cryptocurrencies</a></h2><p id="7b55e09d-98c0-40ed-9e37-00aa0e155c4b" class=""><a href="https://www.nateliason.com/blog/invest-bitcoin-cryptocurrency">An easy way to invest in a collection of cryptocurrencies over time to spread out your risk, and still capture the long term gains in the market.</a></p><h2 id="13f90532-c113-4b3a-92f5-d5bedc14088f" class=""><a href="https://www.nateliason.com/blog/drop-out">How to Drop Out of College (With No Risk)</a></h2><p id="133e018c-d60b-4e8a-a636-ad6619f143f0" class=""><a href="https://www.nateliason.com/blog/drop-out">How to quit or take time off college, with no risk, with your parents being okay with it, and while still getting closer to graduating.</a></p><h2 id="e1c209b6-4930-4757-963e-6886bb8d54b7" class=""><a href="https://www.nateliason.com/blog/mental-model-value">The Incredible Value of Mental Models in a World of Infomania</a></h2><p id="b07837f2-5433-4447-b980-8aebdd251d0a" class=""><a href="https://www.nateliason.com/blog/mental-model-value">This gives us a meta-mental model. The question you should be asking yourself as you read, or decide to read anything.</a></p><h2 id="2460c211-9b79-470a-ac8c-3391eed4b87b" class=""><a href="https://www.nateliason.com/blog/learn-digital-marketing">How to Learn Digital Marketing for (almost) Free in 6 Months</a></h2><p id="81f07444-cede-4dd8-91a1-e67761254cde" class=""><a href="https://www.nateliason.com/blog/learn-digital-marketing">I’d expect that anyone could take a gameplan like this and go from zero to hireable digital marketer in 6 months or less, so long as you work hard at it and don’t get too distracted.</a></p><h2 id="4fe388b6-0d5d-446b-8abc-d7ebe63b7a93" class=""><a href="https://www.nateliason.com/blog/change-reality">To Change Reality, Stop Denying It</a></h2><p id="dedbc75b-cbb3-41c9-8b97-09691424905c" class=""><a href="https://www.nateliason.com/blog/change-reality">If an idea or some research offends you, that doesn’t mean it’s wrong. We have to assess whatever information we have regardless of how painful it is.</a></p><h2 id="d0c91ff5-b821-47cf-93eb-e387d449ace1" class=""><a href="https://www.nateliason.com/blog/wiki-strategy">The Wiki Strategy: How to Grow Your Blog to 100k+ Monthly Visitors</a></h2><p id="5f21b67f-ce22-4330-a632-8d18a1aa4072" class=""><a href="https://www.nateliason.com/blog/wiki-strategy">Done properly, it can lead to tens or hundreds of thousands potential new customers a month, arriving at your site naturally instead of by ads.</a></p><h2 id="bcc2350a-ffdb-4588-9eb5-c9ad05d9f68d" class=""><a href="https://www.nateliason.com/blog/books-after-stoics">10 Books to Read After Discovering Stoicism</a></h2><p id="e8ea2bbb-b35f-463d-9de5-2bbd05f02970" class=""><a href="https://www.nateliason.com/blog/books-after-stoics">Once you’ve read Letters, Meditations, Discourses, and Enchiridion, try these ones to broaden your introduction to practical philosophy.</a></p><h2 id="91a494d5-71fc-45f0-aa38-29f8c51bf23b" class=""><a href="https://www.nateliason.com/blog/boxes">The Problem With Putting Ourselves in Boxes</a></h2><p id="2f4b877b-1d60-4f07-9d56-fb48292668fa" class=""><a href="https://www.nateliason.com/blog/boxes">When you define yourself by an ideology, you look to that ideology to form your opinions, instead of forming your opinions yourself.</a></p><h2 id="f38bb47d-a308-48d0-9056-6ce6d80168a3" class=""><a href="https://www.nateliason.com/blog/no-niche">Does Your Blog Need a Niche? Maybe Not</a></h2><p id="40cd6106-ecbe-46c9-a584-ed764db94018" class=""><a href="https://www.nateliason.com/blog/no-niche">Plenty of blogs, including this one, do well without any clearly defined niche. You can make it work too, so long as it fits with your goals.</a></p><h2 id="1e88cff7-542c-4842-9e19-6587f3286bda" class=""><a href="https://www.nateliason.com/blog/deliberate-practice-examples">45 Deliberate Practice Examples for Rapidly Improving Your Skills</a></h2><p id="5e11f532-3f87-4f70-be0d-2dc91a2f78dc" class=""><a href="https://www.nateliason.com/blog/deliberate-practice-examples">These are ways to give yourself constraints, feedback, new challenges, and make sure that you never hit a learning plateau again.</a></p><h2 id="edfd5287-d37b-48f2-9672-78ac0cf5367b" class=""><a href="https://www.nateliason.com/blog/deliberate-practice">How to Use Deliberate Practice to Reach the Top 1% of Your Field</a></h2><p id="b698fe14-df1c-4e25-a948-466fd085ca26" class=""><a href="https://www.nateliason.com/blog/deliberate-practice">Study it, internalize it, return to it, keep pushing yourself beyond your comfort zone, and in time, you’ll become a true master of your craft.</a></p><h2 id="3ea9123e-4695-4135-95e4-18aa5492c533" class=""><a href="https://www.nateliason.com/blog/become-expert-dreyfus">The Step-by-Step Guide to Go From Novice to Expert in Any Skill</a></h2><p id="ad71bd3d-3a76-4d6a-a70f-11888ae4fc5e" class=""><a href="https://www.nateliason.com/blog/become-expert-dreyfus">I’ve been trying to find a more rigorous way to define different skill levels and how to move between them, and I think I’ve found it in the Dreyfus model.</a></p><h2 id="cce7edcc-a120-4393-91f8-3469612daebd" class=""><a href="https://www.nateliason.com/blog/4-months">The Math and Strategy Behind Working Only 4 Months a Year</a></h2><p id="392a6961-a0a8-4ff2-a270-c01bb183a7d8" class=""><a href="https://www.nateliason.com/blog/4-months">There&#x27;s no reason to wait till you&#x27;re older or richer to experience long-term travel and working on your own projects.</a></p><h2 id="b12f0fd6-0b70-437c-887d-a19c059fb0bc" class=""><a href="https://www.nateliason.com/blog/no-plan">The Psychological Benefit of Not Planning</a></h2><p id="90a4b16e-623c-4ff5-b90f-0708d793599c" class=""><a href="https://www.nateliason.com/blog/no-plan">If we had had to wait for a car, we would have been disappointed by the wait, but by having no expectation of a ride, we were never upset about the wait.</a></p><h2 id="7e593455-df9b-49ee-96e4-929f163a0042" class=""><a href="https://www.nateliason.com/blog/quit-stock-market">Why I Sold My Index Funds and Quit the Stock Market (Mostly)</a></h2><p id="6b63f6b7-a2cb-4c30-97a3-672501dacd73" class=""><a href="https://www.nateliason.com/blog/quit-stock-market">The typical investment advice is smart for most people, but the question you have to ask yourself, is could you double your money in 10 years on your own?</a></p><h2 id="5973e294-88eb-46fe-bbfb-98198ce7c3e3" class=""><a href="https://www.nateliason.com/blog/take-good-pictures">30 Image Composition Styles for Taking Good Pictures</a></h2><p id="135bd149-f7b4-40bd-b994-d99542e7de20" class=""><a href="https://www.nateliason.com/blog/take-good-pictures">30 styles you can use in your own photography to ensure good composition.</a></p><h2 id="48550c97-1d0a-42ef-b041-0deecb8e53ed" class=""><a href="https://www.nateliason.com/blog/white">You Can’t Say That Because You’re White</a></h2><p id="10b89894-6072-4592-a9f3-ce686271eb1c" class=""><a href="https://www.nateliason.com/blog/white">So many of us have gotten into lazy habits of thinking where we throw away opinions that don’t fit our pre-existing views, and we need to fix it.</a></p><h2 id="99512b86-d9e9-4a23-a799-33ac190562c6" class=""><a href="https://www.nateliason.com/blog/direct-vs-indirect-action">Use Direct Actions to Get More Freedom in Your Life</a></h2><p id="c62009e7-cf1b-4411-a277-c50d890b3908" class=""><a href="https://www.nateliason.com/blog/direct-vs-indirect-action">Taking direct action is harder than sitting back and hoping other people will change, but it’s the only way to have control of your life.</a></p><h2 id="5de29c55-84f7-41ea-a2ba-55d9ba13f468" class=""><a href="https://www.nateliason.com/blog/feel-better">A 5-Minute Hack to Stop Feeling Sad, Anxious, Annoyed, etc.</a></h2><p id="b4efda7b-38f6-4576-8bdf-a052a2b4aea8" class=""><a href="https://www.nateliason.com/blog/feel-better">If you go through this routine and at the end you still want to feel upset, anxious, annoyed, or whatever else, go ahead. But I’m confident you won’t.</a></p><h2 id="dfff3500-bd74-4e98-ba1d-c12ae2386f6e" class=""><a href="https://www.nateliason.com/blog/gpa-vs-skills">GPA vs. Skills: How to Stop Worrying About Grades</a></h2><p id="aec29133-fc0e-47fb-80d7-a00ef1ef4c7e" class=""><a href="https://www.nateliason.com/blog/gpa-vs-skills">There’s no shortage of students with good grades, but there’s a massive shortage of students with marketable skills.</a></p><h2 id="4f01ba84-5422-44ef-8c98-0a359ea2f2ae" class=""><a href="https://www.nateliason.com/blog/explained-by-marketing">Could that Be Explained by Marketing?</a></h2><p id="2314d8a8-3758-43fa-b054-34b8ccf0b2f9" class=""><a href="https://www.nateliason.com/blog/explained-by-marketing">120 years ago, John Harvey Kellogg invented corn flakes to keep people from masturbating, and we&#x27;ve kept the &quot;breakfast is important&quot; myth ever since.</a></p><h2 id="bb997763-f1df-467c-9c7d-541e16a6ee80" class=""><a href="https://www.nateliason.com/blog/remembering-ideas">3 Tactics to Remember that Idea You Just Forgot</a></h2><p id="d5bde565-5067-4e3d-ae57-b72d5d91ede5" class=""><a href="https://www.nateliason.com/blog/remembering-ideas">Even if you carry a notebook, you might end up forgetting an idea or two. Fortunately, these tactics will help you get them back.</a></p><h2 id="d9b3de50-c3d2-4770-98f6-2d3fa5ddd388" class=""><a href="https://www.nateliason.com/blog/one-year">Lessons from One Year of Nomadic Passive Income</a></h2><p id="99855887-60e7-4721-855b-69dac19b63fd" class=""><a href="https://www.nateliason.com/blog/one-year">Long-term travel and passive income, despite the incredible appeal, aren’t ends in themselves. They’re tools for something else.</a></p><h2 id="3142d2d4-4c2a-4e73-8caf-578481ba3f39" class=""><a href="https://www.nateliason.com/blog/financial-freedom">The Freedom Calculator: How to Retire in 10 Years (or Less)</a></h2><p id="d3c2c712-2e2b-4f6b-9afe-e5320198849d" class=""><a href="https://www.nateliason.com/blog/financial-freedom">From October to December last year, I did maybe 20 hours of work. Not 20 hours of work per week, but 20 hours total, over the course of those 12 weeks.</a></p><h2 id="c1e2d9e8-2dae-49c2-b087-a6d8ae62e43e" class=""><a href="https://www.nateliason.com/blog/reach-out">How to Reach Out to a Writer, Thinker, or Person You Respect</a></h2><p id="40747d95-ebfb-418a-bbc2-b102999b0595" class=""><a href="https://www.nateliason.com/blog/reach-out">These are the tactics that have worked for me, and on me, and I’m confident that if you used them with me or anyone else you’d get a good result.</a></p><h2 id="23f3ad6a-9b61-4144-a98e-ba7d02e3649d" class=""><a href="https://www.nateliason.com/blog/slack-emojis-everywhere">How to get Slack-Style Emoji Codes Everywhere on Mac</a></h2><p id="1282612b-11dd-4382-a966-161ec59e54fb" class=""><a href="https://www.nateliason.com/blog/slack-emojis-everywhere">An extremely simple tactic to get those :amazing: Slack emoji commands everywhere on your Mac. Even for custom emojis!</a></p><h2 id="b4186e93-222f-4e3f-84b9-ed7d6e52c9b7" class=""><a href="https://www.nateliason.com/blog/anxiety-to-excitement">Killing the Lion: How to Turn Anxiety into Excitement</a></h2><p id="acd14db4-95c3-4c8b-9220-29b1cc2a38a3" class=""><a href="https://www.nateliason.com/blog/anxiety-to-excitement">It’s a way to immediately cure anxiety, impostor syndrome, fear, stage fright, and other negative emotions brought on by some form of public performance.</a></p><h2 id="f10a320d-2b0f-4a03-a528-948c9470fcf8" class=""><a href="https://www.nateliason.com/blog/ephemerality-vs-value">Ephemerality vs. Value for Information, Social Media, Life</a></h2><p id="6a77b84b-feff-4606-8834-561c9973055d" class=""><a href="https://www.nateliason.com/blog/ephemerality-vs-value">Here’s a simple heuristic for judging the value of information. The more ephemeral a piece of information is, the less likely it is to be valuable.</a></p><h2 id="e0c147c2-1d63-4e2e-8346-129945ca7a79" class=""><a href="https://www.nateliason.com/blog/a-priori-diet">The A Priori Diet: Extremely Simple Rules for Healthy Eating</a></h2><p id="b656bbc4-73f2-4847-a77a-dbb3bed0e7ba" class=""><a href="https://www.nateliason.com/blog/a-priori-diet">5 extremely simple rules for eating healthy, based on 2 million years of biology. It&#x27;s the only diet you or I will ever need.</a></p><h2 id="ddfec8a5-83b0-4436-8063-9b134ef469de" class=""><a href="https://www.nateliason.com/blog/learning-through-abstraction">Learning Through Layers of Abstraction</a></h2><p id="5174de5b-cddd-4131-9873-feb6de4d73fe" class=""><a href="https://www.nateliason.com/blog/learning-through-abstraction">If there were college courses on sex, the first few weeks would be spent on the details of the labia minora instead of, you know, actually having sex.</a></p><h2 id="24c826f3-9186-4c2c-a0f5-a45061de1902" class=""><a href="https://www.nateliason.com/blog/vr-blog">How I Put My Blog in Virtual Reality (Mostly)</a></h2><p id="f9d7f2df-0a97-4dfe-a413-e46548d4ba73" class=""><a href="https://www.nateliason.com/blog/vr-blog">What would this site look like if it were a physical space, instead of a 2D series of pages?</a></p><h2 id="c3f9de0c-5dc2-421c-ae03-3789f6419829" class=""><a href="https://www.nateliason.com/blog/escape-political-outrage">Escaping this Explosive Diarrhea of Political Outrage</a></h2><p id="d59d84c1-0923-4e0f-9a4d-5206cf8c92f4" class=""><a href="https://www.nateliason.com/blog/escape-political-outrage">There’s no use to being in an emotional frenzy, especially one you’ve been pulled into by media and other people’s inability to control their feelings.</a></p><h2 id="02597091-75f2-40c7-8a38-6999c512dc93" class=""><a href="https://www.nateliason.com/blog/microdosing-lsd">Why Microdosing LSD Beats Coffee, Adderall, and Other Smart Drugs</a></h2><p id="39a03a66-f484-420a-b0e3-f2ac20a458f7" class=""><a href="https://www.nateliason.com/blog/microdosing-lsd">Microdosing involves taking small doses of psychedelics to gain some of the benefits without getting the full hallucinatory trip. Here&#x27;s what it feels like.</a></p><h2 id="2e8545a1-61a3-4d70-bc8a-c7f58b2ae713" class=""><a href="https://www.nateliason.com/blog/why-vr">Why I&#x27;m Learning VR (And Maybe You Should Too)</a></h2><p id="211debb6-ed72-477f-b810-232293bb73d9" class=""><a href="https://www.nateliason.com/blog/why-vr">Why I&#x27;m jumping into VR development, the massive opportunity for getting into it right now, and some thoughts on how you can too.</a></p><h2 id="440c15f7-82bb-4db7-938d-ff4c810626d6" class=""><a href="https://www.nateliason.com/blog/graduation-calculator">College Students, What Salary Do You ACTUALLY Need?</a></h2><p id="b47a3a66-6d06-4f94-8108-0d5a578bc753" class=""><a href="https://www.nateliason.com/blog/graduation-calculator">Instead of saying “I need to make as much as possible,” use the guide in this article to figure out how much you actually need to make.</a></p><h2 id="4316f8fb-ec48-486e-b4d8-435dfcbacd24" class=""><a href="https://www.nateliason.com/blog/rethink-risk">Don’t Try to be Less Risk Averse, Rethink Risk Instead</a></h2><p id="305e7ae6-b919-47f0-add0-fcf3dd612b5b" class=""><a href="https://www.nateliason.com/blog/rethink-risk">Your goal shouldn&#x27;t be to become bolder and more of a risk taker. Instead, you need to learn how to accurately assess risk, since we so often do.</a></p><h2 id="7b039341-cf54-454f-b621-3f8af2d6cf6f" class=""><a href="https://www.nateliason.com/blog/swearing">How Swearing Leads to a Shitty Vocabulary</a></h2><p id="92085c54-6a8e-4be2-8198-e3ca8216525e" class=""><a href="https://www.nateliason.com/blog/swearing">The words you choose affect how you think and live. When something bad happens and you describe yourself as feeling “fucking annoyed” instead of “peeved,” you feel different. Seriously, try it now.</a></p><h2 id="9d7c0536-71a0-4900-8f50-e8b9b629a132" class=""><a href="https://www.nateliason.com/blog/2-million">9 Blogging Tactics for 2 Million Views in 2 Years</a></h2><p id="47e990f1-fd10-4beb-94d1-ff9978989d68" class=""><a href="https://www.nateliason.com/blog/2-million">How to grow a site from zero to 2 million views in 2 years by following a few key tactics, including evergreen content, not being a charlatan, and SEO.</a></p><h2 id="15abef07-63ea-4cc0-b99b-bc87b21913c2" class=""><a href="https://www.nateliason.com/blog/do-vs-have-done">Do You Want to Do It? Or to Have Done It?</a></h2><p id="d0ed07f8-8bc5-473c-9c67-1e2a20968177" class=""><a href="https://www.nateliason.com/blog/do-vs-have-done">Next time you say you want to do [something], think seriously about where you truly want to &quot;do&quot; it, or if you want to &quot;have done&quot; it.</a></p><h2 id="090cc407-e91b-40a3-814a-68720d2eb1d2" class=""><a href="https://www.nateliason.com/blog/opportunity-cost-focus">38 More Projects till You Die: The Opportunity Cost of Focus</a></h2><p id="7f227690-4bdc-448f-9517-89cf59c9ad4a" class=""><a href="https://www.nateliason.com/blog/opportunity-cost-focus">Think carefully before doubling down on your next project. You only get to do that so many times, and you&#x27;d hate to run out of opportunities.</a></p><h2 id="5fd7a0ee-7d19-4e48-bb93-713bb7b14b64" class=""><a href="https://www.nateliason.com/blog/argentina">I Built a 4-Hour Workweek... What Do I Do Now?</a></h2><p id="f5945f9c-3866-48b2-8712-03a1eed59239" class=""><a href="https://www.nateliason.com/blog/argentina">What was a lofty goal a few years ago has finally happened: I achieved the 4-Hour Workweek. But what came with it is a feeling of loss and confusion.</a></p><h2 id="bc1aef8e-d56d-4453-8176-e7753badd801" class=""><a href="https://www.nateliason.com/blog/2-million">9 Blogging Tactics for 2 Million Views in 2 Years</a></h2><p id="aba63cc3-1821-49b5-86ca-c0acd8a08b9d" class=""><a href="https://www.nateliason.com/blog/2-million">How to grow a site from zero to 2 million views in 2 years by following a few key tactics, including evergreen content, not being a charlatan, and SEO.</a></p><h2 id="3f6b6291-de60-4054-bdb2-e968edfb0996" class=""><a href="https://www.nateliason.com/blog/do-vs-have-done">Do You Want to Do It? Or to Have Done It?</a></h2><p id="57f44cf7-d17a-4441-8c27-552bbaa0f1cd" class=""><a href="https://www.nateliason.com/blog/do-vs-have-done">Next time you say you want to do [something], think seriously about where you truly want to &quot;do&quot; it, or if you want to &quot;have done&quot; it.</a></p><h2 id="d51b998e-00a9-4366-ab36-d9cee725d32e" class=""><a href="https://www.nateliason.com/blog/opportunity-cost-focus">38 More Projects till You Die: The Opportunity Cost of Focus</a></h2><p id="9d7f611c-3441-407d-af21-295e150ff4cd" class=""><a href="https://www.nateliason.com/blog/opportunity-cost-focus">Think carefully before doubling down on your next project. You only get to do that so many times, and you&#x27;d hate to run out of opportunities.</a></p><h2 id="154eb3e3-e775-4285-9207-bd9f3752a732" class=""><a href="https://www.nateliason.com/blog/argentina">I Built a 4-Hour Workweek... What Do I Do Now?</a></h2><p id="78838295-23c8-410d-86b8-a0540850854b" class=""><a href="https://www.nateliason.com/blog/argentina">What was a lofty goal a few years ago has finally happened: I achieved the 4-Hour Workweek. But what came with it is a feeling of loss and confusion.</a></p><h2 id="595bf04a-abae-400c-9709-bca8306bdd7a" class=""><a href="https://www.nateliason.com/blog/enjoy-the-process">Enjoy the Process: Your Intrinsic Motivation Happiness Machine</a></h2><p id="a9a75e57-fc0b-4d77-a6b1-b2be7dbad38e" class=""><a href="https://www.nateliason.com/blog/enjoy-the-process">This is the only way to do intense, sustained, productive work long term and not be miserable.</a></p><h2 id="3e9bd7b7-801e-4da7-9cc5-1a9f1a2856d0" class=""><a href="https://www.nateliason.com/blog/drugs">How Dangerous Are Drugs, Really?</a></h2><p id="7d7ad936-345c-4151-8bf3-28f7f2ebe747" class=""><a href="https://www.nateliason.com/blog/drugs">Many of us think drugs are bad and scary. But many are less harmful and addictive than alcohol. How can we more reasonably decide what&#x27;s bad for us?</a></p><h2 id="6f410bb4-8881-4eb0-9f4b-9325cd6cff1a" class=""><a href="https://www.nateliason.com/blog/decomplication">Decomplication: How to Find Simple Solutions to “Hard” Problems</a></h2><p id="165697f1-1e03-4fd9-b326-9cc7547aa5dc" class=""><a href="https://www.nateliason.com/blog/decomplication">The problems we think are hard and complex (fitness, productivity, sleep, work, etc.) are secretly simple. But only once we decomplicate them.</a></p><h2 id="62d469f5-ad44-4426-b41e-1eefedd0bdc0" class=""><a href="https://www.nateliason.com/blog/block-email-popups">How to Block Annoying Email Popups in 2 Minutes</a></h2><p id="6a04048e-82b6-4b64-855e-5ba776573145" class=""><a href="https://www.nateliason.com/blog/block-email-popups">The Internet is a better place without email popups. Here&#x27;s how to make sure they never bother you again.</a></p><h2 id="7bea9256-7995-4d64-8fa2-1032e9343449" class=""><a href="https://www.nateliason.com/blog/option-not-obligation">Option not Obligation: How to Beat the Sunk Cost Fallacy</a></h2><p id="d1aa7ba9-aacf-4782-bee7-24b35ebad518" class=""><a href="https://www.nateliason.com/blog/option-not-obligation">The tendency to feel like once we’ve spent money (or any resource) on something we must earn back our investment impacts our decision-making in all walks of life. And, sadly, it can lead to significant losses of time, money, health, and happiness.</a></p><h2 id="9ab0f885-da05-4257-b2ba-3800aac9ee0b" class=""><a href="https://www.nateliason.com/blog/huckster">Welcome to the Internet: Don’t be a Huckster</a></h2><p id="98f53a7b-9f48-4b11-8305-3a6cf4f32bfe" class=""><a href="https://www.nateliason.com/blog/huckster">If they took a step back and assessed the situation without blinders on, they could do much better, but they’re trapped in the “huckster mindset.”</a></p><h2 id="a2b3a8bb-bab2-45f9-931e-8693a1a1db4e" class=""><a href="https://www.nateliason.com/blog/shallow-work-checklist">How a Shallow Work Checklist Gives You Back Your Focus</a></h2><p id="d5ca7a22-db5b-47fb-85e0-db0b60e94de2" class=""><a href="https://www.nateliason.com/blog/shallow-work-checklist">Once you do this, you’ll find it significantly easier to stay focused on the big tasks at hand, without worrying about all the little things.</a></p><h2 id="83cf45ef-9c51-4dab-82fa-af7bef454965" class=""><a href="https://www.nateliason.com/blog/entrepreneurial-personal-finance">Entrepreneurial Personal Finance: A Contrarian Investment Strategy</a></h2><p id="3c324e98-7b02-4ede-82cf-9a4262aa939d" class=""><a href="https://www.nateliason.com/blog/entrepreneurial-personal-finance">If you have some experience taking advantage of your money in creative ways, then maybe this strategy is for you.</a></p><h2 id="c0096b05-5ec9-424a-b357-e1e9fa90c7f5" class=""><a href="https://www.nateliason.com/blog/fauxductivity">Fauxductivity: 8 Ways You Trick Yourself into Feeling Productive</a></h2><p id="55a175b0-eacf-4e01-a383-325572e164f7" class=""><a href="https://www.nateliason.com/blog/fauxductivity">In many cases, the key to getting more done is simply a matter of removing these fauxductive habits, or significantly reducing the time we spend on them.</a></p><h2 id="872e0c5d-86f1-4a33-908e-8c21ce8d0b35" class=""><a href="https://www.nateliason.com/blog/email-capture">I&#x27;m killing most of my email capture. Here&#x27;s why.</a></h2><p id="32cb006e-7a93-420f-b133-8dce21c1c884" class=""><a href="https://www.nateliason.com/blog/email-capture">The best writers don&#x27;t need to constantly demand your attention, you&#x27;ll happily give it to them. It&#x27;s the mediocre writers and products that bombard you.</a></p><h2 id="0fd41356-8b70-4cea-b610-0655394cf427" class=""><a href="https://www.nateliason.com/blog/lifestyle-business">$58,150 in 5 Months: How to Build a Lifestyle Business Step-by-Step (Emails, Tools, Everything)</a></h2><p id="62769add-4a79-4822-b77b-9c23b4458761" class=""><a href="https://www.nateliason.com/blog/lifestyle-business">The exact steps we followed to build a lifestyle business in 5 months and make $58,150 in the process, so you can follow and implement them yourself.</a></p><h2 id="d8572ce5-ac45-4b23-91df-9ae76cf76a17" class=""><a href="https://www.nateliason.com/blog/how-to-get-lucky">How to Get Lucky: Maximizing Exposure to Life Changing Serendipity</a></h2><p id="61b9dbf1-5391-4822-84da-c127d898d19f" class=""><a href="https://www.nateliason.com/blog/how-to-get-lucky">In any situation where a single event can create massive good luck, you simply need to maximize your exposure to possible good luck situations and wait for one to come along.</a></p><h2 id="03900a0e-d3bd-4ea0-a15b-bbc16a474277" class=""><a href="https://www.nateliason.com/blog/get-stamena">Introducing Stamena: The App that Helps Men Last Longer in Bed</a></h2><p id="5346f5ea-1a2f-4f3e-b34f-e9045425383e" class=""><a href="https://www.nateliason.com/blog/get-stamena">To last longer in bed, you should practice kegels and reverse kegels. Stamena is the best kegal app, teaching one easy exercise that you can do anywhere!</a></p><h2 id="05d23978-f065-4c48-b4e4-f9a0830942ed" class=""><a href="https://www.nateliason.com/blog/infomania">Fighting Infomania: Why 80% of Your Reading is a Waste of Time</a></h2><p id="a4c81451-4fad-498d-a414-436096be8429" class=""><a href="https://www.nateliason.com/blog/infomania">Unfollow the industry blogs, stop reading the newspaper, don’t go on site aggregators, quit it. It’s all fauxductivity and wasting your time with useless information that will only cause decision paralysis, self-doubt, and decreased confidence in your existing decisions.</a></p><h2 id="d9db940c-2880-4841-a6cc-457751ef13cf" class=""><a href="https://www.nateliason.com/blog/productiva-negativa">Productiva Negativa: 7 Tactics to Create More by Doing Less</a></h2><p id="e90bd32a-237f-411b-8570-84bf8b2dad8e" class=""><a href="https://www.nateliason.com/blog/productiva-negativa">Going against some of the traditional productivity advice, try cutting these things out of your schedule to gain more time for creation.</a></p><h2 id="249a4ab2-52f6-422b-9c0f-2b9268d43808" class=""><a href="https://www.nateliason.com/blog/order-not-schedule">Make an Order, Not a Schedule (But Only to be Creative)</a></h2><p id="7c1b5810-e239-4755-9a64-3e1a4ea51977" class=""><a href="https://www.nateliason.com/blog/order-not-schedule">If you’re doing anything remotely creative, then I suggest creating your own order instead of schedule. Let your body and mind dictate when you move to the next stage, not an artificial indicator (calendars).</a></p><h2 id="c9761508-8b2e-47ed-b709-22139b81cbc6" class=""><a href="https://www.nateliason.com/blog/subconscious-sabotage">Subconscious Sabotage: Why Friends and Family Clip Your Wings</a></h2><p id="768ac2b4-b35e-4d98-aa68-2fc5eeb8a70b" class=""><a href="https://www.nateliason.com/blog/subconscious-sabotage">I showed up for my Freshman year of college interested in starting my own business before I graduated, and then my peers beat a bit of that spirit out of me</a></p><h2 id="06de5c7a-638f-4d85-8082-7951711d6d12" class=""><a href="https://www.nateliason.com/blog/testosterone-timing">How to Spike Your Testosterone for Sexiness and Productivity</a></h2><p id="482b6ca4-bc3f-4c06-a6cd-718f715d266e" class=""><a href="https://www.nateliason.com/blog/testosterone-timing">Make sure you&#x27;re ready for your next lucky night out by timing your masturbation and testosterone like a pro.</a></p><h2 id="35e845c4-3c5f-4d61-aa19-5b5a669e1905" class=""><a href="https://www.nateliason.com/blog/savable-income">Savable Income: How to Earn 1/3 Less but be 3x Richer</a></h2><p id="9eadb1d5-3d3b-4ae9-bfdb-b008114a13d4" class=""><a href="https://www.nateliason.com/blog/savable-income">Salary is incredibly deceptive, and should not factor into your decision-making in what job you take. Instead, you should think about your savable income.</a></p><h2 id="130328db-7a6d-4fbb-9ee0-4d3b2f495bd6" class=""><a href="https://www.nateliason.com/blog/life-after-sumome">Life After Sumo, Being the Hydra, and What’s Next</a></h2><p id="2e425ee1-a30c-45ff-8d8f-58fb5931b5a4" class=""><a href="https://www.nateliason.com/blog/life-after-sumome">“Today is the day I let you go… You need to do your own thing, and I’m helping you do that.&quot;</a></p><h2 id="2321f6dc-9a2c-440d-8427-274165824216" class=""><a href="https://www.nateliason.com/blog/pivotal-books">15 “Pivotal” Books that Changed How I Think and Live</a></h2><p id="e81cb621-155e-44a0-a6ea-0e1995997eaa" class=""><a href="https://www.nateliason.com/blog/pivotal-books">A &quot;pivotal&quot; book, once you&#x27;ve put it down, has changed your way of thinking forever. Here&#x27;s my list, what&#x27;s on yours?</a></p><h2 id="a4336832-971f-46e9-841f-37095de34c63" class=""><a href="https://www.nateliason.com/blog/runway-calculator">The Runway Calculator: How to Travel for 6 Months and Come Back Richer</a></h2><p id="25788be4-db17-4a77-94f2-cb129560c2ea" class=""><a href="https://www.nateliason.com/blog/runway-calculator">The runway calculator tells you exactly how your savings will change if you travel to any city in the world for long periods. Perfect for digital nomads.</a></p><h2 id="7e0df44f-cb45-49e9-93b0-588e84b09e9f" class=""><a href="https://www.nateliason.com/blog/afternoon-afk">Take an Afternoon AFK to De-stress, Recharge, and Refocus</a></h2><p id="b44abdeb-3129-4310-9a7a-cae283d2745f" class=""><a href="https://www.nateliason.com/blog/afternoon-afk">There’s something important that you and a dog have in common. It’s not being soft and wonderful to cuddle with (though I’m sure you are). It’s not the tendency to hump random people’s legs (hopefully). It’s that you both need an afternoon walk.</a></p><h2 id="fe8ccebd-1775-4e91-bc7e-cb0222a649d1" class=""><a href="https://www.nateliason.com/blog/tarnished-bullets">Tarnished Bullets: How Productivity Blogs Waste Your Time</a></h2><p id="538107f1-e9c1-413b-88a7-c7b7b4662b0e" class=""><a href="https://www.nateliason.com/blog/tarnished-bullets">We don’t want to hear “well, you’re going to have to pick a skill, get insanely good at it, work really hard for 20 years, and then you’ll be successful.”</a></p><h2 id="6df61be5-5a71-48c7-9b87-1bdc6f19ee3a" class=""><a href="https://www.nateliason.com/blog/multiple-orgasms-sex-men">Multiple Orgasms During Sex for Men (Positions, Techniques, &amp; More)</a></h2><p id="474d8b3f-850e-45a4-9849-6d1dd60def56" class=""><a href="https://www.nateliason.com/blog/multiple-orgasms-sex-men">This post covers the Best Sex Positions for Men, awesome techniques and more to achieve multiple orgasms during sex.</a></p><h2 id="dc1dddfd-5827-44df-8efc-3d0ba2cccaf0" class=""><a href="https://www.nateliason.com/blog/why-go-carless">Why I Went Carless: A Financial and Moral Analysis</a></h2><p id="ec5d9446-bd67-41b0-9730-e7244dc59000" class=""><a href="https://www.nateliason.com/blog/why-go-carless">All of the reasons you should ditch your car, from cost savings, to reducing your moral risk, to making you happier, and less likely to get a heart attack</a></p><h2 id="b6d3a82e-0de5-484a-aaf0-5f925893aebf" class=""><a href="https://www.nateliason.com/blog/quantitative-life-goals">Quantitative Life Goals: How to Plan and Finish What You Start</a></h2><p id="de4a37d3-88b2-40fa-954e-5f35abbe2a7d" class=""><a href="https://www.nateliason.com/blog/quantitative-life-goals">A proven system for planning and achieving your goals, with a template spreadsheet to help you follow through.</a></p><h2 id="f353c01b-6557-4078-9be5-fb100e1977c9" class=""><a href="https://www.nateliason.com/blog/life-you-want">What Life do You Want?</a></h2><p id="3442f3a0-a9bc-4b03-8cdb-6837bb7e955d" class=""><a href="https://www.nateliason.com/blog/life-you-want">In college, everyone wants to know what kind of work you&#x27;re doing post-graduation. The more important question to ask yourself is: &#x27;what do I want in life?&#x27;</a></p><h2 id="d4c2a70e-c115-405c-8349-7d1ff354afe0" class=""><a href="https://www.nateliason.com/blog/second-degree-dinners">Second-Degree Dinners: The Best Way to Meet Cool People in Your City</a></h2><p id="d643241d-02be-4c73-864a-e57cf4364c0e" class=""><a href="https://www.nateliason.com/blog/second-degree-dinners">A Second-Degree Dinner is the best way to meet interesting new people in your city by leveraging your existing friend networks.</a></p><h2 id="f4b242b6-ca25-42a0-b00d-9774deda8f59" class=""><a href="https://www.nateliason.com/blog/multiple-orgasms-men">Male Multiple Orgasms without Ejaculating: Exactly How to Have Them</a></h2><p id="a08f5573-6dc7-49f4-9bd8-1229439e101b" class=""><a href="https://www.nateliason.com/blog/multiple-orgasms-men">The steps to follow to start having multiple non-ejaculatory orgasms during masturbation, foreplay, and sex as a man, without the woo-woo nonsense.</a></p><h2 id="a8f5811f-2fa5-4ef8-b798-311b23e33b3b" class=""><a href="https://www.nateliason.com/blog/imagined-scarcity">What is Imagined Scarcity, and Why is it Making You Unhappy?</a></h2><p id="61cc977d-7fcb-449a-b9fa-ee7b285ceb23" class=""><a href="https://www.nateliason.com/blog/imagined-scarcity">When you’re unaware of Imagined Scarcity, you unnecessarily fear loss and overvalue new things. But, by being aware of it, you can shift how you think in two key ways...</a></p><h2 id="5070e6a4-9ceb-446c-abd3-9079388e1bf7" class=""><a href="https://www.nateliason.com/blog/never-forget-books-you-read">How to Never Forget Books You Read</a></h2><p id="23555205-ec21-46df-8357-0bccc2e5b2ad" class=""><a href="https://www.nateliason.com/blog/never-forget-books-you-read">Most people quickly forget info from books they read, but with this method, you can make sure you never forget the important points of every book.</a></p><h2 id="3b7d84ba-46d2-46d6-8dae-11f5cdac8c3e" class=""><a href="https://www.nateliason.com/blog/cure-insomnia-wake-up-early-sleep">How to Go to Sleep Early and Wake up Early (and Refreshed!)</a></h2><p id="291fa1e1-1a01-4ab6-8195-e84c7d32abcb" class=""><a href="https://www.nateliason.com/blog/cure-insomnia-wake-up-early-sleep">Learn how to how to go to sleep earlier and wake up early every morning, how your lifestyle affects your sleep, and how to harness sleep for top performance</a></p><h2 id="f3941cd1-e7e5-4adf-96fd-6a9618a08762" class=""><a href="https://www.nateliason.com/blog/become-smarter-more-rational">How to Become Smarter and More Rational (Yes, You Too)</a></h2><p id="c080fc2c-7ffd-45c7-bee5-5af925f8cc35" class=""><a href="https://www.nateliason.com/blog/become-smarter-more-rational">We&#x27;re fraught with mental biases that hurt our decision making and act against our best interests. Here&#x27;s how you can start to fix it.</a></p><h2 id="9fc3c56b-9dfa-43c5-bb23-7b60d503f537" class=""><a href="https://www.nateliason.com/blog/personal-investing-for-20-somethings">Making an Easy 2 Million, Personal Investing for 20 Somethings</a></h2><p id="bb3e0880-65b7-4ab8-8884-c7774c42376b" class=""><a href="https://www.nateliason.com/blog/personal-investing-for-20-somethings">A complete guide to investing in your 20s so that you never have to worry about money later in life.</a></p><h2 id="3a1b872d-4da8-4037-8205-e4c333ecfb47" class=""><a href="https://www.nateliason.com/blog/college-student-independent-work">What to do if You’re a College Student Who Isn&#x27;t Excited by 9-5 Corporate Work</a></h2><p id="7558bc53-2c01-4a53-9157-1415fff05d49" class=""><a href="https://www.nateliason.com/blog/college-student-independent-work">There is a world of work options out there, all providing a greater degree of personal freedom than corporate work. Here&#x27;s how to get started.</a></p><h2 id="89b8e4ce-2102-40ee-b452-c71c7ff7e91c" class=""><a href="https://www.nateliason.com/blog/local-maxima">Don&#x27;t Focus On Local Maxima</a></h2><p id="32626f27-f79b-4b15-afe3-ab6293b6b46b" class=""><a href="https://www.nateliason.com/blog/local-maxima">We overvalue local maxima, and that overvaluation creates unnecessarily steep competition on narrow planes and sub-optimal outcomes for everyone involved.</a></p><h2 id="e2bbe981-b3f9-4da6-a892-050011e3436d" class=""><a href="https://www.nateliason.com/blog/focus-mental-operating-system-not-apps">Focus On Your Mental Operating System, Not Your Apps</a></h2><p id="b5eb235f-c8a1-4d3a-8fd0-bd229e09f4e0" class=""><a href="https://www.nateliason.com/blog/focus-mental-operating-system-not-apps">Your operating system determines your effectiveness in everything you do. You have to refine it before you can hope to learn or do anything effectively.</a></p><h2 id="1c9a169a-7fe0-4558-a987-fbb2c8cc8c30" class=""><a href="https://www.nateliason.com/blog/can-easily-read-100-books-year">How to Read More: Finish 100+ Books This Year</a></h2><p id="ef8bfc58-9c35-4af1-97cf-cfb0e1b794ae" class=""><a href="https://www.nateliason.com/blog/can-easily-read-100-books-year">You need to read a lot. You can’t just read a little. If you only read a little, it creates problems. Let me explain.</a></p><h2 id="30c32f87-f0e0-4af1-9902-eb65776e4559" class=""><a href="https://www.nateliason.com/blog/youre-not-stuck-that-way">You&#x27;re Not Stuck That Way</a></h2><p id="09bcba2b-f484-4af6-b999-22893a1fb684" class=""><a href="https://www.nateliason.com/blog/youre-not-stuck-that-way">Changing your life is no different than changing your sheets. It&#x27;s something you choose to do, and if you don&#x27;t know how, you figure it out.</a></p><h2 id="21f6dd5a-b009-4bd2-8660-fda08facb0d4" class=""><a href="https://www.nateliason.com/blog/meditation-performance-enhancing">The Best Performance Enhancing Drug You Aren&#x27;t Using</a></h2><p id="62aa0455-8b6d-4e73-b637-4cb4c564626f" class=""><a href="https://www.nateliason.com/blog/meditation-performance-enhancing">Most people have a bad mental image of meditation, but odds are someone you look up to professionally is already taking advantage of it.</a></p><h2 id="541fc079-2df3-4762-94b4-48319b98ec9c" class=""><a href="https://www.nateliason.com/blog/start-working-out-dont-quit-lifting">How to Start Working Out So You Don&#x27;t Quit</a></h2><p id="e81d50c3-2ff2-4ad3-8f2a-a66edff74da0" class=""><a href="https://www.nateliason.com/blog/start-working-out-dont-quit-lifting">Exercise has been complicated by people who profits from making it seem harder than it is. This routine makes it easy to start working out and stick to it.</a></p><h2 id="ddba45a6-d6d9-4d1a-870e-5d31d2ce3e0c" class=""><a href="https://www.nateliason.com/blog/dont-drink-coffee-caffeine-overdose">Why I Don&#x27;t Drink Coffee: My Caffeine Overdosing Adventure</a></h2><p id="fcba2608-6a9c-4517-87ac-9c55f6ea446c" class=""><a href="https://www.nateliason.com/blog/dont-drink-coffee-caffeine-overdose">A minute by minute look of how coffee can help you get a ton done... then completely destroy your productivity.</a></p><h2 id="ae7883ac-5438-4c85-b684-f9ce0bd668bf" class=""><a href="https://www.nateliason.com/blog/fratboxes-start-company-weekend-less-25-150-sales">FratBoxes: How to Start a Company This Weekend for $25, and do $150 in Sales</a></h2><p id="eac6c5b3-6205-44c6-98d8-5ea16eb349a1" class=""><a href="https://www.nateliason.com/blog/fratboxes-start-company-weekend-less-25-150-sales">A method for quickly and cheaply testing any company idea, based on a gag company for sending fraternities party supplies each month</a></p><h2 id="f57e589b-2928-4cf1-97d9-77633cec9645" class=""><a href="https://www.nateliason.com/blog/decision-fatigue">Exhausted by Options</a></h2><p id="ff239c9d-ed1d-4275-9225-e08bf55f3bde" class=""><a href="https://www.nateliason.com/blog/decision-fatigue">As you adopt more of these principles, you’ll find you have a lot more time than you thought you did, and much more mental energy. When you’re not wasting decision-making power on minutia, you open yourself up to make much better decisions in the process.</a></p><h2 id="d62e3b08-36f4-404c-b273-673a2f81e5bc" class=""><a href="https://www.nateliason.com/blog/the-source-of-knowledge-learning">The Source of Knowledge</a></h2><p id="185c2b18-0d8d-49c3-b530-d5917405d95a" class=""><a href="https://www.nateliason.com/blog/the-source-of-knowledge-learning">You don’t need to rely on others for your education. We probably did 20 years ago, but we simply don’t anymore, and the sooner we learn to self-educate effectively the sooner we can master whatever interests us.</a></p><h2 id="60ef6899-08d0-4330-8f4b-902811699146" class=""><a href="https://www.nateliason.com/blog/minimalist-apps-getting-things-done">A Minimalist Set of Apps for Getting Things Done</a></h2><p id="7886246a-44c8-4cfa-9396-b6eacf936c96" class=""><a href="https://www.nateliason.com/blog/minimalist-apps-getting-things-done">I had to get out of the bad habit of trying every single popular new app out there to see if it fits into my workflow, or can help me get more things done. If you’re reading this you might have the same habit.</a></p><h2 id="bfd75362-cba4-4200-a173-4a3772854a40" class=""><a href="https://www.nateliason.com/blog/no-gluten-one-month-paleo">Here&#x27;s What I Learned Eating No Gluten for One Month</a></h2><p id="03fb7d31-35d2-4281-b63f-250fe37ad8e5" class=""><a href="https://www.nateliason.com/blog/no-gluten-one-month-paleo">Evidence that gluten is bad for you in mounting. So I tried eating a no gluten diet for one month - and I was surprised with the results.</a></p><h2 id="4965a9c5-f485-4b61-b3c6-9e3b36342114" class=""><a href="https://www.nateliason.com/blog/easily-memorize-80-names-in-a-few-hours">Easily Memorize 80+ Names in a Few Hours</a></h2><p id="08f1d18e-6948-4ab7-a060-484222db8bfd" class=""><a href="https://www.nateliason.com/blog/easily-memorize-80-names-in-a-few-hours">I was recently part of a week-long event where it was useful to memorize 80+ people’s names extremely quickly. I mentioned the idea of trying to memorize all of their names over a weekend casually to a friend, and when he challenged me that he didn’t think I could do it I of course had to.</a></p><h2 id="a381508c-3949-426c-954d-aca8f2900197" class=""><a href="https://www.nateliason.com/blog/how-to-make-anyone-your-mentor-without-asking">How to Make Anyone Your Mentor... Without Asking</a></h2><p id="023603b7-c7f9-42f2-a3ed-eaba52d7b46e" class=""><a href="https://www.nateliason.com/blog/how-to-make-anyone-your-mentor-without-asking">All of the digital literature on mentorship is about how to provide value, how to cold call, how to network, etc. This won’t cover any of that. This is how to make anyone your mentor. Whether they want to or not. whether they’re alive or not.</a></p></div></article></body></html>

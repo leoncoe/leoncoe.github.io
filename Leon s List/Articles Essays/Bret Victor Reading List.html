@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Bret Victor Reading List</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1d381e1d-521b-416e-bb35-7bff1e8f6d0e" class="page sans"><header><h1 class="page-title">Bret Victor Reading List</h1></header><div class="page-body"><p id="d87793d6-e427-43ce-b8af-c9afdc0e489a" class="block-color-gray"><a href="http://worrydream.com/refs/">http://worrydream.com/refs/</a></p><p id="90d5b7e2-cbed-4f35-ad5b-10f0dd1483c5" class="">
+</p><div id="49b2a11e-4cae-4836-baa4-e5af1770beee" class="collection-content"><h4 class="collection-title"></h4><table class="collection-content"><thead><tr><th>Altmann - Hamilton, Rodrigues, and the Quaternion Scandal.pdf</th><th>2017-01-31 00:13</th><th>542K</th></tr></thead><tbody><tr id="e5310ddf-26a1-4c16-8b75-43a7fd1964a7"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Aspray JCR Licklider Interview pdf.html">Aspray - JCR Licklider Interview.pdf</a></td><td class="cell-h=r@"><time>@May 29, 2015 7:36 PM (GMT)</time></td><td class="cell-GNv9">105K</td></tr><tr id="c060c713-e8dd-4984-9656-229bae03549b"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Barton A New Approach to the Functional Design of .html">Barton - A New Approach to the Functional Design of a New Computer.pdf</a></td><td class="cell-h=r@"><time>@Aug 27, 2013 11:09 AM (GMT)</time></td><td class="cell-GNv9">488K</td></tr><tr id="8faa219d-b56b-4b2d-a89a-8d19164b1016"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Bush As We May Think with Engelbart notes pdf.html">Bush - As We May Think (with Engelbart notes).pdf</a></td><td class="cell-h=r@"><time>@Mar 24, 2014 10:51 AM (GMT)</time></td><td class="cell-GNv9">956K</td></tr><tr id="fee6cd49-c5e2-4107-a348-8947b24952fc"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Bush The Differential Analyzer pdf.html">Bush - The Differential Analyzer.pdf</a></td><td class="cell-h=r@"><time>@Aug 27, 2013 11:10 AM (GMT)</time></td><td class="cell-GNv9">5.4M</td></tr><tr id="3ce6e0d9-5dcc-4b22-8965-9329f4f10819"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Carriero Linda in Context pdf.html">Carriero - Linda in Context.pdf</a></td><td class="cell-h=r@"><time>@May 17, 2016 11:59 PM (GMT)</time></td><td class="cell-GNv9">1.6M</td></tr><tr id="0d023537-82ef-4505-9025-ac5e5529e63f"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Clark TX 2 papers pdf.html">Clark - TX-2 papers.pdf</a></td><td class="cell-h=r@"><time>@Dec 08, 2015 11:21 AM (GMT)</time></td><td class="cell-GNv9">6.1M</td></tr><tr id="8594d612-aa60-4f22-9eff-5ddf2ea9de50"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Cohn Comics Linguistics and Visual Language pdf.html">Cohn - Comics, Linguistics, and Visual Language.pdf</a></td><td class="cell-h=r@"><time>@Nov 15, 2013 4:37 PM (GMT)</time></td><td class="cell-GNv9">2.4M</td></tr><tr id="f7e4d7f3-393b-4a5e-bf35-b756b56ce215"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Conway Reminiscences of the VLSI Revolution pdf.html">Conway - Reminiscences of the VLSI Revolution.pdf</a></td><td class="cell-h=r@"><time>@Dec 19, 2015 10:54 PM (GMT)</time></td><td class="cell-GNv9">2.0M</td></tr><tr id="9e5774d7-7a71-4d12-8868-b76da30df52e"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Cook How Complex Systems Fail pdf.html">Cook - How Complex Systems Fail.pdf</a></td><td class="cell-h=r@"><time>@Feb 23, 2014 9:43 AM (GMT)</time></td><td class="cell-GNv9">34K</td></tr><tr id="c0c45a0b-4da7-44b6-b447-6597061f6a92"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Cox Probability Frequency and Reasonable Expectati.html">Cox - Probability, Frequency and Reasonable Expectation.pdf</a></td><td class="cell-h=r@"><time>@Jun 13, 2015 9:04 PM (GMT)</time></td><td class="cell-GNv9">1.0M</td></tr><tr id="c9c7feff-7661-4f96-84c8-c47900feba01"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Crowe HistoryOfVectorAnalysis pdf.html">Crowe-HistoryOfVectorAnalysis.pdf</a></td><td class="cell-h=r@"><time>@Aug 12, 2013 8:27 PM (GMT)</time></td><td class="cell-GNv9">483K</td></tr><tr id="f8ee71bb-2a7b-4064-b096-371ad5468b20"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Engelbart Augmenting Human Intellect typeset pdf.html">Engelbart - Augmenting Human Intellect (typeset).pdf</a></td><td class="cell-h=r@"><time>@Mar 24, 2014 10:51 AM (GMT)</time></td><td class="cell-GNv9">281K</td></tr><tr id="35016a60-7cc0-4b36-bd1e-9b15d383fb88"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Engelbart Augmenting Human Intellect pdf.html">Engelbart - Augmenting Human Intellect.pdf</a></td><td class="cell-h=r@"><time>@Aug 28, 2013 9:22 AM (GMT)</time></td><td class="cell-GNv9">8.6M</td></tr><tr id="04d02d20-0bc7-46a3-b8d1-08b1b85ec146"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Engelbart Games That Teach the Fundamentals of Com.html">Engelbart - Games That Teach the Fundamentals of Computer Operation.pdf</a></td><td class="cell-h=r@"><time>@Apr 30, 2015 5:53 PM (GMT)</time></td><td class="cell-GNv9">1.9M</td></tr><tr id="02e82e8c-f9c6-483e-8520-eda36ece9376"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Engelbart Improving Our Ability to Improve pdf.html">Engelbart - Improving Our Ability to Improve.pdf</a></td><td class="cell-h=r@"><time>@Aug 28, 2013 9:21 AM (GMT)</time></td><td class="cell-GNv9">3.2M</td></tr><tr id="e1967b1f-4391-454e-9916-705e22239b21"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Goody The Consequences of Literacy pdf.html">Goody - The Consequences of Literacy.pdf</a></td><td class="cell-h=r@"><time>@Oct 21, 2014 3:57 PM (GMT)</time></td><td class="cell-GNv9">1.4M</td></tr><tr id="2bc935d3-dbc0-485a-bbf6-061e7edb4cd4"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Green The Application of Mathematical Analysis pdf.html">Green - The Application of Mathematical Analysis.pdf</a></td><td class="cell-h=r@"><time>@Sep 06, 2016 12:45 PM (GMT)</time></td><td class="cell-GNv9">7.3M</td></tr><tr id="8d74b580-407a-4109-9ed0-0096e7d2b247"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Gull Imaginary Numbers are not Real pdf.html">Gull - Imaginary Numbers are not Real.pdf</a></td><td class="cell-h=r@"><time>@Dec 13, 2016 7:32 PM (GMT)</time></td><td class="cell-GNv9">390K</td></tr><tr id="4ee47d73-f432-4f95-ad2d-ee41c96e0f13"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Hamming Mathematics on a Distant Planet pdf.html">Hamming - Mathematics on a Distant Planet.pdf</a></td><td class="cell-h=r@"><time>@Nov 12, 2018 11:43 AM (GMT)</time></td><td class="cell-GNv9">1.2M</td></tr><tr id="c65cada9-8a3f-4594-9e00-91fabfe88322"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Hamming One Man s View of Computer Science pdf.html">Hamming - One Man&#x27;s View of Computer Science.pdf</a></td><td class="cell-h=r@"><time>@Mar 03, 2014 7:58 PM (GMT)</time></td><td class="cell-GNv9">1.0M</td></tr><tr id="00f7e611-b41c-4cae-b37c-7c0d4cf7c14c"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Hamming TheArtOfDoingScienceAndEngineering pdf.html">Hamming-TheArtOfDoingScienceAndEngineering.pdf</a></td><td class="cell-h=r@"><time>@Apr 28, 2013 7:04 PM (GMT)</time></td><td class="cell-GNv9">3.0M</td></tr><tr id="3ba30d68-4818-4455-a496-f76877b1fc6a"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Hamming The Unreasonable Effectiveness of Mathemat.html">Hamming - The Unreasonable Effectiveness of Mathematics.pdf</a></td><td class="cell-h=r@"><time>@Nov 12, 2018 2:45 PM (GMT)</time></td><td class="cell-GNv9">1.5M</td></tr><tr id="fbdad8c0-6685-4945-91d5-d046243bacc6"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Hestenes Modeling games in the Newtonian World pdf.html">Hestenes - Modeling games in the Newtonian World.pdf</a></td><td class="cell-h=r@"><time>@Jan 05, 2014 8:15 PM (GMT)</time></td><td class="cell-GNv9">2.0M</td></tr><tr id="567a3aa5-5887-4542-9f36-9bc36f928e60"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Hestenes ReformingTheMathematicalLanguageOfPhysics.html">Hestenes-ReformingTheMathematicalLanguageOfPhysics.pdf</a></td><td class="cell-h=r@"><time>@Jul 28, 2013 10:40 PM (GMT)</time></td><td class="cell-GNv9">1.0M</td></tr><tr id="4313a3bc-b51a-4292-8997-3d4a55cc4792"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Hillis The Connection Machine pdf.html">Hillis - The Connection Machine.pdf</a></td><td class="cell-h=r@"><time>@Jan 15, 2016 3:40 PM (GMT)</time></td><td class="cell-GNv9">7.9M</td></tr><tr id="5f4bf03a-4157-4aea-9ec9-093f48b91b02"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Ingalls Back to the Future pdf.html">Ingalls - Back to the Future.pdf</a></td><td class="cell-h=r@"><time>@Feb 25, 2016 8:38 PM (GMT)</time></td><td class="cell-GNv9">1.2M</td></tr><tr id="69a493d7-91c6-4e11-88bf-59b269a799a0"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Jacobson How to Kill the Internet pdf.html">Jacobson - How to Kill the Internet.pdf</a></td><td class="cell-h=r@"><time>@May 23, 2018 7:43 AM (GMT)</time></td><td class="cell-GNv9">129K</td></tr><tr id="36e8222b-198b-45e1-a0c9-72d6e8904b98"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Jaynes Clearing up Mysteries pdf.html">Jaynes - Clearing up Mysteries.pdf</a></td><td class="cell-h=r@"><time>@Mar 24, 2014 10:53 AM (GMT)</time></td><td class="cell-GNv9">228K</td></tr><tr id="9cc7ee67-f4bb-4021-885d-751aa4d8c52a"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Jaynes Probability in Quantum Theory pdf.html">Jaynes - Probability in Quantum Theory.pdf</a></td><td class="cell-h=r@"><time>@Mar 07, 2015 8:07 PM (GMT)</time></td><td class="cell-GNv9">200K</td></tr><tr id="a456ba2f-d845-4e46-988d-3320233bda6a"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Jaynes Some Random Observations pdf.html">Jaynes - Some Random Observations.pdf</a></td><td class="cell-h=r@"><time>@Mar 07, 2015 8:07 PM (GMT)</time></td><td class="cell-GNv9">2.4M</td></tr><tr id="cc3e108a-776f-4a36-9dca-676a3e538029"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Jaynes The Gibbs Paradox pdf.html">Jaynes - The Gibbs Paradox.pdf</a></td><td class="cell-h=r@"><time>@Mar 07, 2015 8:07 PM (GMT)</time></td><td class="cell-GNv9">202K</td></tr><tr id="9d56e575-8821-4f28-a0c1-a6b0e2b20c4f"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Jefferson Virtual Time pdf.html">Jefferson - Virtual Time.pdf</a></td><td class="cell-h=r@"><time>@Jul 25, 2018 9:11 AM (GMT)</time></td><td class="cell-GNv9">1.7M</td></tr><tr id="e919ec59-5d48-4e45-93e5-37581444b81e"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Kay Personal Computing pdf.html">Kay - Personal Computing.pdf</a></td><td class="cell-h=r@"><time>@Sep 15, 2016 12:16 PM (GMT)</time></td><td class="cell-GNv9">2.5M</td></tr><tr id="cb7ae30b-329c-44f9-ad9d-a0778cd0bbcb"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Kay Personal Dynamic Media pdf.html">Kay - Personal Dynamic Media.pdf</a></td><td class="cell-h=r@"><time>@Jul 22, 2017 5:39 PM (GMT)</time></td><td class="cell-GNv9">9.7M</td></tr><tr id="80c9e5b8-3b19-4ab0-9211-ee40814f86c4"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Kay Playground Essays pdf.html">Kay - Playground Essays.pdf</a></td><td class="cell-h=r@"><time>@Mar 07, 2015 8:07 PM (GMT)</time></td><td class="cell-GNv9">15M</td></tr><tr id="c85b87e8-0a03-4487-9c27-5e2e18e5a849"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Kay Programming and Programming Languages pdf.html">Kay - Programming and Programming Languages.pdf</a></td><td class="cell-h=r@"><time>@Aug 27, 2013 11:25 AM (GMT)</time></td><td class="cell-GNv9">1.7M</td></tr><tr id="fad8a4bf-8bb5-4113-ba24-cb1ef864fa65"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Kay Revealing the Elephant html.html">Kay - Revealing the Elephant.html</a></td><td class="cell-h=r@"><time>@Mar 01, 2019 12:10 PM (GMT)</time></td><td class="cell-GNv9">20K</td></tr><tr id="01a998f8-db6c-4e22-b92d-7db1836f00b2"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Kay Software Art Engineering Mathematics or Scienc.html">Kay - Software - Art, Engineering, Mathematics, or Science?.html</a></td><td class="cell-h=r@"><time>@Mar 01, 2019 12:33 PM (GMT)</time></td><td class="cell-GNv9">7.1K</td></tr><tr id="f4c20508-a97d-4022-96d2-7322298e9c57"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Kay Technology and Powerful Ideas pdf.html">Kay - Technology and Powerful Ideas.pdf</a></td><td class="cell-h=r@"><time>@Mar 01, 2019 11:52 AM (GMT)</time></td><td class="cell-GNv9">948K</td></tr><tr id="f5caa593-396b-48e8-aef6-750c7fd74f97"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Kay The Center of Why pdf.html">Kay - The Center of Why.pdf</a></td><td class="cell-h=r@"><time>@Aug 27, 2013 11:25 AM (GMT)</time></td><td class="cell-GNv9">2.5M</td></tr><tr id="b00f1a57-2947-4822-b048-f5b65d1aa910"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Kay What is a Dynabook pdf.html">Kay - What is a Dynabook.pdf</a></td><td class="cell-h=r@"><time>@Mar 24, 2014 10:53 AM (GMT)</time></td><td class="cell-GNv9">1.8M</td></tr><tr id="7c01541f-c88f-454b-ae75-01eeebdc8231"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Kita J C R Licklider s Vision for the IPTO pdf.html">Kita - J.C.R. Licklider&#x27;s Vision for the IPTO.pdf</a></td><td class="cell-h=r@"><time>@Jan 28, 2019 8:36 AM (GMT)</time></td><td class="cell-GNv9">219K</td></tr><tr id="ef50cf7c-5917-4421-8201-a1a326d709b3"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Krasner Smalltalk 80 Bits of History pdf.html">Krasner - Smalltalk-80 Bits of History.pdf</a></td><td class="cell-h=r@"><time>@Oct 05, 2016 9:12 AM (GMT)</time></td><td class="cell-GNv9">23M</td></tr><tr id="28376091-42a2-4608-b3e8-1cb035ca77a0"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Kurlander A History Based Macro By Example System .html">Kurlander - A History-Based Macro By Example System.pdf</a></td><td class="cell-h=r@"><time>@Dec 03, 2015 8:45 PM (GMT)</time></td><td class="cell-GNv9">940K</td></tr><tr id="4905d7b3-16b9-4077-902b-fb30381fa07a"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Kurlander Editable Graphical Histories pdf.html">Kurlander - Editable Graphical Histories.pdf</a></td><td class="cell-h=r@"><time>@Dec 03, 2015 8:45 PM (GMT)</time></td><td class="cell-GNv9">311K</td></tr><tr id="e6ba5d23-948e-4d23-83ff-57e520dcb62d"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Lampson Alto User s Handbook pdf.html">Lampson - Alto User&#x27;s Handbook.pdf</a></td><td class="cell-h=r@"><time>@Sep 02, 2015 3:30 PM (GMT)</time></td><td class="cell-GNv9">7.4M</td></tr><tr id="fa00610c-0a0f-44c6-bfad-47b710b13746"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Lapham The Eternal Now pdf.html">Lapham - The Eternal Now.pdf</a></td><td class="cell-h=r@"><time>@Jul 10, 2014 3:16 PM (GMT)</time></td><td class="cell-GNv9">147K</td></tr><tr id="31e0be01-2634-4718-89fc-bd8b10d97fae"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Latour Visualisation and Cognition pdf.html">Latour - Visualisation and Cognition.pdf</a></td><td class="cell-h=r@"><time>@Nov 15, 2013 4:36 PM (GMT)</time></td><td class="cell-GNv9">382K</td></tr><tr id="ee357415-5745-47db-b165-11ba7388c023"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Lenat Voice of the Turtle pdf.html">Lenat - Voice of the Turtle.pdf</a></td><td class="cell-h=r@"><time>@Apr 30, 2015 5:53 PM (GMT)</time></td><td class="cell-GNv9">156K</td></tr><tr id="460fd0ce-f10e-4175-8f24-9bd237423612"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Licklider IntergalacticNetwork pdf.html">Licklider-IntergalacticNetwork.pdf</a></td><td class="cell-h=r@"><time>@Jul 14, 2013 10:52 PM (GMT)</time></td><td class="cell-GNv9">38K</td></tr><tr id="1c99749e-5991-45db-85b3-c6c944fa123c"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Licklider Libraries of the Future pdf.html">Licklider - Libraries of the Future.pdf</a></td><td class="cell-h=r@"><time>@Aug 27, 2013 11:22 AM (GMT)</time></td><td class="cell-GNv9">8.7M</td></tr><tr id="cfc89a88-fd36-4531-88fa-7acf6574a2bf"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Licklider Online Man Computer Communication pdf.html">Licklider - Online Man-Computer Communication.pdf</a></td><td class="cell-h=r@"><time>@Jun 24, 2014 9:38 AM (GMT)</time></td><td class="cell-GNv9">4.3M</td></tr><tr id="8a610667-0480-47ed-890e-b12ae6d40cde"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Lockhart MathematiciansLament pdf.html">Lockhart-MathematiciansLament.pdf</a></td><td class="cell-h=r@"><time>@Aug 04, 2013 6:39 PM (GMT)</time></td><td class="cell-GNv9">391K</td></tr><tr id="ab390b38-64cc-42e4-a0f6-849c61ce81da"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Ludolph The Fabrik Programming Environment pdf.html">Ludolph - The Fabrik Programming Environment.pdf</a></td><td class="cell-h=r@"><time>@Jul 25, 2018 9:11 AM (GMT)</time></td><td class="cell-GNv9">1.5M</td></tr><tr id="09b3fce0-9b82-48b6-b4d1-5fdaa4639360"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Mason When is a Symbol Symbolic pdf.html">Mason - When is a Symbol Symbolic.pdf</a></td><td class="cell-h=r@"><time>@Jan 12, 2014 10:02 PM (GMT)</time></td><td class="cell-GNv9">689K</td></tr><tr id="42b7f01d-c09e-428d-99e0-f97d821b64f4"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Maxwell Tracing the Dynabook pdf.html">Maxwell - Tracing the Dynabook.pdf</a></td><td class="cell-h=r@"><time>@May 25, 2017 7:12 PM (GMT)</time></td><td class="cell-GNv9">2.6M</td></tr><tr id="a38f9fd3-d5b2-4bfb-8ab9-766094a290ca"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Mead American Spectator Interview html.html">Mead - American Spectator Interview.html</a></td><td class="cell-h=r@"><time>@Feb 15, 2016 12:02 AM (GMT)</time></td><td class="cell-GNv9">47K</td></tr><tr id="8faf98c8-3de6-492c-a463-2004e5de74b0"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Mead Gene Youngblood Interview pdf.html">Mead - Gene Youngblood Interview.pdf</a></td><td class="cell-h=r@"><time>@Jan 07, 2014 8:12 PM (GMT)</time></td><td class="cell-GNv9">6.0M</td></tr><tr id="af5faff7-ead2-4a9a-b04a-9f4af7453c3e"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Mead Oral History Cohen pdf.html">Mead - Oral History Cohen.pdf</a></td><td class="cell-h=r@"><time>@Dec 02, 2015 10:57 AM (GMT)</time></td><td class="cell-GNv9">1.2M</td></tr><tr id="8322d786-0d3d-4827-9646-66c0b865b91a"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Mead The Nature of Light What are Photons pdf.html">Mead - The Nature of Light - What are Photons..pdf</a></td><td class="cell-h=r@"><time>@Mar 07, 2015 8:06 PM (GMT)</time></td><td class="cell-GNv9">197K</td></tr><tr id="23464004-04da-4f6f-a12f-de8f25db668a"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Meijer Functional Programming with Bananas Lenses .html">Meijer - Functional Programming with Bananas, Lenses, Envelopes and Barbed Wire.pdf</a></td><td class="cell-h=r@"><time>@Jun 24, 2014 9:38 AM (GMT)</time></td><td class="cell-GNv9">260K</td></tr><tr id="0f5cff09-df17-4514-9a55-64b5dbd6461e"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Minsky Steps Toward Artificial Intelligence pdf.html">Minsky - Steps Toward Artificial Intelligence.pdf</a></td><td class="cell-h=r@"><time>@May 15, 2014 1:14 PM (GMT)</time></td><td class="cell-GNv9">5.8M</td></tr><tr id="c99b5f02-767b-4121-9ac9-f7b5e9365963"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Minsky Why programming is a good medium for expres.html">Minsky - Why programming is a good medium for expressing poorly understood and sloppily-formulated ideas.pdf</a></td><td class="cell-h=r@"><time>@Aug 27, 2013 11:22 AM (GMT)</time></td><td class="cell-GNv9">85K</td></tr><tr id="0224131a-88e6-412e-b4a2-527db2c1e148"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Negroponte Seek pdf.html">Negroponte - Seek.pdf</a></td><td class="cell-h=r@"><time>@Mar 13, 2019 10:43 AM (GMT)</time></td><td class="cell-GNv9">11M</td></tr><tr id="7b349f77-0f1f-4907-a4a1-88cfd12dd85e"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Nelson City Building Education pdf.html">Nelson - City Building Education.pdf</a></td><td class="cell-h=r@"><time>@Mar 13, 2019 11:25 AM (GMT)</time></td><td class="cell-GNv9">230M</td></tr><tr id="5736b016-92f4-4d42-9af4-a94343e9f22f"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Nelson ComputerLibDreamMachines1975 pdf.html">Nelson-ComputerLibDreamMachines1975.pdf</a></td><td class="cell-h=r@"><time>@Aug 09, 2013 6:07 PM (GMT)</time></td><td class="cell-GNv9">14M</td></tr><tr id="0c52c6c1-4dc0-4670-b7cb-668554e0d2c0"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Nelson Inform 7 The Program pdf.html">Nelson - Inform 7 - The Program.pdf</a></td><td class="cell-h=r@"><time>@Mar 13, 2019 10:41 AM (GMT)</time></td><td class="cell-GNv9">488K</td></tr><tr id="17ba14d6-b142-417c-aa8f-e46a4c24b469"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Nelson Prompter A Domain Speci c Language for Vers.html">Nelson - Prompter - A Domain-Speci!c Language for Versu.pdf</a></td><td class="cell-h=r@"><time>@Feb 06, 2017 1:02 PM (GMT)</time></td><td class="cell-GNv9">563K</td></tr><tr id="a0cb5f63-1a93-4a17-8a20-54cee28f275b"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Nelson The Crafting of Media pdf.html">Nelson - The Crafting of Media.pdf</a></td><td class="cell-h=r@"><time>@Mar 13, 2019 10:36 AM (GMT)</time></td><td class="cell-GNv9">1.4M</td></tr><tr id="e2672753-f6fd-4c26-84ea-23260a4be32e"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Ong The Writer s Audience is Always a Fiction pdf.html">Ong - The Writer&#x27;s Audience is Always a Fiction.pdf</a></td><td class="cell-h=r@"><time>@May 16, 2017 9:24 PM (GMT)</time></td><td class="cell-GNv9">2.2M</td></tr><tr id="0094f17e-fac1-4d22-a584-022ec1327996"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Papert Beyond The Cognitive pdf.html">Papert - Beyond The Cognitive.pdf</a></td><td class="cell-h=r@"><time>@Jan 28, 2014 10:18 AM (GMT)</time></td><td class="cell-GNv9">5.2M</td></tr><tr id="015671f7-e3b7-4a33-9206-ea450a552c6e"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Papert Mindstorms 1st ed pdf.html">Papert - Mindstorms 1st ed.pdf</a></td><td class="cell-h=r@"><time>@Oct 02, 2017 7:58 PM (GMT)</time></td><td class="cell-GNv9">2.5M</td></tr><tr id="17bf43c8-cd13-4512-a51e-8804580fb479"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Papert Whats the Big Idea pdf.html">Papert - Whats the Big Idea.pdf</a></td><td class="cell-h=r@"><time>@Jan 11, 2014 8:08 PM (GMT)</time></td><td class="cell-GNv9">243K</td></tr><tr id="95e44ef1-7211-4782-87ce-9c4bfe924510"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Postman Five Things We Need to Know About Technolo.html">Postman - Five Things We Need to Know About Technological Change.pdf</a></td><td class="cell-h=r@"><time>@May 19, 2014 3:21 PM (GMT)</time></td><td class="cell-GNv9">106K</td></tr><tr id="8c6e2b34-5ea4-4fe4-b8ce-c3c7d72b8fd7"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Schmandt The Intelligent Voice lnteractive Interfa.html">Schmandt - The Intelligent Voice-lnteractive Interface.pdf</a></td><td class="cell-h=r@"><time>@Dec 29, 2017 4:49 PM (GMT)</time></td><td class="cell-GNv9">567K</td></tr><tr id="1d7bb753-d23d-4a57-b4e8-020d980d340d"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Scientific American September 1966 pdf.html">Scientific American, September, 1966.pdf</a></td><td class="cell-h=r@"><time>@Jul 30, 2018 10:59 PM (GMT)</time></td><td class="cell-GNv9">29M</td></tr><tr id="f197a56a-8cfa-4e74-bcd4-9d5881fedd4b"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Shannon The Bandwagon pdf.html">Shannon - The Bandwagon.pdf</a></td><td class="cell-h=r@"><time>@Jan 30, 2016 6:55 PM (GMT)</time></td><td class="cell-GNv9">111K</td></tr><tr id="ad8329e7-ad05-45cb-8440-dd46ea3e7a50"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Sibum Reworking the Mechanical Value of Heat pdf.html">Sibum - Reworking the Mechanical Value of Heat.pdf</a></td><td class="cell-h=r@"><time>@Jul 25, 2018 9:12 AM (GMT)</time></td><td class="cell-GNv9">2.6M</td></tr><tr id="f29dbeea-14ad-4ce4-9cea-24829faedaaf"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Sussman Building Robust Systems pdf.html">Sussman - Building Robust Systems.pdf</a></td><td class="cell-h=r@"><time>@Aug 27, 2013 11:22 AM (GMT)</time></td><td class="cell-GNv9">186K</td></tr><tr id="4902e3a4-7db3-4f45-9345-0e25c7919998"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Sussman Robust Design through Diversity pdf.html">Sussman - Robust Design through Diversity.pdf</a></td><td class="cell-h=r@"><time>@Mar 05, 2014 11:16 PM (GMT)</time></td><td class="cell-GNv9">5.2K</td></tr><tr id="70f5581a-ae1a-4a48-8a25-6da465f33a0a"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Sutherland Sketchpad Report pdf.html">Sutherland - Sketchpad Report.pdf</a></td><td class="cell-h=r@"><time>@Aug 27, 2013 11:32 AM (GMT)</time></td><td class="cell-GNv9">4.1M</td></tr><tr id="234085fd-6dcb-42f9-911f-86f843cc2472"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Sutherland Technology and Courage pdf.html">Sutherland - Technology and Courage.pdf</a></td><td class="cell-h=r@"><time>@Nov 03, 2014 3:32 PM (GMT)</time></td><td class="cell-GNv9">61K</td></tr><tr id="de7b1704-1e4f-4e39-b3f5-eb3dd4eaba06"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Sutherland The Ultimate Display pdf.html">Sutherland - The Ultimate Display.pdf</a></td><td class="cell-h=r@"><time>@Jul 06, 2014 7:43 PM (GMT)</time></td><td class="cell-GNv9">128K</td></tr><tr id="e7827d98-ab59-4621-8d38-537b00d7c467"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Sutherland Tyranny of the Clock pdf.html">Sutherland - Tyranny of the Clock.pdf</a></td><td class="cell-h=r@"><time>@Aug 27, 2013 11:26 AM (GMT)</time></td><td class="cell-GNv9">68K</td></tr><tr id="7427243d-487f-44bd-aaa0-6972b2f8a760"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Teitelman The Cedar Programming Environment A Midt.html">Teitelman - The Cedar Programming Environment, A Midterm Report and Examination.pdf</a></td><td class="cell-h=r@"><time>@Sep 02, 2015 3:30 PM (GMT)</time></td><td class="cell-GNv9">13M</td></tr><tr id="917ef882-12f3-4f40-98d7-ae438294dd6d"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Thurston Mathematical Education pdf.html">Thurston - Mathematical Education.pdf</a></td><td class="cell-h=r@"><time>@Nov 15, 2013 4:40 PM (GMT)</time></td><td class="cell-GNv9">119K</td></tr><tr id="275482cb-de73-4268-9bf7-3aa1ddfee288"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Wadge Lucid the Dataflow Programming Language pdf.html">Wadge - Lucid, the Dataflow Programming Language.pdf</a></td><td class="cell-h=r@"><time>@Mar 19, 2015 3:56 PM (GMT)</time></td><td class="cell-GNv9">1.1M</td></tr><tr id="a9d42be9-d466-4fbd-a18c-b0e087d74e12"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Waychoff Stories about the B5000 and people who we.html">Waychoff - Stories about the B5000 and people who were there.pdf</a></td><td class="cell-h=r@"><time>@Jan 22, 2019 2:40 PM (GMT)</time></td><td class="cell-GNv9">3.9M</td></tr><tr id="73f4eb92-61d4-4380-bf26-958f646bb1dd"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/Weiser The Computer for the 21st Century pdf.html">Weiser - The Computer for the 21st Century.pdf</a></td><td class="cell-h=r@"><time>@Apr 17, 2016 12:06 AM (GMT)</time></td><td class="cell-GNv9">2.3M</td></tr><tr id="e62103ff-6d27-4627-8878-9b44a72a418b"><td class="cell-title"><a href="Bret Victor Reading List/Untitled Database/diSessa Knowledge in Pieces pdf.html">diSessa - Knowledge in Pieces.pdf</a></td><td class="cell-h=r@"><time>@Dec 05, 2013 8:54 AM (GMT)</time></td><td class="cell-GNv9">1.0M</td></tr></tbody></table></div><p id="143caed8-acd1-4a04-9554-eebfa645141a" class="">Apache/2.4.18 (Ubuntu) Server at worrydream.com Port 80</p></div></article></body></html>

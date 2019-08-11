@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Become a Missile, Again</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="c4db8c51-0f46-4ea9-ab96-81abf106c790" class="page sans"><header><h1 class="page-title">Become a Missile, Again</h1></header><div class="page-body"><p id="3b9dcf29-75c3-4f0b-b5b3-cdd00f8874be" class="block-color-gray"><a href="https://www.howitactuallyworks.com/archives/become_a_missile_again.html?ck_subscriber_id=398225933">https://www.howitactuallyworks.com/archives/become_a_missile_again.html?ck_subscriber_id=398225933</a></p><p id="23534a51-cb5b-4973-9898-955c0442de65" class="">
+</p><p id="ef7cfeca-bc7e-421a-8b65-fde59dba133f" class="">This was originally published in my weekly newsletter, <a href="https://howitactuallyworks.com/"><em>How It Actually Works</em></a>.</p><p id="94ba49b3-88fb-4546-ac99-efa81181315d" class="">Good morning,</p><p id="3ffd39f8-df27-4c32-b462-e729123b1659" class="">Happy 50th anniversary of us walking on the Moon. I highly recommend you watch the recent <a href="https://www.amazon.com/Apollo-11-Todd-Douglas-Miller/dp/B07RDY2QF1">Apollo 11 documentary</a> that came out this year.</p><p id="9fac2e0c-ffab-4c83-9f79-257de2c6a18d" class="">Trevor</p><p id="4932fdbc-64be-469a-ac48-78d76ad048c6" class="">Have You Forgot?</p><p id="da9eb281-a9ae-45c3-abb1-92f001839b68" class=""><mark class="highlight-yellow_background"><strong>WE ALL WANT SOMETHING that we don’t have.</strong></mark></p><p id="33fa2a40-b8f0-4ea2-888d-6328c17faf99" class="">We want to start a successful business, but we don’t talk to customers.</p><p id="7c9254cf-26c9-4119-8a0d-d73ebab5b4ad" class="">We want to get fit, but we don’t exercise and we eat crap.</p><p id="865db409-2147-407a-a844-17486612f595" class="">We want to date interesting people, but we don’t ask them out.</p><p id="62388ef5-2220-4d81-9631-5c70fd367377" class="block-color-yellow_background"><strong>Every day, every minute, hell… right this second. We aren’t doing the thing we say we want.</strong></p><p id="db6a9403-03d4-4822-aae9-7ce648bf796f" class="block-color-yellow_background"><strong>WHY NOT?</strong></p><p id="a868c42f-4065-4ee3-b3b9-b3d2205ef453" class=""><strong>Why do we mentally struggle and kill ourselves, imputing desire into our brains and emotions, and then do NOTHING.</strong></p><p id="a5a760a3-e12b-4804-9911-a88c2778d584" class=""><strong>We dream, we think, we plan, we research, we write emails, we </strong><strong><a href="https://www.howitactuallyworks.com/archives/future_you_masturbation.html">Future You Masturbate</a></strong><strong>… we mentally see how we want to be, but nothing changes.</strong></p><p id="6d431689-6c31-41bd-82c9-7137ed714d84" class="">WHY NOT?</p><p id="b7f80d1a-3c3b-4604-a8f3-591bc595b820" class=""><strong><mark class="highlight-yellow_background">You </mark></strong><strong><mark class="highlight-yellow_background"><em>have</em></mark></strong><strong><mark class="highlight-yellow_background"> done hard things before.</mark></strong></p><p id="ccf7cc7a-68a1-4274-b63a-92886b91f086" class="">You’ve accomplished goals, kept promises to yourself in the past.</p><p id="65602d15-1d6a-4093-8e6d-bc4d1aacc27c" class="">That test in college you studied for 3 days and aced, or that half marathon you trained for and successful finished.</p><p id="297dc75a-823c-494c-9fa9-b6632284d3d9" class="">We’ve all accomplished hard things. So what’s wrong with us now?</p><p id="d14e24f0-4019-413d-8dc4-2d73b2ebab74" class=""><strong>We’ve forgotten a simple truth: you have to want it more than anything else in the world.</strong></p><p id="3cff9f3b-6529-41be-a41e-ce47ea1f1f55" class="">You remember that burning desire?</p><p id="faec52c0-c2af-4c97-b4c5-a79e53ec9169" class="">Of telling yourself I AM GOING TO DO IT and then by god obstacles were removed, personal motivation was trivial, and you went out and just did it.</p><p id="fb37d7e4-35fb-46da-a01b-dcc04a50b876" class="">Sacrifices? What are those…? You wanted the thing you got more than the things you lost.</p><p id="4ed29475-5b56-466a-b5f3-98602c52d826" class="">THAT’S WHY YOU IGNORED THEM.</p><p id="eb58c69c-755c-4fa9-9753-f5fc48ade5c9" class=""><mark class="highlight-yellow_background"><strong>You’ve got to rediscover the fire that sets you alive, that cloud of dreams that wasn’t motivation, but compulsion.</strong></mark></p><p id="061940ea-4706-432b-b93d-686165020bbd" class="">That told you “I’m going to do this so GTFO of my way”.</p><p id="bd9542f4-efa8-4013-bb79-b6da6c50b66d" class="">I’m studying.</p><p id="7d1f585f-263a-4f23-b10b-e4101027cea6" class="">I’m running.</p><p id="52fd3e31-e35e-42e3-b2b9-2cffd5e35abd" class="">I’m working.</p><p id="433b2cac-aab2-4b55-bbf7-25424ce6892c" class="">I’m practicing.</p><p id="cb746ed5-e895-4a20-b987-edfe7d382aaa" class="">I’m not eating shit.</p><p id="bb2a377b-57da-4f7c-81d9-af2db0fa0bce" class="">So anyone and anything that’s going to get in my way: BE GONE.</p><p id="49f447a1-9a4a-499c-ac65-0c2144ba7ebf" class="">I am a heat-seeking missile and am locked on to my target.</p><p id="7f4d7159-2732-498d-870a-8f882954d724" class=""><mark class="highlight-yellow_background"><strong>Become a missile again. You exercise because that is who you are. That is what you are about.</strong></mark></p><p id="9452d744-683a-45b9-b2c9-c8e3406797a1" class=""><strong>Once your so-called goal is part of your identity you just do it.</strong></p><p id="3237a0b7-8af4-4db2-9db4-807e926e62fc" class=""><strong>Transform your identity &amp; your purpose for being around your goal. That is what will melt away the obstacles, and fill your soul with infinite motivation.</strong></p><p id="a8d66e1b-44f6-44f7-8ae0-a9f73b617b63" class="">This was originally published in my weekly newsletter, <a href="https://howitactuallyworks.com/"><em>How It Actually Works</em></a>.</p><h2 id="e8ce8685-c347-4162-9e70-875dee927de3" class="">The Links</h2><p id="95e58421-b834-4bef-9f1a-0ea01b999db1" class="">&quot;1. It&#x27;s <em>astonishing</em> to me that the mission actually succeeded.</p><p id="815d3322-ae5b-427b-b95f-6601cc22cc23" class="">“It would be an ambitious project <em>today</em>. But 50 years ago, so many new things had to be invented. And it all went mostly right??</p><p id="2603b825-acbb-4ef5-a537-c5a06fde3fd3" class="">“400,000 people worked on the project. The complexity is just staggering.”</p><p id="3f79f995-c7b9-4a3a-8a11-474c63f6ec6b" class="">And “IMO the project didn&#x27;t justify itself <em>scientifically</em>. But it was an unparalleled <em>aesthetic</em> achievement.”</p><p id="48f83d3c-cad3-43f6-a2da-1d00e8d56467" class="">“They discuss fame, the effect of social media, the changing state of comedy, offensive jokes, Louis CK, political hypocrisy, Brexit and Trump, the state of journalism, and other topics.”</p><p id="6488fbe1-310c-4e33-83df-b47bb0a4589c" class="">A classic:</p><p id="180ac3ae-321f-4fd6-ac87-7aae8f6bdbd4" class="">“Your answer is irrelevant, the important part is that whatever your answer, it is founded on the assumption that ads have the authority to set standards. Which is why, in your broken brain, the reflex is to complain about the contents of the ad, not assert the insignificance of ads.”</p><p id="3ae38887-58b1-4593-9070-35a1bd9e750e" class="">This is why I think – totally without irony – it’s insane we let the Simpsons determine emoji color choices.</p><p id="4d7c79d7-4ade-4dd4-b8a8-a10c5eed857d" class="">“The bicycle, as we know it today, was not invented until the late 1800s. Yet it was a simple mechanical invention. It would seem to require no brilliant inventive insight, and certainly no scientific background. Why, then, wasn’t it invented much earlier?”</p><p id="06460bd2-c8bc-496f-ade4-5c1f1c069d55" class="">Read the <a href="https://www.howitactuallyworks.com/archives/">archives here</a>.</p></div></article></body></html>

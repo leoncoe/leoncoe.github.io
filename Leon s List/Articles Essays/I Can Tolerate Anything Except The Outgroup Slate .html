@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>I Can Tolerate Anything Except The Outgroup | Slate Star Codex</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2f2ad53e-45b8-4111-8385-b1c10d9e829d" class="page sans"><header><h1 class="page-title">I Can Tolerate Anything Except The Outgroup | Slate Star Codex</h1></header><div class="page-body"><p id="a93f1c0d-7273-4d5a-83f6-420fab40e9ce" class="block-color-gray"><a href="https://slatestarcodex.com/2014/09/30/i-can-tolerate-anything-except-the-outgroup/">https://slatestarcodex.com/2014/09/30/i-can-tolerate-anything-except-the-outgroup/</a></p><p id="04eb7867-c56d-4631-a16a-5ec899d55a1d" class="">
+</p><p id="d7e62b92-244c-4749-80f0-39f3162a95a1" class=""><strong>I.</strong></p><p id="86bb9148-4028-4e4f-af0f-d6f2efe2ddcd" class="">In Chesterton’s <a href="https://www.amazon.com/Secret-Father-Brown-ebook/dp/B003XYE7YU/ref=as_li_ss_tl?_encoding=UTF8&amp;redirect=true&amp;ref_=as_li_tl&amp;linkCode=ll1&amp;tag=slatestarcode-20&amp;linkId=80cee7fc381622e3e77edf8f12fdb13d"><em>The Secret of Father Brown</em></a>, a beloved nobleman who murdered his good-for-nothing brother in a duel thirty years ago returns to his hometown wracked by guilt. All the townspeople want to forgive him immediately, and they mock the titular priest for only being willing to give a measured forgiveness conditional on penance and self-reflection. They lecture the priest on the virtues of charity and compassion.</p><p id="c4223359-24ed-401e-9670-6084f743f685" class="">Later, it comes out that the beloved nobleman did <em>not</em> in fact kill his good-for-nothing brother. The good-for-nothing brother killed the beloved nobleman (and stole his identity). <em>Now</em> the townspeople want to see him lynched or burned alive, and it is only the priest who – consistently – offers a measured forgiveness conditional on penance and self-reflection.</p><p id="789be8d8-b278-46f6-8446-9245e59f2f4b" class="">The priest tells them:</p><blockquote id="c900edef-a7ba-4489-b850-be88bf8144ba" class="">It seems to me that you only pardon the sins that you don’t really think sinful. You only forgive criminals when they commit what you don’t regard as crimes, but rather as conventions. You forgive a conventional duel just as you forgive a conventional divorce. You forgive because there isn’t anything to be forgiven.</blockquote><p id="59ba352e-22ad-4272-8c98-2bd18b2c39a6" class="">He further notes that this is why the townspeople can self-righteously consider themselves more compassionate and forgiving than he is. Actual forgiveness, the kind the priest needs to cultivate to forgive evildoers, is really really hard. The fake forgiveness the townspeople use to forgive the people they like is really easy, so they get to boast not only of their forgiving nature, but of how much nicer they are than those mean old priests who find forgiveness difficult and want penance along with it.</p><p id="94b107c6-664e-4f5a-b9ad-2223ffdaa003" class="">After some thought I agree with Chesterton’s point. There are a lot of people who say “I forgive you” when they mean “No harm done”, and a lot of people who say “That was unforgiveable” when they mean “That was genuinely really bad”. Whether or not forgiveness is <em>right</em> is a complicated topic I do not want to get in here. But since forgiveness is generally considered a virtue, and one that many want credit for having, I think it’s fair to say you only earn the right to call yourself ‘forgiving’ if you forgive things that genuinely hurt you.</p><p id="cabc5030-0f18-4e94-96a3-23c8e5e27d4e" class="">To borrow Chesterton’s example, if you think divorce is a-ok, then you don’t get to “forgive” people their divorces, you merely ignore them. Someone who thinks divorce is abhorrent can “forgive” divorce. <em>You</em> can forgive theft, or murder, or tax evasion, or something <em>you</em> find abhorrent.</p><p id="2a2e2b01-7e37-4733-93e9-bf0125e6dc29" class="">I mean, from a utilitarian point of view, you are still doing the correct action of not giving people grief because they’re a divorcee. You can have all the Utility Points you want. All I’m saying is that if you “forgive” something you don’t care about, you don’t earn any Virtue Points.</p><p id="22be04ca-05a8-47d4-9e4f-320d95aa0210" class="">(by way of illustration: a billionaire who gives $100 to charity gets as many Utility Points as an impoverished pensioner who donates the same amount, but the latter gets a lot more Virtue Points)</p><p id="4132b81c-36f3-4df4-8bbe-80be43dab61d" class="">Tolerance is also considered a virtue, but it suffers the same sort of dimished expectations forgiveness does.</p><p id="58615208-b8b1-4bfd-a475-97fe2acab162" class="">The Emperor <a href="http://poetrychina.net/Story_of_Zen/zenstory3a.htm">summons before him</a> Bodhidharma and asks: “Master, I have been tolerant of innumerable gays, lesbians, bisexuals, asexuals, blacks, Hispanics, Asians, transgender people, and Jews. How many Virtue Points have I earned for my meritorious deeds?”</p><p id="8927183e-a825-4cdc-99a4-531da43b943e" class="">Bodhidharma answers: “None at all”.</p><p id="a10d43e3-06bd-4080-9da5-4cc531390e9d" class="">The Emperor, somewhat put out, demands to know why.</p><p id="7d8b289c-3e3f-4bd6-aaff-8de2b0876351" class="">Bodhidharma asks: “Well, what do you think of gay people?”</p><p id="e2f18934-7d97-4e43-8744-3ae8f932683a" class="">The Emperor answers: “What do you think I am, some kind of homophobic bigot? Of course I have nothing against gay people!”</p><p id="fe57b09c-5d6f-420b-8cab-0ab55cc91687" class="">And Bodhidharma answers: “Thus do you gain no merit by tolerating them!”</p><p id="78d1799f-034a-4742-951f-0f4a5e1c1259" class=""><strong>II.</strong></p><p id="198c2e16-f7e4-4647-ac1f-817ed16235a8" class="">If I had to define “tolerance” it would be something like “respect and kindness toward members of an outgroup”.</p><p id="eb3706b4-1e68-4f62-9897-715e390c6d84" class="">And today we have an almost unprecedented situation.</p><p id="0fb0a801-47af-40d9-b4e8-ce8fa2c26af6" class="">We have a lot of people – like the Emperor – boasting of being able to tolerate everyone from every outgroup they can imagine, loving the outgroup, writing long paeans to how great the outgroup is, staying up at night fretting that somebody else might not like the outgroup enough.</p><p id="42f1cc44-951c-4909-8208-dd179518e5f5" class="">This is really surprising. It’s a total reversal of everything we know about human psychology up to this point. No one did any genetic engineering. No one passed out weird glowing pills in the public schools. And yet suddenly we get an entire group of people who conspicuously promote and defend their outgroups, the outer the better.</p><p id="89a19e0a-a58f-4257-90fd-f38521174016" class="">What is going on here?</p><p id="d5b88b5a-077d-4415-b0c8-a31e98fb24d8" class="">Let’s start by asking what exactly an outgroup is.</p><p id="d19d2684-d635-453c-bcaa-44fb2ce680c3" class="">There’s a very boring sense in which, assuming the Emperor’s straight, gays are part of his “outgroup” ie a group that he is not a member of. But if the Emperor has curly hair, are straight-haired people part of his outgroup? If the Emperor’s name starts with the letter ‘A’, are people whose names start with the letter ‘B’ part of his outgroup?</p><p id="0af9b23a-d040-40f3-bb50-47b7adb06cbb" class="">Nah. I would differentiate between multiple different meanings of outgroup, where one is “a group you are not a part of” and the other is…something stronger.</p><p id="f864c793-1d5d-4b2f-9b48-fc1b9245cfd7" class="">I want to avoid a very easy trap, which is saying that outgroups are about how different you are, or how hostile you are. I don’t think that’s quite right.</p><p id="2be4facb-61a6-46c1-aa92-b8e578157f34" class="">Compare the Nazis to the German Jews and to the Japanese. The Nazis were very similar to the German Jews: they looked the same, spoke the same language, came from a similar culture. The Nazis were totally different from the Japanese: different race, different language, vast cultural gap. But the Nazis and Japanese mostly got along pretty well. Heck, the Nazis were actually moderately positively disposed to the <em>Chinese</em>, even when they were technically at war. Meanwhile, the conflict between the Nazis and the German Jews – some of whom didn’t even realize they were anything other than German until they checked their grandparents’ birth certificate – is the stuff of history and nightmares. Any theory of outgroupishness that naively assumes the Nazis’ natural outgroup is Japanese or Chinese people will be totally inadequate.</p><p id="7d8468cf-4c9e-4fb9-8ccf-47a25eb24929" class="">And this isn’t a weird exception. Freud spoke of <a href="http://en.wikipedia.org/wiki/Narcissism_of_small_differences">the narcissism of small differences</a>, saying that “it is precisely communities with adjoining territories, and related to each other in other ways as well, who are engaged in constant feuds and ridiculing each other”. Nazis and German Jews. Northern Irish Protestants and Northern Irish Catholics. Hutus and Tutsis. South African whites and South African blacks. Israeli Jews and Israeli Arabs. Anyone in the former Yugoslavia and anyone else in the former Yugoslavia.</p><p id="67b3842f-adf0-4b0d-be7c-cdafeb7f9c86" class="">So what makes an outgroup? Proximity plus small differences. If you want to know who someone in former Yugoslavia hates, don’t look at the Indonesians or the Zulus or the Tibetans or anyone else distant and exotic. Find the Yugoslavian ethnicity that lives closely intermingled with them and is most conspicuously similar to them, and chances are you’ll find the one who they have eight hundred years of seething hatred toward.</p><p id="4652e98a-f85d-40da-8625-72221ef6877b" class="">What makes an unexpected in-group? The answer with Germans and Japanese is obvious – a strategic alliance. In fact, the World Wars forged a lot of unexpected temporary pseudo-friendships. <a href="http://pando.com/2014/02/12/war-nerd-the-long-sleazy-history-behind-a-googlers-nonviolent-militia/">A recent article from War Nerd</a>points out that the British, after spending centuries subjugating and despising the Irish and Sikhs, suddenly needed Irish and Sikh soldiers for World Wars I and II respectively. “Crush them beneath our boots” quickly changed to fawning songs about how “there never was a coward where the shamrock grows” and endless paeans to Sikh military prowess.</p><p id="695e6e5e-6b63-4813-aec9-f2019d54be59" class="">Sure, scratch the paeans even a little bit and you find condescension as strong as ever. But eight hundred years of the British committing genocide against the Irish and considering them literally subhuman turned into smiles and songs about shamrocks once the Irish started looking like useful cannon fodder for a larger fight. And the Sikhs, dark-skinned people with turbans and beards who pretty much exemplify the European stereotype of “scary foreigner”, were lauded by everyone from the news media all the way up <a href="https://www.youtube.com/watch?v=--OAScn5NcI">to Winston Churchill</a>.</p><p id="eb917dcc-ba5a-4800-8c11-e759870fc068" class="">In other words, outgroups may be the people who look exactly like you, and scary foreigner types can become the in-group on a moment’s notice when it seems convenient.</p><p id="5f6c3d86-9a6e-4783-9c4d-5aa756046814" class=""><strong>III.</strong></p><p id="cc99e50d-d0b5-48ee-a268-c56ff95c4a4d" class="">There are certain theories of dark matter where it barely interacts with the regular world <em>at all</em>, such that we could have a dark matter planet exactly co-incident with Earth and never know. Maybe dark matter people are walking all around us and through us, maybe my house is in the Times Square of a great dark matter city, maybe a few meters away from me a dark matter blogger is writing on his dark matter computer about how weird it would be if there was a light matter person he couldn’t see right next to him.</p><p id="5dd83b10-6df5-4059-b83e-e882d81c31b0" class="">This is sort of how I feel about conservatives.</p><p id="ad3d79be-d21f-4371-af71-824a930c9c89" class="">I don’t mean the sort of light-matter conservatives who go around complaining about Big Government and occasionally voting for Romney. I see those guys all the time. What I mean is – well, take creationists. According to <a href="http://www.gallup.com/poll/155003/Hold-Creationist-View-Human-Origins.aspx">Gallup polls</a>, about 46% of Americans are creationists. Not just in the sense of believing God helped guide evolution. I mean they think evolution is a vile atheist lie and God created humans exactly as they exist right now. That’s half the country.</p><p id="03eb6d22-25f1-4bba-9ae1-de963ba1de02" class="">And I don’t have a <em>single one of those people</em> in my social circle. It’s not because I’m deliberately avoiding them; I’m pretty live-and-let-live politically, I wouldn’t ostracize someone just for some weird beliefs. And yet, even though I <a href="http://en.wikipedia.org/wiki/Dunbar%27s_number">probably</a> know about a hundred fifty people, I am pretty confident that not one of them is creationist. Odds of this happening by chance? 1/2^150 = 1/10^45 = approximately the chance of picking a particular atom if you are randomly selecting among all the atoms on Earth.</p><p id="eb7a3d06-4dd5-4e7f-9340-165a57320c78" class="">About forty percent of Americans want to ban gay marriage. I think if I <em>really</em> stretch it, maybe ten of my top hundred fifty friends might fall into this group. This is less astronomically unlikely; the odds are a mere one to one hundred quintillion against.</p><p id="c6447f74-d679-47ad-8f3b-8a84f4c47db7" class="">People like to talk about social bubbles, but that doesn’t even begin to cover one hundred quintillion. The only metaphor that seems really appropriate is the bizarre dark matter world.</p><p id="cb6a32fc-80a5-4c56-b6dc-f33befcf3ea5" class="">I live in a Republican congressional district in a state with a Republican governor. The conservatives are definitely out there. They drive on the same roads as I do, live in the same neighborhoods. But they might as well be made of dark matter. I never meet them.</p><p id="395c4d63-cea5-40da-9241-50e09adc8be5" class="">To be fair, I spend a lot of my time inside on my computer. I’m browsing sites like Reddit.</p><p id="fd650c64-7675-404f-9a54-236b6503f6cf" class="">Recently, there was a thread on Reddit asking – <a href="http://www.reddit.com/r/AskReddit/comments/29uo38/serious_redditors_against_gay_marriage_what_is/">Redditors Against Gay Marriage, What Is Your Best Supporting Argument?</a> A Reddit user who didn’t understand how anybody could be against gay marriage honestly wanted to know how other people who <em>were</em> against it justified their position. He figured he might as well ask one of the largest sites on the Internet, with an estimated user base in the tens of millions.</p><p id="4d7171b6-d173-4b48-bc90-7908f0dc04b6" class="">It soon became clear that nobody there was actually against gay marriage.</p><p id="0f5354c8-be07-4d18-b3f6-2b1562e1f762" class="">There were a bunch of posts saying “I of course support gay marriage but here are some reasons some other people might be against it,” a bunch of others saying “my argument against gay marriage is the government shouldn’t be involved in the marriage business at all”, and several more saying “why would you even ask this question, there’s no possible good argument and you’re wasting your time”. About halfway through the thread someone started saying homosexuality was unnatural and I <em>thought</em> they were going to be the first one to actually answer the question, but at the end they added “But it’s not my place to decide what is or isn’t natural, I’m still pro-gay marriage.”</p><p id="16ac3fb7-0179-4d7e-aa8b-fb28a2273fa0" class="">In a thread with 10,401 comments, a thread <em>specifically</em> asking for people against gay marriage, I was eventually able to find <em>two</em> people who came out and opposed it, way near the bottom. Their posts started with “I know I’m going to be downvoted to hell for this…”</p><p id="ce543ac0-b0e3-445b-b813-fb17486c3c35" class="">But I’m not only on Reddit. I also hang out on LW.</p><p id="33c2f75e-3289-4d5a-8148-42dc7df1ddf5" class="">On last year’s survey, I found that of American LWers who identify with one of the two major political parties, 80% are Democrat and 20% Republican, which actually sounds pretty balanced compared to some of these other examples.</p><p id="f2cb2697-965d-49d3-b1ba-92d6b2b7c23b" class="">But it doesn’t last. Pretty much all of those “Republicans” are libertarians who consider the GOP the lesser of two evils. When allowed to choose “libertarian” as an alternative, only 4% of visitors continued to identify as conservative. But that’s still…some. Right?</p><p id="ba7e37f6-1eac-4503-8438-5cc31144b674" class="">When I broke the numbers down further, 3 percentage points of those are neoreactionaries, a bizarre sect that wants to be ruled by a king. Only <em>one percent</em> of LWers were normal everyday God-‘n-guns-but-not-George-III conservatives of the type that seem to make up about half of the United States.</p><p id="76dcef4d-fe2e-4869-9277-cf0201311b05" class="">It gets worse. My formative years were spent at a university which, if it was similar to other elite universities, had <a href="http://www.washingtonpost.com/wp-dyn/articles/A8427-2005Mar28.html">a faculty</a> and <a href="http://www.thecrimson.com/article/2012/11/5/crimson-presidential-poll-2012/">a student body</a> that skewed about 90-10 liberal to conservative – and we can bet that, like LW, even those few token conservatives are Mitt Romney types rather than God-n’-guns types. I get my news from vox.com, an Official Liberal Approved Site. Even when I go out to eat, it turns out my favorite restaurant, California Pizza Kitchen, is <a href="http://blogs.wsj.com/washwire/2014/05/02/liberals-eat-here-conservatives-eat-there/">the most liberal restaurant in the United States</a>.</p><p id="c0100c90-0fae-4421-91df-24c599360115" class="">I inhabit the same geographical area as <em>scores and scores</em> of conservatives. But without meaning to, I have created an <em>outrageously</em> strong bubble, a 10^45 bubble. Conservatives are all around me, yet I am about as likely to have a serious encounter with one as I am a Tibetan lama.</p><p id="8b12344d-1719-4ae3-9673-efc1579f09f7" class="">(Less likely, actually. One time a Tibetan lama came to my college and gave a really nice presentation, but if a conservative tried that, people would protest and it would be canceled.)</p><p id="9c103b87-567a-4a5a-a86e-957502a763ab" class=""><strong>IV.</strong></p><p id="3647f06c-799e-43b1-b6cf-523ce2a52a1a" class="">One day I realized that entirely by accident I was fulfilling <em>all</em> the Jewish stereotypes.</p><p id="5a833be9-f8ad-4b71-9715-d542a7b18382" class="">I’m nerdy, over-educated, good with words, good with money, weird sense of humor, don’t get outside much, I like deli sandwiches. And I’m a psychiatrist, which is about the most stereotypically Jewish profession short of maybe stand-up comedian or rabbi.</p><p id="68865494-8a7d-4578-a9d5-5be12764f89a" class="">I’m not very religious. And I don’t go to synagogue. But <em>that’s</em> stereotypically Jewish too!</p><p id="75c55da8-d2a8-4841-a188-39404cfcd66b" class="">I bring this up because it would be a mistake to think “Well, a Jewish person is by definition someone who is born of a Jewish mother. Or I guess it sort of also means someone who follows the Mosaic Law and goes to synagogue. But I don’t care about Scott’s mother, and I know he doesn’t go to synagogue, so I can’t gain any useful information from knowing Scott is Jewish.”</p><p id="2f3927fb-85e3-4888-8823-f22c3aeb24d0" class="">The defining factors of Judaism – Torah-reading, synagogue-following, mother-having – are the tip of a giant iceberg. Jews sometimes identify as a “tribe”, and even if you don’t attend synagogue, you’re still a member of that tribe and people can still (in a statistical way) infer things about you by knowing your Jewish identity – like how likely they are to be psychiatrists.</p><p id="db6aa24e-4fd7-41f1-8909-411b6d052c85" class="">The last section raised a question – if people rarely select their friends and associates and customers explicitly for politics, how do we end up with such intense political segregation?</p><p id="cfb5e42d-58de-4f8a-b7bd-6156275a0cca" class="">Well, in the same way “going to synagogue” is merely the iceberg-tip of a Jewish tribe with many distinguishing characteristics, so “voting Republican” or “identifying as conservative” or “believing in creationism” is the iceberg-tip of a conservative tribe with many distinguishing characteristics.</p><p id="cf27da13-99b0-4632-9c5c-03958e983488" class="">A disproportionate number of my friends are Jewish, because I meet them at psychiatry conferences or something – we self-segregate not based on explicit religion but on implicit tribal characteristics. So in the same way, political tribes self-segregate to an impressive extent – a 1/10^45 extent, I will never tire of hammering in – based on their implicit tribal characteristics.</p><p id="6d7257d8-c69b-4e56-b1f9-776be9bfb0c2" class="">The people who are actually into this sort of thing sketch out a bunch of speculative tribes and subtribes, but to make it easier, let me stick with two and a half.</p><p id="25693266-9194-4ec8-9992-d1495bae94c5" class="">The Red Tribe is most classically typified by conservative political beliefs, strong evangelical religious beliefs, creationism, opposing gay marriage, owning guns, eating steak, drinking Coca-Cola, driving SUVs, watching lots of TV, enjoying American football, getting conspicuously upset about terrorists and commies, marrying early, divorcing early, shouting “USA IS NUMBER ONE!!!”, and listening to country music.</p><p id="f18b51f3-b3ce-454f-9823-ec28c9ceed42" class="">The Blue Tribe is most classically typified by liberal political beliefs, vague agnosticism, supporting gay rights, thinking guns are barbaric, eating arugula, drinking fancy bottled water, driving Priuses, reading lots of books, being highly educated, mocking American football, feeling vaguely like they should like soccer but never really being able to get into it, getting conspicuously upset about sexists and bigots, marrying later, constantly pointing out how much more civilized European countries are than America, and listening to “everything except country”.</p><p id="626b9062-8112-4b73-9927-020fe9fe1752" class="">(There is a partly-formed attempt to spin off a Grey Tribe typified by libertarian political beliefs, Dawkins-style atheism, vague annoyance that the question of gay rights even comes up, eating paleo, drinking Soylent, calling in rides on Uber, reading lots of blogs, calling American football “sportsball”, getting conspicuously upset about the War on Drugs and the NSA, and listening to filk – but for our current purposes this is a distraction and they can safely be considered part of the Blue Tribe most of the time)</p><p id="88aa5279-bcc5-4845-ae14-e0a6c6716907" class="">I think these “tribes” will turn out to be even stronger categories than politics. Harvard might skew 80-20 in terms of Democrats vs. Republicans, 90-10 in terms of liberals vs. conservatives, but maybe 99-1 in terms of Blues vs. Reds.</p><p id="2ae13df9-5f7f-4acf-b58f-885c543593fc" class="">It’s the many, many differences between these tribes that explain the strength of the filter bubble – which <em>have I mentioned</em> segregates people at a strength of 1/10^45? Even in something as seemingly politically uncharged as going to California Pizza Kitchen or Sushi House for dinner, I’m restricting myself to the set of people who like cute artisanal pizzas or sophsticated foreign foods, which are classically Blue Tribe characteristics.</p><p id="96a1e540-86f2-4c13-87f7-5c39bc058a44" class="">Are these tribes based on geography? Are they based on race, ethnic origin, religion, IQ, what TV channels you watched as a kid? I don’t know.</p><p id="a5715e5e-1de1-4731-be63-8cfdc27d298e" class="">Some of it is certainly genetic – <a href="https://slatestarcodex.com/2014/09/30/i-can-tolerate-anything-except-the-outgroup/%E2%80%9Dhttp://www.matthewckeller.com/16.Hatemi.et.al.2010.Nuc.fam.ajps.pdf%E2%80%9D">estimates</a> <a href="https://slatestarcodex.com/2014/09/30/i-can-tolerate-anything-except-the-outgroup/%E2%80%9Dhttps://www.apsanet.org/imgtest/GeneticsAPSR0505.pdf%E2%80%9D">of</a> the genetic contribution to political association range from 0.4 to 0.6. Heritability of one’s attitudes toward gay rights range from 0.3 to 0.5, which hilariously is a little more heritable than homosexuality itself.</p><p id="3b8f2470-d8a2-434f-af3a-04b68ca7c62f" class="">(for an interesting attempt to break these down into more rigorous concepts like “traditionalism”, “authoritarianism”, and “in-group favoritism” and find the genetic loading for each <a href="http://www.midus.wisc.edu/findings/pdfs/1287.pdf">see here</a>. For an attempt to trace the specific genes involved, which mostly turn out to be NMDA receptors, <a href="https://slatestarcodex.com/2014/09/30/i-can-tolerate-anything-except-the-outgroup/%E2%80%9Dhttp://ussc.edu.au/s/media/docs/publications/18_Hatemi_et_al_LinkageGW_JOP.pdf%E2%80%9D">see here</a>)</p><p id="311515c6-cc00-4316-865e-726fcc382dc8" class="">But I don’t think it’s just genetics. There’s something else going on too. The word “class” seems like the closest analogue, but only if you use it in the sophisticated Paul Fussell <a href="https://www.amazon.com/Class-Through-American-Status-System/dp/0671792253/ref=as_li_ss_tl?_encoding=UTF8&amp;redirect=true&amp;ref_=as_li_tl&amp;linkCode=ll1&amp;tag=slatestarcode-20&amp;linkId=ae89050500c1fcc0f1d2de1ccb5313ab"><em>Guide Through the American Status System</em></a> way instead of the boring “another word for how much money you make” way.</p><p id="9dd63827-74f3-401e-bf32-ba1a895bd40e" class="">For now we can just accept them as a brute fact – as multiple coexisting societies that might as well be made of dark matter for all of the interaction they have with one another – and move on.</p><p id="1ff49e28-5a16-4100-84cc-f9257b33c10b" class=""><strong>V.</strong></p><p id="1b46450f-0d14-4972-a648-314c172db3de" class="">The worst reaction I’ve ever gotten to a blog post was when <a href="http://squid314.livejournal.com/294986.html">I wrote about</a> the death of Osama bin Laden. I’ve written all sorts of stuff about race and gender and politics and whatever, but that was the worst.</p><p id="f24a03e1-a4e1-40e1-b362-73b5d1f04d62" class="">I didn’t come out and say I was happy he was dead. But some people interpreted it that way, and there followed a bunch of comments and emails and Facebook messages about how could I possibly be happy about the death of another human being, even if he was a bad person? Everyone, even Osama, is a human being, and we should never rejoice in the death of a fellow man. One commenter came out and said:</p><blockquote id="804f6923-ad23-4e5d-9296-8e62a9ffabe3" class="">I’m surprised at your reaction. As far as people I casually stalk on the internet (ie, LJ and Facebook), you are the first out of the “intelligent, reasoned and thoughtful” group to be uncomplicatedly happy about this development and not to be, say, disgusted at the reactions of the other 90% or so.</blockquote><p id="6b93f295-05d3-417b-9045-5e6cd1d08641" class="">This commenter was right. Of the “intelligent, reasoned, and thoughtful” people I knew, the overwhelming emotion was conspicuous disgust that other people could be happy about his death. I hastily backtracked and said I wasn’t happy per se, just surprised and relieved that all of this was finally behind us.</p><p id="8a979a5a-3026-4b81-b0f6-0658911b2d62" class="">And I genuinely believed that day that I had found some unexpected good in people – that everyone I knew was so humane and compassionate that they were unable to rejoice even in the death of someone who hated them and everything they stood for.</p><p id="05b91764-5c99-4389-946c-0b921b7799b1" class="">Then a few years later, Margaret Thatcher died. And on my Facebook wall – made of these same “intelligent, reasoned, and thoughtful” people – the most common response was to quote some portion of the song “Ding Dong, The Witch Is Dead”. Another popular response was to link the videos of British people spontaneously throwing parties in the street, with comments like “I wish I was there so I could join in”. From this exact same group of people, not a single expression of disgust or a “c’mon, guys, we’re all human beings here.”</p><p id="74837dd0-187a-4936-814a-983f624395d4" class="">I <a href="https://slatestarcodex.com/2013/04/12/if-a-clod-be-washed-away-by-the-sea-europe-is-the-less/">gently pointed this out</a> at the time, and mostly got a bunch of “yeah, so what?”, combined with links to an article claiming that “the demand for respectful silence in the wake of a public figure’s death is not just misguided but dangerous”.</p><p id="45d3ced6-a0d1-418c-897a-1320207975dd" class="">And that was when something clicked for me.</p><p id="3265b9ef-493b-4863-83b4-1ef4ae3057cc" class="">You can talk all you want about Islamophobia, but my friend’s “intelligent, reasoned, and thoughtful people” – her name for the Blue Tribe – can’t get together enough energy to really hate Osama, let alone Muslims in general. We understand that what he did was bad, but it didn’t anger us personally. When he died, we were able to very rationally apply our better nature and our Far Mode beliefs about how it’s never right to be happy about anyone else’s death.</p><p id="5184e80d-b4e9-4779-8cd1-e2fb56888317" class="">On the other hand, that same group absolutely <em>loathed</em> Thatcher. Most of us (though <a href="https://slatestarcodex.com/2013/04/12/if-a-clod-be-washed-away-by-the-sea-europe-is-the-less/#comment-3355">not all</a>) can agree, if the question is posed explicitly, that Osama was a worse person than Thatcher. But in terms of actual gut feeling? Osama provokes a snap judgment of “flawed human being”, Thatcher a snap judgment of “scum”.</p><p id="f09362fd-730e-4a1d-ab06-5a0768e0cb91" class="">I started this essay by pointing out that, despite what geographical and cultural distance would suggest, the Nazis’ outgroup was not the vastly different Japanese, but the almost-identical German Jews.</p><p id="836ef49e-efb0-48a5-87cc-6f79fd2fe6b0" class="">And my hypothesis, stated plainly, is that if you’re part of the Blue Tribe, then your outgroup isn’t al-Qaeda, or Muslims, or blacks, or gays, or transpeople, or Jews, or atheists – it’s the Red Tribe.</p><p id="1802ec6a-ab92-49e3-8ae2-7a3ce60199b2" class=""><strong>VI.</strong></p><p id="63412e3c-4b48-476d-8d8e-484cec43e19b" class="">“But racism and sexism and cissexism and anti-Semitism are these giant all-encompassing social factors that verge upon being human universals! Surely you’re not arguing that mere <em>political</em> differences could ever come close to them!”</p><p id="b68da8f4-75dc-4d30-9bdb-65dfd237d04a" class="">One of the ways we <em>know</em> that racism is a giant all-encompassing social factor is the Implicit Association Test. Psychologists ask subjects to quickly identify whether words or photos are members of certain gerrymandered categories, like “either a white person’s face or a positive emotion” or “either a black person’s face and a negative emotion”. Then they compare to a different set of gerrymandered categories, like “either a black person’s face or a positive emotion” or “either a white person’s face or a negative emotion.” If subjects have more trouble (as measured in latency time) connecting white people to negative things than they do white people to positive things, then they probably have subconscious positive associations with white people. You can <a href="https://implicit.harvard.edu/implicit/">try it yourself here</a>.</p><p id="530815db-132b-4dbb-ad03-7495f422aad0" class="">Of course, what the test famously found was that even white people who claimed to have no racist attitudes at all usually had positive associations with white people and negative associations with black people on the test. There are very many claims and counterclaims about the precise meaning of this, but it ended up being a big part of the evidence in favor of the current consensus that all white people are at least a little racist.</p><p id="5ab7e6ab-30aa-40e7-9eaa-8ffd841786e1" class="">Anyway, three months ago, someone finally had the bright idea of <a href="http://pcl.stanford.edu/research/2014/iyengar-ajps-group-polarization.pdf">doing an Implicit Association Test with political parties</a>, and they found that people’s unconscious partisan biases were <em>half again as strong</em> as their unconscious racial biases (h/t <a href="http://www.bloombergview.com/articles/2014-09-22/partyism-now-trumps-racism">Bloomberg</a>. For example, if you are a white Democrat, your unconscious bias against blacks (as measured by something called a d-score) is 0.16, but your unconscious bias against Republicans will be 0.23. The Cohen’s <em>d</em> for racial bias was 0.61, by <a href="http://en.wikipedia.org/wiki/Effect_size#.22Small.22.2C_.22medium.22.2C_.22large.22_effect_sizes">the book</a> a “moderate” effect size; for party it was 0.95, a “large” effect size.</p><p id="d82fe4d8-ff00-4bd4-8f67-fecdaebea961" class="">Okay, fine, but we know race has <em>real world</em> consequences. Like, there have been <a href="https://slatestarcodex.com/2013/04/20/social-justice-for-the-highly-demanding-of-rigor/">several studies</a> where people sent out a bunch of identical resumes except sometimes with a black person’s photo and other times with a white person’s photo, and it was noticed that employers were much more likely to invite the fictional white candidates for interviews. So just some stupid Implicit Association Test results can’t compare to that, right?</p><p id="0300461c-76c0-4bf3-b250-eeb48bcedeb2" class="">Iyengar and Westwood also decided to do the resume test for parties. They asked subjects to decide which of several candidates should get a scholarship (subjects were told this was a genuine decision for the university the researchers were affiliated with). Some resumes had photos of black people, others of white people. And some students listed their experience in Young Democrats of America, others in Young Republicans of America.</p><p id="0d9ba879-6886-4dd8-8ba5-468e4b2596cf" class="">Once again, discrimination on the basis of party was much stronger than discrimination on the basis of race. The size of the race effect for white people was only 56-44 (and in the reverse of the expected direction); the size of the party effect was about 80-20 for Democrats and 69-31 for Republicans.</p><p id="a49f47fd-1986-499d-993c-b591da992f47" class="">If you want to see their third experiment, which applied <em>yet another</em> classic methodology used to detect racism and <em>once again</em> found partyism to be much stronger, you can read the paper.</p><p id="cfadaa08-bc74-48a4-91cc-3f773cc867c6" class="">I &amp; W did an unusually thorough job, but this sort of thing isn’t new or ground-breaking. People have been studying “belief congruence theory” – the idea that differences in beliefs are more important than demographic factors in forming in-groups and outgroups – for decades. As early as 1967, Smith et al were doing surveys all over the country and <a href="http://psycnet.apa.org/index.cfm?fa=buy.optionToBuy&amp;uid=2005-11098-001">finding that</a> people were more likely to accept friendships across racial lines than across beliefs; in the forty years since then, the observation has been replicated scores of times. Insko, Moe, and Nacoste’s 2006 review <a href="http://onlinelibrary.wiley.com/doi/10.1002/ejsp.2420130206/abstract">Belief Congruence And Racial Discrimination</a> concludes that:</p><blockquote id="41c574d4-c478-4aeb-b0dd-f179c16b14fc" class="">. The literature was judged supportive of a weak version of belief congruence theory which states that in those contexts in which social pressure is nonexistent or ineffective, belief is more important than race as a determinant of racial or ethnic discrimination. Evidence for a strong version of belief congruence theory (which states that in those contexts in which social pressure is nonexistent, or ineffective, belief is the only determinant of racial or ethnic discrimination) and was judged much more problematic.</blockquote><p id="12a0336d-aaa1-40f1-9007-f0e53ccb12f1" class="">One of the best-known examples of racism is the “Guess Who’s Coming To Dinner” scenario where parents are scandalized about their child marrying someone of a different race. Pew has done <a href="http://www.people-press.org/2014/06/12/section-3-political-polarization-and-personal-life/">some good work on this</a> and found that only 23% of conservatives and 1% (!) of liberals admit they would be upset in this situation. But Pew <em>also</em> asked how parents would feel about their child marrying someone of a different <em>political party</em>. Now 30% of conservatives and 23% of liberals would get upset. Average them out, and you go from 12% upsetness rate for race to 27% upsetness rate for party – more than double. Yeah, people do lie to pollsters, but a picture is starting to come together here.</p><p id="f37a5df5-bcd7-4f83-815b-ed79fa92ff9b" class="">(Harvard, by the way, is a tossup. There are more black students – 11.5% – than conservative students – 10% – but there are more conservative faculty than black faculty.)</p><p id="348d5028-2627-4efc-a297-c746199676ee" class="">Since people will delight in misinterpreting me here, let me overemphasize what I am <em>not</em> saying. I’m not saying people of either party have it “worse” than black people, or that partyism is more of a <em>problem</em> than racism, or any of a number of stupid things along those lines which I am sure I will nevertheless be accused of believing. Racism is worse than partyism because the two parties are at least kind of balanced in numbers and in resources, whereas the brunt of an entire country’s racism falls on a few underprivileged people. I am saying that the <em>underlying attitudes that produce</em> partyism are stronger than the underlying attitudes that produce racism, with no necessary implications on their social effects.</p><p id="63dfcb2d-70e0-4ee1-bddc-74cb7648fa27" class="">But if we want to look at people’s psychology and motivations, partyism and the particular variant of tribalism that it represents are going to be fertile ground.</p><p id="d36e650d-6358-440e-b0bf-f5ade99b6b2d" class=""><strong>VII.</strong></p><p id="50b1cc76-20c7-4d1f-968b-33fd7dcaef9d" class="">Every election cycle like clockwork, conservatives accuse liberals of not being sufficiently pro-America. And every election cycle like clockwork, liberals give extremely unconvincing denials of this.</p><p id="6bd6d102-ca4b-4bb1-be95-eefcc7dfd82f" class="">“It’s not that we’re, like, <em>against</em> America per se. It’s just that…well, did you know Europe has much better health care than we do? And much lower crime rates? I mean, come on, how did they get so awesome? And we’re just sitting here, can’t even get the gay marriage thing sorted out, seriously, what’s wrong with a country that can’t…sorry, what were we talking about? Oh yeah, America. They’re okay. Cesar Chavez was really neat. So were some other people outside the mainstream who became famous precisely by criticizing majority society. That’s <em>sort of</em> like America being great, in that I think the parts of it that point out how bad the rest of it are often make excellent points. Vote for me!”</p><p id="1838d6d3-3ed1-40b2-95c5-f01a89255ad1" class="">(sorry, I make fun of you because I love you)</p><p id="a81eab51-d479-4df3-a4c2-29cc78f6be19" class="">There was a big brouhaha a couple of years ago when, as it first became apparent Obama had a good shot at the Presidency, Michelle Obama <a href="http://abcnews.go.com/blogs/politics/2008/02/michelle-obam-1-2">said that</a> “for the first time in my adult life, I am proud of my country.”</p><p id="9448d154-e69a-4b5b-a6c9-f1fb93e5b450" class="">Republicans pounced on the comment, asking why she hadn’t felt proud before, and she backtracked saying of course she was proud all the time and she loves America with the burning fury of a million suns and she was just saying that the Obama campaign was <em>particularly</em> inspiring.</p><p id="b1c42dc1-c2a0-4286-b8b9-afef820e0d17" class="">As unconvincing denials go, this one was pretty far up there. But no one really held it against her. Probably most Obama voters felt vaguely the same way. <em>I</em> was an Obama voter, and I have proud memories of spending my Fourth of Julys as a kid debunking people’s heartfelt emotions of patriotism. Aaron Sorkin:</p><blockquote id="0fe90ce1-e08b-40dc-9ce9-604ad01f1970" class="">[What makes America the greatest country in the world?] It’s not the greatest country in the world! We’re seventh in literacy, 27th in math, 22nd in science, 49th in life expectancy, 178th in infant mortality, third in median household income, No. 4 in labor force, and No. 4 in exports. So when you ask what makes us the greatest country in the world, I don’t know what the f*** you’re talking about.</blockquote><p id="5399ad56-c9aa-4f1c-b823-383e03fdfd3f" class="">(Another <a href="http://www.washingtonpost.com/blogs/wonkblog/wp/2014/07/03/21-maps-and-charts-that-prove-america-is-number-one/">good retort</a> is “We’re number one? Sure – number one in incarceration rates, drone strikes, and making new parents go back to work!”)</p><p id="3354d571-2e42-42f5-a220-bde51f09dbf4" class="">All of this is true, of course. But it’s weird that it’s such a classic interest of members of the Blue Tribe, and members of the Red Tribe never seem to bring it up.</p><p id="e8f84d9e-25df-449e-ab7d-fa913435cd81" class="">(“We’re number one? Sure – number one in levels of sexual degeneracy! Well, I guess probably number two, after the Netherlands, but they’re really small and shouldn’t count.”)</p><p id="e4532b8e-f19f-4b82-9577-1acb5141e54f" class="">My hunch – both the Red Tribe and the Blue Tribe, for whatever reason, identify “America” with the Red Tribe. Ask people for typically “American” things, and you end up with a very Red list of characteristics – guns, religion, barbecues, American football, NASCAR, cowboys, SUVs, unrestrained capitalism.</p><p id="0c0d4c83-9b1c-4d4f-baf7-803df4dfa536" class="">That means the Red Tribe feels intensely patriotic about “their” country, and the Blue Tribe feels like they’re living in fortified enclaves deep in hostile territory.</p><p id="4d3977d4-29de-4dc9-9166-5ca88525515d" class="">Here is a popular piece published on a major media site called <a href="http://www.huffingtonpost.com/justin-stoneman/post_868_b_720398.html">America: A Big, Fat, Stupid Nation</a>. Another: <a href="http://english.pravda.ru/opinion/columnists/03-07-2008/105678-america-0/">America: A Bunch Of Spoiled, Whiny Brats</a>. Americans <a href="http://matadornetwork.com/life/10-embarrassing-american-stereotypes/">are</a> ignorant, scientifically illiterate religious fanatics whose “patriotism” is actually just narcissism. <a href="http://www.salon.com/2013/11/06/you_will_be_shocked_at_how_ignorant_americans_are_partner/">You Will Be Shocked At How Ignorant Americans Are</a>, and we should <a href="http://www.slate.com/articles/news_and_politics/the_big_idea/2010/02/down_with_the_people.html">Blame The Childish, Ignorant American People</a>.</p><p id="c21f3689-02f5-44f8-9b81-8c8a340c1e24" class="">Needless to say, every single one of these articles was written by an American and read almost entirely by Americans. Those Americans very likely enjoyed the articles very much and did not feel the least bit insulted.</p><p id="81cb4a1d-e0b8-4964-84f5-6237deb70b61" class="">And look at the sources. HuffPo, Salon, Slate. Might those have anything in common?</p><p id="1affd17b-4ca3-4f01-93c2-b1c01ac58856" class="">On both sides, “American” can be either a normal demonym, or a code word for a member of the Red Tribe.</p><p id="4066e192-d33b-4c3f-bfe4-cde81dd68803" class=""><strong>VIII.</strong></p><p id="1d1ff4b5-acaf-41be-aafa-c44e22bd6aae" class="">The other day, I logged into OKCupid and found someone who looked cool. I was reading over her profile and found the following sentence:</p><blockquote id="b5459365-e81b-4a88-afd1-7067e98d5822" class="">Don’t message me if you’re a sexist white guy</blockquote><p id="7376ad4d-9507-4f8c-bf35-70c1fc2ec48a" class="">And my first thought was “Wait, so a sexist black person would be okay? Why?”</p><p id="81920411-1003-49fc-a1ba-9991013b84ca" class="">(The girl in question was white as snow)</p><p id="e818df34-2f11-4ad7-abc7-13add374b7a0" class="">Around the time the Ferguson riots were first starting, there were a host of articles with titles like <a href="http://mic.com/articles/96554/why-white-people-don-t-seem-to-understand-ferguson-in-one-chart">Why White People Don’t Seem To Understand Ferguson</a>, <a href="http://www.theatlantic.com/politics/archive/2014/08/self-segregation-why-its-hard-for-whites-to-understand-ferguson/378928/">Why It’s So Hard For Whites To Understand Ferguson</a>, and <a href="http://blog.chron.com/texassparkle/2014/08/white-folks-listen-up-and-let-me-tell-you-what-ferguson-is-all-about/">White Folks Listen Up And Let Me Tell You What Ferguson Is All About</a>, this last of which says:</p><blockquote id="01d045c5-d85b-4582-a480-110670e9f1f0" class="">Social media is full of people on both sides making presumptions, and believing what they want to believe. But it’s the white folks that don’t understand what this is all about. Let me put it as simply as I can for you […]No matter how wrong you think Trayvon Martin or Michael Brown were, I think we can all agree they didn’t deserve to die over it. I want you white folks to understand that this is where the anger is coming from. You focused on the looting….”</blockquote><p id="b0fdcff6-695d-48f7-85a1-6f2cd7bce267" class="">And on a hunch I checked the author photos, and every single one of these articles was written by a white person.</p><p id="1b287cda-0328-418b-9bc3-fcc6653219bf" class=""><a href="http://robertlindsay.wordpress.com/2011/04/12/who-is-ruining-america/">White People Are Ruining America</a>? White. <a href="http://unvis.it/gawker.com/fifty-years-after-the-march-white-people-are-still-a-d-1216851674">White People Are Still A Disgrace</a>? White. <a href="http://www.huffingtonpost.com/2014/05/05/white-guys-we-suck_n_5269105.html">White Guys: We Suck And We’re Sorry</a>? White. <a href="http://www.realclearpolitics.com/2014/05/08/bye-bye_whiny_white_dudes_331840.html">Bye Bye, Whiny White Dudes</a>? White. <a href="http://unvis.it/makemeasammich.org/2014/04/25/dear-entitled-straight-white-dudes/">Dear Entitled Straight White Dudes, I’m Evicting You From My Life</a>? White. <a href="http://wonkette.com/542874/all-these-white-dudes-need-to-stop-whitesplaining-about-what-slavery-is">White Dudes Need To Stop Whitesplaining</a>? White. <a href="http://whyamericanssuck.blogspot.com/2010/07/1-white-people.html">Reasons Why Americans Suck #1: White People</a>? White.</p><p id="afd11e00-f596-4139-baad-00c8a7312073" class="">We’ve all seen articles and comments and articles like this. Some unsavory people try to use them to prove that white people are the <em>real</em> victims or the media is biased against white people or something. Other people who are very nice and optimistic use them to show that some white people have developed some self-awareness and are willing to engage in self-criticism.</p><p id="b9f65155-e832-409d-8ee6-2405d680d13c" class="">But I think the situation with “white” is much the same as the situation with “American” – it can either mean what it says, or be a code word for the Red Tribe.</p><p id="217fd340-abfa-410b-8b1a-8ec1780b8c01" class="">(except on the blog <a href="http://stuffwhitepeoplelike.com/">Stuff White People Like</a>, where it obviously serves as a code word for the <em>Blue</em> tribe. I don’t know, guys. I didn’t do it.)</p><p id="5c87af38-935d-48f9-b6a7-224c2308d616" class="">I realize that’s making a strong claim, but it would hardly be without precedent. When people say things like “gamers are misogynist”, do they mean <a href="http://www.theguardian.com/commentisfree/2014/sep/18/52-percent-people-playing-games-women-industry-doesnt-know">the 52% of gamers who are women</a>? Do they mean every one of the 59% of Americans from every walk of life who are known to play video or computer games occasionally? No. “Gamer” is a coded reference to the Gray Tribe, the half-branched-off collection of libertarianish tech-savvy nerds, and everyone knows it. As well expect that when people talk about “fedoras”, they mean Indiana Jones. Or when they talk about “urban youth”, they mean freshmen at NYU. Everyone knows exactly who we mean when we say “urban youth”, and them being young people who live in a city has only the most tenuous of relations to the actual concept.</p><p id="94b52372-6cc7-4fec-9623-2491ae71866a" class="">And I’m saying words like “American” and “white” work the same way. Bill Clinton was the <a href="http://www.realclearpolitics.com/video/2014/04/03/bill_clinton_i_loved_being_called_the_first_black_president.html">“first black President”</a>, but if Herman Cain had won in 2012 he’d have been the 43rd white president. And when an angry white person talks at great length about how much he hates “white dudes”, <em>he is not being humble and self-critical</em>.</p><p id="215de0c2-d164-4942-915d-5d4d23785a52" class=""><strong>IX.</strong></p><p id="89717c40-4655-45be-8fff-0085760adb33" class="">Imagine hearing that a liberal talk show host and comedian was so enraged by the actions of ISIS that he’d recorded and posted a video in which he shouts at them for ten minutes, cursing the “fanatical terrorists” and calling them “utter savages” with “savage values”.</p><p id="9b941322-33ef-4cae-be99-b9c2d0e00a02" class="">If <em>I</em> heard that, I’d be kind of surprised. It doesn’t fit my model of what liberal talk show hosts do.</p><p id="79b6c3ff-e490-445d-919a-542854eb0277" class="">But <a href="http://rt.com/usa/168704-russell-brand-fox-news/">the story</a> I’m <em>actually</em> referring to is liberal talk show host / comedian Russell Brand making that same rant against Fox News for <em>supporting war against</em> the Islamic State, adding at the end that “Fox is worse than ISIS”.</p><p id="beacf95b-9599-4b4c-8137-337bf09c4d37" class="">That fits my model perfectly. You wouldn’t celebrate Osama’s death, only Thatcher’s. And you wouldn’t call ISIS savages, only Fox News. Fox is the outgroup, ISIS is just some random people off in a desert. You hate the outgroup, you don’t hate random desert people.</p><p id="c7f8a66d-23af-45d2-a536-5a3cd76f6ffd" class="">I would go further. Not only does Brand not feel much like hating ISIS, he has a strong incentive not to. That incentive is: the Red Tribe is known to hate ISIS loudly and conspicuously. Hating ISIS would signal Red Tribe membership, would be the equivalent of going into Crips territory with a big Bloods gang sign tattooed on your shoulder.</p><p id="26fb71ec-eb3d-4503-8204-1f2f744359e0" class="">But this might be unfair. What would Russell Brand answer, if we asked him to justify his decision to be much angrier at Fox than ISIS?</p><p id="6bc3ddbd-93c1-4d8a-8d79-4d2447a02496" class="">He might say something like “Obviously Fox News is not literally worse than ISIS. But here I am, talking to my audience, who are mostly white British people and Americans. These people already know that ISIS is bad; they don’t need to be told that any further. In fact, at this point being angry about how bad ISIS is, is less likely to genuinely change someone’s mind about ISIS, and more likely to promote Islamophobia. The sort of people in my audience are at zero risk of becoming ISIS supporters, but at a very real risk of Islamophobia. So ranting against ISIS would be counterproductive and dangerous.</p><p id="00952310-5522-49d2-9ac6-2a612b07d101" class="">On the other hand, my audience of white British people and Americans is very likely to contain many Fox News viewers and supporters. And Fox, while not quite as evil as ISIS, is still pretty bad. So here’s somewhere I have a genuine chance to reach people at risk and change minds. Therefore, I think my decision to rant against Fox News, and maybe hyperbolically say they were ‘worse than ISIS’ is justified under the circumstances.”</p><p id="10cb0dac-c1b7-492a-9a13-3ec0328f19a0" class="">I have a lot of sympathy to hypothetical-Brand, especially to the part about Islamophobia. It <em>does</em> seem really possible to denounce ISIS’ atrocities to a population that already hates them in order to <a href="https://slatestarcodex.com/2014/09/30/i-can-tolerate-anything-except-the-outgroup/%E2%80%9Dhttps://slatestarcodex.com/2014/05/12/weak-men-are-superweapons/%E2%80%9D">weak-man</a> a couple of already-marginalized Muslims. We need to fight terrorism and atrocities – therefore it’s okay to shout at a poor girl ten thousand miles from home for wearing a headscarf in public. Christians are being executed for their faith in Sudan, therefore let’s picket the people trying to build a mosque next door.</p><p id="1ccbc076-478d-4bfd-b969-1662ea900dad" class="">But my sympathy with Brand ends when he acts like his audience is likely to be fans of Fox News.</p><p id="500945b8-0fad-47c9-a72c-7b17bf5e40e2" class="">In a world where a negligible number of Redditors oppose gay marriage and 1% of Less Wrongers identify conservative and I know 0/150 creationists, how many of the people who visit the YouTube channel of a well-known liberal activist with a Che-inspired banner, a channel whose episode names are things like “War: What Is It Good For?” and “Sarah Silverman Talks Feminism” – how many of them do you think are big Fox News fans?</p><p id="54376166-5872-4c27-8770-d2dddcd06b1b" class="">In a way, Russell Brand would have been <em>braver</em> taking a stand against ISIS than against Fox. If he attacked ISIS, his viewers would just be a little confused and uncomfortable. Whereas every moment he’s attacking Fox his viewers are like “HA HA! YEAH! GET ‘EM! SHOW THOSE IGNORANT BIGOTS IN THE OUTGROUP WHO’S BOSS!”</p><p id="c030d643-93a2-467a-8010-fdcedf961cce" class="">Brand acts as if there are just these countries called “Britain” and “America” who are receiving his material. Wrong. There are two parallel universes, and he’s only broadcasting to one of them.</p><p id="a4cb2f9e-1a4a-4c76-bf05-70f1e19b6597" class="">The result is exactly what we predicted would happen in the case of Islam. Bombard people with images of a far-off land they already hate and tell them to hate it more, and the result is ramping up the intolerance on the couple of dazed and marginalized representatives of that culture who have ended up stuck on your half of the divide. Sure enough, if industry or culture or community gets Blue enough, Red Tribe members start getting harassed, fired from their jobs (Brendan Eich being the obvious example) or otherwise shown the door.</p><p id="91b5179c-6609-4c3e-8ce7-af722d6d79c7" class="">Think of Brendan Eich as a member of a tiny religious minority surrounded by people who hate that minority. Suddenly firing him doesn’t seem very noble.</p><p id="0339b4a2-250b-404c-a963-0290f137a67f" class="">If you mix together Podunk, Texas and Mosul, Iraq, you can prove that Muslims are scary and very powerful people who are executing Christians all the time – and so we have a great excuse for kicking the one remaining Muslim family, random people who never hurt anyone, out of town.</p><p id="1e103893-04b1-41cc-9cf8-8d417bef3223" class="">And if you mix together the open-source tech industry and the parallel universe <a href="http://rmitz.org/freebsd.daemon.html">where</a> you can’t wear a FreeBSD t-shirt without risking someone trying to exorcise you, you can prove that Christians are scary and very powerful people who are persecuting everyone else all the time, and you have a great excuse for kicking one of the few people willing to affiliate with the Red Tribe, a guy who never hurt anyone, out of town.</p><p id="ea9b0704-51de-4e63-acba-887504782733" class="">When a friend of mine heard Eich got fired, she didn’t see anything wrong with it. “I can tolerate anything except intolerance,” she said.</p><p id="aff12cc2-13f8-419d-9872-ec81a6b0ad21" class="">“Intolerance” is starting to look like another one of those words like “white” and “American”.</p><p id="c81446a7-4df8-49d5-a8ec-9d4f57e706f4" class="">“I can tolerate anything except the outgroup.” Doesn’t sound quite so noble now, does it?</p><p id="02c1a64e-a7b0-475c-a14f-2d08b23b1ca6" class=""><strong>X.</strong></p><p id="d5d4bb1e-e89b-4ecd-8ab6-889a6c9a189b" class="">We started by asking: millions of people are conspicuously praising every outgroup they can think of, while conspicuously condemning their own in-group. This seems contrary to what we know about social psychology. What’s up?</p><p id="a3cc973b-e89d-42d0-85f6-ecf96f37f186" class="">We noted that outgroups are rarely literally “the group most different from you”, and in fact far more likely to be groups very similar to you sharing <em>almost</em> all your characteristics and living in the same area.</p><p id="fb9eea5e-c65e-4e56-9a22-faf36f6519db" class="">We then noted that although liberals and conservatives live in the same area, they might as well be two totally different countries or universe as far as level of interaction were concerned.</p><p id="2eb2a9b0-b0c2-41e1-a0c7-d7da5b829cda" class="">Contra the usual idea of them being marked only by voting behavior, we described them as very different tribes with totally different cultures. You can speak of “American culture” only in the same way you can speak of “Asian culture” – that is, with a lot of interior boundaries being pushed under the rug.</p><p id="48f71444-72da-4edc-8f72-441856b598c3" class="">The outgroup of the Red Tribe is occasionally blacks and gays and Muslims, more often the Blue Tribe.</p><p id="87cb4906-10d2-4fbc-a746-82ce2d8430d8" class="">The Blue Tribe has performed some kind of very impressive act of alchemy, and transmuted <em>all</em> of its outgroup hatred to the Red Tribe.</p><p id="05ccb8fb-e275-4528-8789-5fe873928f04" class="">This is not surprising. Ethnic differences have proven quite tractable in the face of shared strategic aims. Even the Nazis, not known for their ethnic tolerance, were able to get all buddy-buddy with the Japanese when they had a common cause.</p><p id="e32281f0-dfe5-4806-98d1-ab256f41ce8b" class="">Research suggests Blue Tribe / Red Tribe prejudice to be much stronger than better-known types of prejudice like racism. Once the Blue Tribe was able to enlist the blacks and gays and Muslims in their ranks, they became allies of convenience who deserve to be rehabilitated with mildly condescending paeans to their virtue. “There never was a coward where the shamrock grows.”</p><p id="b8d17f7b-0a00-479b-9e17-8399142e1161" class="">Spending your entire life insulting the other tribe and talking about how terrible they are makes you look, well, tribalistic. It is definitely not high class. So when members of the Blue Tribe decide to dedicate their entire life to yelling about how terrible the Red Tribe is, they make sure that instead of saying “the Red Tribe”, they say “America”, or “white people”, or “straight white men”. That way it’s <em>humble self-criticism</em>. They are <em>so</em> interested in justice that they are willing to critique <em>their own beloved side</em>, much as it pains them to do so. We know they are not exaggerating, because one might exaggerate the flaws of an enemy, but that anyone would exaggerate their <em>own</em> flaws fails <a href="http://en.wikipedia.org/wiki/Criterion_of_embarrassment">the criterion of embarrassment</a>.</p><p id="1737eb9c-be7d-4c76-851f-4eda0d4cc705" class="">The Blue Tribe always has an excuse at hand to persecute and crush any Red Tribers unfortunate enough to fall into its light-matter-universe by defining them as all-powerful domineering oppressors. They appeal to the fact that this is definitely the way it works in the Red Tribe’s dark-matter-universe, and that’s in the same country so it has to be the same community for all intents and purposes. As a result, every Blue Tribe institution is permanently licensed to take whatever emergency measures are necessary against the Red Tribe, however disturbing they might otherwise seem.</p><p id="b8ee5be0-8153-41ec-ab29-1daec90cd4e4" class="">And so how virtuous, how noble the Blue Tribe! Perfectly tolerant of all of the different groups that just so happen to be allied with them, never intolerant unless it happen to be against intolerance itself. Never stooping to engage in petty tribal conflict like that awful Red Tribe, but always nobly criticizing their own culture and striving to make it better!</p><p id="ad0aadc5-46b2-4add-8726-b7793d847495" class="">Sorry. But I hope this is at least a <em>little</em> convincing. The weird dynamic of outgroup-philia and ingroup-phobia isn’t anything of the sort. It’s just good old-fashioned in-group-favoritism and outgroup bashing, a little more sophisticated and a little more sneaky.</p><p id="64f4390a-3144-4f04-adb9-05c01828d51c" class=""><strong>XI.</strong></p><p id="63e33004-84f1-43ac-83fd-16fe4b1f868d" class="">This essay is bad and I should feel bad.</p><p id="ea84e6b6-ac98-4bea-867c-b9afd3693ea4" class="">I should feel bad because I made <em>exactly</em> the mistake I am trying to warn everyone else about, and it wasn’t until I was almost done that I noticed.</p><p id="c54ce809-c702-42a5-8d3f-4ebaf635b3ae" class="">How virtuous, how noble I must be! Never stooping to engage in petty tribal conflict like that silly Red Tribe, but always nobly criticizing my own tribe and striving to make it better.</p><p id="7843942f-fbf4-45c2-ba21-063ef5e037ae" class="">Yeah. Once I’ve written a ten thousand word essay savagely attacking the Blue Tribe, either I’m a very special person or they’re my outgroup. And I’m not <em>that</em> special.</p><p id="d08ba874-434a-4b96-a1fd-319791f33956" class="">Just as you can pull a fast one and look humbly self-critical if you make your audience assume there’s just one American culture, so maybe you can trick people by assuming there’s only one Blue Tribe.</p><p id="06d43fa2-aa44-497c-b77b-427de7a5104b" class="">I’m pretty sure I’m not Red, but I did talk about the Grey Tribe above, and I show all the risk factors for being one of them. That means that, although my critique of the Blue Tribe may be right or wrong, in terms of <em>motivation</em> it comes from the same place as a Red Tribe member talking about how much they hate al-Qaeda or a Blue Tribe member talking about how much they hate ignorant bigots. And when I boast of being able to tolerate Christians and Southerners whom the Blue Tribe is mean to, I’m not being tolerant at all, just noticing people so far away from me they wouldn’t make a good outgroup anyway.</p><p id="4f4a18e6-bbac-434d-b6e9-f8ea75dad273" class="">I had <em>fun</em> writing this article. People do not have fun writing articles savagely criticizing their in-group. People can criticize their in-group, it’s not <em>humanly impossible</em>, but it takes nerves of steel, it makes your blood boil, you should sweat blood. It shouldn’t be <em>fun</em>.</p><p id="f014f160-761b-490c-99c1-331460128cc3" class="">You can bet some white guy on Gawker who week after week churns out “Why White People Are So Terrible” and “Here’s What Dumb White People Don’t Understand” is having fun and not sweating any blood at all. He’s not criticizing his in-group, he’s never even <em>considered</em> criticizing his in-group. I can’t blame him. Criticizing the in-group is a really difficult project I’ve barely begun to build the mental skills necessary to even consider.</p><p id="a241f879-4150-474a-b8a4-87c6382db8f6" class="">I can think of criticisms of my own tribe. Important criticisms, true ones. But the thought of writing them makes my blood boil.</p><p id="66ff203c-27ad-4848-ad32-959ccf178162" class="">I imagine might I feel like some liberal US Muslim leader, when he goes on the O’Reilly Show, and O’Reilly ambushes him and demands to know why he and other American Muslims haven’t condemned beheadings by ISIS more, demands that he criticize them right there on live TV. And you can see the wheels in the Muslim leader’s head turning, thinking something like “Okay, obviously beheadings are terrible and I hate them as much as anyone. But you don’t care even <em>the slightest bit</em> about the victims of beheadings. You’re just looking for a way to score points against me so you can embarass all Muslims. And I would rather personally behead every single person in the world than give a smug bigot like you a single microgram more stupid self-satisfaction than you’ve already got.”</p><p id="fa0b42f3-c64e-478c-918f-1d8a8d8aa324" class="">That is how I feel when asked to criticize my own tribe, even for correct reasons. If you think you’re criticizing your own tribe, and your blood is not at that temperature, consider the possibility that you aren’t.</p><p id="605703ff-107d-480c-95d1-36d4d62ddea2" class="">But if I want Self-Criticism Virtue Points, criticizing the Grey Tribe is the only honest way to get them. And if I want Tolerance Points, my own personal cross to bear right now is tolerating the Blue Tribe. I need to remind myself that when they are bad people, they are merely Osama-level bad people instead of Thatcher-level bad people. And when they are good people, they are powerful and necessary crusaders against the evils of the world.</p><p id="d9b9fd47-8b35-49a6-8a79-b8a8166a5d2d" class="">The worst thing that could happen to this post is to have it be used as convenient feces to fling at the Blue Tribe whenever feces are necessary. Which, given what has happened to my last couple of posts along these lines and the obvious biases of my own subconscious, I already expect it will be.</p><p id="a246ca41-abad-4966-a0d2-c2b4d3a0fe74" class="">But the best thing that could happen to this post is that it makes a lot of people, especially myself, figure out how to be more tolerant. Not in the “of course I’m tolerant, why shouldn’t I be?” sense of the Emperor in Part I. But in the sense of “being tolerant makes me see red, makes me sweat blood, but darn it <em>I am going to be tolerant anyway</em>.”</p></div></article></body></html>
