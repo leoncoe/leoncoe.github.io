@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Winning at the Great Game: My Interview with Adam Robinson (Part 1)</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b595aa47-401d-4899-b877-10be081234b2" class="page sans"><header><h1 class="page-title">Winning at the Great Game: My Interview with Adam Robinson (Part 1)</h1></header><div class="page-body"><p id="608f5c94-6081-4da0-a6ea-c23d2d6a209a" class="block-color-gray"><a href="https://fs.blog/adam-robinson-pt1/">https://fs.blog/adam-robinson-pt1/</a></p><p id="a2d84128-2e4b-4ff9-ad5b-8618585b5418" class="">
+</p><p id="c412844b-b400-490b-b5f4-d6788b4d9b9d" class="">Author, educator, entrepreneur, and hedge fund advisor, <a href="https://twitter.com/IAmAdamRobinson?lang=en">Adam Robinson</a> shares powerful lessons on winning the game of life. He teaches us how to learn, how to fail, and his three secrets of happiness and success.</p><figure id="e86c8782-8264-4fd7-ba73-209b75b2b865" class="image"><a href="Winning at the Great Game My Interview with Adam R/a-robinson-500px.jpg"><img style="width:700px" src="Winning at the Great Game My Interview with Adam R/a-robinson-500px.jpg"/></a></figure><p id="f889efd3-a975-42f6-bb05-6b2e2bc29e2a" class="">Today on the podcast I welcome author, educator, and hedge fund advisor, Adam Robinson. If you don’t know who Adam is, let me give you a little background. He is the man who cracked the SAT before co-founding <a href="https://www.princetonreview.com/">The Princeton Review</a> and in fact, wrote the only test preparation book to become a New York Times best seller.</p><p id="95be5743-e3fa-42a2-8fd9-546b68d1ff8c" class="">Adam is a rated chess master with a Life Title and was actually personally mentored by Bobby Fischer. He was an undergrad at The Wharton School at the University of Pennsylvania and later earned a law degree at Oxford University.</p><p id="4e8375a6-825e-4a3e-b8e4-1bbfe8b1d700" class="">There was so much I wanted to talk to Adam about that we ended up talking for nearly 4 hours. To make it a bit easier to consume, I divided the podcast into two parts (you can <a href="https://fs.blog/adam-robinson-pt2/">find part two here</a>), but don’t let the length of this episode discourage you. Adam really delivers and shares some amazing insights that I’m excited for you to hear.</p><p id="66a28823-dfe9-4b79-a9a3-7317ec1a8c8a" class=""><strong>Here are a few highlights from our discussion:</strong></p><p id="50f7a675-c388-4fea-91ff-16f515e7c445" class=""><strong>The Great Game is life.</strong> We play many games in life. The game of job, or career, or starting a business, or the politics game, or the education game. Everything is a game. Games suggest something that’s not serious, but of course games are intensely serious. If you want to find someone who is ferociously intense and focused, watch someone playing a game, especially something competitive.</p><p id="5d2c71a2-a107-40ab-bec3-372774eeedce" class=""><strong>Constitutionally, I’m an introvert,</strong> and so the revelation of 2016, into 2017 and now 2018, has been that the real magic is connecting with others. That if you want to do anything in the world, and this is as true personally as well as professionally, it’s all about creating a vision for others to join.</p><p id="d85482e4-5e64-4a2b-be57-ff62181fa560" class=""><strong>Our views of the world are reflected back to ourselves by the internet,</strong> so we become more hardened in our own views, right? In fact, all we see is exactly what we expect to see. The internet and technology is one big confirmation bias engine.</p><p id="c517de0a-08db-4710-9bc8-1b3fb62566a9" class=""><strong>By quantitative measures, people should be happier, and yet they’re not.</strong> It’s the exact opposite, right? The irony is that we have material wealth undreamt of. The average person today lives better than the average king a couple of centuries ago. And yet — we’re not happier.</p><p id="f2728ead-cf3f-4b51-a004-66b797005362" class=""><strong>One of the problems with self-help books</strong> is they rivet your attention on exactly the one thing it ought not to be focused on: yourself. You look at any of the great religious traditions, and the great philosophers, and the great poets, they all had the same message of focusing on others, and being of service to others. I think the people who are going on search to “find themselves,” will never find themselves. You find yourself only in the midst of others.</p><p id="cb62821b-e8be-4c76-a9f1-b9eaa919c10d" class=""><strong>Here’s a clue that you’ve tapped into Truth with a capital T,</strong> and that your unconscious is speaking — it’s that the answer will surprise you. You’ll be startled by it.</p><p id="f8e7eba9-a1b3-47b9-bd35-e5fb2bbf9f95" class=""><strong>When someone says, “It makes no sense that…”</strong> really what they’re saying is this: “I have a dozen logical reasons why gold should be going higher but it keeps going lower, therefore that makes no sense.” But really, what makes no sense is their model of the world, right? So I know when that happens, that there’s some other very powerful reason why gold keeps going lower that trumps all the “logical reasons.”</p><p id="6a6f463d-d218-412e-95a0-0ce4d7d38d46" class=""><strong>In America, we’ve deified “intelligence.”</strong> And the problem with “intelligence” is that it works against you. If you’re intelligent, you shouldn’t have to work too hard. Things should come pretty quickly, and if you aren’t intelligent, what’s the point? The better belief is that your success is determined by how hard you work. Then, it’s just a matter of choice. If you want something, work for it, and you will if you want it.</p><p id="b2e224fb-1a6d-4632-a002-2bef1857c5e9" class=""><strong>I think it’s important that parents let their children know,</strong> just to talk about parents for a sec, that learning is hard. You need to know that learning is hard. It’s not easy. Right? The reason you need to know it’s hard is that if you think it’s easy, as soon as you encounter difficulty, you’re going to think the problem is you. So you need to know it’s hard, going in.`</p><h2 id="b7785272-0531-4ea9-9c79-e551d23ccfd0" class="">Listen and Learn</h2><ul id="92815a19-0812-4cb6-9813-aec31e87414d" class="bulleted-list"><li>Listen to this podcast on <a href="https://itunes.apple.com/ca/podcast/the-knowledge-project-with-shane-parrish/id990149481?mt=2&amp;i=1000422845990">iTunes</a>. (Leave a review of the show!)</li></ul><ul id="8ec8accf-3ec1-43c7-9911-17e64c668cd0" class="bulleted-list"><li>Download as MP3 by <a href="http://traffic.libsyn.com/theknowledgeproject/TKP_Adam_Robinson_1.mp3">right-clicking here</a> and choosing “save as”.</li></ul><h2 id="28e73353-a7e0-498b-9174-f3b493ad0ec3" class="">Transcript</h2><p id="6491b52b-e78f-404c-9da2-6bc6a4f5338f" class=""><a href="https://www.fs.blog/membership/">Members of our learning community</a> have access to podcast transcripts, exclusive AMA’s, and so much more. If you’re not a member, a transcript for this episode is <a href="https://gum.co/ixjbU">available for purchase.</a></p><p id="bd379704-c546-49ea-a3d9-a682db4d9f5c" class="">***</p><p id="93ccd6d0-2416-4f95-9cf5-f7a1b1879b80" class=""><strong>Members can </strong><a href="https://lc.fs.blog/t/win-winning-at-the-great-game-my-interview-with-adam-robinson-part-1/7403"><strong>discuss this podcast</strong></a><strong> on the Learning Community Forum.</strong></p></div></article></body></html>
