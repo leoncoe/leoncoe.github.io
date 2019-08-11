@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Michael Mayer – Pseudonymous Social Capital and Bottomless Coffee – [Invest Like the Best, EP.123]</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="85a2a22a-6fcb-4740-92fe-95b18fdd147a" class="page sans"><header><h1 class="page-title">Michael Mayer – Pseudonymous Social Capital and Bottomless Coffee – [Invest Like the Best, EP.123]</h1></header><div class="page-body"><p id="dc23650e-0e42-41dd-83a3-0b380c32eb1d" class="block-color-gray"><a href="http://investorfieldguide.com/bottomless/">http://investorfieldguide.com/bottomless/</a></p><p id="6876ce2a-7b9e-4b86-9922-6761f6364bec" class="">
+</p><figure id="d56a5aab-2350-4c44-93e5-51433ee9b8e8" class="image"><a href="Michael Mayer Pseudonymous Social Capital and Bott/Michael-Mayer.png"><img style="width:700px" src="Michael Mayer Pseudonymous Social Capital and Bott/Michael-Mayer.png"/></a></figure><p id="cc1aed3c-46fb-413f-944f-bd56cab36628" class="">My guest this week is unique and so requires a short story.</p><p id="869e0108-3d05-429e-bbb0-8c84a7a5ab6c" class="">I met our guest Michael Mayer because of twitter. I followed and enjoyed one of several pseudonymous accounts that he maintains to experiment with ideas. His various accounts have wide followings.</p><p id="cf63b08d-7eb7-4cff-8633-34575d1885c7" class="">I think many of the best accounts on twitter are anonymous or pseudonymous, and I’ve always made a point to get to know the ones I like best. As it turns out, Michael was also an entrepreneur. He’d been building a new company and was raising a small amount of outside capital.</p><p id="88131240-dbda-4cea-b443-b13083e48bec" class="">I didn’t invest personally, in part because he raised it so quickly after I spoke with him. Ever since, I’ve gotten to know him better and followed his company, Bottomless, with interest. You know that I am always hyper transparent about any potential conflicts of interest, so its worth noting that while I am not an investor in this company, I expect to be at some point in the future.</p><p id="7bab09da-d0bc-4c4b-b036-a01e2c40637a" class="">The topic of our conversation is both his social media activity and his company. I am a coffee fanatic, and the problem he is solving is one I live. I order a weekly bag of coffee beans but I often have too much coffee or run out. Bottomless solves this by shipping you a simple scale which you keep wherever you store your coffee, connect to your wifi, and set your bag of coffee on. It automatically orders new coffee for you at the right time. Thus the name: Bottomless. If you like the conversation, check out <a href="http://bottomless.com/">bottomless.com</a></p><p id="b759d2a4-2df5-4e85-9ee1-6ed377b2321d" class="">With this podcast, all I’m really trying to do is find, meet, and learn from interesting people. Michael certainly qualifies. I hope you enjoy this unique episode.</p><p id="7aa4ca5a-851d-4b37-9218-6bfe7fe6efa5" class=""><strong>Show Notes</strong></p><p id="fdc618e3-05cf-448e-994d-9138ab901cbf" class="">2:06 – (First Question) – Why he writes under a pseudonym online</p><p id="64dad437-d5cf-45b3-8440-138d6f80772a" class="">2:58 – Positive impacts of writing this way</p><p id="4458a606-62ae-4e5a-9be7-9087012861d5" class="">3:45 – His background</p><p id="63bc2442-a059-4296-b1bb-1dd1ce0535e9" class="">5:02 – Habits he improved upon</p><p id="34f5bb52-b38f-436e-82aa-4304a74c4919" class="">7:03 – Where did his exploration into technology and start-ups come from</p><p id="90a1c37d-930b-46ab-b249-646f20b9ce43" class="">7:33 – <a href="https://www.amazon.com/Algorithms-Live-Computer-Science-Decisions/dp/1627790365">Algorithms to Live By: The Computer Science of Human Decisions</a></p><p id="e5fbfc7c-64c5-4dea-9db9-bbf030c747b7" class="">10:32 – Elements of business that interest him most</p><p id="030932c5-e9d6-41af-b560-8fd5d703b19a" class="">13:26 – Building social capital vs the current state of education</p><p id="881825db-539d-40f1-906a-8381d2143122" class="">17:06 – What information does he like to consume</p><p id="bcdf98c4-f01b-49bb-b0fc-24fa940d54b9" class="">18:17 – <a href="https://www.amazon.com/Zero-One-Notes-Startups-Future/dp/0804139296/ref=sr_1_1?keywords=zero+to+one&amp;qid=1551288459&amp;s=books&amp;sr=1-1">Zero to One: Notes on Startups, or How to Build the Future</a></p><p id="b0c51928-4c3d-48e1-9822-d897f0ee5e11" class="">18:34 – <a href="http://reactionwheel.net/">Jerry Neumann blog Reaction Wheel</a> | <a href="http://investorfieldguide.com/jerry/">Podcast episode</a></p><p id="e775c930-31bf-45a7-8872-62e90f0c05f6" class="">18:39 – <a href="https://meltingasphalt.com/">Kevin Simler’s blog Melting Asphalt</a>| <a href="http://investorfieldguide.com/simler/">Podcast Episode</a></p><p id="04dbd563-f6d0-469c-857c-c39a90252bf0" class="">21:01 – Why the current education system is busted</p><p id="13a6b2a5-5a94-461b-8b02-a38f99bef4cf" class="">22:54 – Formation of his business</p><p id="0402c168-0a5d-415c-a2f0-d6d4242d428a" class="">24:04 – Importance of making things legible</p><p id="4203539e-b289-48be-af1b-430996d46919" class="">25:54 – On demand delivery vs subscription business models</p><p id="3addccd0-c3d7-45f9-aa68-6e0f8619fce8" class="">30:16 – Early day in developing the scale for his business</p><p id="e74447d1-22dd-4149-9082-c2680096ac79" class="">33:50 – What he learned about coffee roasters</p><p id="d032447f-cc35-480d-8ab8-1e12eaca04f8" class="">35:29 – thoughts on supplier power</p><p id="33ecdb07-72f2-48e4-8f2e-f1f7c901c7ea" class="">36:17 – The customer relationship</p><p id="20306cfa-7afc-4f88-b974-715995407a3d" class="">39:50 – Best objections to his business</p><p id="dc69c84b-1250-4a4a-8a7e-79d9bf803e2e" class="">41:58 – Biggest operational/emotional challenges</p><p id="83c76459-fd68-4998-aa65-5718f3d4cbb2" class="">42:56 – Best moment</p><p id="3e0cd35b-b851-4bd5-a735-ed43c1049f95" class="">44:39 – Time at Y combinator</p><p id="48164344-feaf-4985-ae44-3d5af85f2b61" class="">46:28 – His unique co-founder story</p><p id="a2d49c0d-5b85-4019-be04-e5962caf2193" class="">49:47 – Marketing strategies and acquisition costs</p><p id="dbd22abc-3bac-497e-8dbc-688c85f696a8" class="">51:37 – The idea of a commercial loop</p><p id="a1f007b5-b2bc-40aa-8640-24a3aedebef7" class="">53:27 – Discarded ideas, such as spaced repetition social networks</p><p id="5f7e82e9-1959-4db2-8588-1a4be4bed5fe" class="">57:38 – Having a long-term plan vs reformatting a business into success</p><p id="48fdaf92-2958-4f19-84a0-28ed784517e0" class="">1:00:35 – What works on twitter based on his experience</p><p id="64bcf9ae-cb1f-4ff3-991f-6d9553ca3f0c" class="">1:03:09 – Most controversial opinion</p><p id="57448563-385e-461e-b433-a8c2383a5a27" class="">1:05:59 – Kindest thing anyone has done</p></div></article></body></html>

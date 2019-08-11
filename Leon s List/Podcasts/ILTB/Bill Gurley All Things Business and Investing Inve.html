@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Bill Gurley – All Things Business and Investing – [Invest Like the Best, EP.137]</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b925e904-3d3c-4e12-af3a-93117ad5d2d3" class="page sans"><header><h1 class="page-title">Bill Gurley – All Things Business and Investing – [Invest Like the Best, EP.137]</h1></header><div class="page-body"><p id="5c05e3f5-c8d7-455b-8752-147e50462d11" class="block-color-gray"><a href="http://investorfieldguide.com/gurley/">http://investorfieldguide.com/gurley/</a></p><p id="917b7290-7557-45e3-a25c-336610e480cc" class="">
+</p><figure id="08fe1a9c-f735-415a-81d4-01ec18fe674a" class="image"><a href="Bill Gurley All Things Business and Investing Inve/Bill-Gurley.png"><img style="width:700px" src="Bill Gurley All Things Business and Investing Inve/Bill-Gurley.png"/></a></figure><p id="e76b7e62-eca1-42dd-a1bf-3809a474f4a6" class="">My guest this week is Bill Gurley, a general partner at Benchmark Capital and one my favorite investment thinkers. As you’ll hear, despite enormous success through his career, Bill is clearly still in love with business and investing. Where many might discuss past glories, I’ve been incredibly impressed with how both Bill and his partners emphasize the current portfolio and market landscape. I’m thankful to have had the chance to speak with him in this format. I hope you enjoy our conversation.</p><p id="985ef748-1507-428b-9c67-797ad62c8886" class=""><strong>Show Notes</strong></p><p id="2328b172-5362-40aa-8a3e-3a14d5eac5bb" class="">1:13 – (First Question) – The idea of increasing returns</p><p id="c0bab2b7-be5e-42cd-ab47-6a8c18fe1df6" class="">1:21 – <a href="http://tuvalu.santafe.edu/~wbarthur/Papers/Arthur_1989.pdf">Competiting Technologies, Increasing Returns, and Lock-in By Historical Events</a></p><p id="20b0782a-3890-4002-a44d-60443af0b629" class="">2:07 – <a href="https://complexsystemstheory.net/santa-fe-institute/">Complex Systems Theory – Santa Fe Institute</a></p><p id="9e53118e-53bb-45fd-b896-e5c3b1e8cbf5" class="">4:35 – Markers that could be a sign of network effect in a company</p><p id="746aa335-c98e-4e37-b986-e9d62a2ed84e" class="">6:27 – The opportunities for companies to capture network effect</p><p id="4ed27aa8-e368-4b0b-8ba1-e263a18bd25e" class="">8:46 – Are there certain teams/leaders that are more conducive to leading a network effect company</p><p id="92573109-12be-486b-aea8-c83aa1286be8" class="">11:55 – Liquidity quality</p><p id="b8701a8c-8f0e-4ac7-ac9d-1aab33c7a58e" class="">13:35 – How important is the revenue model at the beginning</p><p id="755e47eb-fe76-4f85-95cf-f162b68c840e" class="">15:59 – Fascination with Nextdoor</p><p id="b7e06e19-5049-44e7-b986-14f78eabc6cd" class="">17:56 – <a href="https://www.amazon.com/Paradox-Choice-Why-More-Less/dp/149151423X">Paradox of Choice</a></p><p id="e5f7e492-cff6-41f2-bdd2-44f320bd3019" class="">18:39 – Finding opportunities</p><p id="8213ef69-3d73-46f9-80ea-069dfef6947f" class="">20:17 – Potential marketplaces and assets that could be commoditized</p><p id="6af1bf4d-60a4-4d94-a208-07ce5b1bbffa" class="">20:20 – <a href="http://abovethecrowd.com/2012/11/13/all-markets-are-not-created-equal-10-factors-to-consider-when-evaluating-digital-marketplaces/">All Markets Are Not Created Equal: 10 Factors To Consider When Evaluating Digital Marketplaces</a></p><p id="cb984971-30d2-496c-80bd-59e0a24ac699" class="">21:39 – Usage yield on the world’s assets</p><p id="59a979a9-237a-40ab-9044-e81568ca55cd" class="">23:50 – Has technology changed the world of value investing</p><p id="c2760387-239b-4257-9b1a-fe1457a295b0" class="">26:28 – Hyper niche marketplaces</p><p id="53b960c9-3ad5-4da6-a202-682b388e56f0" class="">27:52 – Challenges of labor marketplaces</p><p id="9c4ab419-c2e3-4789-8576-85e62cdb9186" class="">30:12 – User generated content businesses</p><p id="3d30959a-de41-4ede-9657-e5946f5827c9" class="">32:44 – People who are capable of building UGC businesses</p><p id="b13e9952-7271-4254-8b34-2418a3125193" class="">33:16 – His interest in Discord</p><p id="d4a03e04-4586-43ec-8ee4-0505aec0fc36" class="">34:31 – Factors of a healthy marketplace</p><p id="bc187108-e1f8-44e4-affb-dd76ad45300d" class="">37:57 – Fools’ gold in marketplace businesses</p><p id="fbcee9be-7dea-4e27-9262-1f5351c525f3" class="">39:04 – How influx of cash is impacting the marketplace business landscape</p><p id="930b96d5-32ad-4eec-9ac1-5c07acbfaf3d" class="">40:43 – <a href="http://abovethecrowd.com/2011/05/24/all-revenue-is-not-created-equal-the-keys-to-the-10x-revenue-club/">All Revenue is Not Created Equal: The Keys to the 10X Revenue Club</a></p><p id="348ce2f8-4ac4-467c-affd-af36b834af0e" class="">43:20 – How does the influx of money into the space impact him</p><p id="92f649f2-ddca-4e3a-a88c-e4d06fc7213f" class="">46:44 – Spending money to attack top brands</p><p id="b4f53aa9-12c3-476e-b916-9b3633d36d59" class="">50:32 – Regulatory capture</p><p id="3f866b50-21e6-47f9-bbb8-fe688287850e" class="">53:36 – His thoughts on the IPO market</p><p id="d465eb25-550f-459d-a95b-0d9efb663d58" class="">57:49 – How did he realize this was his passion</p><p id="3433e610-97a6-4c18-b61e-ea501ce40693" class="">1:00:42 – Qualifying his passion</p><p id="1ef454b0-b438-4471-95d3-68a957e55f0b" class="">1:01:52 – Favorite thing about working with entrepreneurs</p><p id="7bf7c134-9751-4cc2-b581-c15227e7a476" class="">102:48 – Honing your craft</p><p id="f6aabd9f-9e60-4795-b1aa-0ea884b3e71c" class="">1:04:33 – Making yourself a good mentor</p><p id="1e68ca94-37ad-448e-9c21-f1f9936ba013" class="">1:05:56 – Kindest thing anyone has done for him</p></div></article></body></html>

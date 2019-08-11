@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Small Bets, Huge Payoffs with Chris Cole [Invest Like the Best, EP.13]</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="fe91f059-7c98-4eb9-9d67-6354776d1c86" class="page sans"><header><h1 class="page-title">Small Bets, Huge Payoffs with Chris Cole [Invest Like the Best, EP.13]</h1></header><div class="page-body"><p id="9e505420-ff7c-4a49-b616-432620111223" class="block-color-gray"><a href="http://investorfieldguide.com/cole/">http://investorfieldguide.com/cole/</a></p><p id="94f4eeba-5999-491f-ab16-0ea9da2d6bb1" class="">
+</p><p id="c2267678-9af3-42f7-9d21-35b0a8b00bfc" class="">My guest this week is Chris Cole, founder and managing partner at Artemis Capital Management. Chris’s specialty is in long volatility strategies, setting up portfolios that will benefit from significant change and volatility in markets. We discuss how a series of small bets can lead to disproportionally large nonlinear payoffs, in both life and markets. We also discuss the kind of watch Chris wears, Dennis Rodman, and movies, all as metaphors for his life philosophy.</p><p id="3b0b4b93-19bc-4608-a8ab-554ce039298e" class="">If you are not already, subscribe to <strong>Invest Like the Best</strong> here:</p><p id="6b2fec08-7cd6-427c-87f1-62c211ffd25f" class="">Please enjoy!</p><p id="dfb29198-3a90-4995-8741-1d757ec77773" class=""><strong>Books Mentioned</strong></p><p id="78f14f2f-14d0-4602-97b4-4fcf1837e340" class=""><strong>Links Referenced</strong></p><p id="d039f430-7849-47fd-b1f8-1cf1ca36a556" class=""><strong>Show Notes</strong></p><p id="29be4628-a4bf-45af-8657-9e18debc6d9b" class="">2:07 – (First Question) – Chris is asked about the somewhat morbid and interesting concept of a “ticker”</p><p id="708c8e7a-e799-4124-b947-dbe9ead0542a" class="">3:17 – A look at volatility and convexity as Chris sees it, and what we do in our everyday lives that exposes us to these concepts.</p><p id="eb846b0e-882d-4332-a9e6-f8568fa20b19" class="">8:03 – How does the same idea get used in investing and a portfolio</p><p id="bb39f8b3-7978-469f-9209-eba3e8461e04" class="">10:02 – If convexity is the non-linear payoffs to change, why is value investing a short convexity strategy?</p><p id="c891efcc-9056-400b-b7e6-76612ec2eb00" class="">11:20 – <a href="https://www.amazon.com/Antifragile-Things-That-Disorder-Incerto/dp/0812979680">Antifragile: Things That Gain from Disorder</a></p><p id="603bd888-02d9-4898-aa56-8f246ffe8233" class="">14:09 – Are there such things as positive Black Swans?</p><p id="170d03d3-2b2d-4508-9c00-15e4e83c54d2" class="">15:51 – How does Chris see the world and markets looking through his lens of convexity</p><p id="9daa6003-200b-4837-b847-722a4ad6dcc0" class="">18:10 – <a href="https://www.amazon.com/Command-Control-Damascus-Accident-Illusion/dp/0143125788/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1479448771&amp;sr=1-1&amp;keywords=command+and+control">Command and Control: Nuclear Weapons, the Damascus Accident, and the Illusion of Safety</a></p><p id="b29a1e73-a0a6-460b-9436-42c8ca2ebfec" class="">20:39 – Why democracy may not survive the strategies in place to protect us</p><p id="d5361c94-9e87-48b6-8e3a-740276f9338e" class="">20:54 – <a href="https://www.amazon.com/Devil-Take-Hindmost-Financial-Speculation/dp/0452281806/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1479448995&amp;sr=1-1&amp;keywords=devil+take+the+hindmost">Devil Take the Hindmost: a History of Financial Speculation</a></p><p id="c4ed6802-52e7-49b9-8bb5-a559386b1142" class="">23:05 – <a href="https://www.amazon.com/Lords-Finance-Bankers-Broke-World/dp/0143116800">Lords of Finance: The Bankers Who Broke the World</a></p><p id="dab6ba00-8654-445f-b863-9b39bf2999e6" class="">23:20 – Why World War II helped the US economy get out of the depression</p><p id="15ad518d-9162-4db4-914d-82b3d0bd0d6e" class="">24:24 – Have we pulled too much future returns into our current numbers and are our expectations for market productivity too high?</p><p id="083e6c44-4fd1-4cd4-947d-e894741c7e3c" class="">26:11 – Some of the strategy thinking that Artemis uses to build portfolios in this current market atmosphere</p><p id="4ffb1365-fafc-4d85-9fe4-012656392cf9" class="">30:40 – How does an average person access these strategies or do you have to be an institution to execute macro strategies like Artemis</p><p id="bd3628c7-62b0-4624-980d-d8871df34797" class="">33:58 – What would it take convince Chris that he is wrong and the world financial markets are in better shape than perceived</p><p id="87c997ae-fe98-40bd-95f2-f525d92093f5" class="">36:48 – Are we seeing above average fear in the market or are we setting up for a more horror-filled scenario where the workforce potential is decimated by technology</p><p id="aeb15db2-057a-41b2-b42c-ef70afeb6b0f" class="">42:53 – How do clients of Artemis perceive their negative outlook on the economy and society</p><p id="0f685e53-cc19-412a-be63-cd4d89f69889" class="">44:10 – Dennis Rodman and portfolio optimization</p><p id="32a02c54-18c0-400c-9923-add406440fa6" class="">44:16 – <a href="http://finance.yahoo.com/news/why-dennis-rodman-asset-portfolio-000000140.html">The unexpected lesson investors can learn from NBA great Dennis Rodman</a></p><p id="4bc43e01-e339-4a94-b787-3f634ff09504" class="">49:39 – Artwork seems to be a major part of Chris’s work, so Patrick questions how that developed</p><p id="30ac33c6-d301-4be9-96c3-f7e4df0f4a34" class="">51:36 – What movie best exemplifies the long volatility strategy</p><p id="e6161cda-8cf0-42c8-9950-88ab88803331" class="">55:14 – Chris’s most memorable day in investing</p><p id="9897847b-fd48-40bd-b514-f0920250b20f" class="">57:04 – The kindest thing that anyone has done for Chris</p><p id="ff6c5785-bafb-4192-bdfe-cef0cbda2e30" class="">57:52 – Chris’s important daily habits; exercise, meditation, and reading; and he goes about them.</p><p id="606210a1-eb01-490e-b38c-6d6b3cf8fa99" class="">59:38 – <a href="https://www.amazon.com/Genius-Birds-Jennifer-Ackerman/dp/1594205213/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1479932711&amp;sr=1-1&amp;keywords=genius+of+birds">The Genius of Birds</a></p><p id="579a21db-219c-4d1c-b18d-b5dfeb98f12a" class="">1:00:39 – <a href="https://www.amazon.com/Creativity-Inc-Overcoming-Unseen-Inspiration/dp/0812993012/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1479932805&amp;sr=1-1&amp;keywords=creativity">Creativity, Inc.: Overcoming the Unseen Forces That Stand in the Way of True Inspiration</a></p><p id="b4175763-68aa-4b72-9f37-491caa91892e" class="">1:01:05 – <a href="https://www.amazon.com/Impro-Improvisation-Theatre-Keith-Johnstone/dp/0878301178/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1479932830&amp;sr=1-1&amp;keywords=impro">Impro: Improvisation and the Theatre</a></p><p id="30e1c4ed-0e82-4ea5-9f36-ca0508686173" class=""><strong>Learn More</strong></p><p id="26fcc101-1535-44e3-a9d0-75f51a26ead1" class="">For more episodes go to <a href="http://investorfieldguide.com/podcast">InvestorFieldGuide.com/podcast</a>.</p><p id="5dc5a22e-e198-4994-b030-0ac8603c83c6" class="">Sign up for the book club, where you’ll get a full investor curriculum and then 3-4 suggestions every month at <a href="http://investorfieldguide.com/bookclub">InvestorFieldGuide.com/bookclub</a></p><p id="51755cc6-b2de-4669-b18d-8e447fd20b5f" class="">Follow Patrick on twitter at <a href="https://twitter.com/patrick_oshag">@patrick_oshag</a></p></div></article></body></html>

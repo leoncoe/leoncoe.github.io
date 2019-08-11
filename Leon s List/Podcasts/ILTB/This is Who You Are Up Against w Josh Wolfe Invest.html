@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>This is Who You Are Up Against, w/ Josh Wolfe – [Invest Like the Best, EP.76]</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="dad4bfb4-ea53-4b0e-a9d0-9a02af45aee1" class="page sans"><header><h1 class="page-title">This is Who You Are Up Against, w/ Josh Wolfe – [Invest Like the Best, EP.76]</h1></header><div class="page-body"><p id="b50b468e-491c-413c-a4d2-b00e0a589853" class="block-color-gray"><a href="http://investorfieldguide.com/wolfe/">http://investorfieldguide.com/wolfe/</a></p><p id="f1ec4f0f-57b9-488f-a4b6-aaffda402283" class="">
+</p><figure id="deb35bb5-ce29-44cd-8e14-5432d5206004" class="image"><a href="This is Who You Are Up Against w Josh Wolfe Invest/JoshWolfe.png"><img style="width:700px" src="This is Who You Are Up Against w Josh Wolfe Invest/JoshWolfe.png"/></a></figure><p id="993ffba2-58bf-45d2-91f3-9ac4733bf27f" class="">Long-time listeners will have heard me joke before that this podcast should really be called “this is who are you up against.” I’ve been waiting for the right episode to deploy the joke as a title, and this week we have it.</p><p id="47675fab-baf6-4948-b5e1-f1e11be8ea8c" class="">The joke is meant to convey how incredibly impressive these people are who we get to hear from every week. My guest this week is Josh Wolfe, a founding and managing partner at Lux Capital in New York City. Lux is a venture capital firm, but a highly unique one. They’ve spent more time in hard sciences and interesting nooks and crannies of the market than the typical VC firm.</p><p id="ff005315-de44-4396-b3d4-210adb8ab0af" class="">Some of investing is zero sum: my outperformance is someone else’s underperformance. Sometimes, though, investing is positive sum. The combination of capital, ideas, people, drive, and raw energy leads to amazing new things.</p><p id="93939997-253b-47cb-8a91-390ceb42c832" class="">I think the best investing and best investors of the future will be more collaborative than competitive. After finishing with Josh, I couldn’t stop thinking “god, do I want to be involved with whatever he’s doing, if only just to learn.”</p><p id="fd1934af-fef5-4a47-a634-afeb2a357be5" class="">This conversation made me rethink my joke “this is who are you up against.” Now I won’t think of it as a zero-sum joke, but instead as a reminder: this is the kind of person who is out there. You better find your niche, and still be the absolute best you can within that niche.</p><p id="eb3c49c0-4bbb-4708-84fb-a2cbf6243e81" class="">Please enjoy this killer conversation with Josh Wolfe. We cover just about everything.</p><p id="950515dd-eab7-4b54-8861-0bf1a9cf8747" class="">For more episodes go to <a href="http://investorfieldguide.com/podcast">InvestorFieldGuide.com/podcast</a>.</p><p id="9ec9a782-ab73-4c7f-991d-314e152216ea" class="">Sign up for the book club, where you’ll get a full investor curriculum and then 3-4 suggestions every month at <a href="http://investorfieldguide.com/bookclub">InvestorFieldGuide.com/bookclub</a>.</p><p id="5f9cb6e3-487c-4ae9-a157-7c75588f713d" class=""><strong>Links Referenced</strong></p><p id="1e4a6e7d-ca2b-4c27-b531-953fb05fe8b0" class=""><a href="https://popplet.com/">Popplet</a></p><p id="c96c4fb7-02f8-40d2-b3c3-9f380b50d550" class=""><strong>Books Referenced</strong></p><p id="855d15c8-af0e-4d16-bdba-33e7f60892be" class=""><strong>Show Notes</strong></p><p id="4cb8ba40-6e34-4fd4-9893-4cee3dd9d153" class="">2:35 – (First Question) – Lux Capital and the kind of investments they have made over the years</p><p id="fcc4b3b8-cb10-4e71-bdd6-001ff140b8f6" class="">5:42 – The formation of the investment philosophy for Lux</p><p id="7fe1cc28-17a5-4d2c-97d5-f887b72ef32e" class="">8:17 – Why randomness and optionality are important cornerstones to the philosophy</p><p id="f12b7f7b-2432-406b-a872-3e7986f11c32" class="">9:52 – Investment philosophy 100-0-100 (ambition, arrogance, intellectual humility)</p><p id="6972e354-b2f4-4591-b243-cbb804aaf966" class="">10:40 – How Josh manages his time and attention</p><p id="de41b991-734b-4dbc-a464-593c5d7820d5" class="">12:53 – <a href="https://www.forbes.com/sites/joshwolfe/2011/03/11/investing-in-biofuels-or-biofools/#3a94583f1017">Investing in Biofuels or Biofools?</a></p><p id="ab04c4ba-7fe2-4b7a-87ab-ba3ac9d7e586" class="">13:29 – Obsession with nuclear</p><p id="90988633-b917-4079-aa78-bb95aa73421e" class="">15:15 – Investment in metamaterials</p><p id="c635e6c1-329a-41d8-afce-e8e294e0d797" class="">18:28 – Focus on autonomous vehicles</p><p id="01f5d276-6ea7-41d5-aa84-d36ba039c0f7" class="">21:02 – How all of these gambles are viewed by Josh’s investors</p><p id="83b4162c-a62e-4e2a-a751-e3c246f4b38d" class="">22:56 – Tattoo technology</p><p id="dd7190cf-401b-4644-858a-50ee8c3f1123" class="">24:20 – <a href="http://investorfieldguide.com/ali/">Ali Hamed podcast</a></p><p id="586f70a3-5119-4da2-b89e-dda3ec8877cb" class="">24:36 – How Josh evaluates people when considering early stage investments</p><p id="9388fb93-95d2-4670-a49b-97458a78e31a" class="">24:45 – <a href="http://investorfieldguide.com/alex/">Alex Moazed podcast</a></p><p id="70dfadb7-0f5c-4972-9cdf-f5a70a2aa458" class="">24:49 – <a href="https://www.amazon.com/Modern-Monopolies-Dominate-Century-Economy/dp/1250091896">Modern Monopolies: What It Takes to Dominate the 21st Century Economy</a></p><p id="85ba42c8-9929-49d7-909e-726b0758201f" class="">28:10 – Why the minority opinion tends to lead to the best outcomes</p><p id="d2a11273-b3b4-4fb0-9e42-8e38ee616061" class="">29:50 – Memorable experience investing in a founder</p><p id="ea39c00f-6cb1-47ba-896d-c756ee3486b6" class="">30:44 – The idea of thesis driven approach to private investment</p><p id="467374d1-b341-467a-8a00-f8a80e3e661b" class="">30:56 – <a href="http://investorfieldguide.com/andy/">Andy Rachleff podcast</a></p><p id="26b056cf-2822-41ae-a6b7-40d572ce2704" class="">32:38 – Crazy thesis – understanding the emotional needs of our pets</p><p id="730609e2-8cbc-45d2-94ed-f7687ed2caa6" class="">34:59 – Crazy thesis – Turning genetic abnormalities into treatments and cures for common conditions</p><p id="aec220c1-7982-40c9-9dba-3dd9f6cc7e19" class="">38:03 – Josh’s learning process through these theses</p><p id="6f5ca832-1c82-434b-a1fa-c14ef91d70d7" class="">38:34 – <a href="https://popplet.com/">Popplet</a></p><p id="1e6b504e-61f3-4759-8ccf-f923e54122de" class="">39:56 – Understanding rebel scientists when it’s impossible to predict what is going to happen</p><p id="ef93b91d-5f88-4fd7-b3b8-2c3325db5115" class="">40:03 – new book on crisper and gene splicing</p><p id="a6cbd7cd-72c2-443e-bce4-6d05e10862e0" class="">44:35 – Can the charge forward mindset be cultivated, or does it have to come naturally</p><p id="40414fdd-3c70-45d5-8441-174c9830469e" class="">45:49 – Investors that Josh has learned the most from</p><p id="784c4cc7-fa94-47a3-9157-e2d80e6ccedd" class="">47:37 – Josh’s comfort investing outside of his usual asset class</p><p id="997751f8-1737-4c3c-8c79-10da90161427" class="">49:03 – <a href="https://twitter.com/wolfejosh">@wolfejosh</a></p><p id="765aec3f-8a57-4563-b91f-d6b4c7c41c44" class="">50:56 – What is the thinking with the short strategy at Lux</p><p id="1ce99bae-83a0-47b6-82a9-ea1b60917698" class="">52:31 – SpaceX vs Tesla, good business vs bad business</p><p id="fe8fd82c-a971-4d78-aaaf-eaaf8c644b93" class="">53:42 – How Josh approaches the quality of a business</p><p id="07d9b585-14ef-4773-a275-f9bb5ea790ec" class="">54:15 – <a href="http://worldaftercapital.org/">World After Capital</a></p><p id="42fb3fae-079f-4cf1-9287-2d80c0f67cc4" class="">55:16 – How does Josh evaluate competitive advantage</p><p id="935b07d1-9a5b-4106-a8c2-0974dbd2fc76" class="">56:45 – Where are we in the venture capital landscape</p><p id="ba90743c-0e9d-4f1c-bec4-bee65ef519d8" class="">1:01:42 – How does his outlook on venture capital affect the way Lux is run</p><p id="4dad56b1-41fe-442d-be95-dabfc34ee98c" class="">1:02:48 – thoughts on cryptocurrency</p><p id="5d0ce5df-2152-4904-9909-6242547c342d" class="">1:05:28 – An overview of Santa Fe Institute</p><p id="357d85c6-138b-48e3-9fa7-47a60e0ca407" class="">1:07:22 – What is the most memorable conversation Josh has ever had</p><p id="0b457087-5d70-43d3-9844-f425d677123f" class="">1:09:34 – What is Josh’s objective function in life</p><p id="77a106d9-4f61-4ab7-ab2e-9f35172fa0d3" class="">1:12:43 – Are there people that Josh disagrees with but deeply respects</p><p id="72cff3f4-1607-4548-bacf-99243d0ab718" class="">1:13:32 – Kindest thing anyone has ever done for Josh</p></div></article></body></html>

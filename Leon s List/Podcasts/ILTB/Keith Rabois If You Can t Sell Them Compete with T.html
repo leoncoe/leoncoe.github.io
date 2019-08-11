@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>﻿Keith Rabois – If You Can’t Sell Them, Compete with Them – [InvestLike the Best, EP.115]</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="f44df6ec-c45a-43f7-a701-212b67872049" class="page sans"><header><h1 class="page-title">﻿Keith Rabois – If You Can’t Sell Them, Compete with Them – [InvestLike the Best, EP.115]</h1></header><div class="page-body"><p id="aa18ec48-044e-430a-9b95-fa95f27cc425" class="block-color-gray"><a href="http://investorfieldguide.com/rabois/">http://investorfieldguide.com/rabois/</a></p><p id="178e4bf6-e394-49f6-bd85-9e6ff46682a0" class="">
+</p><figure id="bfc2a152-e42f-46d9-abf1-9b4423a1c462" class="image"><a href="Keith Rabois If You Can t Sell Them Compete with T/Keith-Rabois.png"><img style="width:700px" src="Keith Rabois If You Can t Sell Them Compete with T/Keith-Rabois.png"/></a></figure><p id="a869b6e2-82e7-4a9d-a530-eeea198ddf55" class="">My guest this week is Keith Rabois. Keith is currently an investment partner at Khosla Ventures, but has a storied and diverse background as an investor, entrepreneur, and executive. He has worked in senior positions at Paypal, LinkedIn, and Square; has led investments in companies like Stripe, YouTube, Palantir, and AirBnB; and started the company OpenDoor, which aims to transform the process of selling a home through technology.</p><p id="0cf77af9-77a4-4b21-99df-3a5edf63bf90" class="">One fun fact about Keith is that he may have the most impressive list of bosses I’ve ever seen, which we discuss during the episode.</p><p id="eedcba3d-3df0-4901-a8cf-0ba5f860bada" class="">We cover a lot, but one thing we kept returning to was business strategy. Keith’s frameworks for gaining and building strategic power helped me clarify my thinking on the topic, and his examples of contrarian thinking will hopefully make you question some commonly held beliefs.</p><p id="d43af3b1-c204-47e1-9865-49d722602472" class="">Please enjoy our conversation.</p><p id="2fe40063-909a-44d4-aa4e-010be97884b7" class="">For more episodes go to <a href="http://investorfieldguide.com/podcast">InvestorFieldGuide.com/podcast</a>.</p><p id="332e8ffb-a7b5-431f-bf21-a6331beed68b" class="">Sign up for the book club, where you’ll get a full investor curriculum and then 3-4 suggestions every month at <a href="http://investorfieldguide.com/bookclub">InvestorFieldGuide.com/bookclub</a>.</p><p id="6c30139a-e803-4fb5-a930-49fa66e93888" class=""><strong>Show Notes</strong></p><p id="d0fd71ca-cb88-4b2d-bcee-6b3265559ee1" class="">1:35 (First Question) – A look at his investing philosophy</p><p id="ebe4d57a-b076-4607-920e-b8a89e43c186" class="">3:16 – Favorite examples of his own investment history</p><p id="161b81af-616c-4d5c-bcf1-1ca3e06b6408" class="">4:40 – <a href="https://www.amazon.com/7-Powers-Foundations-Business-Strategy/dp/0998116319">7 Powers: The Foundations of Business Strategy</a></p><p id="96f64fa3-8fb9-46ca-b877-b8e8c1148638" class="">5:07 – Understanding what is anomalous in a given investment</p><p id="0802da54-95f6-4179-abea-fd84e6186284" class="">7:07 – How much a secret needs to be protected within a business</p><p id="e1cc2075-3ffb-4745-b6d1-69fd369a62b0" class="">11:51 – Why accumulating advantage with data is of interest to Keith</p><p id="31fe7f25-195c-4e7e-8779-5978c26c1439" class="">15:12 – Digital health companies and ideas that he finds compelling</p><p id="741935c9-7100-4873-8c33-83d32a10253e" class="">16:17 – Nuance around financial services that investors should be mindful of</p><p id="3589ad93-3517-4bb7-9e27-dcaa701f063f" class="">17:56 – How do they evaluate managers ability to recruit talent</p><p id="64345295-6475-447c-bb2d-67ddf794c4ba" class="">19:36 – How similar are the roles of entrepreneur, board member, investor, etc that Keith has had in his career</p><p id="0d11c1fb-188d-4af7-997b-6903e64e8746" class="">24:02 – Ways that Keith is a contrarian, including his feelings on “lean startup.”</p><p id="49109b1b-d618-446b-836b-43fef7170a00" class="">27:04 – Is problem identification a specific skill set</p><p id="3b962152-ac5e-48d8-9a76-78d3ec16b014" class="">28:29 – Objection with experimentation/iteration</p><p id="f511e149-62d5-4bd0-a9be-2ddc03bb889a" class="">30:02 – Bad ideas in venture</p><p id="a8ce7e6e-f8c1-47e7-adcc-14c94f6839cc" class="">31:36 – What he likes about Apple</p><p id="434c6a5d-d8a5-436b-b4f7-3b231ec6306d" class="">31:51 – <a href="https://www.amazon.com/Creative-Selection-Inside-Apples-Process/dp/1250194466/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1544845159&amp;sr=1-1&amp;keywords=creative+selection">Creative Selection: Inside Apple’s Design Process During the Golden Age of Steve Jobs</a></p><p id="de2f5a63-8cf4-4bda-8f88-8fba199c07e0" class="">32:26 – Interview questions for identifying great talent</p><p id="d783064a-94de-4753-bc1a-61a86c497383" class="">35:41 – Elements of good design</p><p id="28c26726-314f-4eaa-89ee-29aa44eb43ff" class="">37:14 – Impact of platforms on opening new opportunities</p><p id="df94b1e1-0e7d-47b7-827a-908ebf0e2706" class="">38:42 – His take on valuation in the early stage environment</p><p id="9f9298ca-1ad3-41f5-b191-19953989922e" class="">40:33 – Advice he would give people early in their careers</p><p id="246c59c8-782e-4a91-beb6-077c2ed4e2d6" class="">43:58 – Do high growth companies get beat by established larger businesses</p><p id="eb07eac7-4de9-4d1d-881b-3497a3145849" class="">45:25 – Popular narratives that he thinks are just wrong</p><p id="2bfd2005-ec13-4cdd-8e75-745cc134da60" class="">48:22 – His thoughts on how people should learn, balancing experience vs information gathering</p><p id="2f794ea4-a328-476f-82dd-2dbcd9797d35" class="">50:00 – Other investors that are taking a unique approach to investing</p><p id="6440d6ff-2e0d-4cfe-a038-5326abde1924" class="">51:57 – Reflecting on the entrepreneur as a client model of private equity</p><p id="692eaa95-5407-4d89-afaf-1c802c5d0969" class="">55:04 – Books that he recommends that is least known</p><p id="18439459-2f5b-4580-8623-1c5fed77a152" class="">55:18 – <a href="https://www.amazon.com/Upside-Stress-Why-Good-You/dp/1101982934/ref=sr_1_2?s=books&amp;ie=UTF8&amp;qid=1544845210&amp;sr=1-2&amp;keywords=Upside+of+Stress">The Upside of Stress: Why Stress Is Good for You, and How to Get Good at It</a></p><p id="8028a1a0-cb59-46ed-a725-9cab204eded6" class="">56:30 – Kindest thing anyone has done for Keith</p><p id="ae720e6e-9f34-445c-a1a0-93213e80ddb9" class=""><strong>Learn More</strong></p><p id="66309438-9cf3-49ab-a7dd-27a6720067fb" class="">For more episodes go to <a href="http://investorfieldguide.com/podcast">InvestorFieldGuide.com/podcast</a>.</p><p id="c69419d1-d1a1-45c3-8095-fc0f79da2849" class="">Sign up for the book club, where you’ll get a full investor curriculum and then 3-4 suggestions every month at <a href="http://investorfieldguide.com/bookclub">InvestorFieldGuide.com/bookclub</a></p><p id="37c439b7-e1dc-41b2-8502-79978b33f39e" class="">Follow Patrick on twitter at <a href="https://twitter.com/patrick_oshag">@patrick_oshag</a></p></div></article></body></html>

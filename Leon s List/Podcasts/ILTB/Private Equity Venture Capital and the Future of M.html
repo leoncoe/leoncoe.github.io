@@ -1,0 +1,566 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Private Equity, Venture Capital, and the Future of Money Management, with Brent Beshore – [Invest Like the Best, EP.22]</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="05df1eb1-2cc1-4a4b-8b06-61da88a0fbc5" class="page sans"><header><h1 class="page-title">Private Equity, Venture Capital, and the Future of Money Management, with Brent Beshore – [Invest Like the Best, EP.22]</h1></header><div class="page-body"><p id="c6de851c-bfc3-447c-8746-bf5df4193782" class="block-color-gray"><a href="http://investorfieldguide.com/adventures/">http://investorfieldguide.com/adventures/</a></p><p id="089e7d3d-f315-4515-94be-e8b7bb5415b0" class="">
+</p><p id="5d8875ff-7bc3-4fb0-990d-b261e7119024" class="">Brent Beshore and I spoke for 10 hours about all things investing and business and decided to record a 2-hour chunk of our conversation. We start by discussing private equity, venture capital, and the importance of brand. We then explore the difference between public and private company valuation, and the potent idea of peer mentorship. The conversation wraps up with Brent’s recent experience with one of the greatest investors and thinkers of all time. Above all, this is a conversation about what is right and wrong in the world of money management and investing, and where the business is heading.</p><p id="56d4e226-4f3d-446c-ad67-1e27828ed8a0" class="">Please enjoy!</p><p id="bbce6de1-84da-4699-a556-27c7a8d3bfb5" class=""><strong>Books Referenced</strong></p><p id="b4619586-81a2-459c-8905-e2c3b208fcd7" class=""><a href="https://www.amazon.com/Mountains-Beyond-Quest-Farmer-Would/dp/0812973011">Mountains Beyond Mountains: The Quest of Dr. Paul Farmer, a Man Who Would Cure the World</a></p><p id="c58e680a-2a37-47ad-9a18-d7f7acef7717" class=""><strong>Links Referenced</strong></p><p id="9e231931-4bfe-4fb4-9550-a178894de1d4" class=""><a href="http://www.kauffman.org/~/media/kauffman_org/research%20reports%20and%20covers/2012/05/we_have_met_the_enemy_and_he_is_us.pdf">Lessons from Twenty Years of the Kauffman Foundation’s Investments in Venture Capital Funds and The Triumph of Hope over Experience: Kauffman Foundation</a></p><p id="6ea641c2-7270-44c8-9b1e-d9fa734f7318" class=""><strong>Show Notes</strong></p><p id="beffa2e0-9c22-4f8e-81f9-d1e48652f332" class="">2:18 – (first question) – Brent is asked to paint a picture of the private company market and what are some key features of it</p><p id="8ea063d7-4f62-4e54-8b7d-719b332f0117" class="">4:50 – What does the diligence look like when you get down to examining companies that could be a potential investment target</p><p id="60438e30-d2f3-4fc8-80e3-b37173051edb" class="">9:50 – Exploring whether certain moats are more attractive to Brent vs others</p><p id="704105bc-76c2-404e-ab91-775a354813d4" class="">12:28 – Can moats be developed ahead of time or do you stumble into them</p><p id="64849c4f-d870-4dbe-8a24-781eae111273" class="">14:53 – How do you turn around a company and develop huge growth, like a 90% growth rate.</p><p id="c514018c-7022-4623-8b36-a597226a9066" class="">17:14 – It’s hard to run a company</p><p id="b59f9b4a-205b-4e95-bc54-d03393d58291" class="">18:40 – Cleaning out the entrenched aspects of a business</p><p id="2b3c40da-ae65-4ca8-a889-be9bb3ffb1a5" class="">22:36 – <a href="https://www.amazon.com/Drive-Surprising-Truth-About-Motivates/dp/1594484805">Drive: The Surprising Truth About What Motivates Us</a></p><p id="a8fe3393-61f6-4322-9f8d-23e4b57686b7" class="">23:25 – What is good and what makes no sense about the way private equity operates</p><p id="78fc5114-c4a4-44db-a3ca-5a9d4421bb0f" class="">31:29 – What about venture capital, from the perspective that run venture funds, want to start a venture fund, and from entrepreneurs seeking venture capital.</p><p id="fd0b99ee-2d9b-4646-88ed-b2aaf84d2f67" class="">39:13 – Why being skilled in relationships is such an important trait, in venture capital, and almost anything</p><p id="ea9c9854-5bdf-46e7-a242-5b982074eec3" class="">40:13 – Wrong and right reasons to get into venture capital</p><p id="eaae47e6-1b42-47a6-b4ca-6f8408ed9a35" class="">40:50 – Shift to personal brand and the right time to focus on developing it.</p><p id="64588fe2-4d8b-4177-86a5-4412e1683846" class="">47:04 – How branding impacts our expectations from a company</p><p id="6669d871-86b6-419f-b1d5-bab6445e7f9c" class="">52:30 – When people are pursuing personal brand at the wrong time or for the wrong reason</p><p id="1f6eb25b-60d1-4c8c-9bca-0b34b8a079b8" class="">55:03 – Monetization of and worth of a brand</p><p id="21fdb505-84cf-4aa4-b271-0356e1ebaba8" class="">57:20 – The discovery of Warren Buffet’s brand.</p><p id="01082fc5-fa26-4f78-a41f-f5d2c4c43ab2" class="">58:46 – Circle back to the top LP investors in venture capital funds</p><p id="6dfcf588-0f3d-4344-bb50-1a4a3de128e0" class="">1:01:01 – <a href="http://www.kauffman.org/~/media/kauffman_org/research%20reports%20and%20covers/2012/05/we_have_met_the_enemy_and_he_is_us.pdf">Lessons from Twenty Years of the Kauffman Foundation’s Investments in Venture Capital Funds and The Triumph of Hope over Experience: Kauffman Foundation</a></p><p id="d604cd15-b648-409c-b0a2-299750a10e44" class="">1:04:47 – Looking at some of Brent’s results and how they compare to the alternative options in investing today</p><p id="777d27a4-683a-4d5f-ae79-ed6a6f58cf84" class="">1:19:24 – The impact of companies being acquired at what could be exaggerated multiples of their value</p><p id="1bd98ab2-6cb3-4cd6-b99c-fc1f0086eae6" class="">1:22:50 – Looking at Brent’s process of learning outside of books and acquiring businesses</p><p id="45279c55-84b4-42e7-91a6-4705f3db586a" class="">1:24:50 – <a href="https://www.amazon.com/Fish-That-Ate-Whale-Americas/dp/1250033314">The Fish That Ate the Whale: The Life and Times of America’s Banana King</a></p><p id="5bcfc1d6-0c7f-48af-98aa-bd06e8421af5" class="">1:25:18 – An example of an adjustment that Brent has made based on a lesson he’s learned in the past year</p><p id="273b8f0e-0367-4458-b979-682941735b14" class="">1:29:45 – Understanding the importance of empathy and really listening to people</p><p id="a750ed96-b307-458c-a633-9c66754348b4" class="">1:31:05 – <a href="https://www.amazon.com/Mountains-Beyond-Quest-Farmer-Would/dp/0812973011">Mountains Beyond Mountains: The Quest of Dr. Paul Farmer, a Man Who Would Cure the World</a></p><p id="009ec861-e94b-4624-974e-d2dedd70d612" class="">1:33:45 – Looking at other notable experiences for Brent over the last year</p><p id="85ecbce1-0b13-4f52-95e8-817c6e809b7d" class="">1:36:00 – Brent is asked whether his growth strategy would be better if he looked to outward at landing more deals, or if he should go upward and focus on larger deals</p><p id="1cdc3a91-a20f-4204-9612-76756615d4cb" class="">1:39:24 – Companies are just messy people and it’s about finding the least messy people at the top</p><p id="f211ed5b-2e06-41df-8430-c18713fc8dae" class="">1:42:58 – Two keys to finding the right deals, ability to scale and ability to withstand lumpiness</p><p id="5969fe4e-90db-4e41-9785-22676fbb6108" class="">1:46:02 – Exploring the problems within the capital raising system</p><p id="f34c2e53-fc6f-44b7-afb4-db6e5fa5da1d" class="">1:51:23 – Brent is asked about his recent experience with Charlie Munger</p><p id="a2398484-2d27-401e-8294-0ef52fc10cda" class=""><strong>Learn More</strong></p><p id="937895c0-706c-46af-822d-08cc0edb15a8" class="">For more episodes go to <a href="http://investorfieldguide.com/podcast">InvestorFieldGuide.com/podcast</a>.</p><p id="531644dc-2852-490b-9df0-cc2521b3b5ff" class="">Sign up for the book club, where you’ll get a full investor curriculum and then 3-4 suggestions every month at <a href="http://investorfieldguide.com/bookclub">InvestorFieldGuide.com/bookclub</a></p><p id="024df2f4-6aeb-482c-b3ef-af52524c729a" class="">Follow Patrick on twitter at <a href="https://twitter.com/patrick_oshag">@patrick_oshag</a></p></div></article></body></html>
