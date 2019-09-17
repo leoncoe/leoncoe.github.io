@@ -590,5 +590,46 @@ return " ";
 </FORM>
 </CENTER>
 </p><p id="24a3e323-e0e1-4842-80c1-51c99b05d08d" class="">
-</p><h3 id="83b9b852-3f63-4e68-aac7-59057610cd67" class="">Don&#x27;t have an access code? Purchase an access code below</h3><figure class="callout" style="white-space:pre-wrap;display:flex" id="11bb6ec7-9339-4b35-a464-6bf776ab415b"><div style="font-size:1.5em"><span class="icon">🗂</span></div><div style="width:100%"><strong><a href="https://leonslist.com/login">Buy Lifetime Access to Leon&#x27;s List</a></strong></div></figure><p id="e48a4980-097b-4b4a-ae61-36d6a8124060" class="">
+</p><h3 id="83b9b852-3f63-4e68-aac7-59057610cd67" class="">Don&#x27;t have an access code? Purchase an access code below</h3><figure class="callout" style="white-space:pre-wrap;display:flex" id="11bb6ec7-9339-4b35-a464-6bf776ab415b"><div style="font-size:1.5em"><span class="icon">🗂</span></div><div style="width:100%"><strong>Buy Lifetime Access to Leon&#x27;s List</strong><!-- Load Stripe.js on your website. -->
+<script src="https://js.stripe.com/v3"></script>
+
+<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+<button
+  style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+  id="checkout-button-sku_FbWFryZY26kTvS"
+  role="link"
+>
+  Checkout
+</button>
+
+<div id="error-message"></div>
+
+<script>
+  var stripe = Stripe('pk_live_RuQaUghAhT8oRZc9AhH0oxQV');
+
+  var checkoutButton = document.getElementById('checkout-button-sku_FbWFryZY26kTvS');
+  checkoutButton.addEventListener('click', function () {
+    // When the customer clicks on the button, redirect
+    // them to Checkout.
+    stripe.redirectToCheckout({
+      items: [{sku: 'sku_FbWFryZY26kTvS', quantity: 1}],
+
+      // Do not rely on the redirect to the successUrl for fulfilling
+      // purchases, customers may not always reach the success_url after
+      // a successful payment.
+      // Instead use one of the strategies described in
+      // https://stripe.com/docs/payments/checkout/fulfillment
+      successUrl: 'http://leonslist.com/success',
+      cancelUrl: 'http://leonslist.com/canceled',
+    })
+    .then(function (result) {
+      if (result.error) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer.
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+</script></div></figure><p id="e48a4980-097b-4b4a-ae61-36d6a8124060" class="">
 </p></div></article></body></html>
