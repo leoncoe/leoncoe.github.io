@@ -603,34 +603,5 @@ return " ";
   Checkout
 </button>
 
-<div id="error-message"></div>
-
-<script>
-  var stripe = Stripe('pk_live_RuQaUghAhT8oRZc9AhH0oxQV');
-
-  var checkoutButton = document.getElementById('checkout-button-sku_FbWFryZY26kTvS');
-  checkoutButton.addEventListener('click', function () {
-    // When the customer clicks on the button, redirect
-    // them to Checkout.
-    stripe.redirectToCheckout({
-      items: [{sku: 'sku_FbWFryZY26kTvS', quantity: 1}],
-
-      // Do not rely on the redirect to the successUrl for fulfilling
-      // purchases, customers may not always reach the success_url after
-      // a successful payment.
-      // Instead use one of the strategies described in
-      // https://stripe.com/docs/payments/checkout/fulfillment
-      successUrl: 'http://leonslist.com/success',
-      cancelUrl: 'http://leonslist.com/canceled',
-    })
-    .then(function (result) {
-      if (result.error) {
-        // If `redirectToCheckout` fails due to a browser or network
-        // error, display the localized error message to your customer.
-        var displayError = document.getElementById('error-message');
-        displayError.textContent = result.error.message;
-      }
-    });
-  });
-	</script></CENTER></div></figure><p id="e48a4980-097b-4b4a-ae61-36d6a8124060" class="">
+<div id="error-message"></div></div></figure><p id="e48a4980-097b-4b4a-ae61-36d6a8124060" class="">
 </p></div></article></body></html>
