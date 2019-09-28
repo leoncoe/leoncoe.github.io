@@ -1,0 +1,572 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Books</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="0eb117bf-89aa-471a-95a1-9873bfc04437" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">📙</span></div><h1 class="page-title">Books</h1></header><div class="page-body"><h2 id="d894a948-5154-4fa0-b5bd-6911a85faff0" class="block-color-blue_background">Favorites</h2><figure id="b60b33ac-87e4-409e-bbae-e645766b8b16" class="link-to-page"><a href="Books/Poor Charlie s Almanack The Wit and Wisdom of Char.html">Poor Charlie&#x27;s Almanack: The Wit and Wisdom of Charles T. Munger by Charles T. Munger | Goodreads</a></figure><figure id="647ac313-9309-48a2-9dcb-8729c2825604" class="link-to-page"><a href="Books/The Picture of Dorian Gray by Oscar Wilde Goodread.html">The Picture of Dorian Gray by Oscar Wilde | Goodreads</a></figure><figure id="df0c2437-b8b3-4eac-9896-45009e273864" class="link-to-page"><a href="Books/I See Satan Fall Like Lightning by Ren Girard Good.html">I See Satan Fall Like Lightning by René Girard | Goodreads</a></figure><figure id="33a8eff1-39cc-4760-b507-32358eeb8d53" class="link-to-page"><a href="Books/Antifragile Things That Gain from Disorder by Nass.html">Antifragile: Things That Gain from Disorder by Nassim Nicholas Taleb | Goodreads</a></figure><figure id="bf77b789-4ebf-4ff1-b306-2631eebaf971" class="link-to-page"><a href="Books/Ulysses by Alfred Tennyson Goodreads.html">Ulysses by Alfred Tennyson | Goodreads</a></figure><figure id="2d3b2963-b6b7-4113-a99a-f78c66f62fe0" class="link-to-page"><a href="Books/Winning Ugly Mental Warfare in Tennis Lessons from.html">Winning Ugly: Mental Warfare in Tennis--Lessons from a Master by Brad Gilbert | Goodreads</a></figure><figure id="3e92173f-be95-4bb6-b0cd-4216bc92d92a" class="link-to-page"><a href="Books/The Origin of Consciousness in the Breakdown of th.html">The Origin of Consciousness in the Breakdown of the Bicameral Mind by Julian Jaynes | Goodreads</a></figure><figure id="c7795406-a7d5-499f-891b-859254fecfbe" class="link-to-page"><a href="Books/The Score Takes Care of Itself My Philosophy of Le.html">The Score Takes Care of Itself: My Philosophy of Leadership by Bill Walsh | Goodreads</a></figure><p id="cbf59ac3-da6b-4848-93c9-e0f1302466fb" class="">
+</p><hr id="f24e7463-2cc6-43f2-8447-b3f758e6aec7"/><h2 id="55f7c566-bdc9-444a-9a27-36be0195de60" class="block-color-yellow_background">Sports</h2><figure id="abf0a80d-1ce6-4de2-8195-cc3ba4ac17d1" class="link-to-page"><a href="Books/The Only Rule Is It Has to Work Our Wild Experimen.html">The Only Rule Is It Has to Work: Our Wild Experiment Building a New Kind of Baseball Team by Ben Lindbergh | Goodreads</a></figure><figure id="d9df91b8-7ed1-48b1-bdfb-fbe8041f91b1" class="link-to-page"><a href="Books/Basketball Analytics Objective and Efficient Strat.html">Basketball Analytics: Objective and Efficient Strategies for Understanding How Teams Win by Stephen M. Shea | Goodreads</a></figure><figure id="20413204-2f09-48ab-bd1d-7b7ca2d83c70" class="link-to-page"><a href="Books/Astroball The New Way to Win It All by Ben Reiter .html">Astroball: The New Way to Win It All by Ben Reiter | Goodreads</a></figure><figure id="141e511c-491f-49dc-88f9-e7d67b0fdbfb" class="link-to-page"><a href="Books/Swing Your Sword Leading the Charge in Football an.html">Swing Your Sword: Leading the Charge in Football and Life by Mike Leach | Goodreads</a></figure><figure id="e25d6549-265f-4183-a0cb-132272e22767" class="link-to-page"><a href="Books/The Big Book of Belichick His Thoughts on Strategy.html">The Big Book of Belichick: His Thoughts on Strategy, Fundamentals &amp; History by Alex Kirby | Goodreads</a></figure><figure id="cabd45d3-271b-443c-bae2-b71a773cf44f" class="link-to-page"><a href="Books/Big Data Baseball Math Miracles and the End of a 2.html">Big Data Baseball: Math, Miracles, and the End of a 20-Year Losing Streak by Travis Sawchik | Goodreads</a></figure><figure id="6c05ad2e-6b7d-4a55-883b-f82f1d336633" class="link-to-page"><a href="Books/From Headset to Helmet Coaching the r4 System by D.html">From Headset to Helmet: Coaching the r4 System by Dub Maddox | Goodreads</a></figure><figure id="6f152efe-62c1-4d30-848e-78f8c3c600e0" class="link-to-page"><a href="Books/Thinking Basketball by Ben Taylor Goodreads.html">Thinking Basketball by Ben Taylor | Goodreads</a></figure><figure id="b1a62a6e-a6cb-4a8e-b38f-aaa641005da7" class="link-to-page"><a href="Books/Body by Science A Research Based Program for Stren.html">Body by Science: A Research-Based Program for Strength Training, Body Building, and Complete Fitness in 12 Minutes a Week by John Little | Goodreads</a></figure><figure id="a0ae56f0-8fd6-4b51-a0f0-5c4f50494d1f" class="link-to-page"><a href="Books/Basketball Analytics Spatial Tracking by Stephen S.html">Basketball Analytics: Spatial Tracking by Stephen Shea | Goodreads</a></figure><figure id="1270ba27-b9a5-4a6a-adfa-31a7b43921ca" class="link-to-page"><a href="Books/Hybrids The Making of a Modern Defense by Cody Ale.html">Hybrids: The Making of a Modern Defense by Cody Alexander | Goodreads</a></figure><figure id="48c0b647-ac9d-4823-b9aa-61e8c2b5f6f8" class="link-to-page"><a href="Books/Warren Sharp s 2018 Football Preview by Warren Sha.html">Warren Sharp&#x27;s 2018 Football Preview by Warren Sharp | Goodreads</a></figure><figure id="652e9ab1-3933-4ec3-8d6c-57cc72096bec" class="link-to-page"><a href="Books/The Inner Game of Tennis The Classic Guide to the .html">The Inner Game of Tennis: The Classic Guide to the Mental Side of Peak Performance by W. Timothy Gallwey | Goodreads</a></figure><figure id="282d7da1-7f58-4941-ba46-368ecd4788f9" class="link-to-page"><a href="Books/The Cubs Way The Zen of Building the Best Team in .html">The Cubs Way: The Zen of Building the Best Team in Baseball and Breaking the Curse by Tom Verducci | Goodreads</a></figure><figure id="3105f143-d89b-4e1a-bd4a-f0026201a081" class="link-to-page"><a href="Books/Cautious Aggression Defending Modern Football by C.html">Cautious Aggression: Defending Modern Football by Cody Alexander | Goodreads</a></figure><figure id="bac89ca0-b7cb-412c-90f3-54b96ebced5a" class="link-to-page"><a href="Books/Adapt or Die by Dub Maddox Goodreads.html">Adapt or Die. by Dub Maddox | Goodreads</a></figure><figure id="b3123e50-58d3-4e82-a382-887075ee31c9" class="link-to-page"><a href="Books/The TB12 Method How to Achieve a Lifetime of Susta.html">The TB12 Method: How to Achieve a Lifetime of Sustained Peak Performance by Tom Brady | Goodreads</a></figure><figure id="20b4550e-9cbf-427c-808b-a5e0e3c0d179" class="link-to-page"><a href="Books/The Captain Class The Hidden Force that Creates th.html">The Captain Class: The Hidden Force that Creates the World&#x27;s Greatest Teams by Sam Walker | Goodreads</a></figure><figure id="e91a58bb-9df2-4a48-a8d4-62ab5e668ba8" class="link-to-page"><a href="Books/Study Hall College Football Its Stats and Its Stor.html">Study Hall: College Football, Its Stats and Its Stories by Bill Connelly | Goodreads</a></figure><figure id="bbc909a0-cc49-45c6-8681-6a690ed08625" class="link-to-page"><a href="Books/The Essential Smart Football by Chris B Brown Good.html">The Essential Smart Football by Chris B. Brown | Goodreads</a></figure><figure id="0041d7d8-a711-46c2-9f7b-dcbafae38aaa" class="link-to-page"><a href="Books/The Art of Smart Football by Chris B Brown Goodrea.html">The Art of Smart Football by Chris B. Brown | Goodreads</a></figure><figure id="af60dc19-cd36-4493-a40c-f69c024dd757" class="link-to-page"><a href="Books/The Perfect Pass American Genius and the Reinventi.html">The Perfect Pass: American Genius and the Reinvention of Football by S.C. Gwynne | Goodreads</a></figure><figure id="4a1b858a-0903-4e39-80d5-9ce084521ba2" class="link-to-page"><a href="Books/Take Your Eye Off the Ball How to Watch Football b.html">Take Your Eye Off the Ball: How to Watch Football by Knowing Where to Look by Pat Kirwan | Goodreads</a></figure><p id="bf9923de-6610-4776-9070-2926d093263e" class="">
+</p><h2 id="6e3d089e-155d-4097-8d33-8484d9d4d712" class="block-color-teal_background">Philosophy</h2><figure id="4b9dc469-7a7d-40ae-81f9-1240a4f90a18" class="link-to-page"><a href="Books/Letters to a Young Contrarian by Christopher Hitch.html">Letters to a Young Contrarian by Christopher Hitchens | Goodreads</a></figure><figure id="63906484-736e-4a66-862d-4b684f613e6d" class="link-to-page"><a href="Books/Can t Hurt Me Master Your Mind and Defy the Odds b.html">Can&#x27;t Hurt Me: Master Your Mind and Defy the Odds by David Goggins | Goodreads</a></figure><figure id="f6c8b22c-68de-4391-9c38-6e06f847fa39" class="link-to-page"><a href="Books/Leisure The Basis of Culture by Josef Pieper Goodr.html">Leisure: The Basis of Culture by Josef Pieper | Goodreads</a></figure><figure id="06dc1d80-23b8-474c-8055-cd6a8257028e" class="link-to-page"><a href="Books/Reading the Bible with Rene Girard Conversations w.html">Reading the Bible with Rene Girard: Conversations with Steven E. Berry by Michael Hardin | Goodreads</a></figure><figure id="a82c58c6-71e9-4d6a-9cce-7dea1b9eb073" class="link-to-page"><a href="Books/Things Hidden Since the Foundation of the World by.html">Things Hidden Since the Foundation of the World by René Girard | Goodreads</a></figure><figure id="26d1b43f-1e92-4f5d-8dc8-4d286b323bcc" class="link-to-page"><a href="Books/All Things are Possible by Lev Shestov Goodreads.html">All Things are Possible by Lev Shestov | Goodreads</a></figure><figure id="7ddbcd53-3ef2-4068-b280-becb63ea592d" class="link-to-page"><a href="Books/On the Shortness of Life by Seneca Goodreads.html">On the Shortness of Life by Seneca | Goodreads</a></figure><figure id="8a30cf8c-4466-4fe7-a6fe-cd96000fbdcd" class="link-to-page"><a href="Books/The Official Preppy Handbook by Lisa Birnbach Good.html">The Official Preppy Handbook by Lisa Birnbach | Goodreads</a></figure><figure id="b45c8bf1-38a6-4fe7-9e83-31c12280be79" class="link-to-page"><a href="Books/Living Life Backward How Ecclesiastes Teaches Us t.html">Living Life Backward: How Ecclesiastes Teaches Us to Live in Light of the End by David Gibson | Goodreads</a></figure><figure id="aad30bd1-3c26-4df8-a8f7-c97d088215ab" class="link-to-page"><a href="Books/The Courage to Be Disliked The Japanese Phenomenon.html">The Courage to Be Disliked: The Japanese Phenomenon That Shows You How to Change Your Life and Achieve Real Happiness by Ichiro Kishimi | Goodreads</a></figure><figure id="84fcb21c-25d4-48fb-ae26-ff906f28e14b" class="link-to-page"><a href="Books/Harrison Bergeron by Kurt Vonnegut Goodreads.html">Harrison Bergeron by Kurt Vonnegut | Goodreads</a></figure><figure id="f3107789-5b66-47c2-8d9b-47b54de69952" class="link-to-page"><a href="Books/The Bed of Procrustes Philosophical and Practical .html">The Bed of Procrustes: Philosophical and Practical Aphorisms by Nassim Nicholas Taleb | Goodreads</a></figure><figure id="72aa323e-eba6-45ab-8930-ddb6a2bb122a" class="link-to-page"><a href="Books/Tao Te Ching by Lao Tzu Goodreads.html">Tao Te Ching by Lao Tzu | Goodreads</a></figure><figure id="d1e3ebe0-adff-452e-93b9-3c5caa305882" class="link-to-page"><a href="Books/Chop Wood Carry Water How to Fall In Love With the.html">Chop Wood Carry Water: How to Fall In Love With the Process of Becoming Great by Joshua Medcalf | Goodreads</a></figure><figure id="430dd72f-ccb7-4b5a-b372-2b856944713d" class="link-to-page"><a href="Books/Finite and Infinite Games A Vision of Life as Play.html">Finite and Infinite Games: A Vision of Life as Play and Possibility by James P. Carse | Goodreads</a></figure><figure id="6b60c216-ceef-42c5-8a79-012b86538064" class="link-to-page"><a href="Books/Consolations The Solace Nourishment and Underlying.html">Consolations: The Solace, Nourishment and Underlying Meaning of Everyday Words by David Whyte | Goodreads</a></figure><figure id="87d9799d-b90e-4d57-8cb3-5755b9ffe384" class="link-to-page"><a href="Books/Self Reliance by Ralph Waldo Emerson Goodreads.html">Self-Reliance by Ralph Waldo Emerson | Goodreads</a></figure><figure id="4e864c31-b10f-4d18-89ac-fb548dd67907" class="link-to-page"><a href="Books/The Abolition of Man by C S Lewis Goodreads.html">The Abolition of Man by C.S. Lewis | Goodreads</a></figure><figure id="61a433de-5f07-4ac5-ba4d-7526c6e853fa" class="link-to-page"><a href="Books/Essentialism The Disciplined Pursuit of Less by Gr.html">Essentialism: The Disciplined Pursuit of Less by Greg McKeown | Goodreads</a></figure><p id="706a6594-89ef-4c1e-a186-bfc648ef519d" class="">
+</p><h2 id="d89f7fbe-7fbc-4810-b0ff-0d56d9047e4b" class="block-color-brown_background">Marketing, Sales, &amp; Advertising</h2><figure id="cc6b17fa-6669-487d-a085-cbfc1d342d6d" class="link-to-page"><a href="Books/Advertising Secrets of the Written Word The Ultima.html">Advertising Secrets of the Written Word: The Ultimate Resource on How to Write Powerful Advertising Copy from One of America&#x27;s Top Copywriters and Mail Order Entrepreneurs by Joseph Sugarman | Goodreads</a></figure><figure id="d01e5a8f-b4aa-4adf-9c63-97d74ab614bf" class="link-to-page"><a href="Books/Designing for Behavior Change Applying Psychology .html">Designing for Behavior Change: Applying Psychology and Behavioral Economics by Stephen Wendel | Goodreads</a></figure><figure id="7d928edc-cd5f-4b53-b7a2-c258485a9fc9" class="link-to-page"><a href="Books/Never Split the Difference Negotiating As If Your .html">Never Split the Difference: Negotiating As If Your Life Depended On It by Chris Voss | Goodreads</a></figure><figure id="31d3c112-6b6a-49b2-8c96-049151bb5ec9" class="link-to-page"><a href="Books/Storytelling with Data A Data Visualization Guide .html">Storytelling with Data: A Data Visualization Guide for Business Professionals by Cole Nussbaumer Knaflic | Goodreads</a></figure><figure id="40c92489-68d9-49a9-a43b-b1454d988008" class="link-to-page"><a href="Books/Influence The Psychology of Persuasion by Robert B.html">Influence: The Psychology of Persuasion by Robert B. Cialdini | Goodreads</a></figure><figure id="1c4f6541-3278-4436-9ccd-274c1c4c6074" class="link-to-page"><a href="Books/Pre Suasion A Revolutionary Way to Influence and P.html">Pre-Suasion: A Revolutionary Way to Influence and Persuade by Robert B. Cialdini | Goodreads</a></figure><figure id="e7ea9b05-25c8-49f6-8790-9d369ea8f8da" class="link-to-page"><a href="Books/Predictably Irrational The Hidden Forces That Shap.html">Predictably Irrational: The Hidden Forces That Shape Our Decisions by Dan Ariely | Goodreads</a></figure><figure id="a6c863c4-78df-49fc-bc1a-dbac1093e5f0" class="link-to-page"><a href="Books/Lean Analytics Use Data to Build a Better Startup .html">Lean Analytics: Use Data to Build a Better Startup Faster by Alistair Croll | Goodreads</a></figure><figure id="bcf7a2d2-9cf6-4566-9c0e-5afb62a2c017" class="link-to-page"><a href="Books/Ogilvy on Advertising by David Ogilvy Goodreads.html">Ogilvy on Advertising by David Ogilvy | Goodreads</a></figure><figure id="b46429a7-6c95-4edb-bc7f-1448d9b3c450" class="link-to-page"><a href="Books/The Boron Letters by Gary Halbert Goodreads.html">The Boron Letters by Gary Halbert | Goodreads</a></figure><figure id="91dec3b8-e760-4507-a1c8-d29e0d3e0099" class="link-to-page"><a href="Books/Mid Century Ads Advertising from the Mad Men Era b.html">Mid-Century Ads: Advertising from the Mad Men Era by Jim Heimann | Goodreads</a></figure><figure id="a1d30a22-2892-43ce-bd83-82fbfbc82584" class="link-to-page"><a href="Books/Growth Hacker Marketing A Primer on the Future of .html">Growth Hacker Marketing: A Primer on the Future of PR, Marketing, and Advertising by Ryan Holiday | Goodreads</a></figure><figure id="e6b56de6-c721-48c2-a58f-fd78cb12b3d9" class="link-to-page"><a href="Books/The Elements of Eloquence How to Turn the Perfect .html">The Elements of Eloquence: How to Turn the Perfect English Phrase by Mark Forsyth | Goodreads</a></figure><figure id="2429ee22-dbc9-4bba-be9c-a58963a1e251" class="link-to-page"><a href="Books/Designing for Growth A Design Thinking Tool Kit fo.html">Designing for Growth: A Design Thinking Tool Kit for Managers by Jeanne Liedtka | Goodreads</a></figure><figure id="43ca7a21-5572-47a9-b679-f2c79f4b72e1" class="link-to-page"><a href="Books/The Sales Bible The Ultimate Sales Resource by Jef.html">The Sales Bible: The Ultimate Sales Resource by Jeffrey Gitomer | Goodreads</a></figure><figure id="f1bfd2e2-8b57-4c5f-8e11-e76e4bbe11a9" class="link-to-page"><a href="Books/How I Raised Myself From Failure to Success in Sel.html">How I Raised Myself From Failure to Success in Selling by Frank Bettger | Goodreads</a></figure><figure id="f4ecbf7d-5a66-4941-b4dc-84a82ed8cda4" class="link-to-page"><a href="Books/Hooked How to Build Habit Forming Products by Nir .html">Hooked: How to Build Habit-Forming Products by Nir Eyal | Goodreads</a></figure><figure id="2ed59c03-6782-4b67-8203-0173a3cf47e1" class="link-to-page"><a href="Books/Traction A Startup Guide to Getting Customers by G.html">Traction: A Startup Guide to Getting Customers by Gabriel Weinberg | Goodreads</a></figure><figure id="631ce7e1-03c4-4a5e-bdac-12fe9eb90c01" class="link-to-page"><a href="Books/The Brain Audit Why Customers Buy by Sean D Souza .html">The Brain Audit: Why Customers Buy by Sean D&#x27;Souza | Goodreads</a></figure><p id="1d55e67c-ba42-4c90-9b1a-223d41f712d8" class="">
+</p><h2 id="05e2187b-54b6-4c73-8e40-d93a8fed2b55" class="block-color-red_background">Investing &amp; Finance</h2><figure id="3716b51f-8727-49b7-970d-80787a157824" class="link-to-page"><a href="Books/The Messy Marketplace Selling Your Business in a W.html">The Messy Marketplace: Selling Your Business in a World of Imperfect Buyers by Brent Beshore | Goodreads</a></figure><figure id="ceba0540-d50d-4e9d-a30a-e61ce6733042" class="link-to-page"><a href="Books/Zero to One Notes on Startups or How to Build the .html">Zero to One: Notes on Startups, or How to Build the Future by Peter Thiel | Goodreads</a></figure><figure id="8b5a7aa1-eadc-43cb-9ba6-2ad81c55e157" class="link-to-page"><a href="Books/The Misbehavior of Markets A Fractal View of Finan.html">The Misbehavior of Markets: A Fractal View of Financial Turbulence by Benoît B. Mandelbrot | Goodreads</a></figure><figure id="72516a85-0306-4488-b860-2ea38a9209ed" class="link-to-page"><a href="Books/Thinking in Bets Making Smarter Decisions When You.html">Thinking in Bets: Making Smarter Decisions When You Don&#x27;t Have All the Facts by Annie Duke | Goodreads</a></figure><figure id="d65f5d7e-c1a3-4dd8-aca7-8db238ff219d" class="link-to-page"><a href="Books/Adaptive Markets Financial Evolution at the Speed .html">Adaptive Markets: Financial Evolution at the Speed of Thought by Andrew W. Lo | Goodreads</a></figure><figure id="acaf55e9-19bc-4900-af56-1b1a2abe0423" class="link-to-page"><a href="Books/The Old Man and the Sea by Ernest Hemingway Goodre.html">The Old Man and the Sea by Ernest Hemingway | Goodreads</a></figure><p id="d1a7fd2b-aa21-404a-8cfe-e1c4aee6c079" class="">
+</p><h2 id="d693ba5f-b042-4727-9869-a5ca58dd41d8" class="block-color-pink_background">Business Stories</h2><figure id="8b436a39-4ce7-4bef-b0bf-07794babe044" class="link-to-page"><a href="Books/A Man for All Markets by Edward O Thorp Goodreads.html">A Man for All Markets by Edward O. Thorp | Goodreads</a></figure><figure id="9fa92fc9-24eb-4220-899f-cb41e795cbbe" class="link-to-page"><a href="Books/Hackers Painters Big Ideas from the Computer Age b.html">Hackers &amp; Painters: Big Ideas from the Computer Age by Paul Graham | Goodreads</a></figure><figure id="b9fbcb89-07a0-45ce-8463-ff25bfe45e2f" class="link-to-page"><a href="Books/Chaos Monkeys Obscene Fortune and Random Failure i.html">Chaos Monkeys: Obscene Fortune and Random Failure in Silicon Valley by Antonio García Martínez | Goodreads</a></figure><figure id="0365ddb9-dc82-4f87-8262-a57770ef1f41" class="link-to-page"><a href="Books/Founders at Work Stories of Startups Early Days by.html">Founders at Work: Stories of Startups&#x27; Early Days by Jessica Livingston | Goodreads</a></figure><figure id="3c671bc1-401d-44af-bc83-8f762700b3e6" class="link-to-page"><a href="Books/The Lean Startup How Today s Entrepreneurs Use Con.html">The Lean Startup: How Today&#x27;s Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses by Eric Ries | Goodreads</a></figure><figure id="101b4cc2-5d95-452c-bc5a-dbd638615fc5" class="link-to-page"><a href="Books/High Growth Handbook by Elad Gil Goodreads.html">High Growth Handbook by Elad Gil | Goodreads</a></figure><figure id="18271b8c-065d-431a-ab12-1ad29e38b959" class="link-to-page"><a href="Books/Bad Blood Secrets and Lies in a Silicon Valley Sta.html">Bad Blood: Secrets and Lies in a Silicon Valley Startup by John Carreyrou | Goodreads</a></figure><figure id="5f5f6e03-23dc-458f-87e4-4f8a869cb684" class="link-to-page"><a href="Books/How to Get Rich by Felix Dennis Goodreads.html">How to Get Rich by Felix Dennis | Goodreads</a></figure><figure id="e97b3717-5668-474b-9760-614be68c67ab" class="link-to-page"><a href="Books/Big Mistakes The Best Investors and Their Worst In.html">Big Mistakes: The Best Investors and Their Worst Investments by Michael Batnick | Goodreads</a></figure><figure id="8a5d30e2-d29f-4896-a88f-0cf6665f0e2b" class="link-to-page"><a href="Books/The 4 Hour Workweek Expanded And Updated Expanded .html">The 4 Hour Workweek, Expanded And Updated: Expanded And Updated, With Over 100 New Pages Of Cutting Edge Content by Timothy Ferriss | Goodreads</a></figure><figure id="7bc1f241-ccb7-41ab-833d-9bcdc7d7e97d" class="link-to-page"><a href="Books/The Five Dysfunctions of a Team A Leadership Fable.html">The Five Dysfunctions of a Team: A Leadership Fable by Patrick Lencioni | Goodreads</a></figure><figure id="8acf212b-f979-444a-8b3d-32adfb0f9241" class="link-to-page"><a href="Books/The Lean Startup How Today s Entrepreneurs Use Con 1.html">The Lean Startup: How Today&#x27;s Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses by Eric Ries | Goodreads</a></figure><figure id="20078323-cc33-4726-ac26-6e29a2b47145" class="link-to-page"><a href="Books/Rich Dad Poor Dad by Robert T Kiyosaki Goodreads.html">Rich Dad, Poor Dad by Robert T. Kiyosaki | Goodreads</a></figure><figure id="751d02c0-9c5e-4bee-953c-5b07486307fe" class="link-to-page"><a href="Books/The Goal A Process of Ongoing Improvement by Eliya.html">The Goal: A Process of Ongoing Improvement by Eliyahu M. Goldratt | Goodreads</a></figure><p id="6aeda4e7-13da-474d-8d7f-07b0e32ead65" class="">
+</p><h2 id="02390ed9-f519-4b79-a625-e433da894d75" class="block-color-gray_background">Science, Stories, &amp; Everything Else</h2><figure id="832c87e8-6dce-4feb-a665-4a430595eff8" class="link-to-page"><a href="Books/Working Researching Interviewing Writing by Robert.html">Working: Researching, Interviewing, Writing by Robert A. Caro | Goodreads</a></figure><figure id="e58a88c1-d4f1-4d63-b731-bf56eb1439eb" class="link-to-page"><a href="Books/Behave The Biology of Humans at Our Best and Worst.html">Behave: The Biology of Humans at Our Best and Worst by Robert M. Sapolsky | Goodreads</a></figure><figure id="12fe0b42-ba63-44ed-9ea7-ca77064a72d4" class="link-to-page"><a href="Books/The Great Mental Models General Thinking Concepts .html">The Great Mental Models: General Thinking Concepts by Shane Parrish | Goodreads</a></figure><figure id="159e92d6-02a8-411b-8c1b-a955b24a6bd1" class="link-to-page"><a href="Books/Expert Political Judgment How Good Is It How Can W.html">Expert Political Judgment: How Good Is It? How Can We Know? by Philip E. Tetlock | Goodreads</a></figure><figure id="1899547c-5563-46da-a87b-5765eed7e6c0" class="link-to-page"><a href="Books/White Noise by Don DeLillo Goodreads.html">White Noise by Don DeLillo | Goodreads</a></figure><figure id="ba79ccab-fcd9-4831-9069-cf21c8ae78aa" class="link-to-page"><a href="Books/The Man Who Loved Only Numbers The Story of Paul E.html">The Man Who Loved Only Numbers: The Story of Paul Erdős and the Search for Mathematical Truth by Paul Hoffman | Goodreads</a></figure><figure id="b629669f-d29c-4d7d-a292-b4ca5c978427" class="link-to-page"><a href="Books/Candide by Voltaire Goodreads.html">Candide by Voltaire | Goodreads</a></figure><figure id="008ab883-f893-4cb3-9b7d-1c244accd883" class="link-to-page"><a href="Books/The Godfather by Mario Puzo Goodreads.html">The Godfather by Mario Puzo | Goodreads</a></figure><figure id="2a87efed-2c22-4804-a4e0-2066d10b86c3" class="link-to-page"><a href="Books/The Elephant in the Brain Hidden Motives in Everyd.html">The Elephant in the Brain: Hidden Motives in Everyday Life by Kevin Simler | Goodreads</a></figure><figure id="0e1136a2-7353-4f1b-a2cc-962d7670e1f4" class="link-to-page"><a href="Books/Humility True Greatness by C J Mahaney Goodreads.html">Humility: True Greatness by C.J. Mahaney | Goodreads</a></figure><figure id="c23c4d45-b773-4063-b406-7660cdde8204" class="link-to-page"><a href="Books/How to Change Your Mind What the New Science of Ps.html">How to Change Your Mind: What the New Science of Psychedelics Teaches Us About Consciousness, Dying, Addiction, Depression, and Transcendence by Michael Pollan | Goodreads</a></figure><figure id="5ed7c6ff-f388-48bd-b0de-002be3d19762" class="link-to-page"><a href="Books/The Beginning of Infinity Explanations That Transf.html">The Beginning of Infinity: Explanations That Transform the World by David Deutsch | Goodreads</a></figure><figure id="209c75a5-0a03-461c-87c6-d76dec013a5f" class="link-to-page"><a href="Books/Daring Greatly How the Courage to Be Vulnerable Tr.html">Daring Greatly: How the Courage to Be Vulnerable Transforms the Way We Live, Love, Parent, and Lead by Brené Brown | Goodreads</a></figure><figure id="ddc38831-a05d-4cef-8bc3-11da9fbfc29d" class="link-to-page"><a href="Books/Spaceman An Astronaut s Unlikely Journey to Unlock.html">Spaceman: An Astronaut&#x27;s Unlikely Journey to Unlock the Secrets of the Universe by Mike Massimino | Goodreads</a></figure><figure id="fe747f67-cc27-4197-bf85-4dc7cf5844ba" class="link-to-page"><a href="Books/The Undoing Project A Friendship That Changed Our .html">The Undoing Project: A Friendship That Changed Our Minds by Michael Lewis | Goodreads</a></figure><figure id="3fd62883-d419-4dd9-b85c-af3734728a8a" class="link-to-page"><a href="Books/What Every Body is Saying An Ex FBI Agent s Guide .html">What Every Body is Saying: An Ex-FBI Agent&#x27;s Guide to Speed-Reading People by Joe Navarro | Goodreads</a></figure><figure id="8d9e890d-3e63-4ee2-a455-6896397d9859" class="link-to-page"><a href="Books/A Mind for Numbers How to Excel at Math and Scienc.html">A Mind for Numbers: How to Excel at Math and Science by Barbara Oakley | Goodreads</a></figure><figure id="ef453cff-784c-45a2-84a1-8968361a86c7" class="link-to-page"><a href="Books/Think Twice Harnessing the Power of Counterintuiti.html">Think Twice: Harnessing the Power of Counterintuition by Michael J. Mauboussin | Goodreads</a></figure><figure id="a70478dc-f0dc-488e-b3fe-e05cbcb3d669" class="link-to-page"><a href="Books/The Power of Full Engagement Managing Energy Not T.html">The Power of Full Engagement: Managing Energy, Not Time, Is the Key to High Performance and Personal Renewal by Jim Loehr | Goodreads</a></figure><figure id="7c0635e9-c947-478c-ba7c-b170c9e5e13a" class="link-to-page"><a href="Books/The Remains of the Day by Kazuo Ishiguro Goodreads.html">The Remains of the Day by Kazuo Ishiguro | Goodreads</a></figure><figure id="e2aed2ac-d3f0-4e41-842d-81d62dc23ad4" class="link-to-page"><a href="Books/Leonardo da Vinci by Walter Isaacson Goodreads.html">Leonardo da Vinci by Walter Isaacson | Goodreads</a></figure><figure id="429b801b-27bb-4b88-a914-cfc3a365cec5" class="link-to-page"><a href="Books/Other Minds The Octopus the Sea and the Deep Origi.html">Other Minds: The Octopus, the Sea, and the Deep Origins of Consciousness by Peter Godfrey-Smith | Goodreads</a></figure><figure id="b292e631-8ad1-4031-892b-5e22db8bf930" class="link-to-page"><a href="Books/Play Winning Chess by Yasser Seirawan Goodreads.html">Play Winning Chess by Yasser Seirawan | Goodreads</a></figure><figure id="e04c2fc2-7432-4ae5-9a89-ff3d0c18c856" class="link-to-page"><a href="Books/A More Beautiful Question The Power of Inquiry to .html">A More Beautiful Question: The Power of Inquiry to Spark Breakthrough Ideas by Warren Berger | Goodreads</a></figure><figure id="c32a0220-65d6-4d42-99f4-2ec5018de3fd" class="link-to-page"><a href="Books/Rejection Proof How I Beat Fear and Became Invinci.html">Rejection Proof: How I Beat Fear and Became Invincible Through 100 Days of Rejection by Jia Jiang | Goodreads</a></figure><figure id="69abce15-5332-42c1-915c-1403923c3a36" class="link-to-page"><a href="Books/Good Leaders Ask Great Questions Your Foundation f.html">Good Leaders Ask Great Questions: Your Foundation for Successful Leadership by John C. Maxwell | Goodreads</a></figure><figure id="8979e9bb-dacb-456a-8b4a-f46065684b06" class="link-to-page"><a href="Books/It s Not the How or the What but the Who Succeed b.html">It&#x27;s Not the How or the What but the Who: Succeed by Surrounding Yourself with the Best by Claudio Fernández-Aráoz | Goodreads</a></figure><figure id="175e1c4c-cb42-4553-91c0-a2fc19ce31fd" class="link-to-page"><a href="Books/The Giver The Giver 1 by Lois Lowry Goodreads.html">The Giver (The Giver, #1) by Lois Lowry | Goodreads</a></figure><figure id="f61d9f6e-ba59-498b-9aa9-eb535d3e8c74" class="link-to-page"><a href="Books/Quiet The Power of Introverts in a World That Can .html">Quiet: The Power of Introverts in a World That Can&#x27;t Stop Talking by Susan Cain | Goodreads</a></figure><figure id="700cd692-f196-43db-8425-543d5a6b6453" class="link-to-page"><a href="Books/Death by Meeting A Leadership Fable about Solving .html">Death by Meeting: A Leadership Fable...about Solving the Most Painful Problem in Business by Patrick Lencioni | Goodreads</a></figure><figure id="ec78cc26-475c-4b9c-a1c3-ea343f390890" class="link-to-page"><a href="Books/Meditations in an Emergency by Frank O Hara Goodre.html">Meditations in an Emergency by Frank O&#x27;Hara | Goodreads</a></figure><figure id="bac24192-b65b-4061-a05a-a40a30f27664" class="link-to-page"><a href="Books/The 4 Hour Workweek by Timothy Ferriss Goodreads.html">The 4-Hour Workweek by Timothy Ferriss | Goodreads</a></figure><figure id="c05e9b0e-d549-4b4d-a2ce-068a4bbc9be0" class="link-to-page"><a href="Books/How Will You Measure Your Life by Clayton M Christ.html">How Will You Measure Your Life? by Clayton M. Christensen | Goodreads</a></figure><figure id="da39cf31-1b22-40ad-b758-a589f1ff2ad8" class="link-to-page"><a href="Books/Works Well with Others An Outsider s Guide to Shak.html">Works Well with Others: An Outsider&#x27;s Guide to Shaking Hands, Shutting Up, Handling Jerks, and Other Crucial Skills in Business That No One Ever Teaches You by Ross McCammon | Goodreads</a></figure><figure id="a750bab9-6742-49f5-aed2-a6a7fb6a86b2" class="link-to-page"><a href="Books/Principles Life and Work by Ray Dalio Goodreads.html">Principles: Life and Work by Ray Dalio | Goodreads</a></figure><figure id="b2ad9b98-f945-4704-bde1-5fe2a1998d53" class="link-to-page"><a href="Books/Getting Real The Smarter Faster Easier Way to Buil.html">Getting Real: The Smarter, Faster, Easier Way to Build a Web Application by 37 Signals | Goodreads</a></figure><figure id="c5c325c4-9744-4fc4-b088-db2788b87f10" class="link-to-page"><a href="Books/Intercom on Jobs to be Done by Des Traynor Goodrea.html">Intercom on Jobs-to-be-Done by Des Traynor | Goodreads</a></figure><figure id="c2548a66-90f5-4174-8cd2-a7e6780db972" class="link-to-page"><a href="Books/Intercom on Product Management by Intercom Inc Goo.html">Intercom on Product Management by Intercom Inc | Goodreads</a></figure><figure id="9f3d38a5-5452-481d-8ddf-b511ccbf0687" class="link-to-page"><a href="Books/24 Assets Create a Digital Scalable Valuable and F.html">24 Assets: Create a Digital, Scalable, Valuable and Fun Business That Will Thrive in a Fast Changing World by Daniel Priestley | Goodreads</a></figure><figure id="9fc91c72-0e5d-4547-ae19-5fdae114b4a7" class="link-to-page"><a href="Books/Deep Work Rules for Focused Success in a Distracte.html">Deep Work: Rules for Focused Success in a Distracted World by Cal Newport | Goodreads</a></figure><figure id="1fbf876c-7d8f-4ffc-97c8-fec4e8195247" class="link-to-page"><a href="Books/The Coaching Habit Say Less Ask More Change the Wa.html">The Coaching Habit: Say Less, Ask More &amp; Change the Way You Lead Forever by Michael Bungay Stanier | Goodreads</a></figure><figure id="78a5feb4-5a6b-4599-b51c-08f7ae2b4d7e" class="link-to-page"><a href="Books/Balthazar Korab Architect of Photography by John C.html">Balthazar Korab: Architect of Photography by John Comazzi | Goodreads</a></figure><figure id="32895b15-dbb0-40e1-8616-35e26d5edaed" class="link-to-page"><a href="Books/The Defining Decade Why Your Twenties Matter And H.html">The Defining Decade: Why Your Twenties Matter - And How to Make the Most of Them Now by Meg Jay | Goodreads</a></figure><p id="01d6606d-2531-499b-b04c-cf1493f6cac4" class="">
+</p><hr id="93164b68-fa5c-4843-ae41-7e755d4bb58b"/><div id="9014c1bd-2f88-4c93-8054-fda384bba278" class="column-list"><div id="eacfddbc-df61-4e02-ac3b-b2547c3bea08" style="width:25%" class="column"><h3 id="fa4669bb-e37b-44df-886d-e32467bdbc42" class=""><strong><a href="https://leonslist.com/leon%20s%20list/podcasts">Podcasts</a></strong><strong> </strong></h3></div><div id="4150cd3b-3d76-4c1e-99f6-31902a4c2af9" style="width:25%" class="column"><h3 id="8ceeb9cd-2088-47d7-af3c-28ae55e0e72e" class=""><strong><a href="https://leonslist.com/leon%20s%20list/quotes">Quotes</a></strong></h3></div><div id="3f088f78-b084-4c62-bae9-82e6d3d11ac7" style="width:25%" class="column"><h3 id="3a3bd576-276c-40e3-9500-9853b8e2b00d" class=""><strong><a href="https://leonslist.com/leon%20s%20list/books">Books</a></strong></h3></div><div id="392a6d45-7d80-4726-bff9-31d9926eeb38" style="width:25%" class="column"><h3 id="78909eae-a586-4cf6-90b9-b7e9dabacef5" class=""><strong><a href="https://leonslist.com/leon%20s%20list/articles%20essays">Articles</a></strong></h3></div></div></div></article></body></html>
