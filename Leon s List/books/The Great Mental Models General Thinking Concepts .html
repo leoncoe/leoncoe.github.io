@@ -1,0 +1,588 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>The Great Mental Models: General Thinking Concepts by Shane Parrish | Goodreads</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="12fe0b42-ba63-44ed-9ea7-ca77064a72d4" class="page sans"><header><h1 class="page-title">The Great Mental Models: General Thinking Concepts by Shane Parrish | Goodreads</h1></header><div class="page-body"><p id="1b31645a-be99-47ab-8640-339b401b5aaf" class="block-color-gray"><a href="https://www.goodreads.com/book/show/44245196-the-great-mental-models">https://www.goodreads.com/book/show/44245196-the-great-mental-models</a></p><p id="c1848dc0-dd94-43ec-b5d8-e89e1a307156" class="">
+</p><p id="872435fb-d3ee-4134-82ff-66100377dc6e" class="">Want to Read Rate this book 1 of 5 stars2 of 5 stars3 of 5 stars4 of 5 stars5 of 5 stars</p><figure id="0f9ce9f4-278c-4ea5-9838-9f35a2f71810" class="image"><a href="The Great Mental Models General Thinking Concepts /44245196._SX318_.jpg"><img style="width:318px" src="The Great Mental Models General Thinking Concepts /44245196._SX318_.jpg"/></a></figure><p id="bbb02566-d7b8-4da8-92a0-8d81370ee402" class="">The old saying goes, &quot;To the man with a hammer, everything looks like a nail.&quot; But anyone who has done any kind of project knows a hammer often isn&#x27;t enough.</p><p id="6c2af363-91cc-4c03-b802-db671152d4aa" class="">The more tools you have at your disposal, the more likely you&#x27;ll use the right tool for the job — and get it done right.</p><p id="89f8a859-3dde-4148-9c40-f23ac27c2aa6" class="">The same is true when it comes to your thinking. The quality of your outcomes depends on the m <a href="https://www.goodreads.com/book/show/44245196-the-great-mental-models">...more</a></p><p id="05aae334-bc2c-46dd-b887-9608fa1097fd" class="">If you&#x27;ve read Charlie Munger&#x27;s Almanack this is the book you deeply crave in its wake. Shane&#x27;s done a wonderful job over the past few years making mental models approachable through FS.blog. A mental model is a way to look at a problem through a certain lense: an economist will look at a problem one way, a biologist another, and a statistician yet another. Learn the big ideas from the big disciplines and you&#x27;ll be able to twist and turn problems in interesting ways at unprecedented speeds. His <a href="https://www.goodreads.com/book/show/44245196-the-great-mental-models">...more</a> </p><p id="3db555eb-5f6b-4df1-b741-9ab9dc1dbdb9" class="">I listened to the audiobook, which Shane unfortunately narrated. He&#x27;s super smart but a terrible narrator and it sounds like he&#x27;s actually bored reading his own book.</p><p id="aaed870b-5fc6-4973-a4a3-1768a4a9679d" class="">The content is not super well presented, but the mental models themselves are super good. Here are a few of them:</p><p id="26bf9ccf-0204-459d-bf45-e4e81b4e209b" class=""><strong>Maps are not the territory</strong> - All models are wrong, but some are useful
+1. Reality is the ultimate update
+2. Consider the cartographer
+3. Map can influence territory</p><p id="79e5c2e9-20c1-4626-8560-39aab408b752" class=""><strong>Circle of competence</strong> If you want to improve your odds of suc <a href="https://www.goodreads.com/book/show/44245196-the-great-mental-models">...more</a> </p><p id="1504004e-f5a8-4d43-a3c9-666df3078f76" class="">Short, but good foundations.</p><p id="f1cfef5a-6fbd-4681-9f0e-56675e359faf" class="">Notes below:</p><p id="27e427f3-0252-4761-9116-374a00ee5017" class="">Mental Models book, by Shane Parris: *
+Keep in contact with reality if you want to draw strength *
+We usually are in the way of ourselves, because of our blindspots</p><p id="69e86716-5fb4-4d71-bd36-598f4f9b77a7" class="">*
+1. Not having the right perspective or vantage point</p><p id="b346582d-375b-488b-93a0-0ad1d2aedd51" class="">*
+Be open to other perspectives *
+2. Ego-induced denial</p><p id="ffc34fb0-7f24-476c-b1f8-d384f747e650" class="">*
+We have too much investment in our opinion, and discredit other&#x27;s points of view *
+We don&#x27;t benefit from the world&#x27;s knowledge as much as we want</p><p id="9ea4a4c6-c20c-4c14-bf2e-a2d9f93015e0" class="">*
+1. We fear what others will think <a href="https://www.goodreads.com/book/show/44245196-the-great-mental-models">...more</a> </p><p id="97a6faca-18be-4cd7-ab0e-a4f5385ea016" class="">I found a lot that I was happy to engage with in this book. I had hoped to find more new ideas, but the subject matter is valuable enough to make up for that.</p><p id="056cc190-43da-4d23-8763-5acdcce1bb9d" class="">My biggest gripe with the book was that it felt incomplete. If I understood correctly, this is the first volume in many. But, I couldn&#x27;t help feeling that I&#x27;d paid too much for it.</p><p id="2ad6af5f-be3e-4c29-beee-69714bfad1bb" class="">Somethings I found interesting while reading.
+First was that my definition of mental models was different to the authors. I thought of mental model more as a for <a href="https://www.goodreads.com/book/show/44245196-the-great-mental-models">...more</a> </p><p id="4c3d9fae-e67e-458b-948b-139258af42b9" class="">I recommend only the first chapter of this book. It is the best explanation of mental models and how they work.</p><p id="0dc25bd5-2688-4a3c-83a6-94f8752f8372" class="">Each of the other chapters talk about a specific mental model where just reading a chapter won&#x27;t even get the reader to understand 1% of what that mental model is. The book is written really well but each of those chapters should be a 20 hour lesson all on its own with examples, practices, assignments and everything a lesson would have.</p><p id="03a4c60e-d315-43e8-a7e7-6a0d78be6f00" class="">So while I recommend this book to everyone, I reco <a href="https://www.goodreads.com/book/show/44245196-the-great-mental-models">...more</a> </p><p id="c70d6dce-72ab-4209-97b5-2f2532cf5637" class="">Familiar with Shane&#x27;s blog? Happy. 🙌🏽</p><p id="2625e5e5-b7db-4fb3-9f23-b128382c0b8d" class="">Unfamiliar with Shane&#x27;s blog? Enlightened. 🧠</p><p id="9ae16e72-1ffb-4424-9544-38c37965c17e" class="">Shane begins by paying homage to those before him: &quot;The ideas in these volumes are not my own, nor do I deserve credit for them. [...] I&#x27;ve only curated, edited, and shaped the work of others before me.&quot;</p><p id="18f800dc-64ce-439a-9055-c0a9b755d863" class="">A powerful way to start a powerful book.</p><p id="ac0b52e9-3e8a-48df-b886-a44469c5f95a" class="">Kudos, Shane (and team). Kudos.</p><p id="bd4fb4c9-0c1d-48a5-9694-98ea21d3b75d" class="">A case study on how to ruin your own book. I’ve listened to an audiobook version read by an author. Horrible experience. Why does an author self sabotage his own work?</p><p id="3d335250-1ba8-4011-909c-3de5d6547380" class="">Very rarely do I need to rely on my shear willpower to plow through the book. This was it.</p><p id="4c5b0180-d568-4ce8-8569-5a4f282d1e88" class="">Maybe physical book leaves a better impression.</p><p id="83a55250-85d4-4513-b2ef-361848f3e4c1" class="">Content was ok, basically a summary of authors blog.</p><p id="45e6ba16-b6cc-4fe0-8928-af7dae4e34f4" class="">Best thing about this book was that it was short and finishing it gave me a real sense of accomplishment.</p><p id="cc1cf1c3-eb30-4a56-a622-dc1edc4f4277" class=""><strong>Well worth your time, but read it, and read it slowly</strong></p><p id="d84f2740-87ef-497e-8da9-a5dcc34ad5ae" class="">I listened to an audiobook but felt this should be read instead to allow for deeper thought and reflection.
+A few of the reviews mentioned that narration was lacking, but I found it to be okay.</p><p id="50ad5e59-5403-4c23-a96c-98ed5aede384" class="">The book briefly presents some of the better-known mental models. Every model is explained and illustrated with a few select examples, without going into finer details. This makes the book short and accessible to any casual reader, reminding them of alrea <a href="https://www.goodreads.com/book/show/44245196-the-great-mental-models">...more</a> </p><p id="65f24bae-c806-4abc-8af8-d89dd73f933e" class="">A really good introduction to the topics. Deep explanations and practical applications abound. I&#x27;m familiar with all 9 models but got a great deal out this; returning repeatedly to reinforce my recall of the rich detail provided.</p><p id="006ffa6d-547a-4741-9486-b69b10f165a1" class="">This first volume of the series covers these mental models:
+1. The map is not the territory
+2. Circle of competence
+3. First principles thinking
+4. Thought experiment
+5. Second-order thinking
+6. Probabilistic thinking
+7. Inversion
+8. Occam’s razor
+9. Hanlon’s razor</p><p id="e4ae0105-98fa-4263-afa2-20b76f9992b6" class="">« previous <em>1</em> <a href="https://www.goodreads.com/book/show/44245196-the-great-mental-models">2</a> <a href="https://www.goodreads.com/book/show/44245196-the-great-mental-models">3</a> <a href="https://www.goodreads.com/book/show/44245196-the-great-mental-models">next »</a></p></div></article></body></html>
