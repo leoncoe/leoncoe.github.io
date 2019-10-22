@@ -1,0 +1,592 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Favorites</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="06b1dae6-34ff-4d1b-b333-52763e781a89" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">🚀</span></div><h1 class="page-title">Favorites</h1></header><div class="page-body"><p id="79d78b0f-c037-4a52-a34a-910cb739de44" class="">Some of the best no-code tools, what they do well, and how much they&#x27;ll cost you. You can see the full index of tools <a href="http://codelesss.com/codelesss">here</a>.</p><p id="b88ce836-09fe-4eaf-9822-22d60f5cbc4c" class="">
+</p><div id="37325821-22f1-4947-9878-afcd538ac614" class="column-list"><div id="75d92e94-a98e-4cfd-9315-684151d3d512" style="width:50%" class="column"><h2 id="1e15abf8-5437-48b2-8415-87c7201a4a88" class=""><strong>Best Multi-Purpose Tool</strong></h2><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="492a002a-f374-44bd-bcfb-a0cca3fdac67"><div style="font-size:1.5em"><span class="icon">📄</span></div><div style="width:100%"><strong><a href="http://notion.so/?ref=codelesss">Notion</a></strong>
+A powerful note-taking app focused on keyboard shortcuts and a clean UI. Easily embed links, PDF&#x27;s, images and files while being able to format text into legible hierarchies. The nested page structure makes organization very easy.</div></figure><blockquote id="b79c3867-e7b0-4029-b996-eefdabfbe057" class=""><strong>Best For:</strong> <em>Note taking, internal wiki&#x27;s, brand guidelines, light CRM&#x27;s, writing, and idea generation. </em></blockquote><p id="9d9acbcc-24e8-4bf9-aa22-ae7278044540" class=""><strong><code>Price:</code></strong><code> Free tier with limits, $4/mo for unlimited individual use, $8/mo for team features</code></p><h3 id="05d7ac8e-7577-4295-bc63-e1ef7f01c41c" class="block-color-yellow_background"><mark class="highlight-yellow_background">Best Feature:</mark></h3><p id="fbd6e202-7ed6-460d-a7ea-4fe8505eb287" class="">Tons of super powerful keyboard shortcuts.</p></div><div id="abd2badf-8e1d-4619-908e-953a48d66ddf" style="width:50%" class="column"><h2 id="6b06e535-1e8e-48c2-89a0-143a795c9195" class="">Quickest Mobile App Builder</h2><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="8dea5631-cf3a-4b0c-9772-9aef8c1d6dd3"><div style="font-size:1.5em"><span class="icon">📱</span></div><div style="width:100%"><strong><a href="http://glideapps.com/?ref=codelesss">Glide</a></strong><strong>
+</strong>Fastest way to building a mobile app. Apps are shared as link which you pin to your home screen on your phone. The &quot;apps&quot; then act and respond like normal mobile apps.</div></figure><blockquote id="06d402f6-d8bb-4d6d-ac4d-f17aa719bfc6" class=""><strong>Best For: </strong><em>Launching MVP&#x27;s quickly. Glide now accommodates Stripe payments so you can even</em> </blockquote><p id="c0540c9f-54e1-4ce5-bc42-d636f4f3dd65" class=""><code><strong>Price: </strong></code><code>Free with branding, $19/mo without branding &amp; pro features, $199/mo to publish to the app store</code></p><h3 id="e2934eab-ccbc-4ba4-83cb-76e89aba212e" class="block-color-yellow_background">Best Feature: </h3><p id="e2e334f3-19db-4acb-ab0b-f1ce0de0cb35" class="">Hiding content based on which user is logged in.</p></div></div><p id="1ed67a18-bc8b-487a-8aae-be5d7e40c7e8" class="">
+</p><div id="a0177ac7-ade4-40a3-8f9a-1c54462bc2fb" class="column-list"><div id="09fce158-f621-4982-b12a-4ecceca85f95" style="width:50%" class="column"><h2 id="a9345093-2588-40d9-9ea2-694e1f0ecdcb" class="">Best Database for No-Code</h2><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="a3657be4-8960-4634-8a06-a7229972eaef"><div style="font-size:1.5em"><span class="icon">⌨</span></div><div style="width:100%"><strong><a href="http://airtable.com/?ref=codelesss">Airtable</a></strong><strong>
+</strong>Airtable is a powerful relational database that looks and feels more like a familiar spreadsheet than a traditional database. It comes with great API documentation and is easy to use even for those who haven&#x27;t worked with API&#x27;s before.</div></figure><p id="1e0b5a9e-8d39-4424-a49e-fb11a5637217" class="">
+</p><blockquote id="bb652b24-8126-4273-82a0-caa26417d95f" class=""><strong>Best For: </strong><em>When you need a quick database but don&#x27;t know SQL. When you know how to use API&#x27;s but like GSheets more than MongoDB.</em></blockquote><p id="8fdf8be1-5d0a-4a0f-8324-8fe248def03a" class=""><code><strong>Price:</strong></code><code>Free tier that covers many use cases, $10/mo/user for more space, $20/mo/user for pro features and more space</code></p><h3 id="ec064fc0-0fa1-4eee-a416-859636a1346a" class="block-color-yellow_background">Best Feature:</h3><p id="9dc6a5fc-9405-40b3-8dea-959f10eacf70" class="">Automatically generated API documentation that&#x27;s easy to read.</p></div><div id="fe3e4b25-3d33-48da-bf65-55fb0bd2d9a9" style="width:50%" class="column"><h2 id="e7d93eaf-c37c-4edb-888f-9caa59452f61" class=""><strong>Soon to Replace GSheets</strong></h2><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="5c5c7a29-ba62-4863-ac17-51a349e21463"><div style="font-size:1.5em"><span class="icon">👨‍💻</span></div><div style="width:100%"><a href="http://dashdash.com/?ref=codelesss"><strong>DashDash</strong></a><strong>
+</strong>DashDash is GSheets plus zapier plus cron. While it&#x27;s still in beta and has some bugs to work out, this is going to be a winner due to powerful automation and integration features.</div></figure><p id="e142e5ea-4f98-40b4-82a4-c20d4134da65" class="">
+</p><blockquote id="14467849-3acb-4fa8-b784-8093e6eb8a92" class=""><strong>Best For: </strong><em>Projects where you need google sheets and automation capabilities. Grabbing data over and over again and retrieving information from API&#x27;s easily.</em></blockquote><p id="7b5a53c1-5d1d-444d-b5c3-21af6f3e9ee2" class=""><code><strong>Price:</strong></code><code>Free to use, pay if you use native integrations (optional)</code></p><h3 id="51fd170e-5c85-499d-8ceb-164b2fe14b34" class="block-color-yellow_background">Best Feature:</h3><p id="dcfcd647-8ed9-454e-b77f-6f6f5c537612" class="">Automation to refresh content based on formulas or API&#x27;s in a cell.</p><p id="2037a5c2-0d4c-4be7-bf80-1fee4f4f6b5a" class="">
+</p></div></div><div id="18ac03ca-1dd7-4014-8d51-84712df581fa" class="column-list"><div id="944c1853-9485-43b3-98e9-59c9e53e9311" style="width:50%" class="column"><h2 id="4421c19c-31ac-4516-83b5-486094672e76" class="">Best Web Scraper</h2><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="32899876-0618-4556-9cbf-570b7d937a5b"><div style="font-size:1.5em"><span class="icon">🕸</span></div><div style="width:100%"><strong><a href="http://tryspider.com/?ref=codelesss">Spider Scraper</a></strong><strong>
+</strong>This chrome extension let&#x27;s you easily scrape websites and is the most reliable I&#x27;ve used. Just point and click, you can even name the columns and the file before downloading as a CSV or JSON file</div></figure><blockquote id="68e7f9f2-f3d4-42b4-b8f7-b9c608ad768f" class=""><strong>Best For: </strong><em>Scraping webpages reliably</em></blockquote><p id="26a985ce-1e6b-4b43-923d-596c33f184fb" class=""><code><strong>Price:</strong></code><code>Free chrome extension, $38 one-time for pro</code></p><h3 id="a0332081-83f0-4c1b-aa4f-877651f8d33d" class="block-color-yellow_background">Best Feature:</h3><p id="ae9cdae8-65b7-477b-a69e-6c5a1e4676d0" class="">Point and click web scraper that is reliable and can download data as CSV or JSON.</p><p id="252cbcf3-69a5-43e1-8a39-6bbae5691e4a" class="">
+</p></div><div id="eeb7f4df-5395-4b11-bc4a-8f594e92077d" style="width:50%" class="column"><h2 id="6b28ff58-a567-446b-a796-16b1caa75571" class="">Editable Vector Icons that Make Your App Look Great</h2><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="948d6a60-909f-453c-a357-d7bdb685c533"><div style="font-size:1.5em"><span class="icon">📖</span></div><div style="width:100%"><strong><a href="https://www.ikonate.com/?ref=codelesss">Ikonate</a></strong>
+Ikonate has a large set of icons for your apps and websites. It&#x27;s easily customizable. Change the color on the icon outline, change the icon style, and download only the icons you need in svg format.</div></figure><blockquote id="98810983-bccf-4f33-ba0e-bbb0610d48b8" class=""><strong>Best For: </strong><em>When you need clean, customizable icons for your app or site.</em></blockquote><p id="5af0f43e-0c04-4690-aed8-5bdcd221c531" class=""><code><strong>Price:</strong></code><code>Free</code></p><h3 id="43be1db4-2f5d-448b-bbd4-29a53906c469" class="block-color-yellow_background">Best Feature:</h3><p id="16567f10-5eab-4537-beb2-5aee56008020" class="">Icons come default as svg and you can change any icon to any color you want.</p><p id="427552ab-7b8b-4a01-978e-d85c5b42777d" class="">
+</p></div></div><div id="5f6bd55e-d27b-42d9-bd98-5ba71f376488" class="column-list"><div id="a7b20d9c-556f-4be9-990a-c4ee7e5d809c" style="width:50%" class="column"><h2 id="1905fc65-d34a-493b-9c0e-1ad1e774c065" class="">Best App-Connector</h2><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="b2f0e4e2-99b0-41f7-a385-764392587f52"><div style="font-size:1.5em"><span class="icon">🔗</span></div><div style="width:100%"><strong><a href="http://zapier.com/?ref=codelesss">Zapier</a></strong>
+Connects all your </div></figure><blockquote id="1f8514a3-5c41-46b4-8e0d-6de05e2df38a" class=""><strong>Best For:</strong></blockquote><p id="077ab9e1-c50d-47f0-a299-5c51dcbda29d" class=""><code><strong>Price:</strong></code></p><h3 id="5e0243a3-b5ef-4557-ab2c-58865999c1d3" class="block-color-yellow_background">Best Feature:</h3><p id="2f090fc7-62b8-4ebf-bdd7-b95f0bdcd6d5" class="">Very reliable and has the largest set of popular integrations.</p></div><div id="dc4f298b-b907-4399-acaf-b6a8551071a0" style="width:50%" class="column"><h2 id="8255c465-28a0-47c6-add0-76d969f4a0a9" class="">The Open-Source Zapier</h2><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="d9b37d3b-a7f4-4820-b572-1f625476dd62"><div style="font-size:1.5em"><span class="icon">⛓</span></div><div style="width:100%"><strong><a href="http://n8n.io/?ref=codelesss">n8n</a></strong>
+Newly released product that aims to emulate the integration and automation features of Zapier but as an open-source product.</div></figure><blockquote id="13b998f3-1c7c-4c3b-8201-efb55cfddb8b" class=""><strong>Best For:</strong></blockquote><p id="53b5b18d-466f-4902-8ce7-1494f58b202c" class=""><code><strong>Price: </strong></code><code>Free</code></p><h3 id="c6320bbc-c165-4aa8-a045-e0347d44d8d1" class="block-color-yellow_background">Best Feature:</h3><p id="5f4dbaf9-8b5a-439b-b6a1-5887ad224629" class="">Zapier but it&#x27;s self-hosted.</p><p id="1632845a-75ae-4212-aa11-72d82f8e33e0" class="">
+</p></div></div><div id="ff0c2fe2-207e-47ae-9636-e450ee8fbebd" class="column-list"><div id="e6117d22-4bc2-475c-beec-eee602d0336b" style="width:50%" class="column"><h2 id="18069d4d-7a4d-425a-9469-7cfa498bddcc" class="">Most-Powerful Site Builder</h2><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="1fad9060-0748-4405-bf5b-57cc8d84f389"><div style="font-size:1.5em"><span class="icon">🌐</span></div><div style="width:100%"><strong><a href="http://webflow.com/?ref=codelesss">Webflow</a></strong><strong>
+</strong>Webflow is a popular website builder focused on creating lots of design control. Webflow has both CMS and Ecommerce plans to allow you to run entire online shops or blogs from beautifully designed sites.</div></figure><blockquote id="48342155-e269-4508-bf80-b244ac06ee75" class=""><strong>Best For: </strong><em>Professional sites for those with an eye for design.</em></blockquote><p id="071ce816-bd8d-4b4a-a8a4-1f2a34547edd" class=""><code><strong>Price: </strong></code><code>Free plan for 2 sites, then pay per site based on ecommerce, blog and other needs. </code><a href="https://webflow.com/pricing?ref=codelesss"><code>See pricing page</code></a></p><h3 id="620035aa-d425-44a3-ba5b-7f070676eb56" class="block-color-yellow_background">Best Feature:</h3><p id="e6ffe046-ddde-4cec-883d-5951e18bec09" class="">Super easy to make impressive click-scroll animations.</p></div><div id="d90c8626-3618-470a-80fa-aab36cb5ae80" style="width:50%" class="column"><h2 id="75a7b054-f20b-46a7-9259-0fac2b7cea1e" class="">Quickest Way to Launch a Site</h2><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="4c9f1e63-5f2f-4f9b-800c-bafe05cdb29b"><div style="font-size:1.5em"><span class="icon">⚡</span></div><div style="width:100%"><strong><a href="http://carrd.co/?ref=codelesss">Carrd</a></strong><strong>
+</strong>Carrd creates simple, responsive, one-page websites. The pricing plan is extremely affordable, starting at less than $1/mo and SSL is included. Carrd is a great way to validate your ideas and you can even section off portions of your site to simulate multi-page functionality.</div></figure><blockquote id="4491d749-bc98-4aef-9b0b-a5d61dbbad15" class=""><strong>Best For: </strong><em>Clean templates and an intuitive interface at a great price.</em></blockquote><p id="fcf07870-534d-4dd4-9715-bf1a15e49826" class=""><code><strong>Price: </strong></code><code>Starting at $9/year</code></p><h3 id="b170a202-f432-409c-aa91-e21fdb85b66b" class="block-color-yellow_background">Best Feature:</h3><p id="9836580d-bb72-4593-ae4e-48b424121cbd" class="">Easy Stripe integration so you can accept payments quickly and validate your ideas.</p><p id="d4599f7c-2f62-4e60-8a5f-e28f7d50fe62" class="">
+</p><p id="45a7b8e9-d1f4-4471-ab9b-c22559bdf3f0" class="">
+</p></div></div><div id="43495d23-02c3-44b5-beea-523a9de2b649" class="column-list"><div id="dd1e9b5f-a8d8-4378-972e-3040f57e004c" style="width:50%" class="column"><h2 id="189f2ad9-8b64-4d1c-b394-c94b5f99c034" class="">Your Secret Weapon for Automating Tasks</h2><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="7937f8c7-d9b3-4949-8ce7-750b79c0d4df"><div style="font-size:1.5em"><span class="icon">🖱</span></div><div style="width:100%"><strong><a href="http://tinytask.net/?ref=codelesss">TinyTask</a></strong><strong>
+</strong>TinyTask allows you to create no-code computer macros. Just click record, complete the steps you want TinyTask to recreate, then hit save. In the future, play your macro and watch your mouse and keyboard recreate your actions.</div></figure><blockquote id="de54d11a-317c-4d39-86e2-b7ec413a6031" class=""><strong>Best For: </strong><em>Automating redundant tasks</em></blockquote><p id="c4a4906d-fcd2-4c1d-95af-15c97549b38a" class=""><code><strong>Price:</strong></code><code>Free</code> </p><h3 id="0a421b4c-f9dd-4974-9994-a233e8071b01" class="block-color-yellow_background">Best Feature:</h3><p id="be9d5c1b-a37b-40de-8573-9259a247b928" class="">Download your task as an .exe to can run tasks on a recurring schedule automatically.</p></div><div id="a573e2a1-f18f-4425-8b6f-1d8051c4ae9e" style="width:50%" class="column"><h2 id="fd235d94-3caf-42c2-9cbd-3129cd333464" class="">Email Automation on a Budget</h2><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="c64054f8-5147-434e-99ba-d4a37044afd1"><div style="font-size:1.5em"><span class="icon">📩</span></div><div style="width:100%"><strong><a href="http://rightinbox.com/?ref=codelesss">RightInbox</a></strong><strong>
+</strong>RightInbox is a solid email management extension for Gmail that has all the basics to get you started. It has auto follow-ups, sequences, snippets, and other great tools for automating your email outreach.</div></figure><blockquote id="8af424bd-9a64-44b0-8549-26b354ee89e9" class=""><strong>Best For: </strong><em>Email automation and follow up on a budget.</em></blockquote><p id="975a10b8-409f-4c36-9d67-9628c2f997ad" class=""><code><strong>Price:</strong></code><code>Free tier, unlimited for $8/mo</code></p><h3 id="2bf796fd-68e1-4b39-9fa1-62b31eb70f23" class="block-color-yellow_background">Best Feature:</h3><p id="b751e0c5-3292-427d-af8e-582e7901dd16" class="">The features of much more expensive email tool at a price that can&#x27;t be beat.</p><p id="e99bf5ab-c969-4664-9569-30c0c38a1c4c" class="">
+</p></div></div><div id="ef0b7735-9c0a-444d-990c-c98da0dd807b" class="column-list"><div id="61faf296-883d-4773-9ddc-ca36758e38ef" style="width:50%" class="column"><h2 id="ae0f8b2e-11f1-4f3d-8570-6ca19edf2c94" class="">Score &amp; Improve Your Headlines</h2><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="d96db549-312e-42c7-b26c-4b7c3376d424"><div style="font-size:1.5em"><span class="icon">📑</span></div><div style="width:100%"><a href="https://coschedule.com/headline-analyzer/?ref=codelesss"><strong>Headline Analyzer</strong></a><strong>
+</strong>The CoSchedule Headline Analyzer is a must-have tool for every marketer. This is great for copywriters and content marketers. Use this tool for writing sales emails and weed out weak headlines. This tool is best for eliminating bad headlines, not for generating great ones.</div></figure><blockquote id="5d0f93ca-8037-4bd6-a3f4-24bd33df79ca" class=""><strong>Best For: </strong><em>Testing headlines before you click send on that mass email.</em></blockquote><p id="107f6607-b090-4970-9bac-da9419349b6b" class=""><code><strong>Price:</strong></code><code>Free</code></p><h3 id="310f70b1-ebc0-4109-a63b-cfbf51c0aa9b" class="block-color-yellow_background">Best Feature:</h3><p id="69594f08-3ab8-441c-b8fe-758347b47275" class="">Helps you quickly identify and weed out weak headlines for free.</p><p id="669d056c-9cf5-4dbe-9610-d3cc7279d2d9" class="">
+</p></div><div id="8433e875-6873-4394-bdf4-791478a39813" style="width:50%" class="column"><h2 id="19c53e41-04ba-4db0-bd1f-52a7ba1844bc" class="">Hundreds of Clean Logos. Instantly.</h2><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="856e9a26-b73d-43ca-bfc4-be0a0ea3eda4"><div style="font-size:1.5em"><span class="icon">🖌</span></div><div style="width:100%"><strong><a href="https://www.namecheap.com/logo-maker/app/new/?ref=codelesss">Namecheap Logo Maker</a></strong><strong>
+</strong>The logo maker by Namecheap is a go-to resource for quick, professional looking logos. Just type in your company name, click a couple of style options, and it generates tons of logo options for you to choose from. Select the options you like best and download in multiple formats.</div></figure><blockquote id="4e8bf93e-0199-42ad-82a7-2c71ab4cadbb" class=""><strong>Best For: </strong><em>Fast, professional, clean logo designs for free.</em></blockquote><p id="f147abaf-0d59-4e0c-ba7a-72dee5799eda" class=""><code><strong>Price: </strong></code><code>Free</code></p><h3 id="ac354a98-bbbe-4fe4-ab9b-5888d8058b4c" class="block-color-yellow_background">Best Feature:</h3><p id="51dc1bde-f2ff-4499-9b86-4b2bcf1693d7" class="">It&#x27;s free and generates logos probably better than you could ever hope of designing in seconds.</p></div></div><p id="49a08388-3f51-44cd-bf62-5ca8be963256" class="">
+</p></div></article></body></html>
